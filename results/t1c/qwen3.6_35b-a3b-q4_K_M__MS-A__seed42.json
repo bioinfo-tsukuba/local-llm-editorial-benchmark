@@ -1,0 +1,328 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 33,
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words",
+   "problem": "The title contains the word 'Novel' ('Novel coarse-grained model...').",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract includes a citation '[12]' in the text.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are listed instead of the maximum allowed five.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement contains approximately 123 words, exceeding the 100-word limit.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Running title",
+   "rule": "A Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains approximately 78 characters, exceeding the 50-character limit.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Page 1 footer (Corresponding author information)",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The provided correspondence section only lists a department, city ('Kyoto'), and email. It lacks the complete postal address and the ORCID iD.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Page 1, corresponding author note",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The manuscript provides only a department and city for the corresponding author's address (missing street, postal code, and country) and completely omits the required ORCID iD.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Between Discussion and Author contributions",
+   "rule": "Required section order (Introduction, Materials and methods, Results, Discussion, Conclusion, Conflict of interest, Author contributions, Data availability...)",
+   "problem": "The 'Conclusion' section is entirely missing. The manuscript proceeds directly from Discussion to Author contributions.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Between Discussion and References",
+   "rule": "Required section order (Conflict of interest must precede Author contributions; Data availability must follow Author contributions)",
+   "problem": "'Author contributions' appears before 'Conflict of interest', violating the specified sequence. The required 'Data availability' section is also entirely absent.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Between Conflict of interest and Acknowledgements",
+   "rule": "Required section order (Acknowledgements must precede References)",
+   "problem": "'References' appears before 'Acknowledgements', whereas the instructions mandate the order 'Acknowledgements and References'.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Introduction section",
+   "rule": "Placement of preprint deposition comment (must be arranged in the specified sequence after Data availability and before Acknowledgements/References)",
+   "problem": "The preprint deposition statement is embedded within the Introduction paragraph instead of being placed in its designated structural position.",
+   "severity": "medium",
+   "_area": "structure"
+  },
+  {
+   "location": "Tables section (Table 1)",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is not cited anywhere in the manuscript text.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Tables section (Table 1 footnotes)",
+   "rule": "table footnotes lettered a, b, c, and so forth, below the body of the table.",
+   "problem": "The footnotes are numbered with Arabic numerals (1., 2., 3.) instead of being lettered (a, b, c).",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Tables section (Table 1 and Table 2)",
+   "rule": "Do not use vertical lines.",
+   "problem": "The tables use vertical pipe characters ('|') to separate columns, which constitute vertical lines.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Results section (text citations)",
+   "rule": "Number the figures consecutively with Arabic numerals in the order of their appearance in the text.",
+   "problem": "Figure 2 is cited before Figure 1 in the manuscript text, violating the required consecutive numbering order based on first appearance.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list (Fig1_modes.bmp and Fig2_spectra.bmp)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Figures 1 and 2 are listed as 150 dpi, which is below the required 300 dpi resolution.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list (Fig1_modes.bmp and Fig2_spectra.bmp)",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Figures 1 and 2 are submitted in BMP format, which is not an accepted file type according to the instructions.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials list (図1_final version.tiff)",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path. Use alphanumeric characters only.",
+   "problem": "The filename contains Japanese characters and a space, violating the alphanumeric-only naming convention.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Graphical abstract caption section",
+   "rule": "Upload a short caption less than 100 words about the figure(s).",
+   "problem": "The provided graphical abstract caption is approximately 133 words, exceeding the 100-word limit.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials section (file list)",
+   "rule": "Movie files must be in MPEG or AVI format, and file name extensions should be limited to pdf, txt, zip, mpeg, or avi.",
+   "problem": "The file 'Suppl_Movie_1.mov' uses the MOV format/extension instead of the required MPEG or AVI.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials section (file list)",
+   "rule": "File names must not include spaces or Japanese characters; only alphanumeric characters are allowed.",
+   "problem": "The file '図1_final version.tiff' contains a Japanese character ('図') and a space in its filename.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials section (file list)",
+   "rule": "File name extensions should be one of the following: pdf, txt, zip, mpeg, or avi.",
+   "problem": "The file '図1_final version.tiff' uses a .tiff extension, which is not permitted.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials section (file list)",
+   "rule": "The size of each uploaded supplementary material file should be no more than 20 MB.",
+   "problem": "The file 'Suppl_Movie_1.mov' is listed as 45 MB, exceeding the maximum allowed file size.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "References section, entries [6] and [7]",
+   "rule": "All references should be listed in numerical order",
+   "problem": "Entries [6] and [7] are out of sequence; reference [7] appears before reference [6].",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "References section, entry [8]",
+   "rule": "References to 'personal communications' should not appear in the reference list",
+   "problem": "Entry [8] is listed as a personal communication ('Kuramoto, H. Personal communication, 2025.') instead of being cited parenthetically in the text.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "References section, entry [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list",
+   "problem": "Entry [5] ends with 'In preparation.', which is explicitly prohibited by the instructions.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "References section, entry [9]",
+   "rule": "For more than six authors, list the first six authors followed by 'et al.'",
+   "problem": "Entry [9] lists all ten authors instead of truncating after the sixth author with 'et al.'.",
+   "severity": "medium",
+   "_area": "references"
+  },
+  {
+   "location": "References section, entry [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL",
+   "problem": "Entry [4] uses the prefix 'doi:' instead of the full https://doi.org/ URL format specified in the instructions and examples.",
+   "severity": "low",
+   "_area": "references"
+  },
+  {
+   "location": "Title and Abstract",
+   "rule": "Titles and abstracts may not contain positive words such as “New”, “Novel”, “First”, or “Unprecedented”.",
+   "problem": "The title contains the word “Novel” and the abstract contains the phrase “for the first time”.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Conflict of interest section",
+   "rule": "All authors must declare their conflicts of interest (or state none).",
+   "problem": "The statement only lists three authors (K.M., A.T., and R.N.), omitting S.J.W. and the corresponding author H.K.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "End of manuscript (after Author contributions)",
+   "rule": "A Data availability statement is required and must appear after Author contributions in the specified order.",
+   "problem": "The manuscript completely lacks a Data availability section.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "End of manuscript",
+   "rule": "Sections must follow the prescribed order: ... Conflict of interest, Author contributions, Data availability...",
+   "problem": "The manuscript places the Author contributions section before the Conflict of interest section.",
+   "severity": "medium",
+   "_area": "ethics"
+  },
+  {
+   "location": "Materials and methods / Single-molecule rotation assay subsection",
+   "rule": "For experiments involving live vertebrates, authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments in the methods section.",
+   "problem": "The manuscript states that myosin was purified from rabbit skeletal muscle but provides no statement regarding institutional animal care committee approval or ethics review.",
+   "severity": "high",
+   "_area": "ethics"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 6,
+   "parse_error": null,
+   "wall_s": 144.66,
+   "prompt_tokens": 12135,
+   "output_tokens": 6116,
+   "prefill_tok_s": 1384.0
+  },
+  {
+   "area": "corresponding-author",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 46.61,
+   "prompt_tokens": 12133,
+   "output_tokens": 1812,
+   "prefill_tok_s": 1377.2
+  },
+  {
+   "area": "structure",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 112.71,
+   "prompt_tokens": 12125,
+   "output_tokens": 4981,
+   "prefill_tok_s": 1373.2
+  },
+  {
+   "area": "tables",
+   "n": 3,
+   "parse_error": null,
+   "wall_s": 79.5,
+   "prompt_tokens": 12136,
+   "output_tokens": 3390,
+   "prefill_tok_s": 1375.1
+  },
+  {
+   "area": "figures",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 133.81,
+   "prompt_tokens": 12137,
+   "output_tokens": 5995,
+   "prefill_tok_s": 1381.9
+  },
+  {
+   "area": "supplementary",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 99.84,
+   "prompt_tokens": 12133,
+   "output_tokens": 4370,
+   "prefill_tok_s": 1377.1
+  },
+  {
+   "area": "references",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 146.18,
+   "prompt_tokens": 12144,
+   "output_tokens": 6569,
+   "prefill_tok_s": 1375.4
+  },
+  {
+   "area": "ethics",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 89.6,
+   "prompt_tokens": 12144,
+   "output_tokens": 3882,
+   "prefill_tok_s": 1380.5
+  }
+ ],
+ "meta": {
+  "wall_s": 854.9,
+  "output_tokens": 37115,
+  "prompt_tokens": 97087,
+  "peak_mem_used_mib": 79915,
+  "peak_size_vram_mib": 26840
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

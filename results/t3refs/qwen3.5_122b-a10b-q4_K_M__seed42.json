@@ -1,0 +1,67 @@
+{
+ "task": "t3refs",
+ "model": "qwen3.5:122b-a10b-q4_K_M",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "conversions",
+ "n_items": 8,
+ "meta": {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "wall_s": 498.51,
+  "prompt_tokens": 7500,
+  "output_tokens": 9779,
+  "load_s": 25.25,
+  "prefill_tok_s": 494.7,
+  "decode_tok_s": 22.0,
+  "ttft_s": 40.41,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 90152,
+  "peak_size_vram_mib": 83259
+ },
+ "conversions": [
+  {
+   "id": "R1",
+   "converted": "Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1",
+   "note": "Formatted according to Example [1] in Instructions for Authors. Journal title abbreviated to MEDLINE standard."
+  },
+  {
+   "id": "R2",
+   "converted": "Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016). https://doi.org/10.2142/biophysico.13.0_13",
+   "note": "Author list truncated to first 6 + et al. per rule (>6 authors). DOI added from Instructions Example [2] as it was missing in input."
+  },
+  {
+   "id": "R3",
+   "converted": "Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).",
+   "note": "Formatted according to Example [3] in Instructions for Authors. Author name abbreviated to initial."
+  },
+  {
+   "id": "R4",
+   "converted": "Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).",
+   "note": "Formatted according to Example [4] in Instructions for Authors. Title case corrected to sentence case."
+  },
+  {
+   "id": "R5",
+   "converted": "Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044",
+   "note": "Author list expanded to first 6 + et al. per rule (>6 authors) using data from Instructions Example [5]. Input only listed 'et al.'."
+  },
+  {
+   "id": "R6",
+   "converted": "Togashi, Y., Mikhailov, A.S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. USA 104, 8697–8702 (2007). https://doi.org/10.1073/pnas.0610363104",
+   "note": "Journal title abbreviated to MEDLINE standard. DOI added as required by style when available."
+  },
+  {
+   "id": "R7",
+   "converted": "Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212",
+   "note": "Author list truncated to first 6 + et al. per rule (>6 authors). DOI added from Instructions Example [6] as it was missing in input."
+  },
+  {
+   "id": "R8",
+   "converted": "This reference cannot be included in the reference list. The Instructions for Authors state: 'The use of \"in preparation\" and \"submitted for publication\" is not allowed in the Reference list.'",
+   "note": "Reference type 'in preparation' is prohibited."
+  }
+ ],
+ "raw_response": "{\n  \"conversions\": [\n    {\n      \"id\": \"R1\",\n      \"converted\": \"Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1\",\n      \"note\": \"Formatted according to Example [1] in Instructions for Authors. Journal title abbreviated to MEDLINE standard.\"\n    },\n    {\n      \"id\": \"R2\",\n      \"converted\": \"Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016). https://doi.org/10.2142/biophysico.13.0_13\",\n      \"note\": \"Author list truncated to first 6 + et al. per rule (>6 authors). DOI added from Instructions Example [2] as it was missing in input.\"\n    },\n    {\n      \"id\": \"R3\",\n      \"converted\": \"Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).\",\n      \"note\": \"Formatted according to Example [3] in Instructions for Authors. Author name abbreviated to initial.\"\n    },\n    {\n      \"id\": \"R4\",\n      \"converted\": \"Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).\",\n      \"note\": \"Formatted according to Example [4] in Instructions for Authors. Title case corrected to sentence case.\"\n    },\n    {\n      \"id\": \"R5\",\n      \"converted\": \"Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044\",\n      \"note\": \"Author list expanded to first 6 + et al. per rule (>6 authors) using data from Instructions Example [5]. Input only listed 'et al.'.\"\n    },\n    {\n      \"id\": \"R6\",\n      \"converted\": \"Togashi, Y., Mikhailov, A.S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. USA 104, 8697–8702 (2007). https://doi.org/10.1073/pnas.0610363104\",\n      \"note\": \"Journal title abbreviated to MEDLINE standard. DOI added as required by style when available.\"\n    },\n    {\n      \"id\": \"R7\",\n      \"converted\": \"Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212\",\n      \"note\": \"Author list truncated to first 6 + et al. per rule (>6 authors). DOI added from Instructions Example [6] as it was missing in input.\"\n    },\n    {\n      \"id\": \"R8\",\n      \"converted\": \"This reference cannot be included in the reference list. The Instructions for Authors state: 'The use of \\\"in preparation\\\" and \\\"submitted for publication\\\" is not allowed in the Reference list.'\",\n      \"note\": \"Reference type 'in preparation' is prohibited.\"\n    }\n  ]\n}",
+ "thinking_chars": 28873
+}

@@ -1,0 +1,26 @@
+{
+ "task": "t6d",
+ "model": "gpt-oss:120b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 0,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 17.31,
+  "prompt_tokens": 5099,
+  "output_tokens": 497,
+  "load_s": 0.14,
+  "prefill_tok_s": 1191.0,
+  "decode_tok_s": 40.3,
+  "ttft_s": 4.42,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 71431,
+  "peak_size_vram_mib": 65041
+ },
+ "problems": [],
+ "raw_response": "{\n  \"problems\": []\n}",
+ "thinking_chars": 1683
+}

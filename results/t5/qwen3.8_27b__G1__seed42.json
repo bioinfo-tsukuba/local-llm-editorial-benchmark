@@ -1,0 +1,31 @@
+{
+ "task": "T5",
+ "model": "qwen3.8:27b",
+ "item": "G1",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 23.53,
+  "prompt_tokens": 2261,
+  "output_tokens": 272,
+  "load_s": 6.66,
+  "prefill_tok_s": 350.0,
+  "decode_tok_s": 26.3,
+  "ttft_s": 13.12,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 25570,
+  "peak_size_vram_mib": 16627
+ },
+ "defects": [
+  {
+   "what": "Panel label mismatch: the right-hand panel is labeled (c) in the image, but the author-supplied legend describes it as panel (b).",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"defects\": [\n  {\"what\": \"Panel label mismatch: the right-hand panel is labeled (c) in the image, but the author-supplied legend describes it as panel (b).\", \"severity\": \"high\"}\n]}",
+ "thinking_chars": 870
+}

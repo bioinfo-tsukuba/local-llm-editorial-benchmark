@@ -1,0 +1,30 @@
+{
+ "task": "T5",
+ "model": "qwen3-vl:30b-a3b-instruct",
+ "item": "G2",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3-vl:30b-a3b-instruct",
+  "wall_s": 2.34,
+  "prompt_tokens": 489,
+  "output_tokens": 43,
+  "load_s": 0.11,
+  "prefill_tok_s": 1063.9,
+  "decode_tok_s": 26.2,
+  "ttft_s": 0.57,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 55528,
+  "peak_size_vram_mib": 20818
+ },
+ "defects": [
+  {
+   "what": "The figure is too low in resolution for printing; it is 72 dpi, but 300 dpi is required.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"defects\": [{\"what\": \"The figure is too low in resolution for printing; it is 72 dpi, but 300 dpi is required.\", \"severity\": \"high\"}]}",
+ "thinking_chars": 0
+}

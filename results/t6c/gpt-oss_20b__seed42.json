@@ -1,0 +1,57 @@
+{
+ "task": "t6c",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 5,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 22.56,
+  "prompt_tokens": 5107,
+  "output_tokens": 840,
+  "load_s": 5.13,
+  "prefill_tok_s": 3339.0,
+  "decode_tok_s": 56.8,
+  "ttft_s": 6.66,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 20833,
+  "peak_size_vram_mib": 15032
+ },
+ "problems": [
+  {
+   "location": "Abstract",
+   "problem": "Effective length constant reported as 3.2 subunits counter‑clockwise versus 0.7 clockwise, whereas Results and Table 2 give 2.3 and 0.7 respectively (s=2.8). The abstract value is inconsistent with the data presented.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Table 1",
+   "problem": "Bead count for the truncated hexamer is listed as 18,090, which is 14 fewer than the full hexamer (18,204). Removing residues 471‑489 (14 residues) should reduce the bead count to 18,190, not 18,090. The reported number is 100 beads too low.",
+   "kind": "arithmetic",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 2",
+   "problem": "The ratio column shows 4.51 for s=3.2, but the text states that the asymmetry is preserved and the fitted length constants vary by less than 15%. A ratio change from 2.77 (s=2.0) to 4.51 (s=3.2) represents a 63% change, contradicting the claim.",
+   "kind": "internal-contradiction",
+   "severity": "medium"
+  },
+  {
+   "location": "Materials and methods – Network construction",
+   "problem": "Cutoff distance is stated as 12 nm, but all other distances (e.g., 12 Å in Table 1) are in Å. 12 nm would be 120 Å, an order of magnitude larger than typical protein contact cutoffs.",
+   "kind": "unit-error",
+   "severity": "medium"
+  },
+  {
+   "location": "Results – Directionality of the allosteric channel",
+   "problem": "The text reports a counter‑clockwise length constant of 2.3 subunits, but the abstract and Table 2 (s=2.8) give 2.31. The discrepancy is minor but indicates inconsistent rounding or reporting.",
+   "kind": "internal-contradiction",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "{\"problems\":[\n  {\"location\":\"Abstract\",\"problem\":\"Effective length constant reported as 3.2 subunits counter‑clockwise versus 0.7 clockwise, whereas Results and Table 2 give 2.3 and 0.7 respectively (s=2.8). The abstract value is inconsistent with the data presented.\",\"kind\":\"internal-contradiction\",\"severity\":\"high\"},\n  {\"location\":\"Table 1\",\"problem\":\"Bead count for the truncated hexamer is listed as 18,090, which is 14 fewer than the full hexamer (18,204). Removing residues 471‑489 (14 residues) should reduce the bead count to 18,190, not 18,090. The reported number is 100 beads too low.\",\"kind\":\"arithmetic\",\"severity\":\"medium\"},\n  {\"location\":\"Table 2\",\"problem\":\"The ratio column shows 4.51 for s=3.2, but the text states that the asymmetry is preserved and the fitted length constants vary by less than 15%. A ratio change from 2.77 (s=2.0) to 4.51 (s=3.2) represents a 63% change, contradicting the claim.\",\"kind\":\"internal-contradiction\",\"severity\":\"medium\"},\n  {\"location\":\"Materials and methods – Network construction\",\"problem\":\"Cutoff distance is stated as 12 nm, but all other distances (e.g., 12 Å in Table 1) are in Å. 12 nm would be 120 Å, an order of magnitude larger than typical protein contact cutoffs.\",\"kind\":\"unit-error\",\"severity\":\"medium\"},\n  {\"location\":\"Results – Directionality of the allosteric channel\",\"problem\":\"The text reports a counter‑clockwise length constant of 2.3 subunits, but the abstract and Table 2 (s=2.8) give 2.31. The discrepancy is minor but indicates inconsistent rounding or reporting.\",\"kind\":\"internal-contradiction\",\"severity\":\"low\"}\n]}",
+ "thinking_chars": 1444
+}

@@ -1,0 +1,29 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "think": "high",
+ "error": null,
+ "parse_error": "empty response",
+ "n_findings": null,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 732.65,
+  "prompt_tokens": 11577,
+  "output_tokens": 24576,
+  "load_s": 0.2,
+  "prefill_tok_s": 1171.1,
+  "decode_tok_s": 35.3,
+  "ttft_s": 10.09,
+  "done_reason": "length",
+  "peak_mem_used_mib": 71670,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": null,
+ "raw_response": "",
+ "thinking_chars": 125109
+}

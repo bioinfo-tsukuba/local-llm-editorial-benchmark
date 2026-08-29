@@ -1,0 +1,19 @@
+{
+ "task": "T8",
+ "model": "gpt-oss:120b",
+ "seed": 42,
+ "error": "RuntimeError: HTTP 500: {\"error\":\"error parsing tool call: raw='We need to verify each reference. We have looked up V1, V2, V3, V4 (and V5 uses same DOI as V4, likely wrong). V6 DOI didn't resolve. V7 DOI not yet looked up. V8 DOI not yet looked up.\\n\\nWe need to check journal abbreviation: must be Index Medicus / MEDLINE style. For each, we need to output abbreviated journal title if verified.\\n\\nNow we need to lookup V",
+ "parse_error": "empty response",
+ "n_tool_calls": 0,
+ "n_checks": null,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "peak_mem_used_mib": 70140,
+  "peak_size_vram_mib": 63818
+ },
+ "checks": null,
+ "tool_trace": [],
+ "raw_response": "",
+ "thinking_chars": 0,
+ "wall_s": 0
+}

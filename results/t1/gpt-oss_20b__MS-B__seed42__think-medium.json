@@ -1,0 +1,60 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:20b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "think": "medium",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 5,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 360.39,
+  "prompt_tokens": 11577,
+  "output_tokens": 17249,
+  "load_s": 0.14,
+  "prefill_tok_s": 3259.4,
+  "decode_tok_s": 51.0,
+  "ttft_s": 3.69,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 20819,
+  "peak_size_vram_mib": 15032
+ },
+ "findings": [
+  {
+   "location": "Table 1 and Table 2",
+   "rule": "Text footnotes are not allowed at all from page 2 onwards.",
+   "problem": "Footnotes a, b, c are present in the tables.",
+   "severity": "medium"
+  },
+  {
+   "location": "SupplementaryTableS1.xlsx",
+   "rule": "The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "The supplementary table is provided as an .xlsx file, which is not an allowed extension.",
+   "severity": "high"
+  },
+  {
+   "location": "SupplementaryFigureS1.pdf",
+   "rule": "Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.",
+   "problem": "The file name \"SupplementaryFigureS1.pdf\" does not include spaces and does not follow the required format.",
+   "severity": "medium"
+  },
+  {
+   "location": "SupplementaryTableS1.xlsx",
+   "rule": "Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.",
+   "problem": "The file name \"SupplementaryTableS1.xlsx\" does not include spaces and does not follow the required format, and the extension .xlsx is not allowed.",
+   "severity": "medium"
+  },
+  {
+   "location": "SupplementaryMovieS1.mpeg",
+   "rule": "Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.",
+   "problem": "The file name \"SupplementaryMovieS1.mpeg\" does not include spaces and does not follow the required format.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"findings\":[{\"location\":\"Table 1 and Table 2\",\"rule\":\"Text footnotes are not allowed at all from page 2 onwards.\",\"problem\":\"Footnotes a, b, c are present in the tables.\",\"severity\":\"medium\"},{\"location\":\"SupplementaryTableS1.xlsx\",\"rule\":\"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\"problem\":\"The supplementary table is provided as an .xlsx file, which is not an allowed extension.\",\"severity\":\"high\"},{\"location\":\"SupplementaryFigureS1.pdf\",\"rule\":\"Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.\",\"problem\":\"The file name \\\"SupplementaryFigureS1.pdf\\\" does not include spaces and does not follow the required format.\",\"severity\":\"medium\"},{\"location\":\"SupplementaryTableS1.xlsx\",\"rule\":\"Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.\",\"problem\":\"The file name \\\"SupplementaryTableS1.xlsx\\\" does not include spaces and does not follow the required format, and the extension .xlsx is not allowed.\",\"severity\":\"medium\"},{\"location\":\"SupplementaryMovieS1.mpeg\",\"rule\":\"Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.\",\"problem\":\"The file name \\\"SupplementaryMovieS1.mpeg\\\" does not include spaces and does not follow the required format.\",\"severity\":\"medium\"}]}",
+ "thinking_chars": 66674
+}

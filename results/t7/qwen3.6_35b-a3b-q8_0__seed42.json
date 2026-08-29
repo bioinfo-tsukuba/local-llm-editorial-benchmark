@@ -1,0 +1,75 @@
+{
+ "task": "t7",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 8,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "wall_s": 293.66,
+  "prompt_tokens": 9293,
+  "output_tokens": 11241,
+  "load_s": 0.13,
+  "prefill_tok_s": 1269.5,
+  "decode_tok_s": 41.4,
+  "ttft_s": 7.45,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 47214,
+  "peak_size_vram_mib": 40915
+ },
+ "findings": [
+  {
+   "location": "Table 1 and main text",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is listed at the end of the manuscript but is never cited or referenced in the main body of the text.",
+   "severity": "high"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Do not use vertical lines.",
+   "problem": "The table uses vertical lines (|) to separate columns, which is explicitly prohibited by the instructions.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure legends and Figure file list",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 1 is listed but never cited or referenced in the main body of the text.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution...",
+   "problem": "The figure file is specified as '150 dpi, colour', which does not meet the required minimum resolution of 300 dpi.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials section",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The supplementary file is named '図1_draft version.bmp', which contains Japanese characters and a space, violating the alphanumeric-only requirement.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference list",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is ordered [1], [2], [3], [4], [5], [7], [6], [8]. This is not sequential by appearance in the text (only [1], [2], [4], and [7] are cited). Additionally, references [3], [5], [6], and [8] are not cited anywhere in the manuscript.",
+   "severity": "high"
+  },
+  {
+   "location": "Main text (Introduction)",
+   "rule": "When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.",
+   "problem": "The manuscript uses parentheses '(1, 2)' for citations instead of the required square brackets '[ ]'.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with 'In preparation.', which is explicitly prohibited by the instructions.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Table 1 and main text\",\n      \"rule\": \"All tables must be cited in the text.\",\n      \"problem\": \"Table 1 is listed at the end of the manuscript but is never cited or referenced in the main body of the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 1\",\n      \"rule\": \"Do not use vertical lines.\",\n      \"problem\": \"The table uses vertical lines (|) to separate columns, which is explicitly prohibited by the instructions.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure legends and Figure file list\",\n      \"rule\": \"All figures must be cited in the text.\",\n      \"problem\": \"Figure 1 is listed but never cited or referenced in the main body of the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Figure file list\",\n      \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution...\",\n      \"problem\": \"The figure file is specified as '150 dpi, colour', which does not meet the required minimum resolution of 300 dpi.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials section\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The supplementary file is named '図1_draft version.bmp', which contains Japanese characters and a space, violating the alphanumeric-only requirement.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference list\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is ordered [1], [2], [3], [4], [5], [7], [6], [8]. This is not sequential by appearance in the text (only [1], [2], [4], and [7] are cited). Additionally, references [3], [5], [6], and [8] are not cited anywhere in the manuscript.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Main text (Introduction)\",\n      \"rule\": \"When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\",\n      \"problem\": \"The manuscript uses parentheses '(1, 2)' for citations instead of the required square brackets '[ ]'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ends with 'In preparation.', which is explicitly prohibited by the instructions.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 39491
+}

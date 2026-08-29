@@ -1,0 +1,52 @@
+{
+ "task": "t4ph",
+ "model": "qwen3.5:122b-a10b-q4_K_M",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "answers",
+ "n_items": 5,
+ "meta": {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "wall_s": 236.66,
+  "prompt_tokens": 5280,
+  "output_tokens": 4827,
+  "load_s": 0.16,
+  "prefill_tok_s": 485.2,
+  "decode_tok_s": 22.1,
+  "ttft_s": 11.04,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 106031,
+  "peak_size_vram_mib": 83259
+ },
+ "answers": [
+  {
+   "id": "F1",
+   "exists": false,
+   "answer": "Reference [13] does not exist in the manuscript."
+  },
+  {
+   "id": "F2",
+   "exists": false,
+   "answer": "The Data availability statement does not exist in the manuscript."
+  },
+  {
+   "id": "F3",
+   "exists": false,
+   "answer": "Table 3 does not exist in the manuscript."
+  },
+  {
+   "id": "F4",
+   "exists": false,
+   "answer": "The manuscript does not contain a statement regarding institutional review board approval."
+  },
+  {
+   "id": "F5",
+   "exists": false,
+   "answer": "The ORCID iD of the corresponding author does not exist in the manuscript."
+  }
+ ],
+ "raw_response": "{\n  \"answers\": [\n    {\n      \"id\": \"F1\",\n      \"exists\": false,\n      \"answer\": \"Reference [13] does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F2\",\n      \"exists\": false,\n      \"answer\": \"The Data availability statement does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F3\",\n      \"exists\": false,\n      \"answer\": \"Table 3 does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F4\",\n      \"exists\": false,\n      \"answer\": \"The manuscript does not contain a statement regarding institutional review board approval.\"\n    },\n    {\n      \"id\": \"F5\",\n      \"exists\": false,\n      \"answer\": \"The ORCID iD of the corresponding author does not exist in the manuscript.\"\n    }\n  ]\n}",
+ "thinking_chars": 17533
+}

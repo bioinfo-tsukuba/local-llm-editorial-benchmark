@@ -1,0 +1,39 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "qwen3.6:27b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 1,
+ "meta": {
+  "model": "qwen3.6:27b",
+  "wall_s": 1318.52,
+  "prompt_tokens": 12413,
+  "output_tokens": 13348,
+  "load_s": 0.11,
+  "prefill_tok_s": 1190.8,
+  "decode_tok_s": 10.3,
+  "ttft_s": 10.53,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 32136,
+  "peak_size_vram_mib": 25992
+ },
+ "findings": [
+  {
+   "area": 7,
+   "location": "Reference list and in-text citations",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "References [3], [5], [6], [7], [9], [10], [11], and [12] are listed in the reference section but are not cited anywhere in the manuscript text, tables, or figure legends.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"area\": 7,\n      \"location\": \"Reference list and in-text citations\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"References [3], [5], [6], [7], [9], [10], [11], and [12] are listed in the reference section but are not cited anywhere in the manuscript text, tables, or figure legends.\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+ "thinking_chars": 50009
+}

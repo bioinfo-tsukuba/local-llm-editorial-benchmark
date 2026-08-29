@@ -1,0 +1,507 @@
+[
+ {
+  "model": "gpt-oss:20b",
+  "num_ctx": 4096,
+  "size_vram_gib": 13.14,
+  "load_s": 4.16
+ },
+ {
+  "model": "gpt-oss:20b",
+  "num_ctx": 16384,
+  "size_vram_gib": 13.46,
+  "load_s": 2.64
+ },
+ {
+  "model": "gpt-oss:20b",
+  "num_ctx": 32768,
+  "size_vram_gib": 13.86,
+  "load_s": 2.73
+ },
+ {
+  "model": "gpt-oss:20b",
+  "num_ctx": 65536,
+  "size_vram_gib": 14.68,
+  "load_s": 2.82
+ },
+ {
+  "model": "gpt-oss:20b",
+  "num_ctx": 131072,
+  "size_vram_gib": 16.37,
+  "load_s": 3.71
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "num_ctx": 4096,
+  "size_vram_gib": 24.45,
+  "load_s": 5.72
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "num_ctx": 16384,
+  "size_vram_gib": 24.78,
+  "load_s": 4.15
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "num_ctx": 32768,
+  "size_vram_gib": 25.22,
+  "load_s": 4.3
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "num_ctx": 65536,
+  "size_vram_gib": 26.21,
+  "load_s": 4.61
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "num_ctx": 131072,
+  "size_vram_gib": 28.2,
+  "load_s": 5.52
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "num_ctx": 4096,
+  "size_vram_gib": 38.2,
+  "load_s": 6.8
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "num_ctx": 16384,
+  "size_vram_gib": 38.52,
+  "load_s": 5.49
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "num_ctx": 32768,
+  "size_vram_gib": 38.96,
+  "load_s": 5.35
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "num_ctx": 65536,
+  "size_vram_gib": 39.96,
+  "load_s": 6.6
+ },
+ {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "num_ctx": 131072,
+  "size_vram_gib": 41.95,
+  "load_s": 8.07
+ },
+ {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "num_ctx": 4096,
+  "size_vram_gib": 68.62,
+  "load_s": 17.81
+ },
+ {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "num_ctx": 16384,
+  "size_vram_gib": 68.95,
+  "load_s": 22.86
+ },
+ {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "num_ctx": 32768,
+  "size_vram_gib": 69.38,
+  "load_s": 22.94
+ },
+ {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "num_ctx": 65536,
+  "size_vram_gib": 70.38,
+  "load_s": 23.46
+ },
+ {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "num_ctx": 131072,
+  "size_vram_gib": 72.37,
+  "load_s": 24.29
+ },
+ {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "num_ctx": 4096,
+  "size_vram_gib": 80.42,
+  "load_s": 21.43
+ },
+ {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "num_ctx": 16384,
+  "size_vram_gib": 80.81,
+  "load_s": 25.29
+ },
+ {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "num_ctx": 32768,
+  "size_vram_gib": 81.31,
+  "load_s": 25.32
+ },
+ {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "num_ctx": 65536,
+  "size_vram_gib": 82.31,
+  "load_s": 25.94
+ },
+ {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "num_ctx": 131072,
+  "size_vram_gib": 84.8,
+  "load_s": 26.37
+ },
+ {
+  "model": "gpt-oss:120b",
+  "num_ctx": 4096,
+  "size_vram_gib": 61.26,
+  "load_s": 12.58
+ },
+ {
+  "model": "gpt-oss:120b",
+  "num_ctx": 16384,
+  "size_vram_gib": 61.73,
+  "load_s": 19.55
+ },
+ {
+  "model": "gpt-oss:120b",
+  "num_ctx": 32768,
+  "size_vram_gib": 62.32,
+  "load_s": 19.57
+ },
+ {
+  "model": "gpt-oss:120b",
+  "num_ctx": 65536,
+  "size_vram_gib": 63.52,
+  "load_s": 19.72
+ },
+ {
+  "model": "gpt-oss:120b",
+  "num_ctx": 131072,
+  "size_vram_gib": 65.95,
+  "load_s": 20.42
+ },
+ {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "num_ctx": 4096,
+  "size_vram_gib": 30.03,
+  "load_s": 29.99
+ },
+ {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "num_ctx": 16384,
+  "size_vram_gib": 31.2,
+  "load_s": 13.42
+ },
+ {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "num_ctx": 32768,
+  "size_vram_gib": 32.76,
+  "load_s": 12.88
+ },
+ {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "num_ctx": 65536,
+  "size_vram_gib": 35.88,
+  "load_s": 13.15
+ },
+ {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "num_ctx": 131072,
+  "size_vram_gib": 42.33,
+  "load_s": 14.66
+ },
+ {
+  "model": "hf.co/unsloth/GLM-4.5-Air-GGUF:UD-Q4_K_XL",
+  "num_ctx": 4096,
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "model": "hf.co/unsloth/GLM-4.5-Air-GGUF:UD-Q4_K_XL",
+  "num_ctx": 16384,
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "model": "hf.co/unsloth/GLM-4.5-Air-GGUF:UD-Q4_K_XL",
+  "num_ctx": 32768,
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "model": "hf.co/unsloth/GLM-4.5-Air-GGUF:UD-Q4_K_XL",
+  "num_ctx": 65536,
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "model": "hf.co/unsloth/GLM-4.5-Air-GGUF:UD-Q4_K_XL",
+  "num_ctx": 131072,
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "model": "glm-4.5-air:q4",
+  "num_ctx": 4096,
+  "size_vram_gib": 64.94,
+  "load_s": 114.4
+ },
+ {
+  "model": "glm-4.5-air:q4",
+  "num_ctx": 16384,
+  "size_vram_gib": 71.55,
+  "load_s": 89.15
+ },
+ {
+  "model": "glm-4.5-air:q4",
+  "num_ctx": 32768,
+  "size_vram_gib": 80.36,
+  "load_s": 99.6
+ },
+ {
+  "model": "glm-4.5-air:q4",
+  "num_ctx": 65536,
+  "size_vram_gib": 97.99,
+  "load_s": 167.38
+ },
+ {
+  "model": "glm-4.5-air:q4",
+  "num_ctx": 131072,
+  "size_vram_gib": 113.76,
+  "load_s": 51.17
+ },
+ {
+  "model": "qwen3.8:27b",
+  "num_ctx": 4096,
+  "size_vram_gib": 16.09,
+  "load_s": 5.74
+ },
+ {
+  "model": "qwen3.8:27b",
+  "num_ctx": 16384,
+  "size_vram_gib": 16.24,
+  "load_s": 6.84
+ },
+ {
+  "model": "qwen3.8:27b",
+  "num_ctx": 32768,
+  "size_vram_gib": 16.33,
+  "load_s": 6.86
+ },
+ {
+  "model": "qwen3.8:27b",
+  "num_ctx": 65536,
+  "size_vram_gib": 16.72,
+  "load_s": 6.91
+ },
+ {
+  "model": "qwen3.8:27b",
+  "num_ctx": 131072,
+  "size_vram_gib": 17.22,
+  "load_s": 7.61
+ },
+ {
+  "model": "qwen3.6:27b",
+  "num_ctx": 4096,
+  "size_vram_gib": 21.1,
+  "load_s": 7.4
+ },
+ {
+  "model": "qwen3.6:27b",
+  "num_ctx": 16384,
+  "size_vram_gib": 21.9,
+  "load_s": 4.68
+ },
+ {
+  "model": "qwen3.6:27b",
+  "num_ctx": 32768,
+  "size_vram_gib": 23.02,
+  "load_s": 4.33
+ },
+ {
+  "model": "qwen3.6:27b",
+  "num_ctx": 65536,
+  "size_vram_gib": 25.38,
+  "load_s": 4.97
+ },
+ {
+  "model": "qwen3.6:27b",
+  "num_ctx": 131072,
+  "size_vram_gib": 30.13,
+  "load_s": 6.72
+ },
+ {
+  "model": "llama4:scout",
+  "num_ctx": 4096,
+  "size_vram_gib": 64.14,
+  "load_s": 13.33
+ },
+ {
+  "model": "llama4:scout",
+  "num_ctx": 16384,
+  "size_vram_gib": 67.8,
+  "load_s": 21.18
+ },
+ {
+  "model": "llama4:scout",
+  "num_ctx": 32768,
+  "size_vram_gib": 72.74,
+  "load_s": 21.55
+ },
+ {
+  "model": "llama4:scout",
+  "num_ctx": 65536,
+  "size_vram_gib": 82.62,
+  "load_s": 22.14
+ },
+ {
+  "model": "llama4:scout",
+  "num_ctx": 131072,
+  "size_vram_gib": 102.37,
+  "load_s": 24.09
+ },
+ {
+  "model": "nemotron",
+  "num_ctx": 4096,
+  "size_vram_gib": 40.86,
+  "load_s": 16.58
+ },
+ {
+  "model": "nemotron",
+  "num_ctx": 16384,
+  "size_vram_gib": 46.14,
+  "load_s": 16.88
+ },
+ {
+  "model": "nemotron",
+  "num_ctx": 32768,
+  "size_vram_gib": 53.17,
+  "load_s": 17.56
+ },
+ {
+  "model": "nemotron",
+  "num_ctx": 65536,
+  "size_vram_gib": 67.23,
+  "load_s": 19.62
+ },
+ {
+  "model": "nemotron",
+  "num_ctx": 131072,
+  "size_vram_gib": 95.35,
+  "load_s": 25.76
+ },
+ {
+  "model": "command-r-plus",
+  "num_ctx": 4096,
+  "size_vram_gib": 57.0,
+  "load_s": 170.99
+ },
+ {
+  "model": "command-r-plus",
+  "num_ctx": 16384,
+  "size_vram_gib": 62.27,
+  "load_s": 25.53
+ },
+ {
+  "model": "command-r-plus",
+  "num_ctx": 32768,
+  "size_vram_gib": 69.3,
+  "load_s": 29.48
+ },
+ {
+  "model": "command-r-plus",
+  "num_ctx": 65536,
+  "size_vram_gib": 83.36,
+  "load_s": 31.01
+ },
+ {
+  "model": "command-r-plus",
+  "num_ctx": 131072,
+  "size_vram_gib": 112.47,
+  "load_s": 27.75
+ },
+ {
+  "model": "gemma4",
+  "num_ctx": 4096,
+  "size_vram_gib": 3.0,
+  "load_s": 7.53
+ },
+ {
+  "model": "gemma4",
+  "num_ctx": 16384,
+  "size_vram_gib": 3.15,
+  "load_s": 6.59
+ },
+ {
+  "model": "gemma4",
+  "num_ctx": 32768,
+  "size_vram_gib": 3.18,
+  "load_s": 6.67
+ },
+ {
+  "model": "gemma4",
+  "num_ctx": 65536,
+  "size_vram_gib": 3.61,
+  "load_s": 6.76
+ },
+ {
+  "model": "gemma4",
+  "num_ctx": 131072,
+  "size_vram_gib": 3.86,
+  "load_s": 6.78
+ },
+ {
+  "model": "magistral",
+  "num_ctx": 4096,
+  "size_vram_gib": 13.91,
+  "load_s": 6.73
+ },
+ {
+  "model": "magistral",
+  "num_ctx": 16384,
+  "size_vram_gib": 16.56,
+  "load_s": 6.52
+ },
+ {
+  "model": "magistral",
+  "num_ctx": 32768,
+  "size_vram_gib": 20.09,
+  "load_s": 6.89
+ },
+ {
+  "model": "magistral",
+  "num_ctx": 65536,
+  "size_vram_gib": 21.65,
+  "load_s": 6.51
+ },
+ {
+  "model": "magistral",
+  "num_ctx": 131072,
+  "size_vram_gib": 21.65,
+  "load_s": 6.88
+ },
+ {
+  "model": "mistral-small",
+  "num_ctx": 4096,
+  "size_vram_gib": 13.91,
+  "load_s": 6.24
+ },
+ {
+  "model": "mistral-small",
+  "num_ctx": 16384,
+  "size_vram_gib": 16.56,
+  "load_s": 6.43
+ },
+ {
+  "model": "mistral-small",
+  "num_ctx": 32768,
+  "size_vram_gib": 20.09,
+  "load_s": 6.68
+ },
+ {
+  "model": "mistral-small",
+  "num_ctx": 65536,
+  "size_vram_gib": 20.09,
+  "load_s": 6.52
+ },
+ {
+  "model": "mistral-small",
+  "num_ctx": 131072,
+  "size_vram_gib": 20.09,
+  "load_s": 6.48
+ }
+]

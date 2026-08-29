@@ -1,0 +1,104 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gemma4",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 12,
+ "meta": {
+  "model": "gemma4",
+  "wall_s": 71.54,
+  "prompt_tokens": 11908,
+  "output_tokens": 3233,
+  "load_s": 7.54,
+  "prefill_tok_s": 3996.0,
+  "decode_tok_s": 53.1,
+  "ttft_s": 10.52,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 33149,
+  "peak_size_vram_mib": 0
+ },
+ "findings": [
+  {
+   "location": "Page 1 (Footer)",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author's ORCID iD is missing from the footer of page 1.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "The manuscript lists seven keywords ('elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics'), exceeding the limit of five.",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement exceeds the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript Structure",
+   "rule": "Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability , (A comment about deposition to a preprint server if the authors have deposited the file there: e.g. A preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.), Acknowledgements and References , should be arranged in this order.",
+   "problem": "The manuscript is missing a dedicated 'Conclusion' section and a 'Data availability' section.",
+   "severity": "high"
+  },
+  {
+   "location": "Running title",
+   "rule": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title ('Coarse-grained elastic network analysis of allosteric coupling in ring ATPases') exceeds the 50-character limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 1",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is presented but is not cited anywhere in the main body text.",
+   "severity": "high"
+  },
+  {
+   "location": "Table 1 and Table 2",
+   "rule": "Do not use vertical lines.",
+   "problem": "Both Table 1 and Table 2 use vertical lines in their formatting.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Figure file list indicates that 'Fig1_modes.bmp' and 'Fig2_spectra.bmp' are only 150 dpi, which is below the required 300 dpi resolution.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file list contains '図1_final version.tiff', which includes Japanese characters.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "When you submit a short caption less than 100 words about the figure(s).",
+   "problem": "The graphical abstract caption exceeds the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "References [8]",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).",
+   "problem": "Reference [8] ('Kuramoto, H. Personal communication, 2025.') is listed in the Reference list, violating the policy for personal communications.",
+   "severity": "high"
+  },
+  {
+   "location": "End of Manuscript (Before References)",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, 'The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.'",
+   "problem": "The required Data availability statement from the corresponding author is missing.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Page 1 (Footer)\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The corresponding author's ORCID iD is missing from the footer of page 1.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"The manuscript lists seven keywords ('elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics'), exceeding the limit of five.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Significance\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n      \"problem\": \"The significance statement exceeds the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Manuscript Structure\",\n      \"rule\": \"Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability , (A comment about deposition to a preprint server if the authors have deposited the file there: e.g. A preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.), Acknowledgements and References , should be arranged in this order.\",\n      \"problem\": \"The manuscript is missing a dedicated 'Conclusion' section and a 'Data availability' section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Running title\",\n      \"rule\": \"At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.\",\n      \"problem\": \"The running title ('Coarse-grained elastic network analysis of allosteric coupling in ring ATPases') exceeds the 50-character limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Table 1\",\n      \"rule\": \"All tables must be cited in the text.\",\n      \"problem\": \"Table 1 is presented but is not cited anywhere in the main body text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 1 and Table 2\",\n      \"rule\": \"Do not use vertical lines.\",\n      \"problem\": \"Both Table 1 and Table 2 use vertical lines in their formatting.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Figure file list\",\n      \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.\",\n      \"problem\": \"Figure file list indicates that 'Fig1_modes.bmp' and 'Fig2_spectra.bmp' are only 150 dpi, which is below the required 300 dpi resolution.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The file list contains '図1_final version.tiff', which includes Japanese characters.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"When you submit a short caption less than 100 words about the figure(s).\",\n      \"problem\": \"The graphical abstract caption exceeds the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References [8]\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).\",\n      \"problem\": \"Reference [8] ('Kuramoto, H. Personal communication, 2025.') is listed in the Reference list, violating the policy for personal communications.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"End of Manuscript (Before References)\",\n      \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, 'The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.'\",\n      \"problem\": \"The required Data availability statement from the corresponding author is missing.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 9419
+}

@@ -1,0 +1,175 @@
+{
+ "task": "T8",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_tool_calls": 9,
+ "n_checks": 8,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 7.83,
+  "prompt_tokens": 2907,
+  "output_tokens": 407,
+  "load_s": 0.13,
+  "prefill_tok_s": 30536.5,
+  "decode_tok_s": 57.9,
+  "ttft_s": 0.23,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 21140,
+  "peak_size_vram_mib": 14193
+ },
+ "checks": [
+  {
+   "id": "V1",
+   "verified": true,
+   "journal_abbreviated": "Biophys. J.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V2",
+   "verified": true,
+   "journal_abbreviated": "Protein Eng. Des. Sel.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V3",
+   "verified": true,
+   "journal_abbreviated": "Proc. Natl. Acad. Sci. U.S.A.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V4",
+   "verified": true,
+   "journal_abbreviated": "Nature",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V5",
+   "verified": false,
+   "journal_abbreviated": "Nature",
+   "problems": [
+    "DOI does not match the cited article; the DOI refers to the same article as V4"
+   ],
+   "corrected_doi": "10.1038/35073513"
+  },
+  {
+   "id": "V6",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "DOI could not be resolved; reference could not be verified"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V7",
+   "verified": false,
+   "journal_abbreviated": "Annu. Rev. Biophys. Biomol. Struct.",
+   "problems": [
+    "Year in reference (2008) does not match DOI (2006)"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V8",
+   "verified": true,
+   "journal_abbreviated": "",
+   "problems": [],
+   "corrected_doi": null
+  }
+ ],
+ "tool_trace": [
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1016/S0006-3495(01)76033-X"
+   },
+   "result_summary": "Biophys. J. 80 (2001) 10.1016/s0006-3495(01)76033-x",
+   "error": null
+  },
+  {
+   "n": 2,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Anisotropy of Fluctuation Dynamics of Proteins with an Elastic Network Model"
+   },
+   "result_summary": "3 candidates: 10.1016/s0006-3495(01)76033-x, 10.1002/prot.25157, 10.1002/prot.24153",
+   "error": null
+  },
+  {
+   "n": 3,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1093/protein/14.1.1"
+   },
+   "result_summary": "Protein Eng. Des. Sel. 14 (2001) 10.1093/protein/14.1.1",
+   "error": null
+  },
+  {
+   "n": 4,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1073/pnas.0702950104"
+   },
+   "result_summary": "Proc. Natl. Acad. Sci. U.S.A. 104 (2007) 10.1073/pnas.0702950104",
+   "error": null
+  },
+  {
+   "n": 5,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 6,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 7,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.2142/biophysico.bppb-v21.0112"
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 8,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1146/annurev.biophys.35.040405.101933"
+   },
+   "result_summary": "Annu. Rev. Biophys. Biomol. Struct. 35 (2006) 10.1146/annurev.biophys.35.040405.101933",
+   "error": null
+  },
+  {
+   "n": 9,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1101/2020.06.29.179044"
+   },
+   "result_summary": " None (2020) 10.1101/2020.06.29.179044",
+   "error": null
+  }
+ ],
+ "raw_response": "{\"checks\":[{\"id\":\"V1\",\"verified\":true,\"journal_abbreviated\":\"Biophys. J.\",\"problems\":[],\"corrected_doi\":null},{\"id\":\"V2\",\"verified\":true,\"journal_abbreviated\":\"Protein Eng. Des. Sel.\",\"problems\":[],\"corrected_doi\":null},{\"id\":\"V3\",\"verified\":true,\"journal_abbreviated\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"problems\":[],\"corrected_doi\":null},{\"id\":\"V4\",\"verified\":true,\"journal_abbreviated\":\"Nature\",\"problems\":[],\"corrected_doi\":null},{\"id\":\"V5\",\"verified\":false,\"journal_abbreviated\":\"Nature\",\"problems\":[\"DOI does not match the cited article; the DOI refers to the same article as V4\"],\"corrected_doi\":\"10.1038/35073513\"},{\"id\":\"V6\",\"verified\":false,\"journal_abbreviated\":null,\"problems\":[\"DOI could not be resolved; reference could not be verified\"],\"corrected_doi\":null},{\"id\":\"V7\",\"verified\":false,\"journal_abbreviated\":\"Annu. Rev. Biophys. Biomol. Struct.\",\"problems\":[\"Year in reference (2008) does not match DOI (2006)\"],\"corrected_doi\":null},{\"id\":\"V8\",\"verified\":true,\"journal_abbreviated\":\"\",\"problems\":[],\"corrected_doi\":null}]}",
+ "thinking_chars": 352,
+ "wall_s": 47.6,
+ "null": null,
+ "n_items": null,
+ "null": null
+}

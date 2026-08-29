@@ -1,0 +1,34 @@
+{
+ "task": "T5",
+ "model": "gemma3:4b",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "gemma3:4b",
+  "wall_s": 2.26,
+  "prompt_tokens": 648,
+  "output_tokens": 91,
+  "load_s": 0.15,
+  "prefill_tok_s": 4854.4,
+  "decode_tok_s": 69.3,
+  "ttft_s": 0.29,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 37997,
+  "peak_size_vram_mib": 4385
+ },
+ "defects": [
+  {
+   "what": "Panel labels disagree with the legend. Specifically, panel A is labeled 's' while the legend refers to 's'.",
+   "severity": "high"
+  },
+  {
+   "what": "Text is too small to read.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"Panel labels disagree with the legend. Specifically, panel A is labeled 's' while the legend refers to 's'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"Text is too small to read.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

@@ -1,0 +1,98 @@
+{
+ "task": "t3ja",
+ "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": "salvaged",
+ "result_key": "answers",
+ "n_items": 14,
+ "meta": {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "wall_s": 45.4,
+  "prompt_tokens": 7075,
+  "output_tokens": 1594,
+  "load_s": 0.11,
+  "prefill_tok_s": 1451.0,
+  "decode_tok_s": 39.6,
+  "ttft_s": 4.98,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 39824,
+  "peak_size_vram_mib": 33547
+ },
+ "answers": [
+  {
+   "id": "J1",
+   "answer": "要旨（Abstract）の語数上限は250語です。要約には文献引用を含めることはできません。",
+   "basis": "Manuscript Style (1) Text: An abstract of no more than 250 words is required. The abstract must not include references."
+  },
+  {
+   "id": "J2",
+   "answer": "キーワードは最大5つまでです。",
+   "basis": "Manuscript Style (1) Text: A list of up to five keywords should be provided below the abstract."
+  },
+  {
+   "id": "J3",
+   "answer": "ランニングタイトルの文字数制限は50文字以内（スペース含む）です。奇数ページ目のヘッダーに配置します。",
+   "basis": "Manuscript Style (1) Text: A Running Title not exceeding 50 characters including spaces is required, but it is not necessary for 'Editorial' or 'Commentary and Perspective'."
+  },
+  {
+   "id": "J4",
+   "answer": "正しい書式：[1,3,5-8]. または [1,3,5-8] のように、ピリオドやカンマの前後にスペースを入れず、かつ、ピリオドやカンマの後には必ずスペースを入れます。",
+   "basis": "Manuscript Style (5) References: When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’. References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data)."
+  },
+  {
+   "id": "J1",
+   "answer": "要約（Abstract）の語数上限は250語です。要約には文献引用を含めることはできません。",
+   "basis": "Manuscript Style (1) Text: An abstract of no more than 250 words is required. The abstract must not include references."
+  },
+  {
+   "id": "J2",
+   "answer": "キーワードは最大5つまでです。",
+   "basis": "Manuscript Style (1) Text: A list of up to five keywords should be provided below the abstract."
+  },
+  {
+   "id": "J3",
+   "answer": "ランニングタイトルの文字数制限は50文字以内（スペース含む）です。奇数ページ目のヘッダーに配置します。",
+   "basis": "Manuscript Style (1) Text: A Running Title not exceeding 50 characters including spaces is required, but it is not necessary for 'Editorial' or 'Commentary and Perspective'."
+  },
+  {
+   "id": "J4",
+   "answer": "正しい書式：[1,3,5-8]. または [1,3,5-8] のように、ピリオドやカンマの前後にスペースを入れず、かつ、ピリオドやカンマの後には必ずスペースを入れます。",
+   "basis": "Manuscript Style (5) References: When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’. References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data)."
+  },
+  {
+   "id": "J5",
+   "answer": "6名までは全員を、7名以上の場合は最初の6名までを記載し、その後に「et al.」を付けます。",
+   "basis": "Manuscript Style (5) References: For more than six authors, list the first six authors followed by 'et al.'"
+  },
+  {
+   "id": "J6",
+   "answer": "図のファイル形式はTIFF、PNG、JPEG、PDFです。解像度は300 dpi（グレースケールまたはカラー）です。グラフィカルアブストラクトの場合はPNG、JPEG、GIFのいずれかで、解像度は300 dpiです。",
+   "basis": "Manuscript Style (5) Figures: Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats. The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi."
+  },
+  {
+   "id": "J7",
+   "answer": "1. すべての表をテキストで引用する。2. アラビア数字（Table 3など）で連番で表す。3. 見出しはテーブルの上部に、脚注はテーブルの下部に記載する。",
+   "basis": "Manuscript Style (5) Tables: Number the tables consecutively with Arabic numerals... Supply a short explanatory title above the body of the table, and table footnotes... below the body of the table."
+  },
+  {
+   "id": "J8",
+   "answer": "1ファイルあたりのサイズ上限は20MBです。これを超える場合は、J-STAGE Dataなどのデータリポジトリにアップロードし、エディトリアルオフィスへ連絡してください。",
+   "basis": "Manuscript Style (4) How to submit a manuscript: The size of each file that is uploaded using the online submission system such as text, tables, figures and supplementary material (if any), should be no more than 20 MB. When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data (https://jstagedata.jst.go.jp/). In this case, please contact the Editorial office."
+  },
+  {
+   "id": "J9",
+   "answer": "「New」「Novel」「First」「Unprecedented」、およびそれらの形容詞や同様の表現です。",
+   "basis": "General policy for ethics of the journal (2) Ethics standard: Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives."
+  },
+  {
+   "id": "J10",
+   "answer": "90日以内です。",
+   "basis": "Peer review procedure: Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision."
+  }
+ ],
+ "raw_response": "{\n  \"answers\": [\n    {\n      \"id\": \"J1\",\n      \"answer\": \"要旨（Abstract）の語数上限は250語です。要約には文献引用を含めることはできません。\",\n      \"basis\": \"Manuscript Style (1) Text: An abstract of no more than 250 words is required. The abstract must not include references.\"\n    },\n    {\n      \"id\": \"J2\",\n      \"answer\": \"キーワードは最大5つまでです。\",\n      \"basis\": \"Manuscript Style (1) Text: A list of up to five keywords should be provided below the abstract.\"\n    },\n    {\n      \"id\": \"J3\",\n      \"answer\": \"ランニングタイトルの文字数制限は50文字以内（スペース含む）です。奇数ページ目のヘッダーに配置します。\",\n      \"basis\": \"Manuscript Style (1) Text: A Running Title not exceeding 50 characters including spaces is required, but it is not necessary for 'Editorial' or 'Commentary and Perspective'.\"\n    },\n    \"answers\": [\n      {\n        \"id\": \"J4\",\n        \"answer\": \"正しい書式：[1,3,5-8]. または [1,3,5-8] のように、ピリオドやカンマの前後にスペースを入れず、かつ、ピリオドやカンマの後には必ずスペースを入れます。\",\n        \"basis\": \"Manuscript Style (5) References: When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’. References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).\"\n      }\n    ]\n  }\n}\n```json\n```\n\nPlease output the JSON object only.</think>```json\n{\n  \"answers\": [\n    {\n      \"id\": \"J1\",\n      \"answer\": \"要約（Abstract）の語数上限は250語です。要約には文献引用を含めることはできません。\",\n      \"basis\": \"Manuscript Style (1) Text: An abstract of no more than 250 words is required. The abstract must not include references.\"\n    },\n    {\n      \"id\": \"J2\",\n      \"answer\": \"キーワードは最大5つまでです。\",\n      \"basis\": \"Manuscript Style (1) Text: A list of up to five keywords should be provided below the abstract.\"\n    },\n    {\n      \"id\": \"J3\",\n      \"answer\": \"ランニングタイトルの文字数制限は50文字以内（スペース含む）です。奇数ページ目のヘッダーに配置します。\",\n      \"basis\": \"Manuscript Style (1) Text: A Running Title not exceeding 50 characters including spaces is required, but it is not necessary for 'Editorial' or 'Commentary and Perspective'.\"\n    },\n    {\n      \"id\": \"J4\",\n      \"answer\": \"正しい書式：[1,3,5-8]. または [1,3,5-8] のように、ピリオドやカンマの前後にスペースを入れず、かつ、ピリオドやカンマの後には必ずスペースを入れます。\",\n      \"basis\": \"Manuscript Style (5) References: When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’. References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).\"\n    },\n    {\n      \"id\": \"J5\",\n      \"answer\": \"6名までは全員を、7名以上の場合は最初の6名までを記載し、その後に「et al.」を付けます。\",\n      \"basis\": \"Manuscript Style (5) References: For more than six authors, list the first six authors followed by 'et al.'\"\n    },\n    {\n      \"id\": \"J6\",\n      \"answer\": \"図のファイル形式はTIFF、PNG、JPEG、PDFです。解像度は300 dpi（グレースケールまたはカラー）です。グラフィカルアブストラクトの場合はPNG、JPEG、GIFのいずれかで、解像度は300 dpiです。\",\n      \"basis\": \"Manuscript Style (5) Figures: Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats. The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\"\n    },\n    {\n      \"id\": \"J7\",\n      \"answer\": \"1. すべての表をテキストで引用する。2. アラビア数字（Table 3など）で連番で表す。3. 見出しはテーブルの上部に、脚注はテーブルの下部に記載する。\",\n      \"basis\": \"Manuscript Style (5) Tables: Number the tables consecutively with Arabic numerals... Supply a short explanatory title above the body of the table, and table footnotes... below the body of the table.\"\n    },\n    {\n      \"id\": \"J8\",\n      \"answer\": \"1ファイルあたりのサイズ上限は20MBです。これを超える場合は、J-STAGE Dataなどのデータリポジトリにアップロードし、エディトリアルオフィスへ連絡してください。\",\n      \"basis\": \"Manuscript Style (4) How to submit a manuscript: The size of each file that is uploaded using the online submission system such as text, tables, figures and supplementary material (if any), should be no more than 20 MB. When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data (https://jstagedata.jst.go.jp/). In this case, please contact the Editorial office.\"\n    },\n    {\n      \"id\": \"J9\",\n      \"answer\": \"「New」「Novel」「First」「Unprecedented」、およびそれらの形容詞や同様の表現です。\",\n      \"basis\": \"General policy for ethics of the journal (2) Ethics standard: Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\"\n    },\n    {\n      \"id\": \"J10\",\n      \"answer\": \"90日以内です。\",\n      \"basis\": \"Peer review procedure: Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision.\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0,
+ "schema_break": true
+}

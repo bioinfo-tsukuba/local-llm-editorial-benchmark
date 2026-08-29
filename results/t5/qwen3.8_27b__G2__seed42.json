@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "qwen3.8:27b",
+ "item": "G2",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 11.66,
+  "prompt_tokens": 504,
+  "output_tokens": 284,
+  "load_s": 0.0,
+  "prefill_tok_s": 577.8,
+  "decode_tok_s": 26.7,
+  "ttft_s": 0.87,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 25983,
+  "peak_size_vram_mib": 16627
+ },
+ "defects": [
+  {
+   "what": "Figure resolution is 72 dpi, far below the 300 dpi required for print",
+   "severity": "high"
+  },
+  {
+   "what": "Axis labels and tick text are too small to read at the supplied resolution",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"defects\": [\n  {\"what\": \"Figure resolution is 72 dpi, far below the 300 dpi required for print\", \"severity\": \"high\"},\n  {\"what\": \"Axis labels and tick text are too small to read at the supplied resolution\", \"severity\": \"medium\"}\n]}",
+ "thinking_chars": 810
+}

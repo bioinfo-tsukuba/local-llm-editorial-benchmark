@@ -1,0 +1,81 @@
+{
+ "task": "t7",
+ "model": "qwen3.5:35b-a3b-bf16",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 9,
+ "meta": {
+  "model": "qwen3.5:35b-a3b-bf16",
+  "wall_s": 312.26,
+  "prompt_tokens": 9293,
+  "output_tokens": 8179,
+  "load_s": 0.16,
+  "prefill_tok_s": 736.6,
+  "decode_tok_s": 28.3,
+  "ttft_s": 12.78,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 79583,
+  "peak_size_vram_mib": 72639
+ },
+ "findings": [
+  {
+   "location": "Title of the manuscript",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word 'Novel' ('Novel directions for coarse-grained models of molecular machines').",
+   "severity": "high"
+  },
+  {
+   "location": "Reference list",
+   "rule": "All references should be listed in numerical order.",
+   "problem": "References are listed as [1], [2], [3], [4], [5], [7], [6], [8]. The sequence is not numerical (reference 7 appears before reference 6).",
+   "severity": "high"
+  },
+  {
+   "location": "Text citations (e.g., '(1, 2)')",
+   "rule": "When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8].",
+   "problem": "Citations use parentheses '(1, 2)' instead of square brackets as required.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [5] ('Terashima, A., Kuramoto, H. Benchmarks for coarse-grained allostery. In preparation.') includes 'In preparation'.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list (Fig1_two_readings.bmp)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution.",
+   "problem": "The figure is submitted at 150 dpi resolution.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list (Fig1_two_readings.bmp)",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "The figure format is BMP, which is not listed as an accepted format.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials file list (図1_draft version.bmp)",
+   "rule": "Do not include spaces and Japanese characters (multi-byte codes) in the file name or file path. Use only alphanumeric characters.",
+   "problem": "The file name contains Japanese characters ('図') and spaces.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials file list (図1_draft version.bmp)",
+   "rule": "As Supplementary materials, image files should be in PDF, TXT or ZIP format.",
+   "problem": "The supplementary image is in BMP format.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference list (References [6] and [8])",
+   "rule": "References should be numbered sequentially as they appear in the text.",
+   "problem": "References [6] and [8] are listed but do not appear in the text citations.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Title of the manuscript\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The title contains the word 'Novel' ('Novel directions for coarse-grained models of molecular machines').\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference list\",\n      \"rule\": \"All references should be listed in numerical order.\",\n      \"problem\": \"References are listed as [1], [2], [3], [4], [5], [7], [6], [8]. The sequence is not numerical (reference 7 appears before reference 6).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Text citations (e.g., '(1, 2)')\",\n      \"rule\": \"When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8].\",\n      \"problem\": \"Citations use parentheses '(1, 2)' instead of square brackets as required.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ('Terashima, A., Kuramoto, H. Benchmarks for coarse-grained allostery. In preparation.') includes 'In preparation'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Figure file list (Fig1_two_readings.bmp)\",\n      \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution.\",\n      \"problem\": \"The figure is submitted at 150 dpi resolution.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Figure file list (Fig1_two_readings.bmp)\",\n      \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n      \"problem\": \"The figure format is BMP, which is not listed as an accepted format.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials file list (図1_draft version.bmp)\",\n      \"rule\": \"Do not include spaces and Japanese characters (multi-byte codes) in the file name or file path. Use only alphanumeric characters.\",\n      \"problem\": \"The file name contains Japanese characters ('図') and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials file list (図1_draft version.bmp)\",\n      \"rule\": \"As Supplementary materials, image files should be in PDF, TXT or ZIP format.\",\n      \"problem\": \"The supplementary image is in BMP format.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference list (References [6] and [8])\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text.\",\n      \"problem\": \"References [6] and [8] are listed but do not appear in the text citations.\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+ "thinking_chars": 29482
+}

@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "gemma4",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "gemma4",
+  "wall_s": 13.27,
+  "prompt_tokens": 642,
+  "output_tokens": 752,
+  "load_s": 0.0,
+  "prefill_tok_s": 1928.9,
+  "decode_tok_s": 58.3,
+  "ttft_s": 0.33,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 15996,
+  "peak_size_vram_mib": 3227
+ },
+ "defects": [
+  {
+   "what": "The table uses vertical lines, which is forbidden by the Instructions for Authors.",
+   "severity": "high"
+  },
+  {
+   "what": "The table is supplied as a picture (PNG). Tables must be inserted using the Text-box tool in Microsoft Word, not supplied as pictures.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"The table uses vertical lines, which is forbidden by the Instructions for Authors.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"The table is supplied as a picture (PNG). Tables must be inserted using the Text-box tool in Microsoft Word, not supplied as pictures.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 2682
+}

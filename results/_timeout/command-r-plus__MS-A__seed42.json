@@ -1,0 +1,21 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "command-r-plus",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "think": null,
+ "error": "TimeoutError: timed out",
+ "parse_error": "empty response",
+ "n_findings": null,
+ "meta": {
+  "model": "command-r-plus",
+  "peak_mem_used_mib": 79661,
+  "peak_size_vram_mib": 0
+ },
+ "findings": null,
+ "raw_response": "",
+ "thinking_chars": 0
+}

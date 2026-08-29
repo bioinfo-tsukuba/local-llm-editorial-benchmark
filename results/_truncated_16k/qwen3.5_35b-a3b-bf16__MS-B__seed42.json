@@ -1,0 +1,28 @@
+{
+ "task": "T1",
+ "model": "qwen3.5:35b-a3b-bf16",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 32768,
+ "num_predict": 16384,
+ "think": null,
+ "error": null,
+ "parse_error": "empty response",
+ "n_findings": null,
+ "meta": {
+  "model": "qwen3.5:35b-a3b-bf16",
+  "wall_s": 631.85,
+  "prompt_tokens": 12213,
+  "output_tokens": 16384,
+  "load_s": 0.14,
+  "prefill_tok_s": 1555.6,
+  "decode_tok_s": 27.3,
+  "ttft_s": 7.99,
+  "done_reason": "length",
+  "peak_mem_used_mib": 79552,
+  "peak_size_vram_mib": 71619
+ },
+ "findings": null,
+ "raw_response": "",
+ "thinking_chars": 62763
+}

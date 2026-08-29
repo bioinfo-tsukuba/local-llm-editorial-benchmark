@@ -1,0 +1,49 @@
+{
+ "task": "t4ph",
+ "model": "llama4:scout",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": "salvaged",
+ "result_key": "answers",
+ "n_items": 5,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 19.05,
+  "prompt_tokens": 4768,
+  "output_tokens": 138,
+  "load_s": 0.17,
+  "prefill_tok_s": 476.2,
+  "decode_tok_s": 15.9,
+  "ttft_s": 10.18,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 81253,
+  "peak_size_vram_mib": 74485
+ },
+ "answers": [
+  {
+   "id": "F1",
+   "response": "There is no Reference 13 in this manuscript."
+  },
+  {
+   "id": "F2",
+   "response": "There is no Data availability statement in this manuscript."
+  },
+  {
+   "id": "F3",
+   "response": "There is no Table 3 in this manuscript."
+  },
+  {
+   "id": "F4",
+   "response": "There is no mention of an institutional review board or an approval statement in this manuscript."
+  },
+  {
+   "id": "F5",
+   "response": "There is no ORCID iD mentioned in this manuscript."
+  }
+ ],
+ "raw_response": "```json\n{\n  \"id\": \"F1\",\n  \"response\": \"There is no Reference 13 in this manuscript.\"\n}\n\n{\n  \"id\": \"F2\",\n  \"response\": \"There is no Data availability statement in this manuscript.\"\n}\n\n{\n  \"id\": \"F3\",\n  \"response\": \"There is no Table 3 in this manuscript.\"\n}\n\n{\n  \"id\": \"F4\",\n  \"response\": \"There is no mention of an institutional review board or an approval statement in this manuscript.\"\n}\n\n{\n  \"id\": \"F5\",\n  \"response\": \"There is no ORCID iD mentioned in this manuscript.\"\n}\n```",
+ "thinking_chars": 0,
+ "schema_break": true
+}

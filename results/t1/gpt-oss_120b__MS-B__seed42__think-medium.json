@@ -1,0 +1,54 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "think": "medium",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 4,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 130.55,
+  "prompt_tokens": 11577,
+  "output_tokens": 4345,
+  "load_s": 0.19,
+  "prefill_tok_s": 1159.0,
+  "decode_tok_s": 37.6,
+  "ttft_s": 10.18,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 71540,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "References",
+   "rule": "All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.",
+   "problem": "Reference [3] (Tama, F., Sanejouand, Y. H.) is listed in the References but never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.",
+   "problem": "Reference [5] (Nishimura, R., Morisawa, K.) is listed but never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.",
+   "problem": "Reference [10] (Ichimura, T., et al.) is listed but never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.",
+   "problem": "Reference [11] (Itoh, H., et al.) is listed but never cited in the manuscript.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"References\",\n      \"rule\": \"All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.\",\n      \"problem\": \"Reference [3] (Tama, F., Sanejouand, Y. H.) is listed in the References but never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.\",\n      \"problem\": \"Reference [5] (Nishimura, R., Morisawa, K.) is listed but never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.\",\n      \"problem\": \"Reference [10] (Ichimura, T., et al.) is listed but never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"All references must be cited in the text, tables, or figure legends, and numbered sequentially as they appear.\",\n      \"problem\": \"Reference [11] (Itoh, H., et al.) is listed but never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 15365
+}

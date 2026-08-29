@@ -1,0 +1,45 @@
+{
+ "task": "t7",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 3,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 69.54,
+  "prompt_tokens": 8915,
+  "output_tokens": 1494,
+  "load_s": 0.16,
+  "prefill_tok_s": 2998.0,
+  "decode_tok_s": 23.2,
+  "ttft_s": 3.13,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 87239,
+  "peak_size_vram_mib": 15032
+ },
+ "findings": [
+  {
+   "location": "References section",
+   "rule": "References to unpublished data and personal communications should not appear in the reference list",
+   "problem": "Reference [5] is listed as \"In preparation\", which is an unpublished source and is not allowed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References section",
+   "rule": "References must be listed in numerical order, starting on a new page, under the heading “References”",
+   "problem": "The reference list is out of order: reference [6] appears after reference [7] but should be after [5] and before [7].",
+   "severity": "medium"
+  },
+  {
+   "location": "References section",
+   "rule": "All references should include a DOI URL if available",
+   "problem": "Reference [5] has no DOI and is an unpublished source, violating the requirement for DOI inclusion for published references.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"findings\":[{\"location\":\"References section\",\"rule\":\"References to unpublished data and personal communications should not appear in the reference list\",\"problem\":\"Reference [5] is listed as \\\"In preparation\\\", which is an unpublished source and is not allowed in the reference list.\",\"severity\":\"high\"},{\"location\":\"References section\",\"rule\":\"References must be listed in numerical order, starting on a new page, under the heading “References”\",\"problem\":\"The reference list is out of order: reference [6] appears after reference [7] but should be after [5] and before [7].\",\"severity\":\"medium\"},{\"location\":\"References section\",\"rule\":\"All references should include a DOI URL if available\",\"problem\":\"Reference [5] has no DOI and is an unpublished source, violating the requirement for DOI inclusion for published references.\",\"severity\":\"medium\"}]}",
+ "thinking_chars": 5225
+}

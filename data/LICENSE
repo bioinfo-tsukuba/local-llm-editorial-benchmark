@@ -1,0 +1,30 @@
+Licences for data/
+==================
+
+This directory mixes material created for this study with material obtained
+from third parties. They are licensed differently.
+
+Created for this study — CC BY 4.0
+----------------------------------
+  manuscripts/    the five manuscripts MS-A .. MS-E
+  groundtruth/    the seeded defects and their anchors
+  figures/        the figure stimuli for the vision task
+  t3/, t4/, t8/   the item sets for those tasks
+
+  Copyright (c) 2026 Haruka Ozaki, released under the Creative Commons
+  Attribution 4.0 International licence. https://creativecommons.org/licenses/by/4.0/
+
+Obtained from third parties — original licence applies
+------------------------------------------------------
+  guidelines/     a journal's Instructions for Authors
+  preprints/      the text of a published preprint
+  reviews/        the published peer reviews of that preprint
+
+  These are redistributed under the terms of their sources, which are recorded
+  with retrieval date and SHA-256 in PROVENANCE.md. They are included so that
+  the reported measurements can be reproduced against the material actually
+  used: these sources are revised over time, so a URL alone would not identify
+  what was measured.
+
+  If you are a rights holder and object to redistribution here, please contact
+  ai-biology@ml.riken.jp and it will be removed.

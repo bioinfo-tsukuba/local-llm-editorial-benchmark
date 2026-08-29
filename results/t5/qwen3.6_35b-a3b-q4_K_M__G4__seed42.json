@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 76.77,
+  "prompt_tokens": 1246,
+  "output_tokens": 3844,
+  "load_s": 0.15,
+  "prefill_tok_s": 1527.4,
+  "decode_tok_s": 55.0,
+  "ttft_s": 0.97,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 31692,
+  "peak_size_vram_mib": 25373
+ },
+ "defects": [
+  {
+   "what": "Table uses vertical lines, which violates the instruction 'must not use vertical lines'.",
+   "severity": "high"
+  },
+  {
+   "what": "Table is supplied as a picture (PNG) instead of formatted text in the manuscript.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"Table uses vertical lines, which violates the instruction 'must not use vertical lines'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"Table is supplied as a picture (PNG) instead of formatted text in the manuscript.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 15272
+}

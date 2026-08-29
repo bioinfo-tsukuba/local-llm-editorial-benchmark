@@ -1,0 +1,16 @@
+{
+  "task": "T3-ja",
+  "note": "Japanese-language queries against the English Instructions for Authors. Tests Japanese ability and retrieval from a long document at once. Graded on whether the required facts appear in the Japanese answer.",
+  "items": [
+    {"id":"J1","q":"要旨（Abstract）の語数上限は何語ですか。また要旨に文献引用を入れてよいですか。","required":["250"],"required_any":["入れてはいけない","不可","禁止","含めない","含めてはいけない","できません"]},
+    {"id":"J2","q":"キーワードは最大いくつまで書けますか。","required":["5"]},
+    {"id":"J3","q":"ランニングタイトルの文字数制限と、何ページ目から必要かを教えてください。","required":["50"],"required_any":["3ページ","3 ページ","page 3","3頁"]},
+    {"id":"J4","q":"本文中で文献番号を書くときの正しい書式を、句読点との位置関係も含めて説明してください。","required_any":["角括弧","ブラケット","[1,3,5-8]","[ ]"],"required_any2":["ピリオドの前","コンマの前","前に","手前"]},
+    {"id":"J5","q":"著者が7人以上の論文を参考文献に載せる場合、著者名はどう書きますか。","required":["6"],"required_any":["et al","ほか","他"]},
+    {"id":"J6","q":"図のファイル形式と解像度の要求を教えてください。グラフィカルアブストラクトの場合はどう違いますか。","required":["300"],"required_any":["TIFF","tiff"],"required_any2":["GIF","gif"]},
+    {"id":"J7","q":"表に関する体裁の決まりを3点挙げてください。","required_any":["縦罫線","縦線","vertical"],"required_any2":["上","above"],"required_any3":["a, b, c","アルファベット","英字"]},
+    {"id":"J8","q":"投稿システムにアップロードする1ファイルあたりのサイズ上限はいくらですか。超える場合はどうしますか。","required":["20"],"required_any":["J-STAGE Data","JSTAGE","編集事務局","事務局"]},
+    {"id":"J9","q":"タイトルや要旨に使ってはいけない語を挙げてください。","required_any":["New","新"],"required_any2":["Novel","novel"],"required_any3":["First","first","最初"]},
+    {"id":"J10","q":"改訂原稿の提出期限は編集判断の受領から何日以内ですか。","required":["90"]}
+  ]
+}

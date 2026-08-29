@@ -1,0 +1,68 @@
+{
+ "task": "t3refs",
+ "model": "command-r-plus",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "conversions",
+ "n_items": 8,
+ "meta": {
+  "model": "command-r-plus",
+  "wall_s": 320.29,
+  "prompt_tokens": 7663,
+  "output_tokens": 771,
+  "load_s": 59.79,
+  "prefill_tok_s": 197.4,
+  "decode_tok_s": 3.6,
+  "ttft_s": 98.61,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 71098,
+  "peak_size_vram_mib": 0
+ },
+ "conversions": [
+  {
+   "id": "R1",
+   "converted": "[1]\n\nHarada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1",
+   "note": ""
+  },
+  {
+   "id": "R2",
+   "converted": "[2]\n\nKomatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod- fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016). https://doi.org/10.2142/biophysico.13.0_13",
+   "note": ""
+  },
+  {
+   "id": "R3",
+   "converted": "[3]\n\nGo, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).",
+   "note": ""
+  },
+  {
+   "id": "R4",
+   "converted": "[4]\n\nOosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).",
+   "note": ""
+  },
+  {
+   "id": "R5",
+   "converted": "[5]\n\nIchimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044",
+   "note": ""
+  },
+  {
+   "id": "R6",
+   "converted": "[6]\n\nTogashi, Y. & Mikhailov, A.S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. PNAS 104, 8697–8702 (2007).",
+   "note": ""
+  },
+  {
+   "id": "R7",
+   "converted": "[7]\n\nItoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).\n\nhttps://doi.org/10.1038/nature02212",
+   "note": ""
+  },
+  {
+   "id": "R8",
+   "converted": "This reference may not be listed as it is not yet published.",
+   "note": "The journal's instructions state that the reference list must not include the terms \"in preparation\" or \"submitted for publication\"."
+  }
+ ],
+ "raw_response": "{\"conversions\": [\n  {\"id\": \"R1\",\n   \"converted\": \"[1]\\n\\nHarada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709\\u2013715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1\",\n   \"note\": \"\"},\n  {\"id\": \"R2\",\n   \"converted\": \"[2]\\n\\nKomatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod- fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13\\u201325 (2016). https://doi.org/10.2142/biophysico.13.0_13\",\n   \"note\": \"\"},\n  {\"id\": \"R3\",\n   \"converted\": \"[3]\\n\\nGo, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91\\u2013131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).\",\n   \"note\": \"\"},\n  {\"id\": \"R4\",\n   \"converted\": \"[4]\\n\\nOosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).\",\n   \"note\": \"\"},\n  {\"id\": \"R5\",\n   \"converted\": \"[5]\\n\\nIchimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044\",\n   \"note\": \"\"},\n  {\"id\": \"R6\",\n   \"converted\": \"[6]\\n\\nTogashi, Y. & Mikhailov, A.S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. PNAS 104, 8697\\u20138702 (2007).\",\n   \"note\": \"\"},\n  {\"id\": \"R7\",\n   \"converted\": \"[7]\\n\\nItoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).\\n\\nhttps://doi.org/10.1038/nature02212\",\n   \"note\": \"\"},\n  {\"id\": \"R8\",\n   \"converted\": \"This reference may not be listed as it is not yet published.\",\n   \"note\": \"The journal's instructions state that the reference list must not include the terms \\\"in preparation\\\" or \\\"submitted for publication\\\".\"}\n]}",
+ "thinking_chars": 0
+}

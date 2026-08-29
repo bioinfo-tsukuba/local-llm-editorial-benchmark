@@ -1,0 +1,482 @@
+Instructions for Authors | Biophysics and Physicobiology (BPPB) 
+
+ Toggle Navigation 
+
+ Biophysics and Physicobiology 
+
+ Home 
+
+ About
+
+ Journal Information 
+
+ Editorial Board 
+
+ Paper Awards 
+
+ Submit
+
+ Quick Guide to Prepare Manuscript 
+
+ Instruction for Authors 
+
+ Download Templates
+
+ Regular Article 
+
+ Review Article 
+
+ Note 
+
+ Method and Protocol 
+
+ Database and Computer Program 
+
+ Commentary and Perspective 
+
+ Editorial 
+
+ LaTeX_Template 
+
+ Submission Site 
+
+ J-STAGE Data 
+
+ Browse
+
+ Recent Articles 
+
+ All Articles 
+
+ Special Issues 
+
+ Promotional Video 
+
+ Article Statistics 
+
+ J-STAGE Data 
+
+ Tutorials
+
+ Oosawa lectures 
+
+ Tutorials 
+
+ Biophysics and Physicobiology 
+
+ Home 
+
+ About 
+
+ Journal Information 
+
+ Editorial Board 
+
+ Paper Awards 
+
+ Submit 
+
+ Quick Guide to Prepare Manuscript 
+
+ Instruction for Authors 
+
+ Download Templates 
+
+ Regular Article 
+
+ Review Article 
+
+ Note 
+
+ Method and Protocol 
+
+ Database and Computer Program 
+
+ Commentary and Perspective 
+
+ Editorial 
+
+ LaTeX_Template 
+
+ Submission Site 
+
+ J-STAGE Data 
+
+ Browse 
+
+ Recent Articles 
+
+ All Articles 
+
+ Special Issues 
+
+ Promotional Video 
+
+ Article Statistics 
+
+ J-STAGE Data 
+
+ Tutorials 
+
+ Oosawa lectures 
+
+ Tutorials 
+
+ HOME 
+
+ Submit
+
+ Instructions for Authors
+
+ Instructions for Authors
+
+ Instructions for authors in PDF format file 
+
+   Biophysics and Physicobiology (BPPB) is the official online open journal published by the Biophysical Society of Japan (BSJ) with either the License reference CC BY-NC-SA 4.0 ( https://creativecommons.org/licenses/by-nc-sa/4.0/ ) or CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/ ), which is selected in accordance with the authors’ preference. This journal inherited all the assets of BIOPHYSICS, the former BSJ official journal, and expanded its scope to keep abreast of future directions in the field.
+
+   We welcome contributions from all over the world, from both BSJ members and non-members. Submitted papers must be based on unpublished original research, and not be under consideration for publication elsewhere. BPPB supports the idea of posting a preprint to preprint servers, and hence the manuscript posted on servers such as arXiv ( https://arxiv.org/ ), bioRxiv ( https://www.biorxiv.org/ ), ChemRxiv ( https://chemrxiv.org/engage/chemrxiv/public-dashboard ), medRxiv ( https://www.medrxiv.org/ ) or Jxiv ( https://jxiv.jst.go.jp ) before submission to BPPB is not considered as publication. The authors are free to post the manuscript to the preprint servers, but after publication on BPPB, we ask them to specify the DOI of the final BPPB version of the manuscript along with the posted manuscript. Submitted papers must conform in style to the Instruction for Authors outlined below.
+
+   In addition, BPPB promotes the idea of Open Data, where any raw data are openly available for confirming the results and conclusion of every article and for reuse and data mining by researchers other than the authors. For that purpose, unless special cases, the Editor of BPPB may request the authors to provide their relating raw data as the necessary evidence using the data repositories: Community-endorsed, public repositories, such as protein/DNA sequences, protein structures, molecular simulation trajectories, microscopy images and more general repositories. In particular, the usage of J-STAGE Data ( https://jstagedata.jst.go.jp/biophysico ) is strongly recommended as a general repository, because BPPB is one of the publisher members of J-STAGE Data ( https://jstagedata.jst.go.jp/ ) and every data can have the DOI information without any charges from the authors.
+
+   These notes make up the Instruction for Authors who would like to submit their articles to BPPB.
+
+ 1. Article Categories in BPPB 
+
+ 2. Special Issues 
+
+ 3. Peer review procedure 
+
+ 4. How to submit a manuscript 
+
+ 5. Manuscript style 
+
+ 6. General policy on the journal’s ethics 
+
+ 7. Publication fees 
+
+ 8. Proofs, reprints, and copyright 
+
+ 9. Corrections and retraction policy 
+
+ 1. Article Categories in BPPB
+
+   Articles that BPPB publishes are categorized as (1) Regular Articles, (2) Review Articles, (3) Notes, (4) Methods and Protocols, (5) Databases and Computer Programs, (6) Commentary and Perspective, and (7) Editorial. The manuscript template of each Category for Microsoft Word or LaTeX is available at the BPPB web site:
+
+ https://www.biophys.jp/biophysics_and_physicobiology.html 
+
+ [Submit] -> [Download Template] -> (select appropriate Template for each category)
+
+ (1) Regular Articles are the main category of the journal and must be prepared in accordance with the instructions provided below.
+
+ (2) Review Articles summarize a particular aspect of biophysical research. Most Review Articles are invited, but contributed Review Articles are also welcome (please send inquiries with an outline to the Editor-in-Chief before sending the manuscript).
+
+ (3) Notes are short articles that are not necessarily categorized as Regular Articles because of the content, and may contain important information on new devices and/or new ideas, including hypothetical comments that are useful for researchers working in the field of biophysics. The goal of this category is to encourage critical evaluation of concepts, idiosyncratic viewpoints, and challenges to ideas. However, the manuscript should go through rigorous review, and the ideas should be based on sound data without excessive speculation.
+
+ (4) Methods and Protocols cover new methods or significant new advancement of established methods that will be widely applicable to the field of experimental and computational biophysics.
+
+ (5) Databases and Computer Programs should be a description of the core data or software that would be useful for biophysics studies. The databases/computer programs should be available via a website designated by the authors or via BPPB. The review process for this category is based on the functionality of the database/computer program.
+
+ (6) Commentary and Perspective introduces hot topics in the field of biophysics and topics with global collaborations. Most of the Articles in Commentary and Perspective are invited from the organizers of the annual BSJ meetings or other scientific meetings, but contributed articles are also welcome (please send inquires with an outline to Editor-in-Chief before sending the manuscript).
+
+ (7) Editorial is written by the Editor-in-Chief, Editorial Board members and Guest Editor-in-Charge for Special Issues. It introduces new policies, comments and new editorial board members.
+
+ 2. Special issues
+
+   We welcome a proposal of a topic as a Special Issue, which is in principle composed of more than four articles focusing on a particular biophysical issue, from the members of the Society, the Editorial Board, Associate Editors and Advisory Board. The proposer should contact the Editor-in-Chief directly, and may take on duties as a Guest Editor-in-Charge. Note that all the manuscripts in these Special issues are reviewed, and the publication fees must be paid. In addition, the proceedings of a scientific meeting can be considered for a special issue publication.
+
+ 3. Peer review procedure
+
+   If a submitted manuscript does not conform to the journal scope, or other inadequacies are found, the Editor-in-Chief reserves the right to reject the manuscript without review. In particular, authors are required to provide sufficient details in the Materials and Methods section and the Results section of the submitted manuscript except in the categories of Editorial or Commentary and Perspective to allow readers to validate the contents and to reproduce the research findings.
+
+   Manuscripts are handled through the peer review process and edited by an Editor-in-Charge, selected from the Associate Editors, the Advisory Board members, the Editorial Board members or the Editor-in-Chief, who are introduced in the web page of our Editorial Board. Manuscripts are sent out for peer review to two or more reviewers. The Editor-in-Charge may suggest to the authors that the linguistic accuracy of the manuscript should be improved when the manuscript is poorly written. In that case, the Editorial office may support the authors by introducing a professional English proofreader.
+
+  Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision. Otherwise, the submitted manuscript will be regarded as withdrawn, or if the authors would like to request more time to revise their manuscript following additional research, please inquire at the Editorial Office.
+
+   Please note that the BPPB Editorial Office will not accept a fourth or subsequent manuscript submitted by the same author or group of authors within a 30-day period after submission of the first manuscript without the prior written approval of the Editor-in-Chief.
+
+ 4. How to submit a manuscript
+
+   Manuscripts should be submitted using ScholarOne Manuscripts ( S1M ) Submission System for Biophysics and Physicobiology ( https://mc.manuscriptcentral.com/biophysics ).
+
+   S1M will automatically convert the uploaded files into single PDF and HTML documents so that they can be viewed and printed for peer review. Authors must verify that the PDF file is satisfactory and complete. If the converted PDF file is incorrect, please convert your manuscript to a PDF file by yourself, and submit it using the S1M submission system.When you use the Template file of Microsoft Office Word, please also upload the Word file. When you use the Template file for LaTeX, please also upload the original tex file.
+
+   We started using the Manuscript Transfer system (B2J) from bioRxiv to BPPB in November 2020 as a B2J partner of bioRxiv, in order to save authors time by transmitting their manuscript files and metadata directly from bioRxiv to BPPB. Authors do not have to spend time re-loading manuscript files and re-entering author information at the BPPB website. See the web site of bioRxiv ( https://www.biorxiv.org/about-biorxiv ). The authors are requested to input some additional information on the BPPB web site after transmitting their manuscript.
+
+   If there are any problems with online submission, please contact the editorial office below.
+
+   The Editorial office of Biophysics and Physicobiology
+
+   c/o Nakanishi Printing Co., Ltd.
+
+   Ogawa Higashi-iru, Shimodachiuri-dori, Kamigyo-ku, Kyoto 602-8048, JAPAN
+
+   TEL: +81-75-441-3155
+
+   FAX: +81-75-417-2050
+
+   E-mail: biophysics[AT]nacos.com
+
+   * Please replace [AT] with @
+
+ Please note the following points when using the online submission system:
+
+ (1) Use a conventional web browser to access the online submission system. During the submission process, do not use the “Back” button on your browser to return to the previous page.
+
+ (2) Do not use the enter key on your keyboard to jump to the next input field. Instead, use the tab key or click on the field. The enter key is recognized as a jump to the next page.
+
+ (3) Do not include spaces and Japanese characters (multi-byte codes) in the file name or file path. Use only alphanumeric characters.
+
+ (4) The size of each file that is uploaded using the online submission system such as text, tables, figures and supplementary material (if any), should be no more than 20 MB. When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data (https://jstagedata.jst.go.jp/). In this case, please contact the Editorial office.
+
+ 5. Manuscript Style
+
+   The following materials in electronic form are required for submission. The text including Tables and Figures, and supplementary materials (if any) are required for initial submission. 
+
+ (1) Text 
+
+   The text file should include the title, the author name(s), text, and references as in the template file for each Category. All the URLs on the Word file should be hyperlinked. Every author is requested to use the template file for Microsoft Word or for LaTeX.
+
+   Page 1 of the template file should contain the article title, author name(s), affiliation(s), address(es), an abstract, keywords, and a significance statement . The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1. An E-mail address can be added if the corresponding author(s) wishes. An abstract of no more than 250 words is required. The abstract must not include references. For the “Editorial” or “Commentary and Perspective” categories, an abstract is not necessary. A list of up to five keywords should be provided below the abstract. A short statement of less than 100 words about the significance of the paper should be added, but it is not necessary for “Editorial” or “Commentary and Perspective”. This significance statement should summarize the main point of the article.
+
+   Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability , (A comment about deposition to a preprint server if the authors have deposited the file there: e.g. A preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.), Acknowledgements and References , should be arranged in this order. 
+
+   When you paste the copied content that has already been prepared in the other document where the style is defined differently from that in the template file, please paste it with the option of “Use Destination Style”, so as to keep the style of the template.
+
+   Use only 1-byte and/or ASCII-code fonts for alphanumeric characters. When Greek characters are used, please do not use “symbol” fonts, but use the Unicode characters with the font, Times New Roman. For how to input the Unicode characters from “0391” to “03C9” for Greek characters, please refer to the Microsoft Support Service ( https://support.microsoft.com/ ) to input “Special Characters” or to insert mathematical symbols using “Equation tools”. The simple alternative is to copy and paste the Greek characters from the examples in the Template.
+
+    Figures and Tables should be embedded in the template file at the appropriate locations. Tables and captions should be inserted using the Text-box tool in Microsoft Word. In addition, the authors are requested to submit those figures separately in order to show high-resolution figures in the HTML version on the BPPB website, as indicated below.
+
+   At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required, but it is not necessary for “Editorial” or “Commentary and Perspective”.
+
+ Text footnotes are not allowed at all from page 2 onwards.
+
+ (2) Tables 
+
+   All tables must be cited in the text. Number the tables consecutively with Arabic numerals (for example “Table 3”), in the order of their appearance in the text. Supply a short explanatory title above the body of the table, and table footnotes lettered a, b, c, and so forth, below the body of the table. Do not use vertical lines.
+
+ (3) Figures 
+
+   All figures must be cited in the text. Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text. The dimensions of each illustration, photograph, or composite imagery should be no larger than the size of the manuscript page. 
+
+   Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats . 
+
+ (4) Supplementary materials 
+
+ It is not necessary to add a cover page for Supplementary materials.
+
+ As Supplementary materials, image files should be in PDF, TXT or ZIP format, and movie files in MPEG or AVI format. 
+
+ The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.
+
+ Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.
+
+ Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1” .
+
+ When a text with or without Supplementary Figures and/or Supplementary Tables is added as a Supplementary Text , please upload the PDF file.
+
+ Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.
+
+ (5) Graphical Abstract 
+
+   One figure in color or monochrome that depicts the content of the manuscript should be attached. The figure is used as the graphical abstract, which appears on the J-STAGE website, for every paper except “Editorial” or “Commentary and Perspective” papers, and it will be considered as a candidate for the Cover Picture of the current or next Volume. The figure should not infringe the copyright of any publication. The figure may be the same as one, or a part of one, that appears in the manuscript. The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.
+
+   When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure(s). The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.
+
+ (6) References 
+
+   References should be numbered sequentially as they appear in the text, tables and figure legends. When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’. References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data). Be sure to verify the wording of any personal communication with the person who supplied the information and obtain his/her approval for the use of his/her name in connection with the quoted information. 
+
+   All references should be listed in numerical order, starting on a new page, under the heading “References”.
+
+   Please use normal fonts for the Reference list without using italics or boldface, except for some special characters in the article title. Abbreviated Journal titles follow the Index Medicus/MEDLINE format, which can be found at NLM Catalog: Journals referenced in the NCBI Database: https://www.ncbi.nlm.nih.gov/nlmcatalog/journals/ 
+
+ When the Reference has a Digital Object Identifier (DOI), it should be added by its URL. The DOI for each Reference can be searched, for example, using the “free DOI lookup site” provided by Crossref: https://www.crossref.org/guestquery/ . Please follow the bibliographic style for the Reference list as in the next examples.
+
+ For a journal article with less than seven authors, list all the authors:
+
+ [1]
+
+ Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1 
+
+ For more than six authors, list the first six authors followed by “et al.”:
+
+ [2]
+
+ Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod- fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016). https://doi.org/10.2142/biophysico.13.0_13 
+
+ For a chapter in an edited book:
+
+ [3]
+
+ Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).
+
+ For a book by one or more authors:
+
+ [4]
+
+ Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).
+
+ For an article in a preprint server by one or more authors:
+
+ [5]
+
+ Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044 
+
+   If an article has been accepted for publication by a journal, but has not yet appeared in print, the reference should be styled as follows:
+
+ [6]
+
+ Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). 
+
+ https://doi.org/10.1038/nature02212 
+
+   When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).
+
+   The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.
+
+   The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.
+
+   The procedure to obtain the citation style by the Mendeley system is briefly described by the BPPB Editorial office, and it is available at https://www.biophys.jp/dl/biophysics_and_physicobiology/MendeleyUsageForBPPB.zip . For the Zotero system, it is also available at https://www.biophys.jp/dl/biophysics_and_physicobiology/ZoteroUsageForBPPB.zip .
+
+   The output style for EndNote, “ Biophysics_and_Physicobiology.ens ” was prepared courtesy of USACO Corporation, https://www.usaco.co.jp/endnote/ , and its usage is described at https://support.clarivate.com/Endnote/s/article/EndNote-Install-Additional-Output-Styles?language=en_US .
+
+   The above tools or web sites for the bibliographic style do not always provide the correct citation style, which the BPPB requests. The authors are required to confirm the citation style before submitting their article.
+
+ 6. General policy for ethics of the journal
+
+   Authors must declare the following information before the Reference section.
+
+ (1) Conflicts of interest 
+
+   The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work. The following is an example of such a statement:
+ A, B, and C declare that they have no conflict of interest.
+
+ D declares that she has no conflict of interest. 
+
+ E has received research grants from Drug Company F.
+
+ (2) Ethics standard 
+
+   Any submitted manuscript should be the authors’ own original work that has not been previously published elsewhere. The editors assume that the submitted manuscript should include appropriate credit for the meaningful contributions of co-authors and co-researchers, and should be appropriately placed in the history of the research. Plagiarism in all its forms constitutes unethical publishing behavior and is unacceptable. Duplicated submission is not allowed even when the other publication is not made in English. The editors reserve the right to check for plagiarism if doubt arises. 
+
+   Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.
+
+   Authors may be asked to provide raw data in connection with the manuscript, and should be prepared to provide access to such data for a reasonable time after publication. Sequence and structural information of biological materials should be submitted to public databases and an Identification code should be obtained before submitting the manuscript. The identification code should be given in the manuscript.
+
+   For original research manuscripts, reporting experiments on live vertebrates and/or higher invertebrates, authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments in the methods section. For experiments involving human subjects, authors must identify the committee approving the experiments, and include with their submission a statement confirming that informed consent was obtained from all subjects. All experiments must have been conducted according to the principles expressed in the Declaration of Helsinki and the Methods section must include the required ethics statements. See, for example, the NIH ethical guidelines. https://clinicalcenter.nih.gov/recruit/ethics.html 
+
+ (3) Informed consent 
+
+   If the subjects are human, authors are required to ensure that the following guidelines are followed, as recommended by the International Committee of Medical Journal Editors. See, for example, “Uniform requirements for manuscripts submitted to biomedical journals” (1997), Pathology, Vol. 29, No. 4, Pages 441–447. https://doi.org/10.1080/00313029700169515 . When informed consent has been obtained, it should be indicated in the submitted article. Identifying information, including subjects’ names, initials, or hospital numbers, should not be published in written descriptions, photographs, or pedigrees unless the information is essential for scientific purposes and the patient (or parent or guardian) gives written informed consent for publication.
+
+ (4) Author contribution 
+
+   All persons designated as authors should qualify for authorship. 
+
+   To qualify for authorship, an author should contribute to:
+
+ Conception and design of the work, acquisition of data, or analysis and interpretation of data,
+
+ Drafting the article or revising important aspects of the intellectual content, and 
+
+ Final approval of the version to be published.
+
+   The contribution of all the authors should be listed in a separate section at the end of the manuscript. For example,
+
+ • A, B, and C directed the entire project and co-wrote the manuscript. 
+
+ • D synthesized and characterized materials. E carried out diffractometry analyses. F performed NMR measurements.
+
+ • G and H carried out ab initio calculations.
+
+ For an article by a single author, the example is as follows:
+
+ • J designed the research, performed the experiments, analyzed data and
+wrote the manuscript.
+
+ The Corresponding Author(s) assumes full responsibility for the manuscript throughout the submission, peer review, and production stages, including the settlement of Article Processing Charges upon publication unless exempted by Editor-in-Chief.
+
+ (5) Data availability 
+
+   Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example,
+
+ • The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request. 
+
+   In addition, the authors are encouraged to include supporting digital data for all graphs, tables, and similar contents as Supplementary Materials and/or on J-STAGE Data.
+
+   When the data are not publicly available due to a special reason, for example, privacy, ethical restriction or legal restriction, please describe the reason clearly.
+
+   When the relating raw data to the results of the article are provided as evidence data by the authors, the name of data repository with the data Identification and/or the DOI information, if possible, should be described at the end of the manuscript. For example,
+
+ • Genetic and/or genomic sequence data were deposited to the DDBJ/ENA/GenBank (INSDC: https://www.insdc.org/ ) under the accession number: ??????.
+
+ • Coordinates, structure factors and its validation report of protein X were deposited to the Protein Data Bank ( https://www.wwpdb.org/ ) under the PDBID: ???? with the DOI of https://doi.org/10.2210/pdb????/pdb.
+
+ • The trajectory and a series of snapshots for the current molecular simulation study were deposited to BSM-Arc ( https://bsma.pdbj.org/ ) with the DOI of https://doi.org/10.51093/bsm-????
+
+ • Quantitative biological data and microscopy images analyzed in this study were deposited to SSBD (Systems Science of Biological Dynamics database: https://ssbd.riken.jp ) with the DOI of https://doi.org/10.24631/ssbd.repos.????.??.???"
+
+ • The original raw data that support the findings of the current study are available in J-STAGE Data ( https://jstagedata.jst.go.jp/biophysico ) with the DOI of https://doi.org/10.34600/data.biophysico.????
+
+ (6) Policy for Large Language Models (LLMs) and Generative Artificial Intelligence (AI) 
+
+   Although the scientific content in every submitted article should reflect the authors’ own research, Large Language Models (LLMs) and Generative Artificial Intelligence (AI) may be used to support authors in preparing their manuscript, for example, in searching previous studies and in revising English grammar. For these specific applications, a formal declaration of the use of an LLM or Generative AI is not required. 
+
+   However, in instances where LLM or Generative AI has provided a substantial contribution to the development of the manuscript, a comprehensive description of its application, including the name of the specific tool and version information, must be appended to the Acknowledgements section. This requirement ensures that readers possess the necessary information for validation and reproducibility of the results. Moreover, the generation of images intended for article figures using Generative AI or any other AI-driven tools is strictly forbidden, owing to the significant potential for infringement of third-party copyrights.
+
+   Peer reviewers are strictly prohibited from uploading manuscripts designated for review into Generative AI tools and/or any other internet-based translation platforms. This mandate is essential to preserve the confidentiality and security of the manuscripts, as they constitute non-publicly available information. In contrast, the Editorial Office is currently developing an internal “AI Reviewer” to assess manuscripts through secure, non-public Generative AI systems. The output of these evaluations will be provided to the Editor-in-Charge, and to the human peer reviewers upon request.
+
+ 7. Publication fees
+
+   The publication fee for an accepted manuscript in any category except “Commentary and Perspective” or “Editorial” is 40,000 JPY plus tax for the authors. 
+
+   The publication fee for an accepted manuscript of the “Commentary and Perspective” or “Editorial” article is 18,000 JPY plus tax.
+
+ 8. Proofs, reprints, and copyright
+
+ (1) Proofs: 
+
+   Proofs are sent as PDF files to the corresponding author by E-mail. The proofs should be corrected and returned to the office within three business days. Copy- editing adjustments will be made to the accepted manuscripts. During proof- reading, the corresponding author is required to check for any undesired changes that may have inadvertently occurred during copy-editing. Extensive correction in the proof-reading process is subject to the evaluation of the editor and reviewers and delays publication.
+
+   When the corrected proofs are returned to the office, the names and their e-mail addresses of 10 persons at maximum, to whom the mails of “Message from BPPB” will be sent, are requested so as to announce the publication of the article by the office.
+
+ (2) Reprints: 
+
+   Reprints may be ordered at cost by returning the order form provided with the proofs. Costs for color pages will be charged to the author.
+
+ (3) Copyright: 
+
+   Papers published in BPPB become the permanent property of the BSJ. Authors retain the right to use their original photographs and figures in their own review articles. Authors also retain the right to use their article in their scientific careers by including the published article in, for instance, a dissertation or a postdoctoral qualification, provided acknowledgement is given to the original source of the publication.
+   All articles in this journal published after Dec 2017 are licensed under a Creative Commons (CC) BY-NC-SA 4.0 license, and after May 2025 either the CC BY-NC-SA 4.0 license or the CC BY license may be selected accordance with the authors’ preference. For articles with the CC BY-NC-SA 4.0 license, when anybody including the authors want to use any materials in each article in BPPB for commercial purposes, except for using them in his or her own review articles, reprint permission from the BPPB office is necessary. In that case, please request the “Form to Reprint Permission” to the BPPB office. For articles distributed under the CC BY 4.0 license, no permission is required provided that appropriate credit is given.
+
+ 9. Corrections and retraction policy
+
+   Corrections are published if the publication record is seriously affected. Amendments are published as an “Erratum”, “Corrigendum”, “Addendum” or “Retraction”. BPPB reserves the right to remove articles. This will only occur where the article is clearly defamatory, or infringes others’ legal rights, or where the article is, or there is good reason to expect it will be, the subject of a court order, or where the article, if acted upon, may pose a serious health risk.
+
+ (1) Errata 
+
+   Errata concern the amendment of mistakes introduced by the journal in editing or production, including errors of omission such as failure to make factual proof corrections requested by authors within the deadline provided by the journal and within journal policy. Errata are generally not published for simple, obvious, typing errors, but are published when an apparently simple error is significant (for example, a Greek mu for an ‘m’ in a unit, or a typing error in the corresponding author’s E-mail address).
+
+ (2) Corrigenda 
+
+   Corrigenda submitted by the original authors are published if the scientific accuracy or reproducibility of the original paper is compromised. All authors must sign corrigenda submitted for publication.
+
+ (3) Addenda 
+
+   Addenda are judged on the significance of the addition to the interpretation of the original publication. Addenda do not contradict the original publication, but if the authors inadvertently omitted significant information available to them at the time, this material will be published as an addendum after peer review.
+
+ (4) Retractions 
+
+   Retractions are judged according to whether the main conclusion of the paper is seriously undetermined as a result. Infringements of professional ethical codes, such as multiple submission, bogus claims of authorship, plagiarism, fraudulent use of data, and the like, will also result in an article being retracted. All co-authors will be asked to agree to a retraction. In cases where some co-authors decline to sign a retraction, the Editor-in-Chief reserves the right to publish the retraction with the dissenting author(s) identified.
+
+ (5) Expression of Concern 
+
+   BPPB may publish an “Expression of Concern”, with a brief response from the original authors when complaints, disagreements over interpretation or other matters arising are addressed to the Editor-in-Chief and do not lead to retraction of the original article.
+
+ Revised 21 August, 2026
+
+ Previous Page 
+
+ Scroll up 
+
+ © Biophysics and Physicobiology. All rights reserved.

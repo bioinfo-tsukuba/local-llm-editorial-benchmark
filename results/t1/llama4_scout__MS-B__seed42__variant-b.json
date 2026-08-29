@@ -1,0 +1,31 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "llama4:scout",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": null,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 21.14,
+  "prompt_tokens": 11473,
+  "output_tokens": 60,
+  "load_s": 0.14,
+  "prefill_tok_s": 686.9,
+  "decode_tok_s": 14.4,
+  "ttft_s": 16.84,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 92115,
+  "peak_size_vram_mib": 84597
+ },
+ "findings": null,
+ "raw_response": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"manuscript\": {\n      \"title\": \"\",\n      \"authors\": [],\n      \"abstract\": \"\",\n      \"text\": \"\",\n      \"references\": [],\n      \"figures\": [],\n      \"tables\": []\n    }\n  }\n}",
+ "thinking_chars": 0
+}

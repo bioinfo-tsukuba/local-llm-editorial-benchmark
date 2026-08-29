@@ -1,0 +1,39 @@
+{
+ "task": "T5",
+ "model": "llama4:scout",
+ "item": "G1",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 3,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 32.13,
+  "prompt_tokens": 1978,
+  "output_tokens": 116,
+  "load_s": 20.18,
+  "prefill_tok_s": 521.9,
+  "decode_tok_s": 17.6,
+  "ttft_s": 23.97,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 76294,
+  "peak_size_vram_mib": 69429
+ },
+ "defects": [
+  {
+   "what": "The figure has a resolution that is likely sufficient for printing, but it is hard to tell without knowing the original size.",
+   "severity": "low"
+  },
+  {
+   "what": "The figure is not in an accepted format (TIFF, PNG, JPEG, or PDF).",
+   "severity": "high"
+  },
+  {
+   "what": "The figure is not cited in the text.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"The figure has a resolution that is likely sufficient for printing, but it is hard to tell without knowing the original size.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"what\": \"The figure is not in an accepted format (TIFF, PNG, JPEG, or PDF).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"The figure is not cited in the text.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

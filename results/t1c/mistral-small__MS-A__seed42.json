@@ -1,0 +1,223 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "mistral-small",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 18,
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "The title should be concise and informative, and should not exceed 150 characters including spaces.",
+   "problem": "The title exceeds 150 characters including spaces.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract exceeds 250 words.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Six keywords are provided.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement exceeds 100 words.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Running title",
+   "rule": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title exceeds 50 characters including spaces.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "footer of page 1",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The ORCID iD of the corresponding author is missing.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Tables should be inserted using the Text-box tool in Microsoft Word.",
+   "problem": "The table is not inserted using the Text-box tool in Microsoft Word.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Do not use vertical lines.",
+   "problem": "The table uses vertical lines.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Tables should be inserted using the Text-box tool in Microsoft Word.",
+   "problem": "The table is not inserted using the Text-box tool in Microsoft Word.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Do not use vertical lines.",
+   "problem": "The table uses vertical lines.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are at 150 dpi, which is below the required 300 dpi.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig4_susceptibility.png is in greyscale but the required resolution is 300 dpi.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "図1_final version.tiff is not in the accepted formats (TIFF, PNG, JPEG or PDF).",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "The file name '図1_final version.tiff' contains Japanese characters and an invalid extension.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "References should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "Reference [5] is listed out of order.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [6]",
+   "rule": "References should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "Reference [6] is listed out of order.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [8] uses 'Personal communication, 2025'.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [11] uses '(in press)'",
+   "severity": "high",
+   "_area": "references"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 43.46,
+   "prompt_tokens": 11901,
+   "output_tokens": 305,
+   "prefill_tok_s": 968.4
+  },
+  {
+   "area": "corresponding-author",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 18.54,
+   "prompt_tokens": 11897,
+   "output_tokens": 79,
+   "prefill_tok_s": 978.7
+  },
+  {
+   "area": "structure",
+   "n": 0,
+   "parse_error": "salvaged",
+   "wall_s": 688.36,
+   "prompt_tokens": 11892,
+   "output_tokens": 8192,
+   "prefill_tok_s": 978.4
+  },
+  {
+   "area": "tables",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 29.57,
+   "prompt_tokens": 11900,
+   "output_tokens": 217,
+   "prefill_tok_s": 978.6
+  },
+  {
+   "area": "figures",
+   "n": 3,
+   "parse_error": null,
+   "wall_s": 38.4,
+   "prompt_tokens": 11902,
+   "output_tokens": 327,
+   "prefill_tok_s": 978.4
+  },
+  {
+   "area": "supplementary",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 18.66,
+   "prompt_tokens": 11898,
+   "output_tokens": 80,
+   "prefill_tok_s": 974.3
+  },
+  {
+   "area": "references",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 34.56,
+   "prompt_tokens": 11917,
+   "output_tokens": 277,
+   "prefill_tok_s": 962.8
+  },
+  {
+   "area": "ethics",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 688.83,
+   "prompt_tokens": 11915,
+   "output_tokens": 8192,
+   "prefill_tok_s": 962.5
+  }
+ ],
+ "meta": {
+  "wall_s": 1561.5,
+  "output_tokens": 17669,
+  "prompt_tokens": 95222,
+  "peak_mem_used_mib": 25362,
+  "peak_size_vram_mib": 20574
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

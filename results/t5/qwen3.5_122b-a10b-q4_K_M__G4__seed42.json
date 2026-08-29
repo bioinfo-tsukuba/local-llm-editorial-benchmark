@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "qwen3.5:122b-a10b-q4_K_M",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "wall_s": 26.13,
+  "prompt_tokens": 1246,
+  "output_tokens": 508,
+  "load_s": 0.17,
+  "prefill_tok_s": 539.9,
+  "decode_tok_s": 22.6,
+  "ttft_s": 2.48,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 89991,
+  "peak_size_vram_mib": 82749
+ },
+ "defects": [
+  {
+   "what": "Table supplied as image instead of using Microsoft Word Text-box tool",
+   "severity": "high"
+  },
+  {
+   "what": "Table contains vertical lines which are explicitly forbidden",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\"defects\": [\n  {\"what\": \"Table supplied as image instead of using Microsoft Word Text-box tool\", \"severity\": \"high\"},\n  {\"what\": \"Table contains vertical lines which are explicitly forbidden\", \"severity\": \"high\"}\n]}\n```",
+ "thinking_chars": 2062
+}

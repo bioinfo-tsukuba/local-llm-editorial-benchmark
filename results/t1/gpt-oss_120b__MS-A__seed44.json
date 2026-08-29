@@ -1,0 +1,78 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-A",
+ "seed": 44,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "think": "low",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 8,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 25.39,
+  "prompt_tokens": 11527,
+  "output_tokens": 905,
+  "load_s": 0.16,
+  "prefill_tok_s": 377444.5,
+  "decode_tok_s": 37.4,
+  "ttft_s": 0.19,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 71606,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "Running title",
+   "rule": "Running title must not exceed 50 characters including spaces.",
+   "problem": "The running title \"Coarse-grained elastic network analysis of allosteric coupling in ring ATPases\" is longer than 50 characters.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Abstract must not include references.",
+   "problem": "The abstract contains a citation \"[12]\".",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References to unpublished work such as “In preparation” or personal communications are not allowed in the reference list.",
+   "problem": "Reference [5] is listed as \"In preparation\" and reference [8] is a personal communication, both prohibited.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure files",
+   "rule": "Figures must be at a resolution of 300 dpi.",
+   "problem": "Figure files Fig1_modes.bmp and Fig2_spectra.bmp are only 150 dpi.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File names must not contain spaces or Japanese (multi-byte) characters and must use only alphanumeric characters.",
+   "problem": "Supplementary file \"図1_final version.tiff\" contains Japanese characters and spaces.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Each uploaded file must be no larger than 20 MB; larger files should be deposited in a data repository.",
+   "problem": "Supplementary movie \"Suppl_Movie_1.mov\" is 45 MB, exceeding the 20 MB limit.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "When a DOI is provided, it should be given as a URL (e.g., https://doi.org/...).",
+   "problem": "Reference [4] lists the DOI as \"doi:10.1016/...\" instead of a URL.",
+   "severity": "medium"
+  },
+  {
+   "location": "Author information",
+   "rule": "The complete postal address and ORCID iD of the corresponding author must be indicated on the footer of page 1.",
+   "problem": "The manuscript does not show the ORCID iD or a footer with the full address for the corresponding author.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Running title\",\n      \"rule\": \"Running title must not exceed 50 characters including spaces.\",\n      \"problem\": \"The running title \\\"Coarse-grained elastic network analysis of allosteric coupling in ring ATPases\\\" is longer than 50 characters.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"Abstract must not include references.\",\n      \"problem\": \"The abstract contains a citation \\\"[12]\\\".\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References to unpublished work such as “In preparation” or personal communications are not allowed in the reference list.\",\n      \"problem\": \"Reference [5] is listed as \\\"In preparation\\\" and reference [8] is a personal communication, both prohibited.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Figure files\",\n      \"rule\": \"Figures must be at a resolution of 300 dpi.\",\n      \"problem\": \"Figure files Fig1_modes.bmp and Fig2_spectra.bmp are only 150 dpi.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"File names must not contain spaces or Japanese (multi-byte) characters and must use only alphanumeric characters.\",\n      \"problem\": \"Supplementary file \\\"図1_final version.tiff\\\" contains Japanese characters and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Each uploaded file must be no larger than 20 MB; larger files should be deposited in a data repository.\",\n      \"problem\": \"Supplementary movie \\\"Suppl_Movie_1.mov\\\" is 45 MB, exceeding the 20 MB limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When a DOI is provided, it should be given as a URL (e.g., https://doi.org/...).\",\n      \"problem\": \"Reference [4] lists the DOI as \\\"doi:10.1016/...\\\" instead of a URL.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Author information\",\n      \"rule\": \"The complete postal address and ORCID iD of the corresponding author must be indicated on the footer of page 1.\",\n      \"problem\": \"The manuscript does not show the ORCID iD or a footer with the full address for the corresponding author.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 1562
+}

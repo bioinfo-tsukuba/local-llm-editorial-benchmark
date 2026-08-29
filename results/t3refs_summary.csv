@@ -1,0 +1,18 @@
+model,seed,error,wall_s,in_tok,out_tok,prefill_tok_s,decode_tok_s,ttft_s,peak_vram_mib,n_items,fully_correct,accuracy,one_defect_only,detail
+command-r-plus,42,,320.29,7663,771,197.4,3.6,98.61,0,8,5,0.625,2,R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url/present:&/present:PNAS;R8:missing:any-of-expected
+gemma4,42,,65.32,7473,3105,4169.4,55.1,8.89,0,8,5,0.625,2,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url/present:PNAS
+glm-4.5-air:q4,42,,467.0,7148,4847,574.4,16.5,165.94,82289,8,4,0.5,4,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:doi_url;R8:missing:any-of-expected
+gpt-oss:120b,42,,78.99,7230,786,638.1,19.6,37.44,63818,8,5,0.625,2,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url
+gpt-oss:20b,42,,20.97,7230,671,3211.8,55.1,7.93,14193,8,5,0.625,1,R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:doi_url/present:PNAS;R7:missing:et al./present:Kinosita
+hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0,42,salvaged,57.48,7210,979,1443.2,39.8,32.75,33547,8,2,0.25,0,R2:missing:et al./present:Aizawa;R4:absent;R5:absent;R6:absent;R7:absent;R8:absent
+llama4:scout,42,,55.34,7057,237,439.0,15.2,39.38,74485,8,0,0.0,0,R1:absent;R2:absent;R3:absent;R4:absent;R5:absent;R6:absent;R7:absent;R8:absent
+magistral,42,,76.07,7454,800,979.0,13.0,14.53,20574,8,6,0.75,1,R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url/present:PNAS
+mistral-small,42,,75.76,7454,793,976.8,13.0,14.77,20574,8,6,0.75,1,R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/volume/pages/year/doi_url
+nemotron,42,,242.03,7190,774,296.4,4.4,66.72,0,8,0,0.0,0,R1:absent;R2:absent;R3:absent;R4:absent;R5:absent;R6:absent;R7:absent;R8:absent
+qwen3.5:122b-a10b-q4_K_M,42,,498.51,7500,9779,494.7,22.0,40.41,83259,8,6,0.75,1,R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url/present:PNAS
+qwen3.5:35b-a3b-bf16,42,,317.79,7500,7777,741.5,28.2,30.98,71619,8,5,0.625,2,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url
+qwen3.6:27b,42,,814.0,7500,8400,585.6,10.7,19.26,23572,8,5,0.625,3,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:doi_url
+qwen3.6:35b-a3b-bf16,42,,350.52,7500,8263,726.4,27.2,35.8,71046,8,5,0.625,2,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url/present:PNAS
+qwen3.6:35b-a3b-q4_K_M,42,,166.13,7500,7426,1389.8,51.7,11.84,25820,8,5,0.625,3,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:doi_url
+qwen3.6:35b-a3b-q8_0,42,,219.81,7500,7944,1263.2,41.3,16.03,39895,8,5,0.625,3,R2:doi_url;R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:doi_url
+qwen3.8:27b,42,,125.04,7498,3742,799.0,34.3,15.73,16723,8,6,0.75,1,R4:present:THERMODYNAMICS OF THE POLYMERIZATION;R6:journal/doi_url

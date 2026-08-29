@@ -1,0 +1,57 @@
+{
+ "task": "t7",
+ "model": "gpt-oss:120b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 5,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 26.09,
+  "prompt_tokens": 8915,
+  "output_tokens": 676,
+  "load_s": 0.19,
+  "prefill_tok_s": 1171.4,
+  "decode_tok_s": 38.6,
+  "ttft_s": 7.8,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 71753,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "References section",
+   "rule": "References to “in preparation” are not allowed in the Reference list.",
+   "problem": "Reference [5] is listed as \"In preparation.\"",
+   "severity": "high"
+  },
+  {
+   "location": "References section",
+   "rule": "References must be listed in numerical order as they appear in the text.",
+   "problem": "Reference [6] appears after reference [7] in the list, breaking sequential order.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution of 300 dpi.",
+   "problem": "Figure file \"Fig1_two_readings.bmp\" is only 150 dpi.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File names must not contain spaces or Japanese characters and must use only allowed extensions (pdf, txt, zip, mpeg, avi).",
+   "problem": "Supplementary file \"図1_draft version.bmp\" contains Japanese characters, a space, and uses a .bmp extension which is not permitted.",
+   "severity": "high"
+  },
+  {
+   "location": "Tables section",
+   "rule": "Tables must not use vertical lines.",
+   "problem": "The table uses the \"|\" character to create vertical lines.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"References section\",\n      \"rule\": \"References to “in preparation” are not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] is listed as \\\"In preparation.\\\"\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References section\",\n      \"rule\": \"References must be listed in numerical order as they appear in the text.\",\n      \"problem\": \"Reference [6] appears after reference [7] in the list, breaking sequential order.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Figure file list\",\n      \"rule\": \"Figures must be at a resolution of 300 dpi.\",\n      \"problem\": \"Figure file \\\"Fig1_two_readings.bmp\\\" is only 150 dpi.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"File names must not contain spaces or Japanese characters and must use only allowed extensions (pdf, txt, zip, mpeg, avi).\",\n      \"problem\": \"Supplementary file \\\"図1_draft version.bmp\\\" contains Japanese characters, a space, and uses a .bmp extension which is not permitted.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Tables section\",\n      \"rule\": \"Tables must not use vertical lines.\",\n      \"problem\": \"The table uses the \\\"|\\\" character to create vertical lines.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 1574
+}

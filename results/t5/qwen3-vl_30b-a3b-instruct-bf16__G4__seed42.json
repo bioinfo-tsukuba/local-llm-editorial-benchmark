@@ -1,0 +1,30 @@
+{
+ "task": "T5",
+ "model": "qwen3-vl:30b-a3b-instruct-bf16",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3-vl:30b-a3b-instruct-bf16",
+  "wall_s": 2.88,
+  "prompt_tokens": 1231,
+  "output_tokens": 38,
+  "load_s": 0.08,
+  "prefill_tok_s": 1065.9,
+  "decode_tok_s": 33.2,
+  "ttft_s": 1.24,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 97016,
+  "peak_size_vram_mib": 61424
+ },
+ "defects": [
+  {
+   "what": "The table uses vertical lines, which are not allowed according to the Instructions for Authors.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\"defects\": [{\"what\": \"The table uses vertical lines, which are not allowed according to the Instructions for Authors.\", \"severity\": \"high\"}]}\n```",
+ "thinking_chars": 0
+}

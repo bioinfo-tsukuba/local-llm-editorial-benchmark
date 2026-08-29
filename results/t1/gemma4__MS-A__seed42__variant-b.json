@@ -1,0 +1,172 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "gemma4",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 20,
+ "meta": {
+  "model": "gemma4",
+  "wall_s": 106.38,
+  "prompt_tokens": 12108,
+  "output_tokens": 4972,
+  "load_s": 7.44,
+  "prefill_tok_s": 3989.6,
+  "decode_tok_s": 51.9,
+  "ttft_s": 10.47,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 32736,
+  "peak_size_vram_mib": 0
+ },
+ "findings": [
+  {
+   "area": 1,
+   "location": "Running title",
+   "rule": "Running Title not exceeding 50 characters including spaces.",
+   "problem": "The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' exceeds the 50-character limit.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are listed, exceeding the maximum limit of five.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement contains approximately 130 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Corresponding author details",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author's ORCID iD is missing from the required location on page 1.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Section order/presence",
+   "rule": "Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability , ... should be arranged in this order.",
+   "problem": "The required sections 'Conclusion' and 'Data availability' are missing from the manuscript.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Table 1",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is presented but is not cited anywhere in the main body text.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Table 1 footnotes",
+   "rule": "Table footnotes lettered a, b, c, and so forth, below the body of the table.",
+   "problem": "The footnotes for Table 1 use numbered points (1, 2, 3) instead of the required lettered format (a, b, c).",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figure 3",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 3 is included in the file list and legends but is not explicitly cited in the main body text.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figure file list (Fig1_modes.bmp, Fig2_spectra.bmp)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "The resolution for Fig1_modes.bmp and Fig2_spectra.bmp is listed as 150 dpi, which is below the required 300 dpi minimum.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Graphical abstract caption",
+   "rule": "When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure(s).",
+   "problem": "The graphical abstract caption contains approximately 120 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials file list",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name '図1_final version.tiff' contains Japanese characters ('図').",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials file list (Suppl_Movie_1.mov)",
+   "rule": "When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data.",
+   "problem": "The file 'Suppl_Movie_1.mov' is 45 MB, which is larger than 20 MB, but the manuscript does not indicate that it has been uploaded to J-STAGE Data.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Introduction",
+   "rule": "When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.",
+   "problem": "The citation (1, 2) in the Introduction uses parentheses, not the required bracketed format.",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] contains the phrase 'In preparation.'",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Reference [11]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [11] contains the phrase '(in press)', which is prohibited wording.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Reference [8]",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information.",
+   "problem": "Reference [8] is a personal communication and is incorrectly listed in the References section.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Reference [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "The DOI for Reference [4] is listed with a colon prefix ('doi:10.1016/S0006-3495(01)76033-X') instead of the required full URL format (https://doi.org/...).",
+   "severity": "medium"
+  },
+  {
+   "area": 8,
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word 'Novel'.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The abstract contains the phrase 'for the first time', which is prohibited wording.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Data availability statement",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described...",
+   "problem": "A Data availability statement is required but is missing from the manuscript.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"area\": 1,\n      \"location\": \"Running title\",\n      \"rule\": \"Running Title not exceeding 50 characters including spaces.\",\n      \"problem\": \"The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' exceeds the 50-character limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"Seven keywords are listed, exceeding the maximum limit of five.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Significance statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n      \"problem\": \"The significance statement contains approximately 130 words, exceeding the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Corresponding author details\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The corresponding author's ORCID iD is missing from the required location on page 1.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Section order/presence\",\n      \"rule\": \"Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability , ... should be arranged in this order.\",\n      \"problem\": \"The required sections 'Conclusion' and 'Data availability' are missing from the manuscript.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table 1\",\n      \"rule\": \"All tables must be cited in the text.\",\n      \"problem\": \"Table 1 is presented but is not cited anywhere in the main body text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table 1 footnotes\",\n      \"rule\": \"Table footnotes lettered a, b, c, and so forth, below the body of the table.\",\n      \"problem\": \"The footnotes for Table 1 use numbered points (1, 2, 3) instead of the required lettered format (a, b, c).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figure 3\",\n      \"rule\": \"All figures must be cited in the text.\",\n      \"problem\": \"Figure 3 is included in the file list and legends but is not explicitly cited in the main body text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figure file list (Fig1_modes.bmp, Fig2_spectra.bmp)\",\n      \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.\",\n      \"problem\": \"The resolution for Fig1_modes.bmp and Fig2_spectra.bmp is listed as 150 dpi, which is below the required 300 dpi minimum.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure(s).\",\n      \"problem\": \"The graphical abstract caption contains approximately 120 words, exceeding the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials file list\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The file name '図1_final version.tiff' contains Japanese characters ('図').\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials file list (Suppl_Movie_1.mov)\",\n      \"rule\": \"When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data.\",\n      \"problem\": \"The file 'Suppl_Movie_1.mov' is 45 MB, which is larger than 20 MB, but the manuscript does not indicate that it has been uploaded to J-STAGE Data.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Introduction\",\n      \"rule\": \"When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\",\n      \"problem\": \"The citation (1, 2) in the Introduction uses parentheses, not the required bracketed format.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] contains the phrase 'In preparation.'\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [11]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [11] contains the phrase '(in press)', which is prohibited wording.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [8]\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information.\",\n      \"problem\": \"Reference [8] is a personal communication and is incorrectly listed in the References section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [4]\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"The DOI for Reference [4] is listed with a colon prefix ('doi:10.1016/S0006-3495(01)76033-X') instead of the required full URL format (https://doi.org/...).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Title\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The title contains the word 'Novel'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The abstract contains the phrase 'for the first time', which is prohibited wording.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Data availability statement\",\n      \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described...\",\n      \"problem\": \"A Data availability statement is required but is missing from the manuscript.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 12805
+}

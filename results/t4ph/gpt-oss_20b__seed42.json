@@ -1,0 +1,52 @@
+{
+ "task": "t4ph",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "answers",
+ "n_items": 5,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 5.52,
+  "prompt_tokens": 4963,
+  "output_tokens": 202,
+  "load_s": 0.14,
+  "prefill_tok_s": 3262.2,
+  "decode_tok_s": 56.0,
+  "ttft_s": 1.66,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 20071,
+  "peak_size_vram_mib": 14193
+ },
+ "answers": [
+  {
+   "id": "F1",
+   "exists": false,
+   "answer": "The manuscript does not contain a Reference [13]; therefore the question about its style cannot be answered."
+  },
+  {
+   "id": "F2",
+   "exists": false,
+   "answer": "The manuscript does not include a Data availability statement that names a repository and an accession code."
+  },
+  {
+   "id": "F3",
+   "exists": false,
+   "answer": "Table 3 is not present in the manuscript; hence its caption cannot be evaluated."
+  },
+  {
+   "id": "F4",
+   "exists": false,
+   "answer": "The manuscript does not contain any statement that experiments were approved by an institutional review board."
+  },
+  {
+   "id": "F5",
+   "exists": false,
+   "answer": "The manuscript does not provide an ORCID iD for the corresponding author, so its formatting cannot be assessed."
+  }
+ ],
+ "raw_response": "{\"answers\":[{\"id\":\"F1\",\"exists\":false,\"answer\":\"The manuscript does not contain a Reference [13]; therefore the question about its style cannot be answered.\"},{\"id\":\"F2\",\"exists\":false,\"answer\":\"The manuscript does not include a Data availability statement that names a repository and an accession code.\"},{\"id\":\"F3\",\"exists\":false,\"answer\":\"Table 3 is not present in the manuscript; hence its caption cannot be evaluated.\"},{\"id\":\"F4\",\"exists\":false,\"answer\":\"The manuscript does not contain any statement that experiments were approved by an institutional review board.\"},{\"id\":\"F5\",\"exists\":false,\"answer\":\"The manuscript does not provide an ORCID iD for the corresponding author, so its formatting cannot be assessed.\"}]}",
+ "thinking_chars": 140
+}

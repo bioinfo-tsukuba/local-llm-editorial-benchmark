@@ -1,0 +1,26 @@
+{
+ "task": "T5",
+ "model": "qwen3.8:27b",
+ "item": "G3",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 0,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 19.33,
+  "prompt_tokens": 3046,
+  "output_tokens": 332,
+  "load_s": 0.0,
+  "prefill_tok_s": 498.0,
+  "decode_tok_s": 25.5,
+  "ttft_s": 6.12,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 26492,
+  "peak_size_vram_mib": 16627
+ },
+ "defects": [],
+ "raw_response": "{\"defects\": []}",
+ "thinking_chars": 1331
+}

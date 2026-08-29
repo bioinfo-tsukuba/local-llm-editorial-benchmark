@@ -1,0 +1,81 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "nemotron",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 7,
+ "meta": {
+  "model": "nemotron",
+  "wall_s": 158.01,
+  "prompt_tokens": 11759,
+  "output_tokens": 605,
+  "load_s": 0.12,
+  "prefill_tok_s": 664.7,
+  "decode_tok_s": 4.3,
+  "ttft_s": 17.81,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 66703,
+  "peak_size_vram_mib": 0
+ },
+ "findings": [
+  {
+   "area": "1",
+   "location": "Abstract",
+   "rule": "Abstract word limit (250 words)",
+   "problem": "Abstract exceeds 250 words (current word count: 266)",
+   "severity": "medium"
+  },
+  {
+   "area": "1",
+   "location": "Significance statement",
+   "rule": "Significance statement word limit (100 words)",
+   "problem": "Significance statement exceeds 100 words (current word count: 106)",
+   "severity": "medium"
+  },
+  {
+   "area": "2",
+   "location": "Page 1 footer",
+   "rule": "Complete postal address and ORCID iD of corresponding author",
+   "problem": "ORCID iD provided, but only partial postal address (missing postal code)",
+   "severity": "low"
+  },
+  {
+   "area": "5",
+   "location": "Figure file list",
+   "rule": "Figures must be in TIFF, PNG, JPEG, or PDF format",
+   "problem": "Figure 3 is in PNG format (allowed), but Figure 4 is in PNG (allowed) and Figure 1 & 2 are in TIFF (allowed), however, the format for Graphical_abstract.png is not explicitly restricted, but Supplementary Movie S1 is in MPEG format which is allowed, yet its size (18 MB) exceeds the 20 MB limit for supplementary materials not uploaded to J-STAGE Data",
+   "severity": "medium"
+  },
+  {
+   "area": "6",
+   "location": "Supplementary materials",
+   "rule": "Supplementary materials file size limit (20 MB) or upload to J-STAGE Data",
+   "problem": "Supplementary Movie S1 exceeds 20 MB limit (18 MB is below the limit, however, the instruction is not followed as it is not uploaded to J-STAGE Data, but this is not a violation as per the rule, yet it is good to follow the instruction)",
+   "severity": "low"
+  },
+  {
+   "area": "6",
+   "location": "Supplementary materials file naming",
+   "rule": "Supplementary materials file names should follow a specific format (e.g., Supplementary Text S1, Supplementary Table S1, Supplementary Figure S1)",
+   "problem": "Supplementary materials file names do not strictly follow the recommended format (e.g., SupplementaryFigureS1.pdf instead of Supplementary Figure S1.pdf)",
+   "severity": "low"
+  },
+  {
+   "area": "8",
+   "location": "Ethics and policy statements",
+   "rule": "Institutional and/or licensing committee approval for experiments on live vertebrates and/or higher invertebrates",
+   "problem": "Approval number provided (2025-041), but the statement could be more explicit about the committee's role in approving the experiments",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\"area\": \"1\",\n   \"location\": \"Abstract\",\n   \"rule\": \"Abstract word limit (250 words)\",\n   \"problem\": \"Abstract exceeds 250 words (current word count: 266)\",\n   \"severity\": \"medium\"\n  },\n  {\"area\": \"1\",\n   \"location\": \"Significance statement\",\n   \"rule\": \"Significance statement word limit (100 words)\",\n   \"problem\": \"Significance statement exceeds 100 words (current word count: 106)\",\n   \"severity\": \"medium\"\n  },\n  {\"area\": \"2\",\n   \"location\": \"Page 1 footer\",\n   \"rule\": \"Complete postal address and ORCID iD of corresponding author\",\n   \"problem\": \"ORCID iD provided, but only partial postal address (missing postal code)\",\n   \"severity\": \"low\"\n  },\n  {\"area\": \"5\",\n   \"location\": \"Figure file list\",\n   \"rule\": \"Figures must be in TIFF, PNG, JPEG, or PDF format\",\n   \"problem\": \"Figure 3 is in PNG format (allowed), but Figure 4 is in PNG (allowed) and Figure 1 & 2 are in TIFF (allowed), however, the format for Graphical_abstract.png is not explicitly restricted, but Supplementary Movie S1 is in MPEG format which is allowed, yet its size (18 MB) exceeds the 20 MB limit for supplementary materials not uploaded to J-STAGE Data\",\n   \"severity\": \"medium\"\n  },\n  {\"area\": \"6\",\n   \"location\": \"Supplementary materials\",\n   \"rule\": \"Supplementary materials file size limit (20 MB) or upload to J-STAGE Data\",\n   \"problem\": \"Supplementary Movie S1 exceeds 20 MB limit (18 MB is below the limit, however, the instruction is not followed as it is not uploaded to J-STAGE Data, but this is not a violation as per the rule, yet it is good to follow the instruction)\",\n   \"severity\": \"low\"\n  },\n  {\"area\": \"6\",\n   \"location\": \"Supplementary materials file naming\",\n   \"rule\": \"Supplementary materials file names should follow a specific format (e.g., Supplementary Text S1, Supplementary Table S1, Supplementary Figure S1)\",\n   \"problem\": \"Supplementary materials file names do not strictly follow the recommended format (e.g., SupplementaryFigureS1.pdf instead of Supplementary Figure S1.pdf)\",\n   \"severity\": \"low\"\n  },\n  {\"area\": \"8\",\n   \"location\": \"Ethics and policy statements\",\n   \"rule\": \"Institutional and/or licensing committee approval for experiments on live vertebrates and/or higher invertebrates\",\n   \"problem\": \"Approval number provided (2025-041), but the statement could be more explicit about the committee's role in approving the experiments\",\n   \"severity\": \"low\"\n  }\n]}",
+ "thinking_chars": 0
+}

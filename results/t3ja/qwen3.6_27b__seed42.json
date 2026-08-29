@@ -1,0 +1,78 @@
+{
+ "task": "t3ja",
+ "model": "qwen3.6:27b",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "answers",
+ "n_items": 10,
+ "meta": {
+  "model": "qwen3.6:27b",
+  "wall_s": 467.16,
+  "prompt_tokens": 7227,
+  "output_tokens": 4844,
+  "load_s": 0.14,
+  "prefill_tok_s": 582.7,
+  "decode_tok_s": 10.8,
+  "ttft_s": 12.54,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 29393,
+  "peak_size_vram_mib": 23572
+ },
+ "answers": [
+  {
+   "id": "J1",
+   "answer": "250語まで。文献引用は不可。",
+   "basis": "An abstract of no more than 250 words is required. The abstract must not include references."
+  },
+  {
+   "id": "J2",
+   "answer": "最大5つまで。",
+   "basis": "A list of up to five keywords should be provided below the abstract."
+  },
+  {
+   "id": "J3",
+   "answer": "半角スペースを含む50文字以内。3ページ目以降の奇数ページのヘッダーから必要。",
+   "basis": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required"
+  },
+  {
+   "id": "J4",
+   "answer": "角括弧で囲み（例：[1,3,5-8]）、ピリオドやカンマなどの句読点の前に配置する。",
+   "basis": "reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’."
+  },
+  {
+   "id": "J5",
+   "answer": "最初の6名の著者名を記載し、その後に「et al.」を追記する。",
+   "basis": "For more than six authors, list the first six authors followed by “et al.”:"
+  },
+  {
+   "id": "J6",
+   "answer": "図はTIFF、PNG、JPEG、PDF形式で解像度300dpi。グラフィカルアブストラクトはPNG、JPEG、GIF形式で解像度300dpi（形式がGIFに変わり、TIFFとPDFが除外される点で異なる）。",
+   "basis": "We accept figure files in TIFF, PNG, JPEG or PDF formats. Electronic files of photographs and illustrations should be at 300 dpi resolution... The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi."
+  },
+  {
+   "id": "J7",
+   "answer": "1. 本文中で必ず引用すること。2. 表の上部に短い説明的タイトルを、下部にa, b, cなどの脚注を付けること。3. 縦線を使用しないこと。",
+   "basis": "All tables must be cited in the text. Supply a short explanatory title above the body of the table, and table footnotes lettered a, b, c, and so forth, below the body of the table. Do not use vertical lines."
+  },
+  {
+   "id": "J8",
+   "answer": "20MBまで。超える場合はJ-STAGE Dataにアップロードし、編集事務所に連絡する。",
+   "basis": "The size of each file that is uploaded using the online submission system... should be no more than 20 MB. When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data... In this case, please contact the Editorial office."
+  },
+  {
+   "id": "J9",
+   "answer": "「New」「Novel」「First」「Unprecedented」およびこれらに類似する記述語やその形容詞。",
+   "basis": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives."
+  },
+  {
+   "id": "J10",
+   "answer": "90日以内。",
+   "basis": "Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision."
+  }
+ ],
+ "raw_response": "{\n  \"answers\": [\n    {\n      \"id\": \"J1\",\n      \"answer\": \"250語まで。文献引用は不可。\",\n      \"basis\": \"An abstract of no more than 250 words is required. The abstract must not include references.\"\n    },\n    {\n      \"id\": \"J2\",\n      \"answer\": \"最大5つまで。\",\n      \"basis\": \"A list of up to five keywords should be provided below the abstract.\"\n    },\n    {\n      \"id\": \"J3\",\n      \"answer\": \"半角スペースを含む50文字以内。3ページ目以降の奇数ページのヘッダーから必要。\",\n      \"basis\": \"At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required\"\n    },\n    {\n      \"id\": \"J4\",\n      \"answer\": \"角括弧で囲み（例：[1,3,5-8]）、ピリオドやカンマなどの句読点の前に配置する。\",\n      \"basis\": \"reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\"\n    },\n    {\n      \"id\": \"J5\",\n      \"answer\": \"最初の6名の著者名を記載し、その後に「et al.」を追記する。\",\n      \"basis\": \"For more than six authors, list the first six authors followed by “et al.”:\"\n    },\n    {\n      \"id\": \"J6\",\n      \"answer\": \"図はTIFF、PNG、JPEG、PDF形式で解像度300dpi。グラフィカルアブストラクトはPNG、JPEG、GIF形式で解像度300dpi（形式がGIFに変わり、TIFFとPDFが除外される点で異なる）。\",\n      \"basis\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats. Electronic files of photographs and illustrations should be at 300 dpi resolution... The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\"\n    },\n    {\n      \"id\": \"J7\",\n      \"answer\": \"1. 本文中で必ず引用すること。2. 表の上部に短い説明的タイトルを、下部にa, b, cなどの脚注を付けること。3. 縦線を使用しないこと。\",\n      \"basis\": \"All tables must be cited in the text. Supply a short explanatory title above the body of the table, and table footnotes lettered a, b, c, and so forth, below the body of the table. Do not use vertical lines.\"\n    },\n    {\n      \"id\": \"J8\",\n      \"answer\": \"20MBまで。超える場合はJ-STAGE Dataにアップロードし、編集事務所に連絡する。\",\n      \"basis\": \"The size of each file that is uploaded using the online submission system... should be no more than 20 MB. When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data... In this case, please contact the Editorial office.\"\n    },\n    {\n      \"id\": \"J9\",\n      \"answer\": \"「New」「Novel」「First」「Unprecedented」およびこれらに類似する記述語やその形容詞。\",\n      \"basis\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.\"\n    },\n    {\n      \"id\": \"J10\",\n      \"answer\": \"90日以内。\",\n      \"basis\": \"Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision.\"\n    }\n  ]\n}",
+ "thinking_chars": 13040
+}

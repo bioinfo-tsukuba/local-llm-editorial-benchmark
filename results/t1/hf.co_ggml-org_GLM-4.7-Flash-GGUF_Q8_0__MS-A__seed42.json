@@ -1,0 +1,53 @@
+{
+ "task": "T1",
+ "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 32768,
+ "num_predict": 16384,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 4,
+ "meta": {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "wall_s": 42.71,
+  "prompt_tokens": 11571,
+  "output_tokens": 286,
+  "load_s": 26.13,
+  "prefill_tok_s": 1304.5,
+  "decode_tok_s": 37.6,
+  "ttft_s": 35.0,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 70356,
+  "peak_size_vram_mib": 33547
+ },
+ "findings": [
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract contains 311 words, which exceeds the 250-word limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract includes a reference in the text: [12]",
+   "severity": "medium"
+  },
+  {
+   "location": "Abstract",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added, but it is not necessary for 'Editorial' or 'Commentary and Perspective'.",
+   "problem": "The significance statement is 106 words long, which exceeds the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "background": "The 'Significance' section is 106 words long, which exceeds the 100-word limit.",
+   "rule": "A short statement of less than 100 words about the significance of the word limit.",
+   "problem": "The 'Significance' section is 106 words long, citations included, which exceeds the 100-word limit.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"An abstract of no more than 250 words is required.\",\n      \"problem\": \"The abstract contains 311 words, which exceeds the 250-word limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"The abstract must not include references.\",\n      \"problem\": \"The abstract includes a reference in the text: [12]\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added, but it is not necessary for 'Editorial' or 'Commentary and Perspective'.\",\n      \"problem\": \"The significance statement is 106 words long, which exceeds the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"background\": \"The 'Significance' section is 106 words long, which exceeds the 100-word limit.\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the word limit.\",\n      \"problem\": \"The 'Significance' section is 106 words long, citations included, which exceeds the 100-word limit.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

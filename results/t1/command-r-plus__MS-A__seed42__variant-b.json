@@ -1,0 +1,117 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "command-r-plus",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": "salvaged",
+ "n_findings": 12,
+ "meta": {
+  "model": "command-r-plus",
+  "wall_s": 430.97,
+  "prompt_tokens": 0,
+  "output_tokens": 0,
+  "load_s": 0.0,
+  "prefill_tok_s": null,
+  "decode_tok_s": null,
+  "ttft_s": 0.0,
+  "done_reason": null,
+  "tool_calls": null,
+  "peak_mem_used_mib": 79356,
+  "peak_size_vram_mib": 0
+ },
+ "findings": [
+  {
+   "area": 1,
+   "location": "Title",
+   "rule": "The title should not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word \"Novel\".",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract contains 251 words.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "The manuscript contains six keywords.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement contains 101 words.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Running title",
+   "rule": "A Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title contains 51 characters.",
+   "severity": "high"
+  },
+  {
+   "area": 2,
+   "location": "Page 1",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author's postal address is not given on page 1.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Significance statement",
+   "rule": "Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability, (A comment about deposition to a preprint server if the authors have deposited the file there: e.g. A preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.), Acknowledgements and References, should be arranged in this order.",
+   "problem": "The manuscript contains a Conclusion section, which is not allowed.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not declare any financial interests or connections.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not declare any financial interests or connections.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPP0 requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not declare any financial interests or connections.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not declare any financial interests or connections.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not declare any financial interests or connections.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"findings\": [{\"area\": 1,\n  \"location\": \"Title\",\n  \"rule\": \"The title should not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.\",\n  \"problem\": \"The title contains the word \\\"Novel\\\".\",\n  \"severity\": \"high\"},\n {\"area\": 1,\n  \"location\": \"Abstract\",\n  \"rule\": \"An abstract of no more than 250 words is required.\",\n  \"problem\": \"The abstract contains 251 words.\",\n  \"severity\": \"high\"},\n {\"area\": 1,\n  \"location\": \"Keywords\",\n  \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n  \"problem\": \"The manuscript contains six keywords.\",\n  \"severity\": \"high\"},\n {\"area\": 1,\n  \"location\": \"Significance statement\",\n  \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n  \"problem\": \"The significance statement contains 101 words.\",\n  \"severity\": \"high\"},\n {\"area\": 1,\n  \"location\": \"Running title\",\n  \"rule\": \"A Running Title not exceeding 50 characters including spaces is required.\",\n  \"problem\": \"The running title contains 51 characters.\",\n  \"severity\": \"high\"},\n {\"area\": 2,\n  \"location\": \"Page 1\",\n  \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n  \"problem\": \"The corresponding author's postal address is not given on page 1.\",\n  \"severity\": \"high\"},\n {\"area\": 3,\n  \"location\": \"Significance statement\",\n  \"rule\": \"Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability, (A comment about deposition to a preprint server if the authors have deposited the file there: e.g. A preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.), Acknowledgements and References, should be arranged in this order.\",\n  \"problem\": \"The manuscript contains a Conclusion section, which is not allowed.\",\n  \"severity\": \"high\"},\n {\"area\": 3,\n  \"location\": \"Conflict of interest\",\n  \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n  \"problem\": \"The conflict of interest statement does not declare any financial interests or connections.\",\n  \"severity\": \"high\"},\n {\"area\": 3,\n  \"location\": \"Conflict of interest\",\n  \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n  \"problem\": \"The conflict of interest statement does not declare any financial interests or connections.\",\n  \"severity\": \"high\"},\n {\"area\": 3,\n  \"location\": \"Conflict of interest\",\n  \"rule\": \"The policy of BPP0 requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n  \"problem\": \"The conflict of interest statement does not declare any financial interests or connections.\",\n  \"severity\": \"high\"},\n {\"area\": 3,\n  \"location\": \"Conflict of interest\",\n  \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n  \"problem\": \"The conflict of interest statement does not declare any financial interests or connections.\",\n  \"severity\": \"high\"},\n {\"area\": 3,\n  \"location\": \"Conflict of interest\",\n  \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n  \"problem\": \"The conflict of interest statement does not declare any financial interests or connections.\",\n  \"severity\": \"high\"},\n {\"area\": 3,\n  \"location\": \"Conflict of interest\",\n  \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise theMultiplier: 10000000000000000000000000000000",
+ "thinking_chars": 0,
+ "schema_break": true
+}

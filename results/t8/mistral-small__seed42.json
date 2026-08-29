@@ -1,0 +1,100 @@
+{
+ "task": "T8",
+ "model": "mistral-small",
+ "seed": 42,
+ "error": null,
+ "parse_error": "empty response",
+ "n_tool_calls": 8,
+ "n_checks": null,
+ "meta": {
+  "model": "mistral-small",
+  "wall_s": 4.82,
+  "prompt_tokens": 2592,
+  "output_tokens": 32,
+  "load_s": 0.08,
+  "prefill_tok_s": 1060.1,
+  "decode_tok_s": 14.1,
+  "ttft_s": 2.53,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 24529,
+  "peak_size_vram_mib": 20574
+ },
+ "checks": null,
+ "tool_trace": [
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1016/S0006-3495(01)76033-X"
+   },
+   "result_summary": "Biophys. J. 80 (2001) 10.1016/s0006-3495(01)76033-x",
+   "error": null
+  },
+  {
+   "n": 2,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1093/protein/14.1.1"
+   },
+   "result_summary": "Protein Eng. Des. Sel. 14 (2001) 10.1093/protein/14.1.1",
+   "error": null
+  },
+  {
+   "n": 3,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1073/pnas.0702950104"
+   },
+   "result_summary": "Proc. Natl. Acad. Sci. U.S.A. 104 (2007) 10.1073/pnas.0702950104",
+   "error": null
+  },
+  {
+   "n": 4,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 5,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 6,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.2142/biophysico.bppb-v21.0112"
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 7,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1146/annurev.biophys.35.040405.101933"
+   },
+   "result_summary": "Annu. Rev. Biophys. Biomol. Struct. 35 (2006) 10.1146/annurev.biophys.35.040405.101933",
+   "error": null
+  },
+  {
+   "n": 8,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1101/2020.06.29.179044"
+   },
+   "result_summary": " None (2020) 10.1101/2020.06.29.179044",
+   "error": null
+  }
+ ],
+ "raw_response": "",
+ "thinking_chars": 0,
+ "wall_s": 39.3
+}

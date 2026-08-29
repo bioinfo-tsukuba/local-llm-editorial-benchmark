@@ -1,0 +1,67 @@
+{
+ "task": "t3refs",
+ "model": "qwen3.6:35b-a3b-bf16",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "conversions",
+ "n_items": 8,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "wall_s": 350.52,
+  "prompt_tokens": 7500,
+  "output_tokens": 8263,
+  "load_s": 25.47,
+  "prefill_tok_s": 726.4,
+  "decode_tok_s": 27.2,
+  "ttft_s": 35.8,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 78226,
+  "peak_size_vram_mib": 71046
+ },
+ "conversions": [
+  {
+   "id": "R1",
+   "converted": "Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1",
+   "note": "Formatted exactly per journal example for references with fewer than seven authors."
+  },
+  {
+   "id": "R2",
+   "converted": "Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016).",
+   "note": "Journal title abbreviated per Index Medicus/MEDLINE format. DOI not provided in input; please verify and add if available."
+  },
+  {
+   "id": "R3",
+   "converted": "Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).",
+   "note": "Formatted as a book chapter per journal style."
+  },
+  {
+   "id": "R4",
+   "converted": "Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).",
+   "note": "Formatted as a book per journal style."
+  },
+  {
+   "id": "R5",
+   "converted": "Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044",
+   "note": "Full author list expanded to match journal style examples for this specific preprint."
+  },
+  {
+   "id": "R6",
+   "converted": "Togashi, Y., Mikhailov, A. S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. U. S. A. 104, 8697–8702 (2007).",
+   "note": "Journal title abbreviated per Index Medicus/MEDLINE format (PNAS -> Proc. Natl. Acad. Sci. U. S. A.). DOI not provided in input."
+  },
+  {
+   "id": "R7",
+   "converted": "Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).",
+   "note": "Formatted as an in-press article per journal style. DOI not provided in input; please verify and add if available."
+  },
+  {
+   "id": "R8",
+   "converted": "This reference cannot be included in the reference list. The Instructions for Authors explicitly state that the use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "note": "Entry excluded per journal policy."
+  }
+ ],
+ "raw_response": "{\n  \"conversions\": [\n    {\n      \"id\": \"R1\",\n      \"converted\": \"Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1\",\n      \"note\": \"Formatted exactly per journal example for references with fewer than seven authors.\"\n    },\n    {\n      \"id\": \"R2\",\n      \"converted\": \"Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016).\",\n      \"note\": \"Journal title abbreviated per Index Medicus/MEDLINE format. DOI not provided in input; please verify and add if available.\"\n    },\n    {\n      \"id\": \"R3\",\n      \"converted\": \"Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).\",\n      \"note\": \"Formatted as a book chapter per journal style.\"\n    },\n    {\n      \"id\": \"R4\",\n      \"converted\": \"Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).\",\n      \"note\": \"Formatted as a book per journal style.\"\n    },\n    {\n      \"id\": \"R5\",\n      \"converted\": \"Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044\",\n      \"note\": \"Full author list expanded to match journal style examples for this specific preprint.\"\n    },\n    {\n      \"id\": \"R6\",\n      \"converted\": \"Togashi, Y., Mikhailov, A. S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. U. S. A. 104, 8697–8702 (2007).\",\n      \"note\": \"Journal title abbreviated per Index Medicus/MEDLINE format (PNAS -> Proc. Natl. Acad. Sci. U. S. A.). DOI not provided in input.\"\n    },\n    {\n      \"id\": \"R7\",\n      \"converted\": \"Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).\",\n      \"note\": \"Formatted as an in-press article per journal style. DOI not provided in input; please verify and add if available.\"\n    },\n    {\n      \"id\": \"R8\",\n      \"converted\": \"This reference cannot be included in the reference list. The Instructions for Authors explicitly state that the use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"note\": \"Entry excluded per journal policy.\"\n    }\n  ]\n}",
+ "thinking_chars": 23480
+}

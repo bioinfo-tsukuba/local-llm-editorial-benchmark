@@ -1,0 +1,1855 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "glm-4.5-air:q4",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "think": null,
+ "error": null,
+ "parse_error": "salvaged",
+ "n_findings": 304,
+ "meta": {
+  "model": "glm-4.5-air:q4",
+  "wall_s": 2297.06,
+  "prompt_tokens": 11410,
+  "output_tokens": 24576,
+  "load_s": 137.62,
+  "prefill_tok_s": 537.9,
+  "decode_tok_s": 11.5,
+  "ttft_s": 158.84,
+  "done_reason": "length",
+  "peak_mem_used_mib": 80167,
+  "peak_size_vram_mib": 100337
+ },
+ "findings": [
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.",
+   "problem": "The abstract contains the word 'Novel' in the title: 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase'.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] is listed as 'In preparation'.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [5] is listed as 'In preparation' but appears before [6] and [7] in the reference list, breaking the sequential numbering.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:",
+   "problem": "Reference [10] lists all authors without using 'et al.' despite having more than six authors.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [4] is missing the DOI URL. It only has 'doi:10.1016/S0006-3495(01)76033-X' instead of the full URL.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.",
+   "problem": "The reference list does not follow the exact CSL style, particularly in the formatting of journal articles with DOIs and author lists.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "Supplementary material 'Suppl_Movie_1.mov' uses '.mov' extension instead of '.mpeg' or '.avi'.",
+   "severity": "low"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "Supplementary material '図1_final version.tiff' contains Japanese characters and spaces.",
+   "severity": "high"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.",
+   "problem": "The caption duplicates the title of the article ('Novel coarse-grained model of allosteric communication in a ring-shaped ATPase') and the Significance statement.",
+   "severity": "medium"
+  },
+  {
+   "location": "Data availability",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, “The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.”",
+   "problem": "There is no Data availability section in the manuscript.",
+   "severity": "high"
+  },
+  {
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The Conflict of interest section only declares no conflict for three authors (K.M., A.T., R.N.) but does not include S.J.W. and H.K.",
+   "severity": "high"
+  },
+  {
+   "location": "Author contributions",
+   "rule": "All persons designated as authors should qualify for authorship. To qualify for authorship, an author should contribute to: Conception and design of the work, acquisition of data, or analysis and interpretation of data, Drafting the article or revising important aspects of the intellectual content, and Final approval of the version to be published.",
+   "problem": "The Author contributions section does not clearly specify the contributions of S.J.W. and H.K. beyond what is already mentioned in the text.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).",
+   "problem": "Reference [8] is listed as a personal communication in the reference list, which is not allowed.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).",
+   "problem": "The text mentions PDB 6qw9 but does not use the required format [PDB ID: 6qw9] with the DOI link.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.",
+   "problem": "Supplementary material 'Suppl_Table_1.xlsx' is in Excel format, which should be converted to ZIP format.",
+   "severity": "low"
+  },
+  {
+   "location": "Graphical abstract",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.",
+   "problem": "The graphical abstract file 'Graphical_abstract.tiff' is in TIFF format instead of PNG, JPEG, or GIF.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure legends",
+   "rule": "All figures must be cited in the text. Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text.",
+   "problem": "Figure 1 is mentioned in the text but not cited in the order of appearance. The first figure mentioned is Figure 2 in the Results section.",
+   "severity": "low"
+  },
+  {
+   "location": "References",
+   "rule": "For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:",
+   "problem": "Reference [11] lists all authors without using 'et al.' despite having more than six authors.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [11] is missing the DOI URL. It only has 'https://doi.org/10.1038/nature02212' but the reference list format requires the full URL.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.",
+   "problem": "Reference [11] is listed as 'Nature (in press)' which does not follow the CSL style for in-press articles.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "For an article in a preprint server by one or more authors: ... If an article has been accepted for publication by a journal, but has not yet appeared in print, the reference should be styled as follows: [6] Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212",
+   "problem": "Reference [11] should be styled as [6] is, with 'Nature (in press)' and the DOI URL, but it is listed as [11] and the formatting is inconsistent.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [6] is missing from the reference list. The references jump from [5] to [7].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [7] is listed before [8], but [8] is cited in the text before [7].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [9] is missing from the reference list. The references jump from [8] to [10].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [12] is missing from the reference list. The references jump from [11] to the end.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list has [5], [7], [8], [10], [11], but the text cites [6], [7], [8], [9], [10], [11], [12].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is not sequential. It has [5], then [7], [8], [10], [11], missing [6], [9], [12].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as [1], [2], [3], etc.",
+   "problem": "The reference list has [5], [7], [8], [10], [11], but should have [1] through [12] as cited in the text.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legend.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.",
+   "problem": "The abstract contains the word 'Novel' in the title: 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase'.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] is listed as 'In preparation'.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [5] is listed as 'In preparation' but appears before [6] and [7] in the reference list, breaking the sequential numbering.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:",
+   "problem": "Reference [10] lists all authors without using 'et al.' despite having more than six authors.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [4] is missing the DOI URL. It only has 'doi:10.1016/S0006-3495(01)76033-X' instead of the full URL.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.",
+   "problem": "The reference list does not follow the exact CSL style, particularly in the formatting of journal articles with DOIs and author lists.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "Supplementary material 'Suppl_Movie_1.mov' uses '.mov' extension instead of '.mpeg' or '.avi'.",
+   "severity": "low"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "Supplementary material '図1_final version.tiff' contains Japanese characters and spaces.",
+   "severity": "high"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.",
+   "problem": "The caption duplicates the title of the article ('Novel coarse-grained model of allosteric communication in a ring-shaped ATPase') and the Significance statement.",
+   "severity": "medium"
+  },
+  {
+   "location": "Data availability",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, “The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.”",
+   "problem": "There is no Data availability section in the manuscript.",
+   "severity": "high"
+  },
+  {
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The Conflict of interest section only declares no conflict for three authors (K.M., A.T., R.N.) but does not include S.J.W. and H.K.",
+   "severity": "high"
+  },
+  {
+   "location": "Author contributions",
+   "rule": "All persons designated as authors should qualify for authorship. To qualify for authorship, an author should contribute to: Conception and design of the work, acquisition of data, or analysis and interpretation of data, Drafting the article or revising important aspects of the intellectual content, and Final approval of the version to be published.",
+   "problem": "The Author contributions section does not clearly specify the contributions of S.J.W. and H.K. beyond what is already mentioned in the text.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).",
+   "problem": "Reference [8] is listed as a personal communication in the reference list, which is not allowed.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).",
+   "problem": "The text mentions PDB 6qw9 but does not use the required format [PDB ID: 6qw9] with the DOI link.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.",
+   "problem": "Supplementary material 'Suppl_Table_1.xlsx' is in Excel format, which should be converted to ZIP format.",
+   "severity": "low"
+  },
+  {
+   "location": "Graphical abstract",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.",
+   "problem": "The graphical abstract file 'Graphical_abstract.tiff' is in TIFF format instead of PNG, JPEG, or GIF.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure legends",
+   "rule": "All figures must be cited in the text. Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text.",
+   "problem": "Figure 1 is mentioned in the text but not cited in the order of appearance. The first figure mentioned is Figure 2 in the Results section.",
+   "severity": "low"
+  },
+  {
+   "location": "References",
+   "rule": "For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:",
+   "problem": "Reference [11] lists all authors without using 'et al.' despite having more than six authors.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [11] is missing the DOI URL. It only has 'https://doi.org/10.1038/nature02212' but the reference list format requires the full URL.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.",
+   "problem": "Reference [11] is listed as 'Nature (in press)' which does not follow the CSL style for in-press articles.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "For an article in a preprint server by one or more authors: ... If an article has been accepted for publication by a journal, but has not yet appeared in print, the reference should be styled as follows: [6] Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212",
+   "problem": "Reference [11] should be styled as [6] is, with 'Nature (in press)' and the DOI URL, but it is listed as [11] and the formatting is inconsistent.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [6] is missing from the reference list. The references jump from [5] to [7].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [7] is listed before [8], but [8] is cited in the text before [7].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [9] is missing from the reference list. The references jump from [8] to [10].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [12] is missing from the reference list. The references jump from [11] to the end.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list has [5], [7], [8], [10], [11], but the text cites [6], [7], [8], [9], [10], [11], [12].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "\n```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.\",\n      \"problem\": \"The abstract contains the word 'Novel' in the title: 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] is listed as 'In preparation'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [5] is listed as 'In preparation' but appears before [6] and [7] in the reference list, breaking the sequential numbering.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [10] lists all authors without using 'et al.' despite having more than six authors.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [4] is missing the DOI URL. It only has 'doi:10.1016/S0006-3495(01)76033-X' instead of the full URL.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.\",\n      \"problem\": \"The reference list does not follow the exact CSL style, particularly in the formatting of journal articles with DOIs and author lists.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\n      \"problem\": \"Supplementary material 'Suppl_Movie_1.mov' uses '.mov' extension instead of '.mpeg' or '.avi'.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"Supplementary material '図1_final version.tiff' contains Japanese characters and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.\",\n      \"problem\": \"The caption duplicates the title of the article ('Novel coarse-grained model of allosteric communication in a ring-shaped ATPase') and the Significance statement.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Data availability\",\n      \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, “The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.”\",\n      \"problem\": \"There is no Data availability section in the manuscript.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Conflict of interest\",\n      \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n      \"problem\": \"The Conflict of interest section only declares no conflict for three authors (K.M., A.T., R.N.) but does not include S.J.W. and H.K.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Author contributions\",\n      \"rule\": \"All persons designated as authors should qualify for authorship. To qualify for authorship, an author should contribute to: Conception and design of the work, acquisition of data, or analysis and interpretation of data, Drafting the article or revising important aspects of the intellectual content, and Final approval of the version to be published.\",\n      \"problem\": \"The Author contributions section does not clearly specify the contributions of S.J.W. and H.K. beyond what is already mentioned in the text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).\",\n      \"problem\": \"Reference [8] is listed as a personal communication in the reference list, which is not allowed.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).\",\n      \"problem\": \"The text mentions PDB 6qw9 but does not use the required format [PDB ID: 6qw9] with the DOI link.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.\",\n      \"problem\": \"Supplementary material 'Suppl_Table_1.xlsx' is in Excel format, which should be converted to ZIP format.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Graphical abstract\",\n      \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\",\n      \"problem\": \"The graphical abstract file 'Graphical_abstract.tiff' is in TIFF format instead of PNG, JPEG, or GIF.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure legends\",\n      \"rule\": \"All figures must be cited in the text. Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text.\",\n      \"problem\": \"Figure 1 is mentioned in the text but not cited in the order of appearance. The first figure mentioned is Figure 2 in the Results section.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [11] lists all authors without using 'et al.' despite having more than six authors.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [11] is missing the DOI URL. It only has 'https://doi.org/10.1038/nature02212' but the reference list format requires the full URL.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.\",\n      \"problem\": \"Reference [11] is listed as 'Nature (in press)' which does not follow the CSL style for in-press articles.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For an article in a preprint server by one or more authors: ... If an article has been accepted for publication by a journal, but has not yet appeared in print, the reference should be styled as follows: [6] Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212\",\n      \"problem\": \"Reference [11] should be styled as [6] is, with 'Nature (in press)' and the DOI URL, but it is listed as [11] and the formatting is inconsistent.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [6] is missing from the reference list. The references jump from [5] to [7].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [7] is listed before [8], but [8] is cited in the text before [7].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [9] is missing from the reference list. The references jump from [8] to [10].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [12] is missing from the reference list. The references jump from [11] to the end.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list has [5], [7], [8], [10], [11], but the text cites [6], [7], [8], [9], [10], [11], [12].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is not sequential. It has [5], then [7], [8], [10], [11], missing [6], [9], [12].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as [1], [2], [3], etc.\",\n      \"problem\": \"The reference list has [5], [7], [8], [10], [11], but should have [1] through [12] as cited in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legend.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in \"],\n  \"findings\": [\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.\",\n      \"problem\": \"The abstract contains the word 'Novel' in the title: 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] is listed as 'In preparation'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [5] is listed as 'In preparation' but appears before [6] and [7] in the reference list, breaking the sequential numbering.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [10] lists all authors without using 'et al.' despite having more than six authors.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [4] is missing the DOI URL. It only has 'doi:10.1016/S0006-3495(01)76033-X' instead of the full URL.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.\",\n      \"problem\": \"The reference list does not follow the exact CSL style, particularly in the formatting of journal articles with DOIs and author lists.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\n      \"problem\": \"Supplementary material 'Suppl_Movie_1.mov' uses '.mov' extension instead of '.mpeg' or '.avi'.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"Supplementary material '図1_final version.tiff' contains Japanese characters and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.\",\n      \"problem\": \"The caption duplicates the title of the article ('Novel coarse-grained model of allosteric communication in a ring-shaped ATPase') and the Significance statement.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Data availability\",\n      \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, “The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.”\",\n      \"problem\": \"There is no Data availability section in the manuscript.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Conflict of interest\",\n      \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n      \"problem\": \"The Conflict of interest section only declares no conflict for three authors (K.M., A.T., R.N.) but does not include S.J.W. and H.K.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Author contributions\",\n      \"rule\": \"All persons designated as authors should qualify for authorship. To qualify for authorship, an author should contribute to: Conception and design of the work, acquisition of data, or analysis and interpretation of data, Drafting the article or revising important aspects of the intellectual content, and Final approval of the version to be published.\",\n      \"problem\": \"The Author contributions section does not clearly specify the contributions of S.J.W. and H.K. beyond what is already mentioned in the text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).\",\n      \"problem\": \"Reference [8] is listed as a personal communication in the reference list, which is not allowed.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).\",\n      \"problem\": \"The text mentions PDB 6qw9 but does not use the required format [PDB ID: 6qw9] with the DOI link.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.\",\n      \"problem\": \"Supplementary material 'Suppl_Table_1.xlsx' is in Excel format, which should be converted to ZIP format.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Graphical abstract\",\n      \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\",\n      \"problem\": \"The graphical abstract file 'Graphical_abstract.tiff' is in TIFF format instead of PNG, JPEG, or GIF.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure legends\",\n      \"rule\": \"All figures must be cited in the text. Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text.\",\n      \"problem\": \"Figure 1 is mentioned in the text but not cited in the order of appearance. The first figure mentioned is Figure 2 in the Results section.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [11] lists all authors without using 'et al.' despite having more than six authors.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [11] is missing the DOI URL. It only has 'https://doi.org/10.1038/nature02212' but the reference list format requires the full URL.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles , and it is also available from the Zotero site, http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.\",\n      \"problem\": \"Reference [11] is listed as 'Nature (in press)' which does not follow the CSL style for in-press articles.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For an article in a preprint server by one or more authors: ... If an article has been accepted for publication by a journal, but has not yet appeared in print, the reference should be styled as follows: [6] Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212\",\n      \"problem\": \"Reference [11] should be styled as [6] is, with 'Nature (in press)' and the DOI URL, but it is listed as [11] and the formatting is inconsistent.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [6] is missing from the reference list. The references jump from [5] to [7].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [7] is listed before [8], but [8] is cited in the text before [7].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [9] is missing from the reference list. The references jump from [8] to [10].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [12] is missing from the reference list. The references jump from [11] to the end.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list has [5], [7], [8], [10], [11], but the text cites [6], [7], [8], [9], [10], [11], [12].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"The reference list is missing [6], [9], [12] and has [5], [7], [8], [10], [11].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\":",
+ "thinking_chars": 0,
+ "schema_break": true
+}

@@ -1,0 +1,256 @@
+{
+ "task": "T8",
+ "model": "command-r-plus",
+ "seed": 42,
+ "error": null,
+ "parse_error": "salvaged",
+ "n_tool_calls": 8,
+ "n_checks": null,
+ "meta": {
+  "model": "command-r-plus",
+  "wall_s": 114.52,
+  "prompt_tokens": 2657,
+  "output_tokens": 398,
+  "load_s": 0.17,
+  "prefill_tok_s": 480.5,
+  "decode_tok_s": 3.7,
+  "ttft_s": 5.7,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 71586,
+  "peak_size_vram_mib": 0
+ },
+ "checks": null,
+ "tool_trace": [
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.1016/S0006-3495(01)76033-X"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  },
+  {
+   "n": 2,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.1093/protein/14.1.1"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  },
+  {
+   "n": 3,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.1073/pnas.0702950104"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  },
+  {
+   "n": 4,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.1038/35073513"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  },
+  {
+   "n": 5,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.1038/35073510"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  },
+  {
+   "n": 6,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.2142/biophysico.bppb-v21.0112"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  },
+  {
+   "n": 7,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.1146/annurev.biophys.35.040405.101933"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  },
+  {
+   "n": 8,
+   "tool": "lookup_doi",
+   "args": {
+    "tool_name": "lookup_doi",
+    "parameters": {
+     "doi": "10.1101/2020.06.29.179044"
+    }
+   },
+   "result_summary": " None (None) None",
+   "error": null
+  }
+ ],
+ "raw_response": "{\n    \"checks\": [\n        {\n            \"id\": \"V1\",\n            \"verified\": false,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        },\n        {\n            \"id\": \"V2\",\n            \"verified\": false,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        },\n        {\n            \"id\": \"V3\",\n            \"verified\": false,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        },\n        {\n            \"id\": \"V4\",\n            \"verified\": false,\n           0,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        },\n        {\n            \"id\": \"V5\",\n            \"verified\": false,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        },\n        {\n            \"id\": \"V6\",\n            \"verified\": false,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        },\n        {\n            \"id\": \"V7\",\n            \"verified\": false,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        },\n        {\n            \"id\": \"V8\",\n            \"verified\": false,\n            \"journal_abbreviated\": null,\n            \"problems\": [\n                \"Could not verify this reference.\"\n            ],\n            \"corrected_doi\": null\n        }\n    ]\n}",
+ "thinking_chars": 0,
+ "wall_s": 295.9,
+ "schema_break": true,
+ "null": [
+  {
+   "id": "V1",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V2",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V3",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V5",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V6",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V7",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V8",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  }
+ ],
+ "n_items": 7,
+ "null": [
+  {
+   "id": "V1",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V2",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V3",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V5",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V6",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V7",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V8",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "Could not verify this reference."
+   ],
+   "corrected_doi": null
+  }
+ ]
+}

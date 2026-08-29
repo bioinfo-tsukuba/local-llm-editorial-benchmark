@@ -1,0 +1,207 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "qwen3.6:35b-a3b-bf16",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 25,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "wall_s": 522.2,
+  "prompt_tokens": 12304,
+  "output_tokens": 13851,
+  "load_s": 21.75,
+  "prefill_tok_s": 714.2,
+  "decode_tok_s": 29.8,
+  "ttft_s": 38.97,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 80819,
+  "peak_size_vram_mib": 72066
+ },
+ "findings": [
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract contains the citation \"[12]\".",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Keywords section",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are provided instead of a maximum of five.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Running title (header)",
+   "rule": "A Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title contains 76 characters.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Title and Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains \"Novel\" and the abstract contains \"for the first time\".",
+   "severity": "high"
+  },
+  {
+   "area": 2,
+   "location": "Page 1 (corresponding author block)",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The ORCID iD for the corresponding author is missing.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Manuscript structure",
+   "rule": "Required sections must appear in the specified order, including Conclusion and Data availability.",
+   "problem": "The \"Conclusion\" section is absent. The \"Author contributions\" section precedes \"Conflict of interest\". The \"Data availability\" section is missing entirely.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Table 1",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is not cited anywhere in the manuscript text.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Table footnotes",
+   "rule": "Table footnotes should be lettered a, b, c, and so forth.",
+   "problem": "Footnotes are numbered 1, 2, 3 instead of using letters.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Table formatting",
+   "rule": "Do not use vertical lines.",
+   "problem": "The tables contain vertical lines (|) separating columns.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figure 3",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 3 is not cited in the manuscript text.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Text citations of figures",
+   "rule": "Number the figures consecutively with Arabic numerals, in the order of their appearance in the text.",
+   "problem": "Figures are cited out of numerical order in the text (Figure 2 before Figure 1; Figure 4 before Figure 3).",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figure files (Fig1_modes.bmp, Fig2_spectra.bmp)",
+   "rule": "Electronic files should be at 300 dpi resolution.",
+   "problem": "Both files are listed at 150 dpi.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figure file formats (Fig1_modes.bmp, Fig2_spectra.bmp)",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "The files use the .bmp extension, which is not an accepted format.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Graphical abstract file",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF.",
+   "problem": "The graphical abstract is submitted as a .tiff file.",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials (Suppl_Movie_1.mov)",
+   "rule": "The size of each file uploaded should be no more than 20 MB.",
+   "problem": "The movie file is 45 MB.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials (Suppl_Movie_1.mov)",
+   "rule": "Movie files should be in MPEG or AVI format.",
+   "problem": "The file uses the .mov extension.",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials filename (図1_final version.tiff)",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name.",
+   "problem": "The filename contains a Japanese character (図) and a space.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "In-text citations",
+   "rule": "Reference numbers must be put in brackets in the form [1,3,5-8].",
+   "problem": "Citations in the text use parentheses, e.g., \"(1, 2)\", instead of brackets.",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "Reference list order",
+   "rule": "All references should be listed in numerical order.",
+   "problem": "The reference list is not sequential; it jumps from [5] to [7], then lists [6].",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Reference [9]",
+   "rule": "For more than six authors, list the first six authors followed by “et al.”",
+   "problem": "Ten authors are listed in full instead of truncating after six with \"et al.\".",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "References [5] and [8]",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list; the use of “in preparation” is not allowed.",
+   "problem": "Reference [5] is marked \"In preparation\" and Reference [8] is a \"Personal communication\", both incorrectly placed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Reference [4]",
+   "rule": "Abbreviated Journal titles follow the Index Medicus/MEDLINE format.",
+   "problem": "\"Biophysical Journal\" is used instead of the standard abbreviation \"Biophys. J.\".",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "Reference [4] DOI",
+   "rule": "When the Reference has a DOI, it should be added by its URL.",
+   "problem": "The DOI is provided as \"doi:10.1016/...\" instead of a full URL (https://doi.org/...).",
+   "severity": "medium"
+  },
+  {
+   "area": 8,
+   "location": "Materials and methods section",
+   "rule": "For experiments involving animals, authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments.",
+   "problem": "The manuscript describes purifying myosin from rabbit skeletal muscle but lacks any ethics approval or animal welfare statement.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Manuscript body",
+   "rule": "A Data availability statement is required.",
+   "problem": "No data availability statement is present in the manuscript.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\"area\": 1, \"location\": \"Abstract\", \"rule\": \"The abstract must not include references.\", \"problem\": \"The abstract contains the citation \\\"[12]\\\".\", \"severity\": \"high\"},\n  {\"area\": 1, \"location\": \"Keywords section\", \"rule\": \"A list of up to five keywords should be provided below the abstract.\", \"problem\": \"Seven keywords are provided instead of a maximum of five.\", \"severity\": \"medium\"},\n  {\"area\": 1, \"location\": \"Running title (header)\", \"rule\": \"A Running Title not exceeding 50 characters including spaces is required.\", \"problem\": \"The running title contains 76 characters.\", \"severity\": \"high\"},\n  {\"area\": 1, \"location\": \"Title and Abstract\", \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.\", \"problem\": \"The title contains \\\"Novel\\\" and the abstract contains \\\"for the first time\\\".\", \"severity\": \"high\"},\n  {\"area\": 2, \"location\": \"Page 1 (corresponding author block)\", \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\", \"problem\": \"The ORCID iD for the corresponding author is missing.\", \"severity\": \"high\"},\n  {\"area\": 3, \"location\": \"Manuscript structure\", \"rule\": \"Required sections must appear in the specified order, including Conclusion and Data availability.\", \"problem\": \"The \\\"Conclusion\\\" section is absent. The \\\"Author contributions\\\" section precedes \\\"Conflict of interest\\\". The \\\"Data availability\\\" section is missing entirely.\", \"severity\": \"high\"},\n  {\"area\": 4, \"location\": \"Table 1\", \"rule\": \"All tables must be cited in the text.\", \"problem\": \"Table 1 is not cited anywhere in the manuscript text.\", \"severity\": \"medium\"},\n  {\"area\": 4, \"location\": \"Table footnotes\", \"rule\": \"Table footnotes should be lettered a, b, c, and so forth.\", \"problem\": \"Footnotes are numbered 1, 2, 3 instead of using letters.\", \"severity\": \"medium\"},\n  {\"area\": 4, \"location\": \"Table formatting\", \"rule\": \"Do not use vertical lines.\", \"problem\": \"The tables contain vertical lines (|) separating columns.\", \"severity\": \"medium\"},\n  {\"area\": 5, \"location\": \"Figure 3\", \"rule\": \"All figures must be cited in the text.\", \"problem\": \"Figure 3 is not cited in the manuscript text.\", \"severity\": \"medium\"},\n  {\"area\": 5, \"location\": \"Text citations of figures\", \"rule\": \"Number the figures consecutively with Arabic numerals, in the order of their appearance in the text.\", \"problem\": \"Figures are cited out of numerical order in the text (Figure 2 before Figure 1; Figure 4 before Figure 3).\", \"severity\": \"medium\"},\n  {\"area\": 5, \"location\": \"Figure files (Fig1_modes.bmp, Fig2_spectra.bmp)\", \"rule\": \"Electronic files should be at 300 dpi resolution.\", \"problem\": \"Both files are listed at 150 dpi.\", \"severity\": \"high\"},\n  {\"area\": 5, \"location\": \"Figure file formats (Fig1_modes.bmp, Fig2_spectra.bmp)\", \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats.\", \"problem\": \"The files use the .bmp extension, which is not an accepted format.\", \"severity\": \"medium\"},\n  {\"area\": 5, \"location\": \"Graphical abstract file\", \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF.\", \"problem\": \"The graphical abstract is submitted as a .tiff file.\", \"severity\": \"medium\"},\n  {\"area\": 6, \"location\": \"Supplementary materials (Suppl_Movie_1.mov)\", \"rule\": \"The size of each file uploaded should be no more than 20 MB.\", \"problem\": \"The movie file is 45 MB.\", \"severity\": \"high\"},\n  {\"area\": 6, \"location\": \"Supplementary materials (Suppl_Movie_1.mov)\", \"rule\": \"Movie files should be in MPEG or AVI format.\", \"problem\": \"The file uses the .mov extension.\", \"severity\": \"medium\"},\n  {\"area\": 6, \"location\": \"Supplementary materials filename (図1_final version.tiff)\", \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name.\", \"problem\": \"The filename contains a Japanese character (図) and a space.\", \"severity\": \"high\"},\n  {\"area\": 7, \"location\": \"In-text citations\", \"rule\": \"Reference numbers must be put in brackets in the form [1,3,5-8].\", \"problem\": \"Citations in the text use parentheses, e.g., \\\"(1, 2)\\\", instead of brackets.\", \"severity\": \"medium\"},\n  {\"area\": 7, \"location\": \"Reference list order\", \"rule\": \"All references should be listed in numerical order.\", \"problem\": \"The reference list is not sequential; it jumps from [5] to [7], then lists [6].\", \"severity\": \"high\"},\n  {\"area\": 7, \"location\": \"Reference [9]\", \"rule\": \"For more than six authors, list the first six authors followed by “et al.”\", \"problem\": \"Ten authors are listed in full instead of truncating after six with \\\"et al.\\\".\", \"severity\": \"medium\"},\n  {\"area\": 7, \"location\": \"References [5] and [8]\", \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list; the use of “in preparation” is not allowed.\", \"problem\": \"Reference [5] is marked \\\"In preparation\\\" and Reference [8] is a \\\"Personal communication\\\", both incorrectly placed in the reference list.\", \"severity\": \"high\"},\n  {\"area\": 7, \"location\": \"Reference [4]\", \"rule\": \"Abbreviated Journal titles follow the Index Medicus/MEDLINE format.\", \"problem\": \"\\\"Biophysical Journal\\\" is used instead of the standard abbreviation \\\"Biophys. J.\\\".\", \"severity\": \"medium\"},\n  {\"area\": 7, \"location\": \"Reference [4] DOI\", \"rule\": \"When the Reference has a DOI, it should be added by its URL.\", \"problem\": \"The DOI is provided as \\\"doi:10.1016/...\\\" instead of a full URL (https://doi.org/...).\", \"severity\": \"medium\"},\n  {\"area\": 8, \"location\": \"Materials and methods section\", \"rule\": \"For experiments involving animals, authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments.\", \"problem\": \"The manuscript describes purifying myosin from rabbit skeletal muscle but lacks any ethics approval or animal welfare statement.\", \"severity\": \"high\"},\n  {\"area\": 8, \"location\": \"Manuscript body\", \"rule\": \"A Data availability statement is required.\", \"problem\": \"No data availability statement is present in the manuscript.\", \"severity\": \"high\"}\n]}",
+ "thinking_chars": 47867
+}

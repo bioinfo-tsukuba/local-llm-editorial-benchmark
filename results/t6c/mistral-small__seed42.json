@@ -1,0 +1,58 @@
+{
+ "task": "t6c",
+ "model": "mistral-small",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 5,
+ "meta": {
+  "model": "mistral-small",
+  "wall_s": 43.9,
+  "prompt_tokens": 5268,
+  "output_tokens": 422,
+  "load_s": 6.89,
+  "prefill_tok_s": 995.0,
+  "decode_tok_s": 13.3,
+  "ttft_s": 12.18,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 24383,
+  "peak_size_vram_mib": 20574
+ },
+ "problems": [
+  {
+   "location": "Abstract",
+   "problem": "The abstract states an effective length constant of 3.2 subunits counter-clockwise, but the results section and conclusion state 2.3 subunits.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 3.2",
+   "problem": "The ratio of CCW to CW length constants is listed as 4.51, but 2.42 / 0.69 = 3.51.",
+   "kind": "arithmetic",
+   "severity": "medium"
+  },
+  {
+   "location": "Results, paragraph 'Directionality of the allosteric channel'",
+   "problem": "The results section states an effective length constant of 2.3 subunits in the counter-clockwise direction and 0.7 subunits in the clockwise direction, but the abstract states 3.2 subunits counter-clockwise against 0.7 subunits clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Results, paragraph 'Contacts responsible for directionality'",
+   "problem": "The results section states that truncating the C-terminal helix reduces the counter-clockwise length constant to 1.8 subunits, but the abstract and conclusion do not mention this change.",
+   "kind": "internal-contradiction",
+   "severity": "medium"
+  },
+  {
+   "location": "Conclusion",
+   "problem": "The conclusion states an effective length constant of 2.3 subunits in one direction against 0.7 in the other, but the abstract states 3.2 subunits counter-clockwise against 0.7 subunits clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"problems\": [\n    {\n      \"location\": \"Abstract\",\n      \"problem\": \"The abstract states an effective length constant of 3.2 subunits counter-clockwise, but the results section and conclusion state 2.3 subunits.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 2, row s = 3.2\",\n      \"problem\": \"The ratio of CCW to CW length constants is listed as 4.51, but 2.42 / 0.69 = 3.51.\",\n      \"kind\": \"arithmetic\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Results, paragraph 'Directionality of the allosteric channel'\",\n      \"problem\": \"The results section states an effective length constant of 2.3 subunits in the counter-clockwise direction and 0.7 subunits in the clockwise direction, but the abstract states 3.2 subunits counter-clockwise against 0.7 subunits clockwise.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Results, paragraph 'Contacts responsible for directionality'\",\n      \"problem\": \"The results section states that truncating the C-terminal helix reduces the counter-clockwise length constant to 1.8 subunits, but the abstract and conclusion do not mention this change.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Conclusion\",\n      \"problem\": \"The conclusion states an effective length constant of 2.3 subunits in one direction against 0.7 in the other, but the abstract states 3.2 subunits counter-clockwise against 0.7 subunits clockwise.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

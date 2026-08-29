@@ -1,0 +1,27 @@
+{
+ "task": "t4abs",
+ "model": "nemotron",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "answers",
+ "n_items": null,
+ "meta": {
+  "model": "nemotron",
+  "wall_s": 111.27,
+  "prompt_tokens": 6841,
+  "output_tokens": 391,
+  "load_s": 0.13,
+  "prefill_tok_s": 297.6,
+  "decode_tok_s": 4.4,
+  "ttft_s": 23.11,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 56330,
+  "peak_size_vram_mib": 0
+ },
+ "answers": null,
+ "raw_response": "Here is the JSON object with the answers:\n\n```\n{\n  \"answers\": [\n    {\n      \"id\": \"A1\",\n      \"in_document\": true,\n      \"answer\": \"250 words\",\n      \"quote\": \"An abstract of no more than 250 words is required.\"\n    },\n    {\n      \"id\": \"A2\",\n      \"in_document\": false,\n      \"answer\": \"The Instructions do not specify it\",\n      \"quote\": \"\"\n    },\n    {\n      \"id\": \"A3\",\n      \"in_document\": true,\n      \"answer\": \"40,000 JPY plus tax\",\n      \"quote\": \"The publication fee for an accepted manuscript in any category except “Commentary and Perspective” or “Editorial” is 40,000 JPY plus tax for the authors.\"\n    },\n    {\n      \"id\": \"A4\",\n      \"in_document\": false,\n      \"answer\": \"The Instructions do not specify it\",\n      \"quote\": \"\"\n    },\n    {\n      \"id\": \"A5\",\n      \"in_document\": true,\n      \"answer\": \"90 days\",\n      \"quote\": \"Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision.\"\n    },\n    {\n      \"id\": \"A6\",\n      \"in_document\": false,\n      \"answer\": \"The Instructions do not specify it\",\n      \"quote\": \"\"\n    },\n    {\n      \"id\": \"A7\",\n      \"in_document\": true,\n      \"answer\": \"two or more reviewers\",\n      \"quote\": \"Manuscripts are sent out for peer review to two or more reviewers.\"\n    },\n    {\n      \"id\": \"A8\",\n      \"in_document\": false,\n      \"answer\": \"The Instructions do not specify it\",\n      \"quote\": \"\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}
