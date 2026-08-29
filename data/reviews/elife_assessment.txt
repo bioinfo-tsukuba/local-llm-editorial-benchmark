@@ -1,3 +1,0 @@
-eLife Assessment 
-
- This important manuscript presents a way to understand allostery and allostery-inspired mechanical systems. It presents a mechanochemical model of an ATPase-like molecular machine in which geometric constraints and mechanically coupled linkages generate negative allostery, yielding a large stochastic reaction network that captures productive and futile cycling behavior. The work presents an interesting framework for bridging concepts from molecular motors and allostery. It provides a compelling, intuitive physical mechanism for mechanochemical transduction and reveals nontrivial tradeoffs that emerge from geometry-induced constraints.
