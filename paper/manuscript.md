@@ -179,10 +179,44 @@ rules (T7), and reference verification with live calls to Crossref and the NLM C
 (T8). T6 and T7 were added after an early version of the suite proved saturated: a 13 GB
 model reached full marks on T4 and seven of eight models scored identically on T3.
 
-Twenty-one models from 3.3 to 81 GB were measured. Coverage is defined per task by
-capability, read from the runtime's model metadata rather than assumed: 17 models on the
-text tasks, the 11 carrying a vision encoder on T5, and the 15 supporting tool calls on
-T8. Every model that could run a task did run it.
+Twenty-one open-weight models from 3.3 to 81 GB were measured (Table 1). Coverage is
+defined per task by capability, read from the runtime's model metadata rather than
+assumed: 17 models on the text tasks, the 11 carrying a vision encoder on T5, and the 15
+supporting tool calls on T8. Every model that could run a task did run it, and the gaps
+in coverage are therefore capability limits rather than omissions.
+
+**Table 1** Models evaluated. Size is the on-disk weight size reported by the runtime.
+"Active" is active parameters per token for mixture-of-experts models, which governs
+bandwidth demand during generation. V and T mark a vision encoder and tool-calling
+support.
+
+| Model | Size | Type | Active | V | T |
+|---|---|---|---|---|---|
+| gemma3:4b | 3.3 GB | dense | 4B | ✓ | |
+| gemma4 | 9.6 GB | dense | | ✓ | ✓ |
+| gpt-oss:20b | 13 GB | MoE | | | ✓ |
+| mistral-small | 14 GB | dense | | | ✓ |
+| magistral | 14 GB | dense | | | ✓ |
+| qwen3.6:27b | 17 GB | dense | 27B | ✓ | ✓ |
+| qwen3.8:27b | 17 GB | MoE | | ✓ | ✓ |
+| qwen3-vl:30b-a3b-instruct | 19 GB | MoE | 3B | ✓ | ✓ |
+| qwen3:32b | 20 GB | dense | 32B | | ✓ |
+| qwen3.6:35b-a3b-q4_K_M | 23 GB | MoE | 3B | ✓ | ✓ |
+| GLM-4.7-Flash Q8_0 | 31 GB | MoE | | | |
+| qwen3.6:35b-a3b-q8_0 | 38 GB | MoE | 3B | ✓ | ✓ |
+| nemotron | 42 GB | dense | 42B | | ✓ |
+| command-r-plus | 59 GB | dense | | | ✓ |
+| qwen3-vl:30b-a3b-instruct-bf16 | 62 GB | MoE | 3B | ✓ | ✓ |
+| gpt-oss:120b | 65 GB | MoE | | | ✓ |
+| glm-4.5-air:q4 | 67 GB | MoE | 12B | | |
+| llama4:scout | 67 GB | MoE | | ✓ | ✓ |
+| qwen3.6:35b-a3b-bf16 | 71 GB | MoE | 3B | ✓ | ✓ |
+| qwen3.5:35b-a3b-bf16 | 71 GB | MoE | 3B | ✓ | ✓ |
+| qwen3.5:122b-a10b-q4_K_M | 81 GB | MoE | 10B | ✓ | ✓ |
+
+Three models support neither vision nor tool calling and are therefore absent from T5
+and T8; `gemma3:4b` and the two `qwen3-vl` variants took part in T5 only, leaving 17 for
+the text tasks.
 
 ### Inference parameters and scoring
 
@@ -211,6 +245,17 @@ Keyword matching is a prefilter, not a verdict: every unmatched finding was writ
 for human adjudication, because an unmatched finding may be a real violation we failed
 to seed — which is how the defect in MS-B surfaced. Reported false-positive counts are
 post-adjudication.
+
+### The system that carried out the work
+
+The benchmark construction, implementation, execution, analysis and drafting were
+performed by Claude Code version 2.1.238 (Anthropic) running the model `claude-opus-5`,
+directed by the author. This is recorded here as part of the method rather than only in
+the acknowledgements, because it bears on how the work should be read: several
+intermediate conclusions reported in the Discussion were produced, and later corrected,
+by that system. The measurements themselves are independent of it — they are produced by
+the scripts in the repository and can be re-run without any assistance from a language
+model.
 
 ### The control arm
 
@@ -563,7 +608,7 @@ its conclusions.
 ## Author team composed of AI scientist(s) and human scientist(s)
 
 Haruka Ozaki, RIKEN Center for Biosystems Dynamics Research / University of Tsukuba;
-Claude Code (Anthropic), model Claude Opus 5.
+Claude Code version 2.1.238 (Anthropic), model claude-opus-5.
 
 ## Author contributions
 
@@ -615,10 +660,16 @@ benchmark initially contained only problems small models could already solve, an
 objection that the figure-checking task had not been run on large models — led directly
 to the additional measurements reported here.
 
-Claude Code (Anthropic, model Claude Opus 5) was used as described under Author
-contributions. It performed the implementation, measurement and analysis, and drafted
-the manuscript; it also produced several of the erroneous intermediate conclusions
+Claude Code version 2.1.238 (Anthropic), running the model `claude-opus-5`, was used as
+described under Author contributions. The work was carried out in a single continuous
+session between 21 and 29 August 2026, in which the model issued 1,694 assistant turns;
+the session transcript is the record of what was directed and what was produced. Claude
+Code performed the implementation, measurement and analysis, and drafted this
+manuscript; it also produced several of the erroneous intermediate conclusions
 documented in the Discussion.
+
+No other AI system was used in the preparation of this work. The models listed in
+Table 1 are the *objects* of measurement and had no part in writing it.
 
 ---
 
