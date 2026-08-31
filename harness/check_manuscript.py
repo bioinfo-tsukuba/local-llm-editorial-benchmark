@@ -104,6 +104,32 @@ def main():
         if not ok:
             fails.append(label)
 
+    # Back matter must run in the order the Instructions for Authors prescribe, and
+    # the preprint comment must sit between Data availability and Acknowledgements
+    # (Quick Guide item 1-9: it is required whenever a deposit exists, and this
+    # special issue requires Regular Articles to be deposited before submission).
+    heads = re.findall(r'^## (.+)$', s, re.M)
+    want = ['Introduction', 'Materials and methods', 'Results', 'Discussion',
+            'Conclusion', 'Conflict of interest', 'Author contributions',
+            'Data availability', 'Acknowledgements', 'References']
+    got = [h for h in heads if h in want]
+    ok = got == want
+    print(f'{"back matter in order":<28}{"ok" if ok else "FAIL"} {"" if ok else got}')
+    if not ok:
+        fails.append('back matter out of order')
+    pre = re.search(r'^A preliminary version of this work was deposited in '
+                    r'(\w+) \(([^)]+)\) on (.+?)\.$', s, re.M)
+    if pre:
+        i = s.index(pre.group(0))
+        ok = s.index('## Data availability') < i < s.index('## Acknowledgements')
+        print(f'{"preprint comment placed":<28}{"ok" if ok else "FAIL"} '
+              f'{pre.group(1)}, {pre.group(2)}')
+        if not ok:
+            fails.append('preprint comment misplaced')
+    else:
+        print(f'{"preprint comment":<28}absent or not in the prescribed form')
+        fails.append('preprint comment absent or malformed')
+
     # Tables must be numbered in the order they are first cited, and each legend must
     # appear in the same order. This went unchecked while only the figures were, and
     # Table 4 -- the seed table in the Methods -- was cited before Tables 2 and 3.

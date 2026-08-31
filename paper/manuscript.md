@@ -954,7 +954,7 @@ All tabulated numbers are generated from the stored results by
 `harness/make_report.py` and `harness/make_paper_figures.py`; none are transcribed by
 hand. Ground truth passed 52 independent arithmetic checks before any model was scored.
 
-A preliminary version of this work, DOI: XXX, was deposited in arXiv on 31 August 2026.
+A preliminary version of this work was deposited in arXiv (DOI: XXX) on 31 August 2026.
 
 ---
 
