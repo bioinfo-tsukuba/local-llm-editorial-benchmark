@@ -283,7 +283,7 @@ text tasks.
 
 Every condition was run at temperature 0 and at random seed 42. Fifteen conditions over
 seven models were additionally repeated at seeds 43 and 44 to check reproducibility
-(Table 4); the models leading each task were chosen for repetition, so that the ordering
+(Table 2); the models leading each task were chosen for repetition, so that the ordering
 at the top rests on more than one measurement. Scores were not averaged over seeds, and
 each seed is reported as its own condition. For each task, `num_ctx` was set to the smallest
 context window that accommodated both the full prompt and the maximum permitted output:
@@ -296,7 +296,7 @@ for T8, and 8,192 for T5. Every request had the same wall-clock limit of 3,600 s
 exceeding this limit were recorded as timeouts. Model-default `top_p`, `top_k`, and
 `min_p` were left unchanged and are inert under greedy decoding. Greedy decoding was nearly, but not exactly, reproducible: of the fifteen repeated
 conditions, twelve scored identically at all three seeds and three differed by one
-violation (Table 4).
+violation (Table 2).
 
 The prompts are `harness/prompts.py` in the accompanying repository (see Data
 availability), one builder per task. All of them instruct the model to report only
@@ -370,7 +370,7 @@ adjudicated by Claude Code, whose decisions H.O. reviewed. An unmatched finding 
 be a real violation that was not seeded, which is how the defect in MS-B surfaced.
 Reported false-positive counts are post-adjudication.
 
-**Table 4**  Violations detected at each random seed, for the fifteen conditions measured at more than one. MS-A carries the 40 seeded violations; MS-B is the compliant control, where the number is false positives. Twelve of the fifteen are identical across all three seeds and the other three differ by one, so the orderings reported here do not turn on the choice of seed.
+**Table 2**  Violations detected at each random seed, for the fifteen conditions measured at more than one. MS-A carries the 40 seeded violations; MS-B is the compliant control, where the number is false positives. Twelve of the fifteen are identical across all three seeds and the other three differ by one, so the orderings reported here do not turn on the choice of seed.
 
 | Model | Size | Prompt | Manuscript | seed 42 | seed 43 | seed 44 |
 |---|---|---|---|---|---|---|
@@ -476,11 +476,11 @@ perform and how large that model must be. To separate tasks that require a model
 those that do not, the 40 seeded violations in MS-A were evaluated with the deterministic
 baseline, with each model under its best prompt, and with the baseline and model in
 combination. The deterministic baseline detected 31 of the 40 violations, the strongest
-single model detected 36, and the combination detected all 40 (Table 2). The baseline
+single model detected 36, and the combination detected all 40 (Table 3). The baseline
 raised no false positive on the compliant control and took under a tenth of a second and
 no memory; the model raised one and took 722 s and 81 GB.
 
-**Table 2**  Contribution of each layer to the 40 seeded guideline violations (T1, MS-A). The
+**Table 3**  Contribution of each layer to the 40 seeded guideline violations (T1, MS-A). The
 deterministic checker is 220 lines of regular expressions and arithmetic and uses no
 model. The external lookup resolves a journal name to its Index Medicus abbreviation
 through Crossref and the NLM Catalog; it is listed for completeness, since within this
@@ -513,8 +513,8 @@ complementary on this item set is not their detections but their remaining error
 additional detections rather than forty, at approximately 7,000 times the wall-clock time
 and with an 81 GB memory footprint.
 
-One violation shows that the two are not interchangeable. MS-A cites only Table 2 in its
-text, so its tables are not numbered in order of appearance; the checker settles this by
+One violation shows that the two are not interchangeable. MS-A cites only its own
+Table 2 in its text, so its tables are not numbered in order of appearance; the checker settles this by
 comparing the citation order against the numbering, and all 62 model conditions missed it
 (Figure 3). For this item, the deterministic layer was not merely a cheaper route to a result that a
 model could also reach; it was the only successful route we observed. The figure also shows a bimodal pattern in task completion: 12 of the 62 conditions
@@ -628,9 +628,9 @@ and not always upward: of the 14 models measured under both, 9 detected more und
 checklist, 2 detected fewer, and 3 detected nothing under either. The largest gains
 belong to models that return nothing at all under free-form prompting and therefore
 start from zero; among the 7 that produce output under both forms the shift ranges from
--2 to +11 violations. Where the gain falls is not uniform either (Table 3).
+-2 to +11 violations. Where the gain falls is not uniform either (Table 4).
 
-**Table 3**  Detection by difficulty class under the two prompt structures, for two
+**Table 4**  Detection by difficulty class under the two prompt structures, for two
 models that respond to the checklist differently (T1, MS-A). For `qwen3.8:27b` the gain
 is on the violations decidable at a single location and the harder class does not
 improve; for `qwen3.6:27b` the gain is on the harder class. The direction of the effect
@@ -856,7 +856,7 @@ spanning multiple journals and disciplines would provide a stronger test.
 
 Third, most conditions were evaluated with a single random seed. Fifteen conditions over
 seven models were repeated at three seeds: twelve scored identically and three differed
-by one violation (Table 4). That is reassuring for the orderings reported here, but
+by one violation (Table 2). That is reassuring for the orderings reported here, but
 fifteen conditions are insufficient to establish confidence intervals. We therefore report no significance tests other than the permutation test
 used for the figure task. The figure task itself also does not isolate visual reasoning,
 because only three of the five seeded defects strictly require information from the

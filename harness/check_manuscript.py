@@ -104,6 +104,29 @@ def main():
         if not ok:
             fails.append(label)
 
+    # Tables must be numbered in the order they are first cited, and each legend must
+    # appear in the same order. This went unchecked while only the figures were, and
+    # Table 4 -- the seed table in the Methods -- was cited before Tables 2 and 3.
+    # One "Table 2" in the Results is MS-A's own table, not this paper's, and is
+    # excluded by matching only citations in parentheses and bold legends.
+    tbl_legs = re.findall(r'^\*\*Table (\d+)\*\*', s, re.M)
+    tbl_cites, seen = [], set()
+    for m in re.finditer(r'\(Tables? (\d+)(?: and (\d+))?\)', s):
+        for n in m.groups():
+            if n and n not in seen:
+                seen.add(n); tbl_cites.append(n)
+    for label, got in (('tables in citation order', tbl_cites),
+                       ('table legends in order', tbl_legs)):
+        ok = got == sorted(got, key=int)
+        print(f'{label:<28}{"ok" if ok else "FAIL"} {"" if ok else got}')
+        if not ok:
+            fails.append(label)
+    ok = set(tbl_legs) == set(tbl_cites)
+    print(f'{"every table cited":<28}{"ok" if ok else "FAIL"} '
+          f'{"" if ok else sorted(set(tbl_legs) ^ set(tbl_cites))}')
+    if not ok:
+        fails.append('table citations and legends disagree')
+
     # tables must have a constant column count
     blk, bad = [], []
     for i, line in enumerate(s.split('\n'), 1):
