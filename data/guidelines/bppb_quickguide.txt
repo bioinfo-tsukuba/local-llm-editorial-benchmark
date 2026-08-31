@@ -1,0 +1,410 @@
+Quick Guide to Prepare Manuscript | Biophysics and Physicobiology (BPPB) 
+
+ Toggle Navigation 
+
+ Biophysics and Physicobiology 
+
+ Home 
+
+ About
+
+ Journal Information 
+
+ Editorial Board 
+
+ Paper Awards 
+
+ Submit
+
+ Quick Guide to Prepare Manuscript 
+
+ Instruction for Authors 
+
+ Download Templates
+
+ Regular Article 
+
+ Review Article 
+
+ Note 
+
+ Method and Protocol 
+
+ Database and Computer Program 
+
+ Commentary and Perspective 
+
+ Editorial 
+
+ LaTeX_Template 
+
+ Submission Site 
+
+ J-STAGE Data 
+
+ Browse
+
+ Recent Articles 
+
+ All Articles 
+
+ Special Issues 
+
+ Promotional Video 
+
+ Article Statistics 
+
+ J-STAGE Data 
+
+ Tutorials
+
+ Oosawa lectures 
+
+ Tutorials 
+
+ Biophysics and Physicobiology 
+
+ Home 
+
+ About 
+
+ Journal Information 
+
+ Editorial Board 
+
+ Paper Awards 
+
+ Submit 
+
+ Quick Guide to Prepare Manuscript 
+
+ Instruction for Authors 
+
+ Download Templates 
+
+ Regular Article 
+
+ Review Article 
+
+ Note 
+
+ Method and Protocol 
+
+ Database and Computer Program 
+
+ Commentary and Perspective 
+
+ Editorial 
+
+ LaTeX_Template 
+
+ Submission Site 
+
+ J-STAGE Data 
+
+ Browse 
+
+ Recent Articles 
+
+ All Articles 
+
+ Special Issues 
+
+ Promotional Video 
+
+ Article Statistics 
+
+ J-STAGE Data 
+
+ Tutorials 
+
+ Oosawa lectures 
+
+ Tutorials 
+
+ HOME 
+
+ Submit
+
+ Quick Guide to Prepare Manuscript
+
+ Quick Guide to Prepare Manuscript
+
+ in PDF format file : in English  
+
+ in PDF format file : in Japanese 
+
+ Every author is requested to use a Template file for Microsoft Word or for LaTeX.
+
+ The Template files are available at the BPPB web site : https://www.biophys.jp/biophysics_and_physicobiology.html 
+
+ [Submit] -> [Download Template] -> (select appropriate Template for each category)
+
+ The BPPB categories are: (1) Regular Articles, (2) Review Articles, (3) Notes, (4) Methods and Protocols, (5) Databases and Computer Programs, (6) Commentary and Perspective, and (7) Editorial. 
+The details are shown in the Instruction for Authors : https://www.biophys.jp/biophysics_and_physicobiology03.html#1 
+
+ In the Template file, the authors should include Text, Tables, and Figures.
+
+The authors can also submit supplementary materials relating to the article as the PDF file(s), image files, and movie files.
+
+ The followings are brief descriptions to prepare your manuscript:
+
+ 1. Text 
+
+ 1-1. First page information 
+
+ 1-2. Sections 
+
+ 1-3. Main text body 
+
+ 1-4. Header 
+
+ 1-5. Footnotes 
+
+ 1-6. Conflict of interest 
+
+ 1-7. Author contributions 
+
+ 1-8. Data availability 
+
+ 1-9. Comments about deposition to a preprint server 
+
+ 1-10. References 
+
+ 2. Tables 
+
+ 3. Figures 
+
+ 4. Supplementary materials 
+
+ 5. Graphical Abstract 
+
+ 6. Publication fees (APC: Article Processing Charges) 
+
+ 1. Text
+
+ The text file should include the title, the author name(s), text, and references as in the template file for each Category. All the URLs on the Word file should be hyperlinked. 
+
+ The only font used should be “Times New Roman”. When Greek characters are used, please do not use “symbol” fonts, but use the Unicode characters with the font Times New Roman. For how to input the Unicode characters from “0391” to “03C9” for Greek characters, please refer to Microsoft Support Service ( https://support.microsoft.com/ ) to input “Special Characters” or to insert mathematical symbols using “Equation tools” when the Template file for Microsoft Word is used. The simple alternative is to copy and paste the Greek characters from the examples in the Template.
+
+ The first line of every paragraph must be indented. Both ends should be justified with the line spacing single spaced.
+
+ Please directly write the manuscript on the Template when the Template file for Microsoft Word is used. When you paste copied content from another document where the style is defined differently from that in the Template, please paste it with the option of “Use Destination Style” in order to keep the style of the original Template.
+
+ 1-1. First page information
+
+ Page 1 of the template file should contain the article title, author name(s), affiliation(s), address(es), an abstract, keywords, a significance statement, and the information of the Corresponding author(s).
+
+ 1-1-1. The Title of the article is in 16-point boldface font and left-justified. Only the first character of the Title is capitalized except for proper names.
+
+ Titles of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. Please also see the article, “Editorial” by Arai, M., Komatsuzaki, T., Nakamura, H. Biophys. Physicobiol. 17, 155 (2020). https://doi.org/10.2142/biophysico.BSJ-2020030 
+
+ 1-1-2. The authors’ names are in 12-point font and left-justified. Please do not insert “and” just before the last author’s name.
+
+ 1-1-3. The name and address (only City, Prefecture and Postcode, Country) of every author are in 10-point italic font and left justified. Please do not write the precise postal address such as town name or street address.
+
+ 1-1-4. The Abstract is in 10-point boldface font. The length is no more than 250 words. The abstract must not include references. For the “Editorial” or “Commentary and Perspective” categories, any abstract is not necessary.
+
+ Abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. Please also see the article, “Editorial” by Arai, M., Komatsuzaki, T., Nakamura, H. Biophys. Physicobiol. 17, 155 (2020). https://doi.org/10.2142/biophysico.BSJ-2020030 
+
+ 1-1-5. Up to five keywords are in 10-point font. Please separate the keywords with a comma ‘,’.
+
+ 1-1-6. The "Significance" section contains a short statement of no more than 100 words about the significance of the article in 10-point font. Both ends should be justified. This Significance statement should summarize the main point of the article.
+
+ 1-1-7. Please provide information of the Corresponding author(s) on the footer of page.
+
+ When there are multiple Corresponding authors, please separate their information with a semicolon ‘;’. Although multiple corresponding authors are available on the Template, only a single Corresponding author can be specified as the representative at the web page of ScholarOne Manuscript (S1M) for BPPB submission : https://mc.manuscriptcentral.com/biophysics .
+
+ First and last name, affiliation, city, prefecture and postcode, country, and ORCID iD (URL) of each Corresponding author are described. When the city name and the prefecture name are the same, the city name should be removed.
+
+ An E-mail address of each Corresponding author can be added after the ORCID iD with a comma ‘,’, if the corresponding author(s) wishes.
+
+ 1-2. Sections
+
+ Following the above information in the first page, several main sections should be arranged.
+
+ 1-2-1. The order of the main section is:
+
+ Introduction, 
+
+ Materials and methods (or Methods), 
+
+ Results, 
+
+ Discussion (or Results and discussion), 
+
+ Conclusion, 
+
+ Conflict of interest, 
+
+ Author contributions, 
+
+ A comment about deposition to a preprint server if the authors have deposited the file there, 
+
+ Data cvailability, 
+
+ Acknowledgements, and 
+
+ References.
+
+ 1-2-2. Main section names are described in 10-point boldface. 
+
+ Please leave a blank line at the top and bottom of the main section name. Only the first character of the section name except proper names should be capitalized. 
+
+ 1-2-3. When subsections are used, their names are also described in 10-point boldface.
+
+ Please leave a blank line is left at top and bottom of the subsection name. Only the first character except proper names should be capitalized. 
+
+ 1-3. Main text body
+
+ Text is written in 10-point Times New Roman with the line spacing single spaced, and the both ends should be justified. The first line of every paragraph must be indented.
+
+ When References are cited in the text, the Reference numbers are put in brackets in the form [1, 3, 5-8] before a 'period' or 'comma'. All References should be listed in numerical order depending on the location where they first appear, including Table and Figure captions.
+
+ When macromolecular structures in the PDB database are referred to, please describe [PDB ID: ] in the text and set hyperlinks to https://doi.org/10.2210/pdb /pdb as follow: (e.g., [PDB ID: 6qw9]).
+
+ When equations are used with the “Equation tools”, they are indented and the equation numbers are written in parentheses at the right edge, as in the examples in the Template. For a single character or a short word, please do not use the “Equation tools”, but directly input Unicode characters described above.
+
+ 1-4. Header
+
+ At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is described in 10-point font. It is not necessary for “Editorial” or “Commentary and Perspective”.
+
+ 1-5. Footnotes
+
+ Text footnotes are not allowed at all from page 2 onwards.
+
+ 1-6. Conflict of interest
+
+ All the authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work. The following is an example of such a statement:
+
+ • A, B, and C declare that they have no conflict of interest.
+
+ • D declares that she has no conflict of interest.
+
+ • E has received research grants from Drug Company F.
+
+ 1-7. Author contributions
+
+ All persons designated as authors should qualify for authorship. The contribution of all the authors should be listed, for example:
+
+ • A, B, and C directed the entire project and co-wrote the manuscript.
+
+ • D synthesized and characterized materials. E carried out diffractometry analyses. F performed NMR measurements.
+
+ • G and H carried out ab initio calculations.
+
+ For an article by a single author, the example is as follows:
+
+ • J designed the research, performed the experiments, analyzed data and wrote the manuscript.
+
+ 1-8. Data availability
+
+ Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example:
+
+ • The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.
+
+ In addition, the authors are encouraged to include supporting digital data for all graphs, tables, and similar contents as Supplementary Materials and/or on J-STAGE Data.
+
+ When the data are not publicly available due to a special reason, for example, privacy, ethical restriction or legal restriction, please describe the reason clearly.
+
+ When the relating raw data to the results of the article are provided as evidence data by the authors, the name of data repository with the data Identification and/or the DOI information, if possible, should be described at the end of the manuscript. For example,
+
+ • Genetic and/or genomic sequence data were deposited to the DDBJ/ENA/GenBank (INSDC: https://www.insdc.org/ ) under the accession number: ??????
+
+ • Coordinates, structure factors and its validation report of protein X were deposited to the Protein Data Bank ( https://www.wwpdb.org/ ) under the PDBID: ???? with the DOI of https://doi.org/10.2210/pdb????/pdb. 
+
+ • The trajectory and a series of snapshots for the current molecular simulation study were deposited to BSM-Arc ( https://bsma.pdbj.org/ ) with the DOI of https://doi.org/10.51093/bsm-???? 
+
+ • Quantitative biological data and microscopy images analyzed in this study were deposited to SSBD (Systems Science of Biological Dynamics database: https://ssbd.riken.jp ) with the DOI of https://doi.org/10.24631/ssbd.repos.????.??.??? 
+
+ • The original raw data that support the findings of the current study are available in J-STAGE Data ( https://jstagedata.jst.go.jp/biophysico ) with the DOI of https://doi.org/10.34600/data.biophysico.???? 
+
+ 1-9. Comments about deposition to a preprint server
+
+ If the authors have deposited the file to a preprint server, please describe a statement for example: “preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.)”
+
+ 1-10. References
+
+ The style of the Reference list is described in detail in Instructions for Authors ( https://www.biophys.jp/biophysics_and_physicobiology03.html ) and in the Template. 
+
+ 1-10-1. Author name(s), Title of the article, Journal name, Volume number, Page number(s), Published year, and URL of digital object identifier (DOI) (if possible) should be described in this order for a journal article . For citing a book chapter, a book, and a preprint server, several examples are shown in the Instruction for Authors ( https://www.biophys.jp/biophysics_and_physicobiology03.html#5 )
+
+ 1-10-2. Only the first character of the Title of the article is capitalized except for proper names.
+
+ 1-10-3. When there are less than seven Authors, the Author names are separated by commas. Please do not insert “and” or “&” before the last author.
+
+ 1-10-4. When there are more than six Authors, “et al.” in normal font should be added after the sixth Author’s name.
+
+ 1-10-5. The Journal name is described as the abbreviated form in normal font, not in italic. The abbreviated Journal names follow the Index Medicus/MEDLINE format, which can be found at NLM Catalog: Journals referenced in the NCBI Database ( https://www.ncbi.nlm.nih.gov/nlmcatalog/journals/ ). After every abbreviated word, please add a period “.”.
+
+ 1-10-6. The Volume number is also written in normal font, not in boldface. The issue information is not necessary.
+
+ 1-10-7. When the Reference has a DOI, it should be added by its URL. The DOI for each reference can be searched, for example, using the “free DOI lookup site” provided by CrossRef ( https://www.crossref.org/guestquery/ ).
+
+ 1-10-8. When articles in Preprint Servers are cited, please describe their URL.
+
+ 1-10-9. The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site https://github.com/citation-style-language/styles , and it is also available from the Zotero site http://www.zotero.org/styles/biophysics-and-physicobiology . The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.com/ ) or Zotero tools ( https://www.zotero.org/ ) for managing the Reference list.
+
+ 1-10-10. The output style for EndNote, “ Biophysics_and_Physicobiology.ens ”, was prepared courtesy of USACO Corporation , https://www.usaco.co.jp/endnote/ , and its usage is described at https://support.clarivate.com/Endnote/s/article/EndNote-Install-Additional-Output-Styles?language=en_US .
+
+ 2. Tables
+
+ Tables and their captions should be embedded in the template file at the appropriate locations. Tables and their captions should be inserted using the Text-box tool in Microsoft Word, when the Template for Microsoft Word is used. The left and right margins should be the same, 20 mm, as those for the other text. Do not use vertical lines.
+
+ When the Tables are embedded as the picture images, the original Word /Excel files are requested to be submitted separately at the S1M web site in order to show the Tables in the HTML version on the BPPB website.
+
+ All tables must be cited in the text. Number the tables consecutively with Arabic numerals (for example “Table 3”), in the order of their appearance in the text. 
+
+ Each Table name, title, and explanation is written in 10-point Times New Roman boldface above each Table with the line spacing single spaced. No lines are indented and both ends should be justified.
+
+ Supply table footnotes lettered a, b, c, and so forth, below the body of the Table. Those notes are written in 10-point Times New Roman with the line spacing single spaced. No lines are indented and both ends should be justified.
+
+ 3. Figures
+
+ Figures and their captions should be embedded in the template file at the appropriate locations. Their captions should be inserted below each Figure using the Text-box tool in Microsoft Word, when the Template for Microsoft Word is used. Each Figure caption is written in 10-point Times New Roman. It should be single spaced with only the Figure number in boldface. No lines are indented and both ends should be justified.
+
+ Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG JPEG or PDF formats.
+
+ All figures must be cited in the text. Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text. The dimensions of each illustration, photograph, or composite imagery should be no larger than the size of the manuscript page.
+
+ In addition to the embedded Figures in the Template file, each Figure should be uploaded separately at the S1M web site to be used in the XML and HTML versions.
+
+ 4. Supplementary materials
+
+ It is not necessary to add a cover page for Supplementary materials.
+
+ As Supplementary materials, image files should be in PDF, TXT or ZIP format, and movie files in MPEG or AVI format. 
+
+ The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.
+
+ Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.
+
+ Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.
+
+ Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1” .
+
+ When a text with or without Supplementary Figures and/or Supplementary Tables is added as a Supplementary Text, please upload the PDF file.
+
+ 5. Graphical Abstract
+
+ One figure in color or monochrome that depicts the content of the manuscript should be attached as the Graphical Abstract, which may be the same as one, or a part of one, that appears in the manuscript.
+
+ This figure appears on the J-STAGE website, for every paper except “Editorial” or “Commentary and Perspective” papers, and it will be considered as a candidate for the Cover Picture of the current or next Volume. 
+
+ The figure should not infringe the copyright of any publication. 
+
+ The format of the graphical abstract should be GIF, PNG or JPEG, and the resolution should be 300 dpi.
+
+ When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure. The caption will appear together with the Graphical Abstract. It must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.
+
+ 6. Publication fees (APC: Article Processing Charges)
+
+ The publication fee for an accepted manuscript in any category except “Commentary and Perspective” or “Editorial” is 40,000 JPY plus tax. For the “Commentary and Perspective” or “Editorial” article, it is 18,000 JPY plus tax.
+
+ If you have any questions about how to format your manuscript using the Template, please inquire the Editorial office of BPPB <biophysics[AT]nacos.com> (* Please replace [AT] with @).
+
+ Previous Page 
+
+ Scroll up 
+
+ © Biophysics and Physicobiology. All rights reserved.

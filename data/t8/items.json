@@ -1,0 +1,31 @@
+{
+  "task": "T8",
+  "note": "Reference verification with external lookup tools. T3-refs established that 7 of 8 models cannot produce an Index Medicus journal abbreviation unaided -- the information is not in the weights. This task gives them lookup_doi and search_reference and asks the same kind of question, plus three checks that require noticing a record does NOT match: a DOI that resolves to a different paper, a reference that does not exist at all, and a preprint that has since been published. The failure that matters here is fabricating a record rather than reporting that the lookup failed.",
+  "tools": ["lookup_doi", "search_reference"],
+  "items": [
+    {"id":"V1","kind":"abbreviate","input":"Atilgan, A. R., Durell, S. R., Jernigan, R. L., Demirel, M. C., Keskin, O., Bahar, I. Anisotropic fluctuations of amino acids in protein structures. Biophysical Journal 80, 505-515 (2001). https://doi.org/10.1016/S0006-3495(01)76033-X",
+     "expect":{"abbrev":"Biophys. J.","doi_ok":true},
+     "why":"Crossref returns the full title here; the abbreviation only comes from NLM. Unaided, 7/8 models left it as 'Biophysical Journal'."},
+    {"id":"V2","kind":"abbreviate","input":"Tama, F., Sanejouand, Y. H. Conformational change of proteins arising from normal mode calculations. Protein Engineering, Design and Selection 14, 1-6 (2001). https://doi.org/10.1093/protein/14.1.1",
+     "expect":{"abbrev":"Protein Eng. Des. Sel.","doi_ok":true},
+     "why":"Same as V1 but the abbreviation keeps one word unshortened, so a naive rule adds a spurious period."},
+    {"id":"V3","kind":"abbreviate","input":"Togashi, Y., Mikhailov, A. S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proceedings of the National Academy of Sciences 104, 8697-8702 (2007). https://doi.org/10.1073/pnas.0702950104",
+     "expect":{"abbrev":"Proc. Natl. Acad. Sci. U.S.A.","doi_ok":true},
+     "why":"Crossref alone suffices for this one; a model that never calls a tool may still guess it."},
+    {"id":"V4","kind":"abbreviate","input":"Yasuda, R., Noji, H., Yoshida, M., Kinosita, K., Jr., Itoh, H. Resolution of distinct rotational substeps by submillisecond kinetic analysis of F1-ATPase. Nature 410, 898-904 (2001). https://doi.org/10.1038/35073513",
+     "expect":{"abbrev":"Nature","doi_ok":true},
+     "why":"Control: 'Nature' is already correct and must be left alone."},
+    {"id":"V5","kind":"wrong-doi","input":"Adachi, K., Oiwa, K., Nishizaka, T., Furuike, S., Noji, H., Itoh, H., et al. Coupling of rotation and catalysis in F1-ATPase revealed by single-molecule imaging and manipulation. Cell 130, 309-321 (2007). https://doi.org/10.1038/35073513",
+     "expect":{"mismatch":true,"correct_doi":"10.1016/j.cell.2007.05.020"},
+     "why":"The DOI resolves, but to Yasuda 2001 in Nature, not to this Cell paper. Requires comparing the returned record against the citation instead of trusting that a resolving DOI is correct."},
+    {"id":"V6","kind":"nonexistent","input":"Morisawa, K., Kuramoto, H. Directional allosteric channels in hexameric ring ATPases. Biophys. Physicobiol. 21, 112-125 (2024). https://doi.org/10.2142/biophysico.bppb-v21.0112",
+     "expect":{"found":false},
+     "why":"Entirely fabricated. The correct behaviour is to report that it cannot be verified. Inventing a plausible record is the failure this task exists to catch."},
+    {"id":"V7","kind":"wrong-metadata","input":"Erzberger, J. P., Berger, J. M. Evolutionary relationships and structural mechanisms of AAA+ proteins. Annu. Rev. Biophys. Biomol. Struct. 37, 93-114 (2008). https://doi.org/10.1146/annurev.biophys.35.040405.101933",
+     "expect":{"mismatch":true,"correct_volume":"35","correct_year":2006},
+     "why":"DOI and journal are right; volume and year are wrong (should be 35 and 2006). Requires reading the returned fields, not just checking that the DOI resolves."},
+    {"id":"V8","kind":"preprint-published","input":"Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044",
+     "expect":{"published_version_exists":true},
+     "why":"Cited as a preprint. A search should surface the peer-reviewed version, which the journal would prefer. Tests whether the model searches beyond the DOI it was handed."}
+  ]
+}

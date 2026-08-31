@@ -1,0 +1,34 @@
+{
+ "task": "t6d",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 1,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "wall_s": 213.86,
+  "prompt_tokens": 5460,
+  "output_tokens": 8431,
+  "load_s": 0.14,
+  "prefill_tok_s": 1267.7,
+  "decode_tok_s": 42.5,
+  "ttft_s": 4.44,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 47636,
+  "peak_size_vram_mib": 40915
+ },
+ "problems": [
+  {
+   "location": "Materials and methods, Single-molecule rotation assay",
+   "problem": "Myosin is described as a 'reference standard in the calibration measurements' for a single-molecule rotation assay of a ring ATPase. Myosin is an actin-based motor protein and has no role in calibrating rotational mechanics or bead tracking in such assays; calibration typically relies on thermal fluctuation analysis (power spectrum) or known optical/magnetic trap stiffness.",
+   "kind": "domain-implausibility",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\"problems\": [{\"location\": \"Materials and methods, Single-molecule rotation assay\", \"problem\": \"Myosin is described as a 'reference standard in the calibration measurements' for a single-molecule rotation assay of a ring ATPase. Myosin is an actin-based motor protein and has no role in calibrating rotational mechanics or bead tracking in such assays; calibration typically relies on thermal fluctuation analysis (power spectrum) or known optical/magnetic trap stiffness.\", \"kind\": \"domain-implausibility\", \"severity\": \"high\"}]}\n```",
+ "thinking_chars": 30400
+}

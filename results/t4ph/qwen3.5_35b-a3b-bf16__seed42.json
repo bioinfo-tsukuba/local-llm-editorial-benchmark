@@ -1,0 +1,53 @@
+{
+ "task": "t4ph",
+ "model": "qwen3.5:35b-a3b-bf16",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "answers",
+ "n_items": 5,
+ "meta": {
+  "model": "qwen3.5:35b-a3b-bf16",
+  "wall_s": 150.45,
+  "prompt_tokens": 5280,
+  "output_tokens": 3330,
+  "load_s": 23.55,
+  "prefill_tok_s": 719.2,
+  "decode_tok_s": 29.0,
+  "ttft_s": 30.89,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 81716,
+  "peak_size_vram_mib": 74679
+ },
+ "answers": [
+  {
+   "id": "F1",
+   "exists": false,
+   "answer": "Reference [13] does not exist in the manuscript. The reference list ends at citation [12]."
+  },
+  {
+   "id": "F2",
+   "exists": false,
+   "answer": "The Data availability statement does not exist in the manuscript."
+  },
+  {
+   "id": "F3",
+   "exists": false,
+   "answer": "Table 3 does not exist in the manuscript. Only Table 1 and Table 2 are listed."
+  },
+  {
+   "id": "F4",
+   "exists": false,
+   "answer": "The manuscript does not contain a statement regarding institutional review board approval."
+  },
+  {
+   "id": "F5",
+   "exists": false,
+   "answer": "The ORCID iD of the corresponding author does not exist in the manuscript."
+  }
+ ],
+ "raw_response": "{\n  \"answers\": [\n    {\n      \"id\": \"F1\",\n      \"exists\": false,\n      \"answer\": \"Reference [13] does not exist in the manuscript. The reference list ends at citation [12].\"\n    },\n    {\n      \"id\": \"F2\",\n      \"exists\": false,\n      \"answer\": \"The Data availability statement does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F3\",\n      \"exists\": false,\n      \"answer\": \"Table 3 does not exist in the manuscript. Only Table 1 and Table 2 are listed.\"\n    },\n    {\n      \"id\": \"F4\",\n      \"exists\": false,\n      \"answer\": \"The manuscript does not contain a statement regarding institutional review board approval.\"\n    },\n    {\n      \"id\": \"F5\",\n      \"exists\": false,\n      \"answer\": \"The ORCID iD of the corresponding author does not exist in the manuscript.\"\n    }\n  ]\n}",
+ "thinking_chars": 12360
+}

@@ -1,0 +1,13 @@
+model,seed,detected,n_defects,recall,fp_on_compliant_figure,total_raised,wall_s_all_figures,errors,found
+gemma3:4b,42,1,5,0.2,2,6,12.2,1,G1a
+gemma4,42,4,5,0.8,0,5,58.3,0,"G1a,G2a,G4a,G4b"
+llama4:scout,42,3,5,0.6,3,9,54.8,0,"G2a,G4a,G4b"
+qwen3-vl:30b-a3b-instruct,42,3,5,0.6,0,3,14.4,0,"G1a,G2a,G4a"
+qwen3-vl:30b-a3b-instruct-bf16,42,4,5,0.8,0,3,27.9,0,"G1a,G2a,G2b,G4a"
+qwen3.5:122b-a10b-q4_K_M,42,4,5,0.8,0,4,196.6,0,"G1a,G2a,G4a,G4b"
+qwen3.5:35b-a3b-bf16,42,4,5,0.8,0,4,473.3,1,"G1a,G2a,G4a,G4b"
+qwen3.6:27b,42,5,5,1.0,0,5,566.7,0,"G1a,G2a,G2b,G4a,G4b"
+qwen3.6:35b-a3b-bf16,42,4,5,0.8,0,4,556.5,1,"G1a,G2a,G4a,G4b"
+qwen3.6:35b-a3b-q4_K_M,42,5,5,1.0,0,5,168.8,0,"G1a,G2a,G2b,G4a,G4b"
+qwen3.6:35b-a3b-q8_0,42,5,5,1.0,0,5,163.7,0,"G1a,G2a,G2b,G4a,G4b"
+qwen3.8:27b,42,5,5,1.0,0,5,73.7,0,"G1a,G2a,G2b,G4a,G4b"

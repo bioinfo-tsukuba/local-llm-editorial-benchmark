@@ -1,0 +1,263 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "command-r-plus",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 33,
+ "meta": {
+  "model": "command-r-plus",
+  "wall_s": 824.79,
+  "prompt_tokens": 13265,
+  "output_tokens": 2583,
+  "load_s": 0.15,
+  "prefill_tok_s": 481.7,
+  "decode_tok_s": 3.2,
+  "ttft_s": 27.69,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79636,
+  "peak_size_vram_mib": 85363
+ },
+ "findings": [
+  {
+   "area": 1,
+   "location": "Title",
+   "rule": "The title should not exceed 100 characters.",
+   "problem": "The title is 101 characters long.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract is 251 words long.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "There are six keywords.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added, but it is not necessary for “Editorial” or “Commentary and Perspective”. This significance statement should summarize the main point of the article.",
+   "problem": "The significance statement is 101 words long.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Running title",
+   "rule": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required, but it is not necessary for “Editorial” or “Commentary and Perspective”.",
+   "problem": "The running title is 51 characters long.",
+   "severity": "medium"
+  },
+  {
+   "area": 2,
+   "location": "Page 1",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author's postal address is not on page 1.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Introduction",
+   "rule": "Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability, (A comment about deposition to a preprint server if the authors have deposited the file there: e.g. A preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.), Acknowledgements and References, should be arranged in this order.",
+   "problem": "The manuscript is missing a Conclusion section.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not declare any financial interests or connections.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Author contributions",
+   "rule": "All persons designated as authors should qualify for authorship.",
+   "problem": "The author contributions section does not list the contributions of all authors.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Data availability",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.",
+   "problem": "The data availability statement does not declare that the evidence data are available upon reasonable request.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 2 is not cited in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "Number the tables consecutively with Arabic numerals (for example “Table 3”), in the order of their appearance in the text.",
+   "problem": "Table 2 is not numbered consecutively with Arabic numerals.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "Supply a short explanatory title above the body of the table.",
+   "problem": "Table 2 does not have a title.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "Do not use vertical lines.",
+   "problem": "Table 2 uses vertical lines.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 4 is not cited in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text.",
+   "problem": "Figure 4 is not numbered consecutively with Arabic numerals.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "The dimensions of each illustration, photograph, or composite imagery should be no larger than the size of the manuscript page.",
+   "problem": "Figure 4 is larger than the size of the manuscript page.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Figure 4 is not at 300 dpi resolution.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Figure 4 is not in TIFF, PNG, JPEG or PDF format.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Graphical abstract",
+   "rule": "One figure in color or monochrome that depicts the content of the manuscript should be attached. The figure is used as the graphical abstract, which appears on the J-STAGE website, for every paper except “Editorial” or “Commentary and Perspective” papers, and it will be considered as a candidate for the Cover Picture of the current or next Volume. The figure should not infringe the copyright of any publication. The figure may be the same as one, or a part of one, that appears in the manuscript. The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.",
+   "problem": "The graphical abstract is not in PNG, JPEG or GIF format.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "The file extension of SupplementaryMovieS1.mpeg is not one of the required formats.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name of SupplementaryMovieS1.mpeg contains spaces.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.",
+   "problem": "The title of SupplementaryMovieS1.mpeg is not in the required format.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The references are not numbered sequentially as they appear in the text, tables and figure legends.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.",
+   "problem": "The references are not cited in the text in the required format.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "Please use normal fonts for the Reference list without using italics or boldface, except for some special characters in the article title.",
+   "problem": "The reference list uses italics and boldface.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "Abbreviated Journal titles follow the Index Medicus/MEDLINE format, which can be found at NLM Catalog: Journals referenced in the NCBI Database: https://www.ncbi.nlm.nih.Multiplier/journals/",
+   "problem": "The reference list does not follow the Index Medicus/MEDLINE format.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "The reference list does not include DOIs.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "The DOI for each Reference can be searched, for example, using the “free DOI lookup site” provided by Crossref: https://www.crossref.org/guestquery/",
+   "problem": "The reference list does not include DOIs.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles, and it is also available from the Zotero site, http://www.zotero.Multiplier/styles/biophysics-and-physicobiology. The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.Multiplier/ ) or ZotMultiplier tools ( https://www.zotMultiplier.org/ ) for managing the Reference list.",
+   "problem": "The reference list does not follow the required style.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not declare any financial interests or connections.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Author contributions",
+   "rule": "All persons designated as authors should qualify for authorship.",
+   "problem": "The author contributions section does not list the contributions of all authors.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Data availability",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.",
+   "problem": "The data availability statement does not declare that the evidence data are available upon reasonable request.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\"area\": 1,\n   \"location\": \"Title\",\n   \"rule\": \"The title should not exceed 100 characters.\",\n   \"problem\": \"The title is 101 characters long.\",\n   \"severity\": \"medium\"},\n  {\"area\": 1,\n   \"location\": \"Abstract\",\n   \"rule\": \"An abstract of no more than 250 words is required.\",\n   \"problem\": \"The abstract is 251 words long.\",\n   \"severity\": \"medium\"},\n  {\"area\": 1,\n   \"location\": \"Keywords\",\n   \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n   \"problem\": \"There are six keywords.\",\n   \"severity\": \"medium\"},\n  {\"area\": 1,\n   \"location\": \"Significance statement\",\n   \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added, but it is not necessary for “Editorial” or “Commentary and Perspective”. This significance statement should summarize the main point of the article.\",\n   \"problem\": \"The significance statement is 101 words long.\",\n   \"severity\": \"medium\"},\n  {\"area\": 1,\n   \"location\": \"Running title\",\n   \"rule\": \"At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required, but it is not necessary for “Editorial” or “Commentary and Perspective”.\",\n   \"problem\": \"The running title is 51 characters long.\",\n   \"severity\": \"medium\"},\n  {\"area\": 2,\n   \"location\": \"Page 1\",\n   \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n   \"problem\": \"The corresponding author's postal address is not on page 1.\",\n   \"severity\": \"high\"},\n  {\"area\": 3,\n   \"location\": \"Introduction\",\n   \"rule\": \"Following the above information, Introduction, Materials and methods (or Methods), Results, Discussion (or Results and discussion), Conclusion, Conflict of interest, Author contributions, Data availability, (A comment about deposition to a preprint server if the authors have deposited the file there: e.g. A preliminary version of this work was deposited in arXiv (ID, DOI or URL) on August 13, 2020.), Acknowledgements and References, should be arranged in this order.\",\n   \"problem\": \"The manuscript is missing a Conclusion section.\",\n   \"severity\": \"high\"},\n  {\"area\": 3,\n   \"location\": \"Conflict of interest\",\n   \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n   \"problem\": \"The conflict of interest statement does not declare any financial interests or connections.\",\n   \"severity\": \"high\"},\n  {\"area\": 3,\n   \"location\": \"Author contributions\",\n   \"rule\": \"All persons designated as authors should qualify for authorship.\",\n   \"problem\": \"The author contributions section does not list the contributions of all authors.\",\n   \"severity\": \"high\"},\n  {\"area\": 3,\n   \"location\": \"Data availability\",\n   \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.\",\n   \"problem\": \"The data availability statement does not declare that the evidence data are available upon reasonable request.\",\n   \"severity\": \"high\"},\n  {\"area\": 4,\n   \"location\": \"Tables\",\n   \"rule\": \"All tables must be cited in the text.\",\n   \"problem\": \"Table 2 is not cited in the text.\",\n   \"severity\": \"high\"},\n  {\"area\": 4,\n   \"location\": \"Tables\",\n   \"rule\": \"Number the tables consecutively with Arabic numerals (for example “Table 3”), in the order of their appearance in the text.\",\n   \"problem\": \"Table 2 is not numbered consecutively with Arabic numerals.\",\n   \"severity\": \"high\"},\n  {\"area\": 4,\n   \"location\": \"Tables\",\n   \"rule\": \"Supply a short explanatory title above the body of the table.\",\n   \"problem\": \"Table 2 does not have a title.\",\n   \"severity\": \"high\"},\n  {\"area\": 4,\n   \"location\": \"Tables\",\n   \"rule\": \"Do not use vertical lines.\",\n   \"problem\": \"Table 2 uses vertical lines.\",\n   \"severity\": \"high\"},\n  {\"area\": 5,\n   \"location\": \"Figures\",\n   \"rule\": \"All figures must be cited in the text.\",\n   \"problem\": \"Figure 4 is not cited in the text.\",\n   \"severity\": \"high\"},\n  {\"area\": 5,\n   \"location\": \"Figures\",\n   \"rule\": \"Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text.\",\n   \"problem\": \"Figure 4 is not numbered consecutively with Arabic numerals.\",\n   \"severity\": \"high\"},\n  {\"area\": 5,\n   \"location\": \"Figures\",\n   \"rule\": \"The dimensions of each illustration, photograph, or composite imagery should be no larger than the size of the manuscript page.\",\n   \"problem\": \"Figure 4 is larger than the size of the manuscript page.\",\n   \"severity\": \"high\"},\n  {\"area\": 5,\n   \"location\": \"Figures\",\n   \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.\",\n   \"problem\": \"Figure 4 is not at 300 dpi resolution.\",\n   \"severity\": \"high\"},\n  {\"area\": 5,\n   \"location\": \"Figures\",\n   \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n   \"problem\": \"Figure 4 is not in TIFF, PNG, JPEG or PDF format.\",\n   \"severity\": \"high\"},\n  {\"area\": 5,\n   \"location\": \"Graphical abstract\",\n   \"rule\": \"One figure in color or monochrome that depicts the content of the manuscript should be attached. The figure is used as the graphical abstract, which appears on the J-STAGE website, for every paper except “Editorial” or “Commentary and Perspective” papers, and it will be considered as a candidate for the Cover Picture of the current or next Volume. The figure should not infringe the copyright of any publication. The figure may be the same as one, or a part of one, that appears in the manuscript. The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\",\n   \"problem\": \"The graphical abstract is not in PNG, JPEG or GIF format.\",\n   \"severity\": \"high\"},\n  {\"area\": 6,\n   \"location\": \"Supplementary materials\",\n   \"rule\": \"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\n   \"problem\": \"The file extension of SupplementaryMovieS1.mpeg is not one of the required formats.\",\n   \"severity\": \"high\"},\n  {\"area\": 6,\n   \"location\": \"Supplementary materials\",\n   \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n   \"problem\": \"The file name of SupplementaryMovieS1.mpeg contains spaces.\",\n   \"severity\": \"high\"},\n  {\"area\": 6,\n   \"location\": \"Supplementary materials\",\n   \"rule\": \"Title of the material should be, for example, “Supplementary Text S1”, “Supplementary Table S1”, and “Supplementary Figure S1”.\",\n   \"problem\": \"The title of SupplementaryMovieS1.mpeg is not in the required format.\",\n   \"severity\": \"high\"},\n  {\"area\": 7,\n   \"location\": \"References\",\n   \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n   \"problem\": \"The references are not numbered sequentially as they appear in the text, tables and figure legends.\",\n   \"severity\": \"high\"},\n  {\"area\": 7,\n   \"location\": \"References\",\n   \"rule\": \"When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\",\n   \"problem\": \"The references are not cited in the text in the required format.\",\n   \"severity\": \"high\"},\n  {\"area\": 7,\n   \"location\": \"References\",\n   \"rule\": \"Please use normal fonts for the Reference list without using italics or boldface, except for some special characters in the article title.\",\n   \"problem\": \"The reference list uses italics and boldface.\",\n   \"severity\": \"high\"},\n  {\"area\": 7,\n   \"location\": \"References\",\n   \"rule\": \"Abbreviated Journal titles follow the Index Medicus/MEDLINE format, which can be found at NLM Catalog: Journals referenced in the NCBI Database: https://www.ncbi.nlm.nih.Multiplier/journals/\",\n   \"problem\": \"The reference list does not follow the Index Medicus/MEDLINE format.\",\n   \"severity\": \"high\"},\n  {\"area\": 7,\n   \"location\": \"References\",\n   \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n   \"problem\": \"The reference list does not include DOIs.\",\n   \"severity\": \"high\"},\n  {\"area\": 7,\n   \"location\": \"References\",\n   \"rule\": \"The DOI for each Reference can be searched, for example, using the “free DOI lookup site” provided by Crossref: https://www.crossref.org/guestquery/\",\n   \"problem\": \"The reference list does not include DOIs.\",\n   \"severity\": \"high\"},\n  {\"area\": 7,\n   \"location\": \"References\",\n   \"rule\": \"The above bibliographic style in the Reference list is described by the Citation Style Language (CSL) as “biophysics-and-physicobiology.csl” at the GitHub site, https://github.com/citation-style-language/styles, and it is also available from the Zotero site, http://www.zotero.Multiplier/styles/biophysics-and-physicobiology. The CSL can be used by Mendeley Free/Desktop ( https://www.mendeley.Multiplier/ ) or ZotMultiplier tools ( https://www.zotMultiplier.org/ ) for managing the Reference list.\",\n   \"problem\": \"The reference list does not follow the required style.\",\n   \"severity\": \"high\"},\n  {\"area\": 8,\n   \"location\": \"Conflict of interest\",\n   \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n   \"problem\": \"The conflict of interest statement does not declare any financial interests or connections.\",\n   \"severity\": \"high\"},\n  {\"area\": 8,\n   \"location\": \"Author contributions\",\n   \"rule\": \"All persons designated as authors should qualify for authorship.\",\n   \"problem\": \"The author contributions section does not list the contributions of all authors.\",\n   \"severity\": \"high\"},\n  {\"area\": 8,\n   \"location\": \"Data availability\",\n   \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.\",\n   \"problem\": \"The data availability statement does not declare that the evidence data are available upon reasonable request.\",\n   \"severity\": \"high\"}\n]}",
+ "thinking_chars": 0
+}

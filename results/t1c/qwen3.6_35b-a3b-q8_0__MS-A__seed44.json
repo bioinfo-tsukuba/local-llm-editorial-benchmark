@@ -1,0 +1,321 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "manuscript": "MS-A",
+ "seed": 44,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 32,
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word 'Novel'.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract contains approximately 330 words, exceeding the 250-word limit.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract includes a citation '[12]' when discussing single-molecule rotation assays.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The abstract uses the phrase 'for the first time'.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are listed, exceeding the limit of five.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement contains approximately 128 words, exceeding the 100-word limit.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Running title",
+   "rule": "A Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title contains 79 characters, exceeding the 50-character limit.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Page 1, corresponding author section",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The manuscript only provides an affiliation and city ('Department of Molecular Biophysics, Kitagawa Institute of Technology, Kyoto') rather than a complete postal address, and omits the ORCID iD for the corresponding author.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Manuscript section sequence following 'Discussion'",
+   "rule": "Required structural order: Introduction, Materials and methods, Results, Discussion, Conclusion, Conflict of interest, Author contributions, Data availability, Preprint comment, Acknowledgements, References.",
+   "problem": "The manuscript omits the mandatory 'Conclusion' section entirely.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Section ordering after 'Discussion'",
+   "rule": "Instructions specify that 'Conflict of interest' must precede 'Author contributions'.",
+   "problem": "The manuscript lists 'Author contributions' before 'Conflict of interest', reversing the required order.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Section sequence between 'Conflict of interest' and 'Acknowledgements'",
+   "rule": "A 'Data availability' section/statement is required in the specified structural order.",
+   "problem": "The manuscript completely lacks a 'Data availability' section.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Within the 'Introduction' section",
+   "rule": "Preprint deposition comments must be placed in their designated structural slot after Data availability, not embedded within other sections.",
+   "problem": "The preprint statement is incorrectly placed inside the Introduction rather than following the Data availability section as required.",
+   "severity": "medium",
+   "_area": "structure"
+  },
+  {
+   "location": "End of manuscript (after Acknowledgements)",
+   "rule": "Figures and Tables should be embedded in the template file at the appropriate locations within the text.",
+   "problem": "All tables, figure legends, figure file lists, and supplementary materials are grouped at the end of the document instead of being embedded where first cited in the text.",
+   "severity": "medium",
+   "_area": "structure"
+  },
+  {
+   "location": "Table 1",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is not cited anywhere in the manuscript text.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Supply a short explanatory title above the body of the table",
+   "problem": "The title for Table 2 is placed below the table body instead of above it.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 1 footnotes",
+   "rule": "table footnotes lettered a, b, c, and so forth",
+   "problem": "The footnotes use numbers (1, 2, 3) instead of letters.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Tables 1 and 2",
+   "rule": "Do not use vertical lines.",
+   "problem": "Both tables use vertical lines (|) to separate columns.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Results section (paragraph 1)",
+   "rule": "Number the figures consecutively with Arabic numerals (for example “Figure 3”), in the order of their appearance in the text.",
+   "problem": "Figure 2 is cited before Figure 1 ('Figure 2 shows... Figure 1 shows...'), violating the required sequential order of appearance.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are listed at 150 dpi, which is below the required 300 dpi minimum.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats .",
+   "problem": "Figures 1 and 2 are submitted as .bmp files, which is not an accepted format.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "upload a short caption less than 100 words about the figure(s).",
+   "problem": "The provided graphical abstract caption contains approximately 134 words, exceeding the 100-word limit.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list / Graphical Abstract submission",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF",
+   "problem": "The graphical abstract is submitted as a .tiff file (Graphical_abstract.tiff), which is not among the accepted formats for graphical abstracts.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials section, file 'Suppl_Movie_1.mov'",
+   "rule": "Movie files must be in MPEG or AVI format; each uploaded file must not exceed 20 MB.",
+   "problem": "The file is in MOV format and has a size of 45 MB, violating both the required format and the maximum file size limit.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials section, file '図1_final version.tiff'",
+   "rule": "File names must not include spaces or Japanese characters; only alphanumeric characters are allowed. Supplementary image files should be in PDF, TXT, ZIP, MPEG, or AVI format.",
+   "problem": "The filename contains a Japanese character (図) and a space. The .tiff extension is not an accepted format for supplementary materials.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "The entry ends with 'In preparation.', which is explicitly prohibited by the journal's style guide.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text...",
+   "problem": "Lists a personal communication ('Kuramoto, H. Personal communication, 2025.') in the reference list instead of citing it parenthetically in the main text.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference list ordering (between entries [5] and [8])",
+   "rule": "All references should be listed in numerical order...",
+   "problem": "References are not in numerical order; entry [7] appears before entry [6].",
+   "severity": "medium",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [9]",
+   "rule": "For more than six authors, list the first six authors followed by 'et al.'.",
+   "problem": "Lists all ten authors (Adachi, K., Oiwa, K., Nishizaka, T., Furuike, S., Noji, H., Itoh, H., Yoshida, M., Kinosita, K., Jr., Tanaka, S.) instead of truncating after the sixth author with 'et al.'.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Uses the prefix 'doi:' (doi:10.1016/S0006-3495(01)76033-X) instead of the required full URL format (https://doi.org/...).",
+   "severity": "low",
+   "_area": "references"
+  },
+  {
+   "location": "Title",
+   "rule": "Titles may not contain positive words such as “New”, “Novel”, “First”, or “Unprecedented”.",
+   "problem": "The title begins with the word “Novel”.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Abstracts may not contain positive words such as “First” or claims like “for the first time”.",
+   "problem": "The abstract contains the phrase “demonstrate for the first time that truncating...”.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Manuscript text (between Conflict of interest and References)",
+   "rule": "A Data availability statement is required before the Reference section.",
+   "problem": "The manuscript completely lacks a Data availability statement or section.",
+   "severity": "high",
+   "_area": "ethics"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 7,
+   "parse_error": null,
+   "wall_s": 182.76,
+   "prompt_tokens": 12892,
+   "output_tokens": 6749,
+   "prefill_tok_s": 1259.5
+  },
+  {
+   "area": "corresponding-author",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 65.08,
+   "prompt_tokens": 12890,
+   "output_tokens": 2161,
+   "prefill_tok_s": 1258.3
+  },
+  {
+   "area": "structure",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 123.48,
+   "prompt_tokens": 12882,
+   "output_tokens": 4455,
+   "prefill_tok_s": 1262.7
+  },
+  {
+   "area": "tables",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 116.62,
+   "prompt_tokens": 12893,
+   "output_tokens": 4178,
+   "prefill_tok_s": 1256.6
+  },
+  {
+   "area": "figures",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 181.22,
+   "prompt_tokens": 12894,
+   "output_tokens": 6687,
+   "prefill_tok_s": 1253.2
+  },
+  {
+   "area": "supplementary",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 119.72,
+   "prompt_tokens": 12890,
+   "output_tokens": 4301,
+   "prefill_tok_s": 1259.2
+  },
+  {
+   "area": "references",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 197.14,
+   "prompt_tokens": 12901,
+   "output_tokens": 7323,
+   "prefill_tok_s": 1264.3
+  },
+  {
+   "area": "ethics",
+   "n": 3,
+   "parse_error": null,
+   "wall_s": 112.85,
+   "prompt_tokens": 12901,
+   "output_tokens": 4037,
+   "prefill_tok_s": 1263.2
+  }
+ ],
+ "meta": {
+  "wall_s": 1099.2,
+  "output_tokens": 39891,
+  "prompt_tokens": 103143,
+  "peak_mem_used_mib": 49001,
+  "peak_size_vram_mib": 40915
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

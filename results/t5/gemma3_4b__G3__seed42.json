@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "gemma3:4b",
+ "item": "G3",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "gemma3:4b",
+  "wall_s": 2.66,
+  "prompt_tokens": 669,
+  "output_tokens": 113,
+  "load_s": 0.17,
+  "prefill_tok_s": 5723.5,
+  "decode_tok_s": 67.6,
+  "ttft_s": 0.29,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 9713,
+  "peak_size_vram_mib": 4385
+ },
+ "defects": [
+  {
+   "what": "Panel labels disagree with the legend. Specifically, panel (a) is labeled 'Susceptibility decay with subunit separation' but the legend indicates it is a 'residue-level heat map of the susceptibility change over the subunit interface'.",
+   "severity": "high"
+  },
+  {
+   "what": "Text too small to read.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"Panel labels disagree with the legend. Specifically, panel (a) is labeled 'Susceptibility decay with subunit separation' but the legend indicates it is a 'residue-level heat map of the susceptibility change over the subunit interface'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"Text too small to read.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

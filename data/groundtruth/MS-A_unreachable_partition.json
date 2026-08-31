@@ -1,0 +1,21 @@
+{
+  "note": "The violations the deterministic checker cannot decide, and what each would need instead. The checker's own output is the authority for which items these are: harness/deterministic_check.py prints them under 'cannot be judged in code'. This file only classifies them, and check_claims.py fails if the set here stops matching the checker's output. Written after the manuscript stated 'ten items' where the checker reports nine.",
+  "manuscript": "MS-A",
+  "classes": {
+    "language_model": "requires reading a statement and judging what it covers or whether it is owed",
+    "document_parser": "a layout property of the typeset document, recoverable without a model",
+    "external_lookup": "an authority file settles it; no reasoning involved",
+    "structural": "a section-placement rule, decidable once the document is segmented"
+  },
+  "items": [
+    {"id": "V08", "class": "language_model",   "reason": "requires identifying which author is the corresponding one before asking whether an ORCID iD is given for them"},
+    {"id": "V09", "class": "language_model",   "reason": "judging an address incomplete requires knowing which components a postal address is expected to carry"},
+    {"id": "V14", "class": "structural",       "reason": "the bioRxiv deposition statement is present but in the Introduction rather than the prescribed section"},
+    {"id": "V17", "class": "document_parser",  "reason": "vertical rules between table columns are a property of the typeset table"},
+    {"id": "V18", "class": "document_parser",  "reason": "the position of the table title relative to the table body is a layout property"},
+    {"id": "V19", "class": "document_parser",  "reason": "footnote markers numbered rather than lettered is a layout property"},
+    {"id": "V37", "class": "external_lookup",  "reason": "the Index Medicus abbreviation of a journal title is settled by Crossref and the NLM Catalog"},
+    {"id": "V39", "class": "language_model",   "reason": "requires noticing that rabbit skeletal muscle implies an animal ethics statement is owed"},
+    {"id": "V40", "class": "language_model",   "reason": "requires comparing the authors a consent statement names against the author list"}
+  ]
+}

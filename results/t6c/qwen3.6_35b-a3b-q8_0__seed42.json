@@ -1,0 +1,58 @@
+{
+ "task": "t6c",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 5,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "wall_s": 145.1,
+  "prompt_tokens": 5477,
+  "output_tokens": 5421,
+  "load_s": 6.7,
+  "prefill_tok_s": 1266.5,
+  "decode_tok_s": 42.8,
+  "ttft_s": 11.02,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 48528,
+  "peak_size_vram_mib": 40915
+ },
+ "problems": [
+  {
+   "location": "Materials and methods / Network construction vs Table 1",
+   "problem": "The text states a cutoff distance of 12 nm, but Table 1 lists the cutoff as 12 under the unit column '(A)' (Angstroms). A 12 nm cutoff is implausibly large for an elastic network model of a protein complex.",
+   "kind": "unit-error",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 3.2",
+   "problem": "The ratio column reports 4.51, but the calculated ratio from the CCW (2.42) and CW (0.69) length constants is 2.42 / 0.69 ≈ 3.51.",
+   "kind": "arithmetic",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract vs Results / Conclusion",
+   "problem": "The abstract states an effective length constant of 3.2 subunits counter-clockwise, whereas the results and conclusion report ~2.3 subunits (consistent with Table 2 for s = 2.8).",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Materials and methods / Brownian dynamics vs Results / Comparison with rotation assays",
+   "problem": "Production runs cover only 200 ns, but the text claims saturation of the mean rotation rate above a driving frequency of ~400 s^-1. A frequency of 400 s^-1 corresponds to a period of 2.5 ms (2,500,000 ns), making it impossible to observe kinetic saturation or measure rates at this frequency within a 200 ns simulation window.",
+   "kind": "timescale",
+   "severity": "high"
+  },
+  {
+   "location": "Table 1 / Network construction",
+   "problem": "The hexameric network contains 18,204 beads (3,034 per monomer). With one bead per alpha-carbon, this implies each subunit has ~3,034 residues (~300 kDa). Typical ring ATPase subunits (e.g., F1-ATPase, AAA+ unfoldases) are ~500–700 residues. This size is highly implausible for the described system.",
+   "kind": "domain-implausibility",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"problems\": [\n    {\n      \"location\": \"Materials and methods / Network construction vs Table 1\",\n      \"problem\": \"The text states a cutoff distance of 12 nm, but Table 1 lists the cutoff as 12 under the unit column '(A)' (Angstroms). A 12 nm cutoff is implausibly large for an elastic network model of a protein complex.\",\n      \"kind\": \"unit-error\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 2, row s = 3.2\",\n      \"problem\": \"The ratio column reports 4.51, but the calculated ratio from the CCW (2.42) and CW (0.69) length constants is 2.42 / 0.69 ≈ 3.51.\",\n      \"kind\": \"arithmetic\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract vs Results / Conclusion\",\n      \"problem\": \"The abstract states an effective length constant of 3.2 subunits counter-clockwise, whereas the results and conclusion report ~2.3 subunits (consistent with Table 2 for s = 2.8).\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Materials and methods / Brownian dynamics vs Results / Comparison with rotation assays\",\n      \"problem\": \"Production runs cover only 200 ns, but the text claims saturation of the mean rotation rate above a driving frequency of ~400 s^-1. A frequency of 400 s^-1 corresponds to a period of 2.5 ms (2,500,000 ns), making it impossible to observe kinetic saturation or measure rates at this frequency within a 200 ns simulation window.\",\n      \"kind\": \"timescale\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 1 / Network construction\",\n      \"problem\": \"The hexameric network contains 18,204 beads (3,034 per monomer). With one bead per alpha-carbon, this implies each subunit has ~3,034 residues (~300 kDa). Typical ring ATPase subunits (e.g., F1-ATPase, AAA+ unfoldases) are ~500–700 residues. This size is highly implausible for the described system.\",\n      \"kind\": \"domain-implausibility\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 15730
+}

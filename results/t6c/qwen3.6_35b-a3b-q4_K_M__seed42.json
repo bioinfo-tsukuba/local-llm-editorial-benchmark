@@ -1,0 +1,52 @@
+{
+ "task": "t6c",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 4,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 124.25,
+  "prompt_tokens": 5477,
+  "output_tokens": 5778,
+  "load_s": 5.04,
+  "prefill_tok_s": 1384.9,
+  "decode_tok_s": 53.8,
+  "ttft_s": 8.99,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 34818,
+  "peak_size_vram_mib": 26840
+ },
+ "problems": [
+  {
+   "location": "Materials and methods (Network construction) & Table 1",
+   "problem": "The text states a cutoff distance of '12 nm', while Table 1 lists it as '12 A'. An ANM cutoff of 12 nm (120 Å) is physically implausible for a residue-level network, as it would connect non-interacting residues across the entire ring and beyond. The correct unit should be Angstroms.",
+   "kind": "unit-error",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract & Results (Directionality of the allosteric channel) & Table 2 (s = 2.8)",
+   "problem": "The abstract reports an effective length constant of '3.2 subunits counter-clockwise', but the Results section and Table 2 (for the standard stiffening factor s = 2.8) report ~2.3 subunits (specifically 2.31). The value 3.2 appears to be a typographical confusion with the stiffening factor s.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 3.2",
+   "problem": "The ratio column lists 4.51, but dividing the CCW length constant (2.42) by the CW length constant (0.69) yields approximately 3.51.",
+   "kind": "arithmetic",
+   "severity": "high"
+  },
+  {
+   "location": "Materials and methods (Contacts responsible for directionality) & Table 1",
+   "problem": "The text states that truncating residues 471-489 of a single subunit removes 19 beads, which should reduce the total bead count by ~19. However, Table 1 shows a reduction of 114 beads (from 18204 to 18090), and springs drop by 2895, which is inconsistent with removing only one short helix from one subunit.",
+   "kind": "internal-contradiction",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"problems\": [\n    {\n      \"location\": \"Materials and methods (Network construction) & Table 1\",\n      \"problem\": \"The text states a cutoff distance of '12 nm', while Table 1 lists it as '12 A'. An ANM cutoff of 12 nm (120 Å) is physically implausible for a residue-level network, as it would connect non-interacting residues across the entire ring and beyond. The correct unit should be Angstroms.\",\n      \"kind\": \"unit-error\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract & Results (Directionality of the allosteric channel) & Table 2 (s = 2.8)\",\n      \"problem\": \"The abstract reports an effective length constant of '3.2 subunits counter-clockwise', but the Results section and Table 2 (for the standard stiffening factor s = 2.8) report ~2.3 subunits (specifically 2.31). The value 3.2 appears to be a typographical confusion with the stiffening factor s.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 2, row s = 3.2\",\n      \"problem\": \"The ratio column lists 4.51, but dividing the CCW length constant (2.42) by the CW length constant (0.69) yields approximately 3.51.\",\n      \"kind\": \"arithmetic\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Materials and methods (Contacts responsible for directionality) & Table 1\",\n      \"problem\": \"The text states that truncating residues 471-489 of a single subunit removes 19 beads, which should reduce the total bead count by ~19. However, Table 1 shows a reduction of 114 beads (from 18204 to 18090), and springs drop by 2895, which is inconsistent with removing only one short helix from one subunit.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 17248
+}

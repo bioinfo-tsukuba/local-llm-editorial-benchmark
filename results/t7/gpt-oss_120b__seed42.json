@@ -1,0 +1,64 @@
+{
+ "task": "t7",
+ "model": "gpt-oss:120b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 6,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 48.17,
+  "prompt_tokens": 9653,
+  "output_tokens": 723,
+  "load_s": 20.2,
+  "prefill_tok_s": 1158.3,
+  "decode_tok_s": 38.5,
+  "ttft_s": 28.53,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 71743,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "References",
+   "rule": "References must not include “in preparation” entries.",
+   "problem": "Reference [5] is listed as “In preparation.”",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References must be listed in numerical order as they appear in the text.",
+   "problem": "References are ordered as [1], [2], [3], [4], [5], [7], [6], [8]; [6] and [7] are out of sequence.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be submitted in TIFF, PNG, JPEG or PDF format at 300 dpi resolution.",
+   "problem": "Figure file is BMP format and only 150 dpi.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Supplementary file names must contain only alphanumeric characters, no spaces or Japanese characters.",
+   "problem": "File name \"図1_draft version.bmp\" contains Japanese characters and spaces.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Allowed supplementary file extensions are pdf, txt, zip, mpeg, avi.",
+   "problem": "Supplementary file \"図1_draft version.bmp\" has .bmp extension, which is not permitted.",
+   "severity": "high"
+  },
+  {
+   "location": "Tables",
+   "rule": "Tables must not use vertical lines.",
+   "problem": "Table uses vertical bar characters \"|\" to separate columns.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"References\",\n      \"rule\": \"References must not include “in preparation” entries.\",\n      \"problem\": \"Reference [5] is listed as “In preparation.”\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References must be listed in numerical order as they appear in the text.\",\n      \"problem\": \"References are ordered as [1], [2], [3], [4], [5], [7], [6], [8]; [6] and [7] are out of sequence.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure file list\",\n      \"rule\": \"Figures must be submitted in TIFF, PNG, JPEG or PDF format at 300 dpi resolution.\",\n      \"problem\": \"Figure file is BMP format and only 150 dpi.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Supplementary file names must contain only alphanumeric characters, no spaces or Japanese characters.\",\n      \"problem\": \"File name \\\"図1_draft version.bmp\\\" contains Japanese characters and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Allowed supplementary file extensions are pdf, txt, zip, mpeg, avi.\",\n      \"problem\": \"Supplementary file \\\"図1_draft version.bmp\\\" has .bmp extension, which is not permitted.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Tables\",\n      \"rule\": \"Tables must not use vertical lines.\",\n      \"problem\": \"Table uses vertical bar characters \\\"|\\\" to separate columns.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 1478
+}

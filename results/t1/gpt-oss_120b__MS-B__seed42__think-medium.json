@@ -1,0 +1,80 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": "medium",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 8,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 120.37,
+  "prompt_tokens": 12315,
+  "output_tokens": 3942,
+  "load_s": 0.13,
+  "prefill_tok_s": 1153.4,
+  "decode_tok_s": 37.4,
+  "ttft_s": 10.8,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 72154,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "Reference [5]",
+   "rule": "All references must be cited in the text; references should be listed in the order they appear.",
+   "problem": "Reference [5] appears in the reference list but is never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [6]",
+   "rule": "All references must be cited in the text; references should be listed in the order they appear.",
+   "problem": "Reference [6] appears in the reference list but is never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [7]",
+   "rule": "All references must be cited in the text; references should be listed in the order they appear.",
+   "problem": "Reference [7] appears in the reference list but is never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [9]",
+   "rule": "All references must be cited in the text; references should be listed in the order they appear.",
+   "problem": "Reference [9] appears in the reference list but is never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [10]",
+   "rule": "All references must be cited in the text; references should be listed in the order they appear.",
+   "problem": "Reference [10] appears in the reference list but is never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "All references must be cited in the text; references should be listed in the order they appear.",
+   "problem": "Reference [11] appears in the reference list but is never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [12]",
+   "rule": "All references must be cited in the text; references should be listed in the order they appear.",
+   "problem": "Reference [12] appears in the reference list but is never cited in the manuscript.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [5] (duplicate entry)",
+   "rule": "References must be listed in numerical order corresponding to their first citation.",
+   "problem": "Reference numbers are assigned to items that are not cited, breaking the sequential citation order.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"All references must be cited in the text; references should be listed in the order they appear.\",\n      \"problem\": \"Reference [5] appears in the reference list but is never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [6]\",\n      \"rule\": \"All references must be cited in the text; references should be listed in the order they appear.\",\n      \"problem\": \"Reference [6] appears in the reference list but is never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [7]\",\n      \"rule\": \"All references must be cited in the text; references should be listed in the order they appear.\",\n      \"problem\": \"Reference [7] appears in the reference list but is never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [9]\",\n      \"rule\": \"All references must be cited in the text; references should be listed in the order they appear.\",\n      \"problem\": \"Reference [9] appears in the reference list but is never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [10]\",\n      \"rule\": \"All references must be cited in the text; references should be listed in the order they appear.\",\n      \"problem\": \"Reference [10] appears in the reference list but is never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [11]\",\n      \"rule\": \"All references must be cited in the text; references should be listed in the order they appear.\",\n      \"problem\": \"Reference [11] appears in the reference list but is never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [12]\",\n      \"rule\": \"All references must be cited in the text; references should be listed in the order they appear.\",\n      \"problem\": \"Reference [12] appears in the reference list but is never cited in the manuscript.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [5] (duplicate entry)\",\n      \"rule\": \"References must be listed in numerical order corresponding to their first citation.\",\n      \"problem\": \"Reference numbers are assigned to items that are not cited, breaking the sequential citation order.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 14838
+}

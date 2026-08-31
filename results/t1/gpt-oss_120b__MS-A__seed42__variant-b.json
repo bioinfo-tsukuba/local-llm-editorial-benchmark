@@ -1,0 +1,31 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": "low",
+ "error": null,
+ "parse_error": "salvaged",
+ "n_findings": 0,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 79.65,
+  "prompt_tokens": 12456,
+  "output_tokens": 1999,
+  "load_s": 13.91,
+  "prefill_tok_s": 1172.9,
+  "decode_tok_s": 37.8,
+  "ttft_s": 24.53,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 90774,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": null,
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"area\": 1,\n      \"location\": \"Title and abstract page\",\n      \"rule\": \"Running title must not exceed 50 characters\",\n      \"problem\": \"Running title is 71 characters long\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Abstract\",\n      \"rule\": \"Abstract must be no more than 250 words\",\n      \"problem\": \"Abstract exceeds 250 words (estimated >300 words)\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Keywords line\",\n      \"rule\": \"Maximum of five keywords allowed\",\n      \"problem\": \"Seven keywords are listed\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Significance statement\",\n      \"rule\": \"Significance statement must be less than 100 words\",\n      \"problem\": \"Significance statement appears to exceed 100 words\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Title\",\n      \"rule\": \"Prohibited positive wording (e.g., \\\"Novel\\\") in title\",\n      \"problem\": \"Title contains the word \\\"Novel\\\"\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 2,\n      \"location\": \"Corresponding-author block (page 1)\",\n      \"rule\": \"Full postal address and ORCID iD must be provided for corresponding author\",\n      \"problem\": \"Only department and city are given; no postal address or ORCID iD\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Manuscript sections\",\n      \"rule\": \"Required sections must appear in prescribed order and include all items\",\n      \"problem\": \"Missing Conclusion section and Data availability statement; Conflict of interest appears after Author contributions (order incorrect)\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table 1\",\n      \"rule\": \"All tables must be cited in the text\",\n      \"problem\": \"Table 1 is never referenced in the manuscript text\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table footnotes\",\n      \"rule\": \"Table footnotes must be lettered (a, b, c, …)\",\n      \"problem\": \"Footnotes are numbered (1, 2, 3) instead of lettered\",\n      \"severity\": \"low\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figure files list\",\n      \"rule\": \"Figure files must be in TIFF, PNG, JPEG or PDF format\",\n      \"problem\": \"Fig1_modes.bmp and Fig2_spectra.bmp are BMP files\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figure files list\",\n      \"rule\": \"Figures must be at least 300 dpi resolution\",\n      \"problem\": \"Fig1_modes.bmp and Fig2_spectra.bmp are only 150 dpi\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials list\",\n      \"rule\": \"File names must contain only alphanumeric characters (no Japanese characters)\",\n      \"problem\": \"File \\\"図1_final version.tiff\\\" contains Japanese characters\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials list\",\n      \"rule\": \"Supplementary files must be PDF, TXT, ZIP, MPEG or AVI\",\n      \"problem\": \"\\\"図1_final version.tiff\\\" is a TIFF file, which is not an allowed format\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials list\",\n      \"rule\": \"Each uploaded file must be ≤20 MB\",\n      \"problem\": \"\\\"Suppl_Movie_1.mov\\\" is 45 MB, exceeding the size limit\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference list\",\n      \"rule\": \"References to unpublished data or personal communications must not appear in the reference list\",\n      \"problem\": \"Reference [5] (In preparation) and [8] (Personal communication) are included in the list\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [4]\",\n      \"rule\": \"DOI must be provided as a URL (https://doi.org/…)\",\n      \"problem\": \"DOI is given as \\\"doi:10.1016/...\\\" instead of a URL\",\n      \"severity\": \"low\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference ordering\",\n      \"rule\": \"References must be listed in the order they are cited\",\n      \"problem\": References are out of order (e.g., [7] appears before [6])\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Abstract and title\",\n      \"rule\": \"Prohibited positive wording such as \\\"first time\\\" or \\\"novel\\\" must not be used\",\n      \"problem\": Abstract contains phrase \\\"for the first time\\\" and title contains \\\"Novel\\\"\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Data availability statement\",\n      \"rule\": \"A data availability statement must be included before the References\",\n      \"problem\": \"No data availability statement is present\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+ "thinking_chars": 3457
+}

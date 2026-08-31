@@ -1,0 +1,58 @@
+{
+ "task": "t6c",
+ "model": "qwen3.6:27b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 5,
+ "meta": {
+  "model": "qwen3.6:27b",
+  "wall_s": 461.33,
+  "prompt_tokens": 5477,
+  "output_tokens": 4704,
+  "load_s": 5.15,
+  "prefill_tok_s": 587.8,
+  "decode_tok_s": 10.7,
+  "ttft_s": 14.47,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 33921,
+  "peak_size_vram_mib": 25992
+ },
+ "problems": [
+  {
+   "location": "Abstract vs. Results, Conclusion, Table 2, and Graphical Abstract caption",
+   "problem": "The Abstract states the counter-clockwise effective length constant is 3.2 subunits, whereas the Results section, Conclusion, Table 2 (for s=2.8), and Graphical Abstract caption all consistently report it as 2.3 subunits.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Materials and methods (Network construction) vs. Table 1",
+   "problem": "The text specifies a cutoff distance of 12 nm, but Table 1 lists the cutoff unit as Å with a value of 12. A 12 nm cutoff is also physically implausible for an elastic network model, which typically uses ~10–15 Å to define local springs.",
+   "kind": "unit-error",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 3.2",
+   "problem": "The Ratio column lists 4.51, but the arithmetic of the adjacent columns gives CCW/CW = 2.42 / 0.69 ≈ 3.51.",
+   "kind": "arithmetic",
+   "severity": "medium"
+  },
+  {
+   "location": "Materials and methods (Brownian dynamics) vs. Results (Comparison with rotation assays)",
+   "problem": "The Methods state that 'thirty independent runs were performed for each condition,' but the Results section reports that the mean rotation rate was 'averaged over five independent runs.'",
+   "kind": "internal-contradiction",
+   "severity": "medium"
+  },
+  {
+   "location": "Results (Contacts responsible for directionality) vs. Table 1",
+   "problem": "The text states that truncating residues 471-489 of a single subunit removes those beads. At one bead per residue, this should remove ~19 beads. However, Table 1 shows the total bead count dropping from 18,204 to 18,090, a difference of 114 beads.",
+   "kind": "internal-contradiction",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"problems\": [\n    {\n      \"location\": \"Abstract vs. Results, Conclusion, Table 2, and Graphical Abstract caption\",\n      \"problem\": \"The Abstract states the counter-clockwise effective length constant is 3.2 subunits, whereas the Results section, Conclusion, Table 2 (for s=2.8), and Graphical Abstract caption all consistently report it as 2.3 subunits.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Materials and methods (Network construction) vs. Table 1\",\n      \"problem\": \"The text specifies a cutoff distance of 12 nm, but Table 1 lists the cutoff unit as Å with a value of 12. A 12 nm cutoff is also physically implausible for an elastic network model, which typically uses ~10–15 Å to define local springs.\",\n      \"kind\": \"unit-error\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 2, row s = 3.2\",\n      \"problem\": \"The Ratio column lists 4.51, but the arithmetic of the adjacent columns gives CCW/CW = 2.42 / 0.69 ≈ 3.51.\",\n      \"kind\": \"arithmetic\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Materials and methods (Brownian dynamics) vs. Results (Comparison with rotation assays)\",\n      \"problem\": \"The Methods state that 'thirty independent runs were performed for each condition,' but the Results section reports that the mean rotation rate was 'averaged over five independent runs.'\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Results (Contacts responsible for directionality) vs. Table 1\",\n      \"problem\": \"The text states that truncating residues 471-489 of a single subunit removes those beads. At one bead per residue, this should remove ~19 beads. However, Table 1 shows the total bead count dropping from 18,204 to 18,090, a difference of 114 beads.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"medium\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 13277
+}

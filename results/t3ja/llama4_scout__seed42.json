@@ -1,0 +1,27 @@
+{
+ "task": "t3ja",
+ "model": "llama4:scout",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": "salvaged",
+ "result_key": "answers",
+ "n_items": null,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 49.56,
+  "prompt_tokens": 7617,
+  "output_tokens": 466,
+  "load_s": 0.2,
+  "prefill_tok_s": 419.2,
+  "decode_tok_s": 15.2,
+  "ttft_s": 18.37,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 81385,
+  "peak_size_vram_mib": 74485
+ },
+ "answers": null,
+ "raw_response": "```json\n{\n  \"id\": \"J1\",\n  \"answer\": \"要旨（Abstract）は 200 語以内でお願いいたします。文献引用は不可です。\"\n\n}\n{\n  \"id\": \"J2\",\n  \"answer\": \"キーワードは 5 個までです。\"\n\n}\n{\n  \"id\": \"J3\",\n  \"answer\": \"ランニングタイトルの文字数は 50 文字以内です。ページ数は問いません。\"\n\n}\n{\n  \"id\": \"J4\",\n  \"answer\": \"本文中で文献番号は、参考文献の番号を上付きで、[] で囲んでください。\"\n\n}\n{\n  \"id\": \"J5\",\n  \"answer\": \"著者が 7 人以上の論文を参考文献に載せる場合、著者名は「最初の 3 人の著者名 + et al.」と書きます。\"\n\n}\n{\n  \"id\": \"J6\",\n  \"answer\": \"ファイル形式は、.jpg, .png, .tif などの画像ファイルです。解像度は 300 dpi 以上でお願いいたします。グラフィカルアブストラクトは、通常の図とは異なりますので、編集部にお問い合わせください。\"\n\n}\n{\n  \"id\": \"J7\",\n  \"answer\": \"表の体裁は、（1）表のタイトルは表の上部に、（2）表の説明文は表の下部に、（3）表の縦横の線は、JST 規格に準じていること、です。\"\n\n}\n{\n  \"id\": \"J8\",\n  \"answer\": \"1 ファイルあたり 10 MB までです。それ以上は、分割して下さい。\"\n\n}\n{\n  \"id\": \"J9\",\n  \"answer\": \"タイトルや要旨に、（1）人や組織の名前、（2）研究の内容や方法、（3）結果や結論を、正確に反映していない言葉は使ってはいけません。\"\n\n}\n{\n  \"id\": \"J10\",\n  \"answer\": \"改訂原稿の提出期限は、編集判断の 1 週間後です。\"\n\n}\n```",
+ "thinking_chars": 0
+}

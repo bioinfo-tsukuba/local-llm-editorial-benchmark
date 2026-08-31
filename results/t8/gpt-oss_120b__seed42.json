@@ -1,0 +1,127 @@
+{
+ "task": "T8",
+ "model": "gpt-oss:120b",
+ "seed": 42,
+ "error": null,
+ "parse_error": "empty response",
+ "n_tool_calls": 11,
+ "n_checks": null,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 0.94,
+  "prompt_tokens": 3035,
+  "output_tokens": 11,
+  "load_s": 0.16,
+  "prefill_tok_s": 8760.8,
+  "decode_tok_s": 43.7,
+  "ttft_s": 0.51,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 70286,
+  "peak_size_vram_mib": 63818
+ },
+ "checks": null,
+ "tool_trace": [
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1016/S0006-3495(01)76033-X"
+   },
+   "result_summary": "Biophys. J. 80 (2001) 10.1016/s0006-3495(01)76033-x",
+   "error": null
+  },
+  {
+   "n": 2,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1093/protein/14.1.1"
+   },
+   "result_summary": "Protein Eng. Des. Sel. 14 (2001) 10.1093/protein/14.1.1",
+   "error": null
+  },
+  {
+   "n": 3,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1073/pnas.0702950104"
+   },
+   "result_summary": "Proc. Natl. Acad. Sci. U.S.A. 104 (2007) 10.1073/pnas.0702950104",
+   "error": null
+  },
+  {
+   "n": 4,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1035?..."
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 5,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 6,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/doi?"
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 7,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Adachi K Coupling of rotation and catalysis in F1-ATPase Cell 130 309-321 2007"
+   },
+   "result_summary": "3 candidates: 10.1016/j.cell.2007.05.020, 10.1016/b978-0-12-374920-8.00804-3, 10.1002/3527606122.ch11",
+   "error": null
+  },
+  {
+   "n": 8,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10://..."
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 9,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.2142/biophysico.bppb-v21.0112"
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 10,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Morisawa K Kuramoto H Directional allosteric channels in hexameric ring ATPases Biophys. Physicobiol. 21 112-125 2024"
+   },
+   "result_summary": "3 candidates: 10.1021/jacs.6b10744.s003, 10.1021/jacs.6b10744.s002, 10.1021/jacs.6b10744.s001",
+   "error": null
+  },
+  {
+   "n": 11,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1146/annurev.biophys.35.040405.101933"
+   },
+   "result_summary": "Annu. Rev. Biophys. Biomol. Struct. 35 (2006) 10.1146/annurev.biophys.35.040405.101933",
+   "error": null
+  }
+ ],
+ "raw_response": "",
+ "thinking_chars": 0,
+ "wall_s": 41.1
+}

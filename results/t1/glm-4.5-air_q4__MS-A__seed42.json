@@ -1,0 +1,686 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "glm-4.5-air:q4",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 109,
+ "meta": {
+  "model": "glm-4.5-air:q4",
+  "wall_s": 1019.75,
+  "prompt_tokens": 12154,
+  "output_tokens": 10530,
+  "load_s": 193.49,
+  "prefill_tok_s": 534.6,
+  "decode_tok_s": 13.2,
+  "ttft_s": 216.22,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 80792,
+  "peak_size_vram_mib": 100337
+ },
+ "findings": [
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.",
+   "problem": "The title of the manuscript contains the word 'Novel', which is prohibited in the instructions.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends. When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.",
+   "problem": "Reference [5] is cited in the text as [12] in the abstract and [12] in the results section. Also, reference [6] is missing from the reference list but appears in the text as [6] in the materials and methods section.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "All references should be listed in numerical order, starting on a new page, under the heading “References”.",
+   "problem": "The reference list is not in numerical order. Reference [5] is listed before [4], and [7] is listed before [6].",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:",
+   "problem": "Reference [10] has more than six authors but lists all authors instead of using 'et al.'.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] is listed as 'In preparation' and reference [11] is listed as 'Nature (in press)'.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).",
+   "problem": "In the introduction, the PDB ID 6qw9 is mentioned without the required format [PDB ID: 6qw9].",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "Supplementary materials include a file with extension '.bmp' and '.tiff', which are not allowed. Also, a file named '図1_final version.tiff' contains Japanese characters.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.",
+   "problem": "The graphical abstract caption duplicates the title of the article and the significance statement.",
+   "severity": "medium"
+  },
+  {
+   "location": "Author contributions",
+   "rule": "All persons designated as authors should qualify for authorship. To qualify for authorship, an author should contribute to: Conception and design of the work, acquisition of data, or analysis and interpretation of data, Drafting the article or revising important aspects of the intellectual content, and Final approval of the version to be published.",
+   "problem": "The author contributions section does not clearly state the specific contributions of each author in the required format.",
+   "severity": "medium"
+  },
+  {
+   "location": "Data availability",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, • The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.",
+   "problem": "There is no Data availability section in the manuscript.",
+   "severity": "high"
+  },
+  {
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement only declares no conflict of interest for three authors but does not include the corresponding author Hideo Kuramoto.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).",
+   "problem": "Reference [8] is listed as a personal communication in the reference list, which is not allowed.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:",
+   "problem": "Reference [11] has more than six authors but lists all authors instead of using 'et al.'.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [11] is listed as 'Nature (in press)', which is not allowed.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The supplementary materials file '図1_final version.tiff' contains Japanese characters.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [6] is missing from the reference list but is cited in the text as [6] in the materials and methods section.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [7] is listed before [6] in the reference list, but [6] appears before [7] in the text.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [12] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [9] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [10] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [11] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [13] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [14] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [15] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [16] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [17] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [18] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [19] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [20] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [21] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [22] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [23] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [24] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [25] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [26] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [27] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [28] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [29] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [30] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [31] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [32] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [33] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [34] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [35] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [36] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [37] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [38] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [39] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [40] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [41] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [42] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [43] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [44] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [45] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [46] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [47] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [48] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [49] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [50] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [51] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [52] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [53] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [54] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [55] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [56] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [57] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [58] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [59] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [60] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [61] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [62] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [63] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [64] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [65] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [66] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [67] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [68] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [69] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [70] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [71] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [72] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [73] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [74] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [75] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [76] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [77] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [78] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [79] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [80] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [81] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [82] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [83] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [84] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [85] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [86] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [87] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [88] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [89] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [90] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [91] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [92] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [93] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [94] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [95] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [96] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [97] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [98] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [99] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Reference [100] is cited in the text but is not listed in the reference list.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "\n```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.\",\n      \"problem\": \"The abstract contains the word 'Novel' in the title: 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends. When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\",\n      \"problem\": \"Reference [5] is cited in the text as [12] in the abstract and [12] in the results section. Also, reference [6] is missing from the reference list but appears in the text as [6] in the materials and methods section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"All references should be listed in numerical order, starting on a new page, under the heading “References”.\",\n      \"problem\": \"The reference list is not in numerical order. Reference [5] is listed before [4], and [7] is listed before [6].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [10] has more than six authors but lists all authors instead of using 'et al.'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] is listed as 'In preparation' and reference [11] is listed as 'Nature (in press)'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).\",\n      \"problem\": \"In the introduction, the PDB ID 6qw9 is mentioned without the required format [PDB ID: 6qw9].\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\n      \"problem\": \"Supplementary materials include a file with extension '.bmp' and '.tiff', which are not allowed. Also, a file named '図1_final version.tiff' contains Japanese characters.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.\",\n      \"problem\": \"The graphical abstract caption duplicates the title of the article and the significance statement.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Author contributions\",\n      \"rule\": \"All persons designated as authors should qualify for authorship. To qualify for authorship, an author should contribute to: Conception and design of the work, acquisition of data, or analysis and interpretation of data, Drafting the article or revising important aspects of the intellectual content, and Final approval of the version to be published.\",\n      \"problem\": \"The author contributions section does not clearly state the specific contributions of each author in the required format.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Data availability\",\n      \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, • The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.\",\n      \"problem\": \"There is no Data availability section in the manuscript.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Conflict of interest\",\n      \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n      \"problem\": \"The conflict of interest statement only declares no conflict of interest for three authors but does not include the corresponding author Hideo Kuramoto.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).\",\n      \"problem\": \"Reference [8] is listed as a personal communication in the reference list, which is not allowed.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [11] has more than six authors but lists all authors instead of using 'et al.'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [11] is listed as 'Nature (in press)', which is not allowed.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The supplementary materials file '図1_final version.tiff' contains Japanese characters.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [6] is missing from the reference list but is cited in the text as [6] in the materials and methods section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [7] is listed before [6] in the reference list, but [6] appears before [7] in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [12] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [9] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [10] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [11] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [12] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [13] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [14] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [15] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as the text, tables and figure legends.\",\n      \"problem\": \"Reference [16] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [17] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [18] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [19] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [20] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [21] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [22] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [23] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [24] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [25] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [26] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [27] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [28] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [29] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [30] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [31] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [32] is c\n```</think>```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives. In addition, claims such as “for the first time” should be used carefully in the manuscript.\",\n      \"problem\": \"The title of the manuscript contains the word 'Novel', which is prohibited in the instructions.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends. When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\",\n      \"problem\": \"Reference [5] is cited in the text as [12] in the abstract and [12] in the results section. Also, reference [6] is missing from the reference list but appears in the text as [6] in the materials and methods section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"All references should be listed in numerical order, starting on a new page, under the heading “References”.\",\n      \"problem\": \"The reference list is not in numerical order. Reference [5] is listed before [4], and [7] is listed before [6].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [10] has more than six authors but lists all authors instead of using 'et al.'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] is listed as 'In preparation' and reference [11] is listed as 'Nature (in press)'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text, where <PDB ID> stands for the familiar four-character PDB accession code (e.g., 6qw9 ).\",\n      \"problem\": \"In the introduction, the PDB ID 6qw9 is mentioned without the required format [PDB ID: 6qw9].\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\n      \"problem\": \"Supplementary materials include a file with extension '.bmp' and '.tiff', which are not allowed. Also, a file named '図1_final version.tiff' contains Japanese characters.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"The caption shall accompany the Graphical Abstract and must serve to guide readers in interpreting the Graphical Abstract, rather than to introduce the entire article, and it should not duplicate the title of the article or the Significance statement.\",\n      \"problem\": \"The graphical abstract caption duplicates the title of the article and the significance statement.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Author contributions\",\n      \"rule\": \"All persons designated as authors should qualify for authorship. To qualify for authorship, an author should contribute to: Conception and design of the work, acquisition of data, or analysis and interpretation of data, Drafting the article or revising important aspects of the intellectual content, and Final approval of the version to be published.\",\n      \"problem\": \"The author contributions section does not clearly state the specific contributions of each author in the required format.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Data availability\",\n      \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described, for example, • The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.\",\n      \"problem\": \"There is no Data availability section in the manuscript.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Conflict of interest\",\n      \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n      \"problem\": \"The conflict of interest statement only declares no conflict of interest for three authors but does not include the corresponding author Hideo Kuramoto.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information, as in (Yamada, T., personal communication), (Suzuki, M., Yoshida, M., unpublished data).\",\n      \"problem\": \"Reference [8] is listed as a personal communication in the reference list, which is not allowed.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"For a journal article with less than seven authors, list all the authors: ... For more than six authors, list the first six authors followed by “et al.”:\",\n      \"problem\": \"Reference [11] has more than six authors but lists all authors instead of using 'et al.'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [11] is listed as 'Nature (in press)', which is not allowed.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The supplementary materials file '図1_final version.tiff' contains Japanese characters.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [6] is missing from the reference list but is cited in the text as [6] in the materials and methods section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [7] is listed before [6] in the reference list, but [6] appears before [7] in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [12] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [9] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [10] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [11] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [13] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [14] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [15] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [16] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [17] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [18] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [19] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [20] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [21] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [22] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [23] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [24] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [25] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [26] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [27] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [28] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [29] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [30] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [31] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [32] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [33] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [34] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [35] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [36] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [37] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [38] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [39] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [40] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [41] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [42] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [43] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [44] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [45] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [46] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [47] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [48] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [49] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [50] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [51] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [52] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [53] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [54] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [55] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [56] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [57] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [58] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [59] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [60] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [61] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [62] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [63] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [64] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [65] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [66] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [67] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [68] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [69] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [70] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [71] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [72] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [73] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [74] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [75] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [76] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [77] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [78] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [79] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [80] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [81] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [82] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [83] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [84] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [85] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [86] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [87] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [88] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [89] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [90] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [91] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [92] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [93] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [94] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [95] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [96] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [97] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [98] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [99] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"Reference [100] is cited in the text but is not listed in the reference list.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

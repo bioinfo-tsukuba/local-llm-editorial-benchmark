@@ -1,0 +1,27 @@
+{
+ "task": "t6d",
+ "model": "qwen3.5:35b-a3b-bf16",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": "empty response",
+ "result_key": "problems",
+ "n_items": null,
+ "meta": {
+  "model": "qwen3.5:35b-a3b-bf16",
+  "wall_s": 907.05,
+  "prompt_tokens": 5460,
+  "output_tokens": 24576,
+  "load_s": 0.12,
+  "prefill_tok_s": 723.5,
+  "decode_tok_s": 28.3,
+  "ttft_s": 7.66,
+  "done_reason": "length",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79521,
+  "peak_size_vram_mib": 72639
+ },
+ "problems": null,
+ "raw_response": "",
+ "thinking_chars": 72254
+}

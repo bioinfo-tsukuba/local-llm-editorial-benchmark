@@ -1,0 +1,31 @@
+{
+ "task": "T5",
+ "model": "qwen3.5:122b-a10b-q4_K_M",
+ "item": "G1",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "wall_s": 78.37,
+  "prompt_tokens": 2261,
+  "output_tokens": 1042,
+  "load_s": 22.22,
+  "prefill_tok_s": 256.3,
+  "decode_tok_s": 22.8,
+  "ttft_s": 31.04,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 89567,
+  "peak_size_vram_mib": 82749
+ },
+ "defects": [
+  {
+   "what": "Panel labels in the image ((a), (c)) do not match the panel references in the legend ((a), (b)). The legend describes a panel (b) which corresponds to the visual content of the panel labeled (c) in the image.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"Panel labels in the image ((a), (c)) do not match the panel references in the legend ((a), (b)). The legend describes a panel (b) which corresponds to the visual content of the panel labeled (c) in the image.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 3601
+}

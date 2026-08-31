@@ -1,0 +1,122 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": "medium",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 15,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 100.48,
+  "prompt_tokens": 12265,
+  "output_tokens": 2500,
+  "load_s": 20.81,
+  "prefill_tok_s": 1175.1,
+  "decode_tok_s": 37.6,
+  "ttft_s": 31.25,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 71884,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "The manuscript lists seven keywords.",
+   "severity": "high"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement contains roughly 130 words, exceeding the 100‑word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Running title",
+   "rule": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title \"Coarse-grained elastic network analysis of allosteric coupling in ring ATPases\" is about 72 characters long.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required and must not include references.",
+   "problem": "The abstract contains a citation “[12]”.",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text.",
+   "problem": "The reference list is out of order (e.g., [5] is followed by [7] then [6]).",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] is listed as “In preparation.”",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "Personal communications should appear parenthetically in the text, not in the reference list.",
+   "problem": "Reference [8] is a personal communication included in the reference list.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "When a DOI is available it should be added as a URL (e.g., https://doi.org/...).",
+   "problem": "Reference [4] provides a DOI in the form “doi:10.1016/...”, not as a URL.",
+   "severity": "low"
+  },
+  {
+   "location": "Figure files",
+   "rule": "Figures must be at a resolution of 300 dpi for printing.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are only 150 dpi.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary material file names",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in file names; use only alphanumeric characters.",
+   "problem": "File \"図1_final version.tiff\" contains Japanese characters and spaces.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary movie file",
+   "rule": "The size of each uploaded file must be no more than 20 MB.",
+   "problem": "Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Conflict of interest statement",
+   "rule": "All authors must declare conflicts of interest (or lack thereof).",
+   "problem": "The statement lists conflicts for K.M., A.T., and R.N. only; H.K. and S.J.W. are omitted.",
+   "severity": "medium"
+  },
+  {
+   "location": "Data availability section",
+   "rule": "A Data availability statement must be included before the References.",
+   "problem": "The manuscript does not contain any Data availability statement.",
+   "severity": "high"
+  },
+  {
+   "location": "Ethics statement",
+   "rule": "For experiments involving animal material, a statement identifying the institutional/licensing committee approving the experiments must be included in the Methods section.",
+   "problem": "The manuscript reports use of rabbit skeletal‑muscle myosin but provides no ethics approval statement.",
+   "severity": "high"
+  },
+  {
+   "location": "Table footnotes",
+   "rule": "Text footnotes are not allowed from page 2 onwards.",
+   "problem": "Table 1 includes footnotes (e.g., \"Footnotes: 1. ...\").",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"The manuscript lists seven keywords.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Significance statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n      \"problem\": \"The significance statement contains roughly 130 words, exceeding the 100‑word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Running title\",\n      \"rule\": \"At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.\",\n      \"problem\": \"The running title \\\"Coarse-grained elastic network analysis of allosteric coupling in ring ATPases\\\" is about 72 characters long.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"An abstract of no more than 250 words is required and must not include references.\",\n      \"problem\": \"The abstract contains a citation “[12]”.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text.\",\n      \"problem\": \"The reference list is out of order (e.g., [5] is followed by [7] then [6]).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] is listed as “In preparation.”\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [8]\",\n      \"rule\": \"Personal communications should appear parenthetically in the text, not in the reference list.\",\n      \"problem\": \"Reference [8] is a personal communication included in the reference list.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [4]\",\n      \"rule\": \"When a DOI is available it should be added as a URL (e.g., https://doi.org/...).\",\n      \"problem\": \"Reference [4] provides a DOI in the form “doi:10.1016/...”, not as a URL.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Figure files\",\n      \"rule\": \"Figures must be at a resolution of 300 dpi for printing.\",\n      \"problem\": \"Fig1_modes.bmp and Fig2_spectra.bmp are only 150 dpi.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary material file names\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in file names; use only alphanumeric characters.\",\n      \"problem\": \"File \\\"図1_final version.tiff\\\" contains Japanese characters and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary movie file\",\n      \"rule\": \"The size of each uploaded file must be no more than 20 MB.\",\n      \"problem\": \"Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Conflict of interest statement\",\n      \"rule\": \"All authors must declare conflicts of interest (or lack thereof).\",\n      \"problem\": \"The statement lists conflicts for K.M., A.T., and R.N. only; H.K. and S.J.W. are omitted.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Data availability section\",\n      \"rule\": \"A Data availability statement must be included before the References.\",\n      \"problem\": \"The manuscript does not contain any Data availability statement.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Ethics statement\",\n      \"rule\": \"For experiments involving animal material, a statement identifying the institutional/licensing committee approving the experiments must be included in the Methods section.\",\n      \"problem\": \"The manuscript reports use of rabbit skeletal‑muscle myosin but provides no ethics approval statement.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table footnotes\",\n      \"rule\": \"Text footnotes are not allowed from page 2 onwards.\",\n      \"problem\": \"Table 1 includes footnotes (e.g., \\\"Footnotes: 1. ...\\\").\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+ "thinking_chars": 6212
+}

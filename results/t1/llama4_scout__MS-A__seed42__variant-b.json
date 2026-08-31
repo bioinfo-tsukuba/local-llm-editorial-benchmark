@@ -1,0 +1,31 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "llama4:scout",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 0,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 65.46,
+  "prompt_tokens": 12166,
+  "output_tokens": 106,
+  "load_s": 22.69,
+  "prefill_tok_s": 348.3,
+  "decode_tok_s": 13.9,
+  "ttft_s": 57.62,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 91875,
+  "peak_size_vram_mib": 84597
+ },
+ "findings": null,
+ "raw_response": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"title\": \"Manuscript Title\",\n    \"authors\": [\n      {\n        \"name\": \"Author 1\",\n        \"email\": \"author1@example.com\"\n      },\n      {\n        \"name\": \"Author 2\",\n        \"email\": \"author2@example.com\"\n      }\n    ],\n    \"abstract\": \"This is an abstract.\",\n    \"keywords\": [\n      \"keyword1\",\n      \"keyword2\"\n    ]\n  }\n}",
+ "thinking_chars": 0
+}

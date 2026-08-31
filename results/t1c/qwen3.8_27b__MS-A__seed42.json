@@ -1,0 +1,293 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "qwen3.8:27b",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 28,
+ "findings": [
+  {
+   "location": "Corresponding author line (after affiliations, page 1): '*Corresponding author: Hideo Kuramoto, Department of Molecular Biophysics, Kitagawa Institute of Technology, Kyoto'",
+   "rule": "The complete postal address of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The address given is only 'Department of Molecular Biophysics, Kitagawa Institute of Technology, Kyoto'. It lacks a street address, postal code, and country, so it is not a complete postal address.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Corresponding author line (after affiliations, page 1)",
+   "rule": "The ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "No ORCID iD is provided for the corresponding author (Hideo Kuramoto) anywhere in the page-1 author block.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Tables section – Table 1",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 (Bead and spring counts for the networks used in this study) is never cited anywhere in the body text. Only Table 2 is referenced (in Materials and methods and Results).",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Tables section – Table 2",
+   "rule": "Supply a short explanatory title above the body of the table.",
+   "problem": "The title 'Table 2 | Dependence of the fitted susceptibility length constants on the nucleotide stiffening factor s.' is placed below the table body rather than above it.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Tables section – Table 1, footnotes",
+   "rule": "Table footnotes lettered a, b, c, and so forth, below the body of the table.",
+   "problem": "The three footnotes under Table 1 are numbered '1.', '2.', '3.' instead of being lettered 'a.', 'b.', 'c.' as required.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Tables section – Table 1 and Table 2",
+   "rule": "Do not use vertical lines.",
+   "problem": "Both tables use vertical line separators (|) between columns (e.g., 'Network | Beads | Springs | Cutoff (A)' and 's | CCW length constant | CW length constant | Ratio'), which constitutes vertical lines in the table layout.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Results section, 'Reorganization of the low-frequency spectrum depends on occupancy pattern'",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 3 (residue-level decomposition heat map) appears in the figure legends but is never cited anywhere in the body text.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Results section, first paragraph",
+   "rule": "Number the figures consecutively with Arabic numerals in the order of their appearance in the text.",
+   "problem": "Figure 2 is cited before Figure 1 in the text ('Figure 2 shows the frequency spectrum…' appears before 'Figure 1 shows the corresponding mode displacement fields…'), violating the required order of first appearance.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list: Fig1_modes.bmp",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Figure 1 is submitted in BMP format, which is not an accepted file format.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list: Fig2_spectra.bmp",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Figure 2 is submitted in BMP format, which is not an accepted file format.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list: Fig1_modes.bmp (150 dpi)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Figure 1 is at 150 dpi, well below the required 300 dpi minimum.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list: Fig2_spectra.bmp (150 dpi)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Figure 2 is at 150 dpi, well below the required 300 dpi minimum.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list: Graphical_abstract.tiff",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.",
+   "problem": "The graphical abstract is submitted in TIFF format, which is not among the accepted formats (PNG, JPEG, GIF) for the graphical abstract.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "Please also upload a short caption less than 100 words about the figure(s).",
+   "problem": "The graphical abstract caption is approximately 134 words, exceeding the 100-word limit.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Graphical abstract caption, first sentence",
+   "rule": "The caption…should not duplicate the title of the article or the Significance statement.",
+   "problem": "The first sentence of the caption ('Novel coarse-grained model of allosteric communication in a ring-shaped ATPase.') is identical to the article title.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials: '図1_final version.tiff'",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The filename contains the Japanese character '図' and a space, both of which are prohibited.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials: '図1_final version.tiff'",
+   "rule": "As Supplementary materials, image files should be in PDF, TXT or ZIP format.",
+   "problem": "The supplementary figure is in TIFF format, which is not an accepted format for supplementary image files (must be PDF, TXT, or ZIP).",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials – Suppl_Movie_1.mov",
+   "rule": "Movie files must be in MPEG or AVI format; the file name extension should be one of pdf, txt, zip, mpeg or avi.",
+   "problem": "The file extension is .mov (QuickTime), which is not among the permitted formats (.mpeg or .avi for movies).",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials – Suppl_Movie_1.mov",
+   "rule": "The size of each file uploaded via the online submission system, including supplementary material, should be no more than 20 MB. Files larger than 20 MB must be uploaded to J-STAGE Data.",
+   "problem": "The file is listed as 45 MB, which exceeds the 20 MB per-file limit by more than double.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials – 図1_final version.tiff",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path; use alphanumeric characters only.",
+   "problem": "The file name contains the Japanese character '図' and a space (between 'final' and 'version'), violating both prohibitions.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials – 図1_final version.tiff",
+   "rule": "The file name extension should be one of the following as appropriate: pdf, txt, zip, mpeg or avi.",
+   "problem": "The file extension is .tiff, which is not in the list of permitted supplementary-material extensions.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials – all four listed files",
+   "rule": "Title of the material should be, for example, 'Supplementary Text S1', 'Supplementary Table S1', and 'Supplementary Figure S1'.",
+   "problem": "None of the four supplementary items uses the required 'Supplementary [Type] S[number]' naming convention. The titles given are 'Convergence of the Brownian dynamics runs', 'Full susceptibility matrices', 'Animation of the lowest shear mode', and 'High-resolution version of Figure 1'.",
+   "severity": "medium",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Title: \"Novel coarse-grained model of allosteric communication in a ring-shaped ATPase\"",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: \"New\", \"Novel\", \"First\", \"Unprecedented\", or other similar descriptive words, and their adjectives.",
+   "problem": "The title begins with the word \"Novel\", which is explicitly listed as a prohibited word in the title.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Abstract, sentence: \"We further demonstrate for the first time that truncating the C-terminal helix…\"",
+   "rule": "Claims such as \"for the first time\" should be used carefully in the manuscript; titles and abstracts may not contain \"First\" or similar descriptive words.",
+   "problem": "The abstract contains the phrase \"for the first time\", which the instructions flag as a prohibited/sensitive claim in the abstract.",
+   "severity": "medium",
+   "_area": "ethics"
+  },
+  {
+   "location": "Graphical abstract caption: \"Novel coarse-grained model of allosteric communication in a ring-shaped ATPase.\"",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: \"New\", \"Novel\", \"First\", \"Unprecedented\", or other similar descriptive words, and their adjectives.",
+   "problem": "The graphical abstract caption repeats the word \"Novel\" from the title, constituting the same prohibited-word violation in a title-equivalent element.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Conflict of interest section: \"K.M., A.T., and R.N. declare that they have no conflict of interest.\"",
+   "rule": "All authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work. (All authors must be named in the declaration.)",
+   "problem": "The manuscript has five authors (K.M., A.T., R.N., S.J.W., H.K.), but the conflict-of-interest statement only names three (K.M., A.T., R.N.). Sarah J. Whitfield (S.J.W.) and Hideo Kuramoto (H.K.) are omitted from the declaration.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "End of manuscript (between Author contributions and References)",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described (e.g., \"The evidence data generated and/or analyzed during the current study are available from the corresponding author on reasonable request.\"). A Data availability section is required before the References.",
+   "problem": "The manuscript contains no Data availability section at all. No statement about data availability, data repository, or access to evidence data is present anywhere in the text.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Materials and methods, \"Single-molecule rotation assay\" paragraph: \"Myosin used as a reference standard in the calibration measurements was purified from rabbit skeletal muscle by the standard procedure.\"",
+   "rule": "For original research manuscripts, reporting experiments on live vertebrates and/or higher invertebrates, authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments in the methods section.",
+   "problem": "The manuscript reports the use of rabbit (a vertebrate) skeletal muscle for myosin purification but provides no ethics statement, no identification of an institutional animal-care committee, and no approval/licensing reference for the animal work.",
+   "severity": "high",
+   "_area": "ethics"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 0,
+   "parse_error": "empty response",
+   "wall_s": 252.08,
+   "prompt_tokens": 12860,
+   "output_tokens": 8192,
+   "prefill_tok_s": 789.2
+  },
+  {
+   "area": "corresponding-author",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 52.58,
+   "prompt_tokens": 12858,
+   "output_tokens": 1041,
+   "prefill_tok_s": 765.1
+  },
+  {
+   "area": "structure",
+   "n": 0,
+   "parse_error": "empty response",
+   "wall_s": 248.71,
+   "prompt_tokens": 12850,
+   "output_tokens": 8192,
+   "prefill_tok_s": 757.9
+  },
+  {
+   "area": "tables",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 103.69,
+   "prompt_tokens": 12861,
+   "output_tokens": 2658,
+   "prefill_tok_s": 768.3
+  },
+  {
+   "area": "figures",
+   "n": 11,
+   "parse_error": null,
+   "wall_s": 172.43,
+   "prompt_tokens": 12862,
+   "output_tokens": 4997,
+   "prefill_tok_s": 764.4
+  },
+  {
+   "area": "supplementary",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 119.18,
+   "prompt_tokens": 12858,
+   "output_tokens": 3180,
+   "prefill_tok_s": 768.3
+  },
+  {
+   "area": "references",
+   "n": 0,
+   "parse_error": "salvaged",
+   "wall_s": 277.48,
+   "prompt_tokens": 12869,
+   "output_tokens": 8192,
+   "prefill_tok_s": 763.1
+  },
+  {
+   "area": "ethics",
+   "n": 6,
+   "parse_error": null,
+   "wall_s": 163.31,
+   "prompt_tokens": 12869,
+   "output_tokens": 4401,
+   "prefill_tok_s": 763.1
+  }
+ ],
+ "meta": {
+  "wall_s": 1389.7,
+  "output_tokens": 40853,
+  "prompt_tokens": 102887,
+  "peak_mem_used_mib": 38642,
+  "peak_size_vram_mib": 17119
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

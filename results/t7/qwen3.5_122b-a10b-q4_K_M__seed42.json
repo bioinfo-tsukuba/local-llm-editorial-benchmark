@@ -1,0 +1,70 @@
+{
+ "task": "t7",
+ "model": "qwen3.5:122b-a10b-q4_K_M",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 7,
+ "meta": {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "wall_s": 445.68,
+  "prompt_tokens": 10050,
+  "output_tokens": 8532,
+  "load_s": 27.11,
+  "prefill_tok_s": 500.3,
+  "decode_tok_s": 22.1,
+  "ttft_s": 47.2,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 92833,
+  "peak_size_vram_mib": 84281
+ },
+ "findings": [
+  {
+   "location": "Manuscript Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.",
+   "problem": "The title 'Novel directions for coarse-grained models of molecular machines' contains the word 'Novel'.",
+   "severity": "high"
+  },
+  {
+   "location": "References section",
+   "rule": "All references should be listed in numerical order.",
+   "problem": "The reference list is ordered 1, 2, 3, 4, 5, 7, 6, 8. Reference [7] appears before Reference [6].",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with 'In preparation.'",
+   "severity": "high"
+  },
+  {
+   "location": "Main text",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is listed in the manuscript but is not cited in the main text.",
+   "severity": "medium"
+  },
+  {
+   "location": "Main text",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 1 is listed in the Figure legends but is not cited in the main text.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The supplementary file name '図 1_draft version.bmp' contains Japanese characters ('図 1').",
+   "severity": "high"
+  },
+  {
+   "location": "Page 1 (Author block)",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author's postal address and ORCID iD are listed in the main author block, not in the footer of page 1.",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Manuscript Title\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The title 'Novel directions for coarse-grained models of molecular machines' contains the word 'Novel'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"References section\",\n      \"rule\": \"All references should be listed in numerical order.\",\n      \"problem\": \"The reference list is ordered 1, 2, 3, 4, 5, 7, 6, 8. Reference [7] appears before Reference [6].\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ends with 'In preparation.'\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Main text\",\n      \"rule\": \"All tables must be cited in the text.\",\n      \"problem\": \"Table 1 is listed in the manuscript but is not cited in the main text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Main text\",\n      \"rule\": \"All figures must be cited in the text.\",\n      \"problem\": \"Figure 1 is listed in the Figure legends but is not cited in the main text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials list\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The supplementary file name '図 1_draft version.bmp' contains Japanese characters ('図 1').\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Page 1 (Author block)\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The corresponding author's postal address and ORCID iD are listed in the main author block, not in the footer of page 1.\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+ "thinking_chars": 30748
+}

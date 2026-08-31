@@ -1,0 +1,279 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "mistral-small",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 26,
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "The title should be concise and informative, and should not exceed 150 characters including spaces.",
+   "problem": "The title exceeds 150 characters including spaces.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract exceeds 250 words.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Six keywords are provided.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement exceeds 100 words.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Running title",
+   "rule": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title exceeds 50 characters including spaces.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Footer of page 1",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The ORCID iD of the corresponding author is missing.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Table 1",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is not cited in the text.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Do not use vertical lines.",
+   "problem": "Table 1 uses vertical lines.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 2 is not cited in the text.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Do not use vertical lines.",
+   "problem": "Table 2 uses vertical lines.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are at 150 dpi, which is below the required 300 dpi resolution.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig3_heatmap.png is at 600 dpi, which exceeds the required 300 dpi resolution.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig4_susceptibility.png is at 600 dpi, which exceeds the required 300 dpi resolution.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Graphical_abstract.tiff is at 300 dpi, which is compliant, but the format is TIFF, which is acceptable but not specified as the preferred format for the graphical abstract.",
+   "severity": "low",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "As Supplementary materials, image files should be in PDF, TXT or ZIP format, and movie files in MPEG or AVI format.",
+   "problem": "Suppl_Movie_1.mov is in MOV format, which is not accepted.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "図1_final version.tiff contains Japanese characters in the file name, which is not allowed.",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "The file name '図1_final version.tiff' contains Japanese characters and an invalid extension.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "References should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "Reference [5] is listed out of numerical order.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [6]",
+   "rule": "References should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "Reference [6] is listed out of numerical order.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information.",
+   "problem": "Reference [8] is listed as a personal communication in the reference list.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [11] is listed as 'in press'.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Conflict of interest",
+   "rule": "Conflict of interest",
+   "problem": "The conflict of interest statement does not include declarations for all authors. Sarah J. Whitfield's declaration is missing.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Data availability",
+   "rule": "Data availability",
+   "problem": "The data availability statement does not specify how to access the data or provide a DOI or repository information.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Data availability",
+   "rule": "Data availability",
+   "problem": "The data availability statement does not mention the use of J-STAGE Data or any other specific repository.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Data availability",
+   "rule": "Data availability",
+   "problem": "The data availability statement does not include a clear statement about the availability of raw data upon reasonable request.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Data availability",
+   "rule": "Data availability",
+   "problem": "The data availability statement does not specify the reason for not publicly available data if applicable.",
+   "severity": "high",
+   "_area": "ethics"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 51.15,
+   "prompt_tokens": 12661,
+   "output_tokens": 305,
+   "prefill_tok_s": 936.3
+  },
+  {
+   "area": "corresponding-author",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 20.5,
+   "prompt_tokens": 12657,
+   "output_tokens": 87,
+   "prefill_tok_s": 943.6
+  },
+  {
+   "area": "structure",
+   "n": 0,
+   "parse_error": "salvaged",
+   "wall_s": 695.06,
+   "prompt_tokens": 12652,
+   "output_tokens": 8192,
+   "prefill_tok_s": 935.5
+  },
+  {
+   "area": "tables",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 29.79,
+   "prompt_tokens": 12660,
+   "output_tokens": 203,
+   "prefill_tok_s": 943.5
+  },
+  {
+   "area": "figures",
+   "n": 6,
+   "parse_error": null,
+   "wall_s": 63.98,
+   "prompt_tokens": 12662,
+   "output_tokens": 627,
+   "prefill_tok_s": 946.5
+  },
+  {
+   "area": "supplementary",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 20.56,
+   "prompt_tokens": 12658,
+   "output_tokens": 88,
+   "prefill_tok_s": 945.0
+  },
+  {
+   "area": "references",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 37.5,
+   "prompt_tokens": 12677,
+   "output_tokens": 296,
+   "prefill_tok_s": 933.0
+  },
+  {
+   "area": "ethics",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 36.41,
+   "prompt_tokens": 12675,
+   "output_tokens": 283,
+   "prefill_tok_s": 935.8
+  }
+ ],
+ "meta": {
+  "wall_s": 956.9,
+  "output_tokens": 10081,
+  "prompt_tokens": 101302,
+  "peak_mem_used_mib": 26224,
+  "peak_size_vram_mib": 20574
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

@@ -1,0 +1,31 @@
+{
+ "task": "T5",
+ "model": "qwen3.6:35b-a3b-bf16",
+ "item": "G1",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "wall_s": 105.62,
+  "prompt_tokens": 2261,
+  "output_tokens": 1701,
+  "load_s": 38.06,
+  "prefill_tok_s": 554.7,
+  "decode_tok_s": 28.0,
+  "ttft_s": 42.14,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 76954,
+  "peak_size_vram_mib": 70600
+ },
+ "defects": [
+  {
+   "what": "Panel labels disagree with the legend: the image displays panels labeled (a) and (c), whereas the legend describes panels (a) and (b).",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"Panel labels disagree with the legend: the image displays panels labeled (a) and (c), whereas the legend describes panels (a) and (b).\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 6247
+}

@@ -1,0 +1,328 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "mistral-small",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 33,
+ "findings": [
+  {
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract includes a reference to a PDB ID.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract is 304 words long.",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Six keywords are provided.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement is 149 words long.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Running title",
+   "rule": "A Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title is 51 characters long.",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Footer of page 1",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The ORCID iD is not indicated in the footer of page 1.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Abstract length",
+   "problem": "The abstract is 307 words long, exceeding the 250-word limit.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Abstract references",
+   "problem": "The abstract contains a reference to a PDB ID.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [11] is not formatted correctly as it is listed as 'in press' without a DOI.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [10] is listed as a preprint server article but does not include the DOI in the correct format.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [5] is listed as a preprint server article but does not include the DOI in the correct format.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [8] is listed as a preprint server article but does not include the DOI in the correct format.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [9] is listed as a preprint server article but does not include the DOI in the correct format.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [12] is listed as a preprint server article but does not include the DOI in the correct format.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [1] does not include a DOI.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [2] does not include a DOI.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [3] does not include a DOI.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [4] does not include a DOI.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [6] does not include a DOI.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "References",
+   "rule": "Reference format",
+   "problem": "Reference [7] does not include a DOI.",
+   "severity": "high",
+   "_area": "structure"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Tables should be inserted using the Text-box tool in Microsoft Word.",
+   "problem": "The table is not inserted using the Text-box tool in Microsoft Word.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Do not use vertical lines.",
+   "problem": "The table contains vertical lines.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Tables should be inserted using the Text-box tool in Microsoft Word.",
+   "problem": "The table is not inserted using the Text-box tool in Microsoft Word.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Do not use vertical lines.",
+   "problem": "The table contains vertical lines.",
+   "severity": "high",
+   "_area": "tables"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig3_susceptibility.png is at 600 dpi, which exceeds the required 300 dpi resolution.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed. We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig4_heatmap.png is at 600 dpi, which exceeds the required 300 dpi resolution.",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "The file name 'SupplementaryMovieS1.mpeg' uses the extension 'mpeg' instead of 'mpg'.",
+   "severity": "medium",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name 'SupplementaryMovieS1.mpeg' includes a space character.",
+   "severity": "medium",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Reference [10]",
+   "rule": "References should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "Reference [10] is listed out of numerical order.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [11] uses 'in press'.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference [12]",
+   "rule": "References should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "Reference [12] is listed out of numerical order.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Materials and methods",
+   "rule": "Ethics standard",
+   "problem": "The manuscript does not include a statement identifying the institutional and/or licensing committee approving the experiments involving animal subjects.",
+   "severity": "high",
+   "_area": "ethics"
+  },
+  {
+   "location": "Materials and methods",
+   "rule": "Ethics standard",
+   "problem": "The manuscript does not include a statement confirming that informed consent was obtained from all human subjects.",
+   "severity": "high",
+   "_area": "ethics"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 5,
+   "parse_error": null,
+   "wall_s": 36.27,
+   "prompt_tokens": 12765,
+   "output_tokens": 281,
+   "prefill_tok_s": 941.9
+  },
+  {
+   "area": "corresponding-author",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 20.98,
+   "prompt_tokens": 12761,
+   "output_tokens": 91,
+   "prefill_tok_s": 942.2
+  },
+  {
+   "area": "structure",
+   "n": 14,
+   "parse_error": null,
+   "wall_s": 69.45,
+   "prompt_tokens": 12756,
+   "output_tokens": 692,
+   "prefill_tok_s": 941.9
+  },
+  {
+   "area": "tables",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 31.08,
+   "prompt_tokens": 12764,
+   "output_tokens": 217,
+   "prefill_tok_s": 943.9
+  },
+  {
+   "area": "figures",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 32.3,
+   "prompt_tokens": 12766,
+   "output_tokens": 232,
+   "prefill_tok_s": 940.9
+  },
+  {
+   "area": "supplementary",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 27.07,
+   "prompt_tokens": 12762,
+   "output_tokens": 167,
+   "prefill_tok_s": 943.6
+  },
+  {
+   "area": "references",
+   "n": 3,
+   "parse_error": null,
+   "wall_s": 30.96,
+   "prompt_tokens": 12781,
+   "output_tokens": 213,
+   "prefill_tok_s": 931.4
+  },
+  {
+   "area": "ethics",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 23.9,
+   "prompt_tokens": 12779,
+   "output_tokens": 125,
+   "prefill_tok_s": 931.0
+  }
+ ],
+ "meta": {
+  "wall_s": 272.3,
+  "output_tokens": 2018,
+  "prompt_tokens": 102134,
+  "peak_mem_used_mib": 25100,
+  "peak_size_vram_mib": 20574
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

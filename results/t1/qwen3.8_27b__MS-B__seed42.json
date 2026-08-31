@@ -1,0 +1,44 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.8:27b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 2,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 380.41,
+  "prompt_tokens": 12937,
+  "output_tokens": 11725,
+  "load_s": 0.0,
+  "prefill_tok_s": 746.6,
+  "decode_tok_s": 32.4,
+  "ttft_s": 17.33,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 34029,
+  "peak_size_vram_mib": 17119
+ },
+ "findings": [
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "References [3], [5], [6], [7], [9], [10], [11], and [12] appear in the reference list but are not cited anywhere in the text, tables, or figure legends. Only [1], [2], [4], and [8] are actually cited. The numbering is therefore non-sequential in order of first appearance (it jumps 1, 2, 4, 8) and the list contains eight entries that do not correspond to any in-text citation.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL. The instructions' own example for an 'in press' article (the identical Itoh et al. Nature paper) includes the DOI: https://doi.org/10.1038/nature02212.",
+   "problem": "Reference [11] reads 'Nature (in press).' with no DOI URL appended, whereas the instructions' example for this exact reference includes 'https://doi.org/10.1038/nature02212'.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\n    \"location\": \"References\",\n    \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n    \"problem\": \"References [3], [5], [6], [7], [9], [10], [11], and [12] appear in the reference list but are not cited anywhere in the text, tables, or figure legends. Only [1], [2], [4], and [8] are actually cited. The numbering is therefore non-sequential in order of first appearance (it jumps 1, 2, 4, 8) and the list contains eight entries that do not correspond to any in-text citation.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Reference [11]\",\n    \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL. The instructions' own example for an 'in press' article (the identical Itoh et al. Nature paper) includes the DOI: https://doi.org/10.1038/nature02212.\",\n    \"problem\": \"Reference [11] reads 'Nature (in press).' with no DOI URL appended, whereas the instructions' example for this exact reference includes 'https://doi.org/10.1038/nature02212'.\",\n    \"severity\": \"medium\"\n  }\n]}",
+ "thinking_chars": 37983
+}

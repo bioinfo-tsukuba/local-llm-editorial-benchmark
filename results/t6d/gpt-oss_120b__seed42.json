@@ -1,0 +1,34 @@
+{
+ "task": "t6d",
+ "model": "gpt-oss:120b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 1,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 19.64,
+  "prompt_tokens": 5099,
+  "output_tokens": 581,
+  "load_s": 0.15,
+  "prefill_tok_s": 1180.1,
+  "decode_tok_s": 40.0,
+  "ttft_s": 4.47,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 71518,
+  "peak_size_vram_mib": 65041
+ },
+ "problems": [
+  {
+   "location": "Results section, paragraph discussing Table 2",
+   "problem": "The text states that the fitted length constants vary by less than 15% across the range s = 2.0 to 3.6, but the CCW length constant changes from 2.05 to 2.51, a 22% increase (0.46/2.05 ≈ 22%). This contradicts the claimed <15% variation.",
+   "kind": "internal-contradiction",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"problems\": [\n    {\n      \"location\": \"Results section, paragraph discussing Table 2\",\n      \"problem\": \"The text states that the fitted length constants vary by less than 15% across the range s = 2.0 to 3.6, but the CCW length constant changes from 2.05 to 2.51, a 22% increase (0.46/2.05 ≈ 22%). This contradicts the claimed <15% variation.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 1543
+}

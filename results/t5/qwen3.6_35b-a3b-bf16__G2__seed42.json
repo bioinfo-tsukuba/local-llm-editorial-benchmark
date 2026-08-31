@@ -1,0 +1,31 @@
+{
+ "task": "T5",
+ "model": "qwen3.6:35b-a3b-bf16",
+ "item": "G2",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "wall_s": 43.99,
+  "prompt_tokens": 504,
+  "output_tokens": 1172,
+  "load_s": 0.22,
+  "prefill_tok_s": 811.2,
+  "decode_tok_s": 28.3,
+  "ttft_s": 0.84,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 77115,
+  "peak_size_vram_mib": 70600
+ },
+ "defects": [
+  {
+   "what": "The figure resolution is 72 dpi, which is below the required 300 dpi for printing.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"The figure resolution is 72 dpi, which is below the required 300 dpi for printing.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 4008
+}

@@ -1,0 +1,27 @@
+{
+ "task": "t6d",
+ "model": "command-r-plus",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 0,
+ "meta": {
+  "model": "command-r-plus",
+  "wall_s": 26.8,
+  "prompt_tokens": 5360,
+  "output_tokens": 6,
+  "load_s": 0.15,
+  "prefill_tok_s": 213.5,
+  "decode_tok_s": 4.2,
+  "ttft_s": 25.26,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79073,
+  "peak_size_vram_mib": 85363
+ },
+ "problems": [],
+ "raw_response": "{\"problems\": []}",
+ "thinking_chars": 0
+}

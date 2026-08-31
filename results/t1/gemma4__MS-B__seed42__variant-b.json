@@ -1,0 +1,46 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "gemma4",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 2,
+ "meta": {
+  "model": "gemma4",
+  "wall_s": 74.47,
+  "prompt_tokens": 12951,
+  "output_tokens": 3680,
+  "load_s": 0.0,
+  "prefill_tok_s": 3994.1,
+  "decode_tok_s": 51.8,
+  "ttft_s": 3.24,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 17812,
+  "peak_size_vram_mib": 3700
+ },
+ "findings": [
+  {
+   "area": 1,
+   "location": "Page 1, after author affiliations",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author details are listed immediately following the author affiliations, not in the footer of page 1.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Table 1 and Table 2",
+   "rule": "Do not use vertical lines.",
+   "problem": "Both Table 1 and Table 2 utilize vertical lines in their formatting.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"area\": 1,\n      \"location\": \"Page 1, after author affiliations\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The corresponding author details are listed immediately following the author affiliations, not in the footer of page 1.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table 1 and Table 2\",\n      \"rule\": \"Do not use vertical lines.\",\n      \"problem\": \"Both Table 1 and Table 2 utilize vertical lines in their formatting.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 14610
+}

@@ -1,0 +1,53 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "qwen3.5:122b-a10b-q4_K_M",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 3,
+ "meta": {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "wall_s": 724.56,
+  "prompt_tokens": 13170,
+  "output_tokens": 15041,
+  "load_s": 0.15,
+  "prefill_tok_s": 970.1,
+  "decode_tok_s": 21.8,
+  "ttft_s": 13.72,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 90886,
+  "peak_size_vram_mib": 84281
+ },
+ "findings": [
+  {
+   "area": 2,
+   "location": "Page 1, author block",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author's postal address and ORCID iD are listed in the main text block below the affiliations, not in the footer of page 1.",
+   "severity": "medium"
+  },
+  {
+   "area": 3,
+   "location": "End of manuscript text",
+   "rule": "Figures and Tables should be embedded in the template file at the appropriate locations.",
+   "problem": "Tables and Figure Legends are listed at the end of the manuscript text rather than being embedded in the text at the appropriate locations where they are cited.",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials list",
+   "rule": "The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "Supplementary Table S1 is listed with the file extension .xlsx, which is not in the allowed list of extensions.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"area\": 2,\n      \"location\": \"Page 1, author block\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The corresponding author's postal address and ORCID iD are listed in the main text block below the affiliations, not in the footer of page 1.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"End of manuscript text\",\n      \"rule\": \"Figures and Tables should be embedded in the template file at the appropriate locations.\",\n      \"problem\": \"Tables and Figure Legends are listed at the end of the manuscript text rather than being embedded in the text at the appropriate locations where they are cited.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials list\",\n      \"rule\": \"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\n      \"problem\": \"Supplementary Table S1 is listed with the file extension .xlsx, which is not in the allowed list of extensions.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 56145
+}

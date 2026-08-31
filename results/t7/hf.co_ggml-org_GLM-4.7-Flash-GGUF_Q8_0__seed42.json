@@ -1,0 +1,34 @@
+{
+ "task": "t7",
+ "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 1,
+ "meta": {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "wall_s": 26.68,
+  "prompt_tokens": 9642,
+  "output_tokens": 88,
+  "load_s": 16.91,
+  "prefill_tok_s": 1364.7,
+  "decode_tok_s": 33.3,
+  "ttft_s": 23.97,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 42605,
+  "peak_size_vram_mib": 36743
+ },
+ "findings": [
+  {
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name '図1_draft version.bmp' contains spaces and Japanese characters.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The file name '図1_draft version.bmp' contains spaces and Japanese characters.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

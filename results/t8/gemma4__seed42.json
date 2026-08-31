@@ -1,0 +1,155 @@
+{
+ "task": "T8",
+ "model": "gemma4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_tool_calls": 7,
+ "n_checks": 8,
+ "meta": {
+  "model": "gemma4",
+  "wall_s": 55.19,
+  "prompt_tokens": 2551,
+  "output_tokens": 3143,
+  "load_s": 0.0,
+  "prefill_tok_s": 30514.0,
+  "decode_tok_s": 57.1,
+  "ttft_s": 0.09,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 26719,
+  "peak_size_vram_mib": 3259
+ },
+ "checks": [
+  {
+   "id": "V1",
+   "verified": false,
+   "journal_abbreviated": "Biophys. J.",
+   "problems": [
+    "The title provided in the reference does not match the title associated with the DOI."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V2",
+   "verified": true,
+   "journal_abbreviated": "Protein Eng. Des. Sel.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V3",
+   "verified": true,
+   "journal_abbreviated": "Proc. Natl. Acad. Sci. U.S.A.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V4",
+   "verified": true,
+   "journal_abbreviated": "Nature",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V5",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "The DOI provided is incorrect for this reference. It points to a different article (V4).",
+    "The journal name, volume, and year do not match the record found for the DOI."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V6",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "The reference could not be verified as the DOI does not resolve."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V7",
+   "verified": true,
+   "journal_abbreviated": "Annu. Rev. Biophys. Biomol. Struct.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V8",
+   "verified": true,
+   "journal_abbreviated": null,
+   "problems": [],
+   "corrected_doi": null
+  }
+ ],
+ "tool_trace": [
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1016/S0006-3495(01)76033-X"
+   },
+   "result_summary": "Biophys. J. 80 (2001) 10.1016/s0006-3495(01)76033-x",
+   "error": null
+  },
+  {
+   "n": 2,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1093/protein/14.1.1"
+   },
+   "result_summary": "Protein Eng. Des. Sel. 14 (2001) 10.1093/protein/14.1.1",
+   "error": null
+  },
+  {
+   "n": 3,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1073/pnas.0702950104"
+   },
+   "result_summary": "Proc. Natl. Acad. Sci. U.S.A. 104 (2007) 10.1073/pnas.0702950104",
+   "error": null
+  },
+  {
+   "n": 4,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 5,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.2142/biophysico.bppb-v21.0112"
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 6,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 7,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1101/2020.06.29.179044"
+   },
+   "result_summary": " None (2020) 10.1101/2020.06.29.179044",
+   "error": null
+  }
+ ],
+ "raw_response": "```json\n{\n  \"checks\": [\n    {\n      \"id\": \"V1\",\n      \"verified\": false,\n      \"journal_abbreviated\": \"Biophys. J.\",\n      \"problems\": [\n        \"The title provided in the reference does not match the title associated with the DOI.\"\n      ],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V2\",\n      \"verified\": true,\n      \"journal_abbreviated\": \"Protein Eng. Des. Sel.\",\n      \"problems\": [],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V3\",\n      \"verified\": true,\n      \"journal_abbreviated\": \"Proc. Natl. Acad. Sci. U.S.A.\",\n      \"problems\": [],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V4\",\n      \"verified\": true,\n      \"journal_abbreviated\": \"Nature\",\n      \"problems\": [],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V5\",\n      \"verified\": false,\n      \"journal_abbreviated\": null,\n      \"problems\": [\n        \"The DOI provided is incorrect for this reference. It points to a different article (V4).\",\n        \"The journal name, volume, and year do not match the record found for the DOI.\"\n      ],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V6\",\n      \"verified\": false,\n      \"journal_abbreviated\": null,\n      \"problems\": [\n        \"The reference could not be verified as the DOI does not resolve.\"\n      ],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V7\",\n      \"verified\": true,\n      \"journal_abbreviated\": \"Annu. Rev. Biophys. Biomol. Struct.\",\n      \"problems\": [],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V8\",\n      \"verified\": true,\n      \"journal_abbreviated\": null,\n      \"problems\": [],\n      \"corrected_doi\": null\n    }\n  ]\n}\n```",
+ "thinking_chars": 7929,
+ "wall_s": 175.5
+}

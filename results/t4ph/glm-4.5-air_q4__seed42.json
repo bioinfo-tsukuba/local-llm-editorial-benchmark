@@ -1,0 +1,27 @@
+{
+ "task": "t4ph",
+ "model": "glm-4.5-air:q4",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": "salvaged",
+ "result_key": "answers",
+ "n_items": null,
+ "meta": {
+  "model": "glm-4.5-air:q4",
+  "wall_s": 186.41,
+  "prompt_tokens": 4913,
+  "output_tokens": 381,
+  "load_s": 153.71,
+  "prefill_tok_s": 569.5,
+  "decode_tok_s": 18.8,
+  "ttft_s": 162.34,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 94329,
+  "peak_size_vram_mib": 116492
+ },
+ "answers": null,
+ "raw_response": "\n```json\n{\n  \"answers\": [\n    {\n      \"id\": \"F1\",\n      \"exists\": false,\n      \"answer\": \"Reference [13] does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F2\",\n      \"exists\": false,\n      \"answer\": \"There is no Data availability statement in the manuscript.\"\n    },\n    {\n      \"id\": \"F3\",\n      \"exists\": false,\n      \"answer\": \"Table 3 does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F4\",\n      \"exists\": false,\n      \"answer\": \"The manuscript does not state that experiments were approved by the institutional review board.\"\n    },\n    {\n      \"id\": \"F5\",\n      \"exists\": false,\n      \"answer\": \"The corresponding author's ORCID iD is not provided in the manuscript.\"\n    }\n  ]\n}\n```</think>```json\n{\n  \"answers\": [\n    {\n      \"id\": \"F1\",\n      \"exists\": false,\n      \"answer\": \"Reference [13] does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F2\",\n      \"exists\": false,\n      \"answer\": \"There is no Data availability statement in the manuscript.\"\n    },\n    {\n      \"id\": \"F3\",\n      \"exists\": false,\n      \"answer\": \"Table 3 does not exist in the manuscript.\"\n    },\n    {\n      \"id\": \"F4\",\n      \"exists\": false,\n      \"answer\": \"The manuscript does not state that experiments were approved by the institutional review board.\"\n    },\n    {\n      \"id\": \"F5\",\n      \"exists\": false,\n      \"answer\": \"The corresponding author's ORCID iD is not provided in the manuscript.\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

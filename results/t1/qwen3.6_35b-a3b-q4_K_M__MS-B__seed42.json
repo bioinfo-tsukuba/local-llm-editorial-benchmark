@@ -1,0 +1,38 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 1,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 369.53,
+  "prompt_tokens": 12970,
+  "output_tokens": 16821,
+  "load_s": 0.17,
+  "prefill_tok_s": 2722.3,
+  "decode_tok_s": 49.1,
+  "ttft_s": 4.93,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 33353,
+  "peak_size_vram_mib": 26840
+ },
+ "findings": [
+  {
+   "location": "References section",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "References [9], [10], [11], and [12] are listed in the reference section but are not cited anywhere in the manuscript text, tables, or figure legends, violating the sequential numbering rule based on appearance.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\"location\": \"References section\", \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\", \"problem\": \"References [9], [10], [11], and [12] are listed in the reference section but are not cited anywhere in the manuscript text, tables, or figure legends, violating the sequential numbering rule based on appearance.\", \"severity\": \"high\"}\n]}",
+ "thinking_chars": 66707
+}

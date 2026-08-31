@@ -1,0 +1,92 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:20b",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": "low",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 10,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 31.17,
+  "prompt_tokens": 12265,
+  "output_tokens": 1090,
+  "load_s": 5.64,
+  "prefill_tok_s": 3264.4,
+  "decode_tok_s": 53.3,
+  "ttft_s": 9.4,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79952,
+  "peak_size_vram_mib": 15032
+ },
+ "findings": [
+  {
+   "location": "Abstract",
+   "rule": "Abstract must be no more than 250 words",
+   "problem": "The abstract contains 274 words, exceeding the 250-word limit",
+   "severity": "high"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "Significance statement must be less than 100 words",
+   "problem": "The significance statement contains 112 words, exceeding the 100-word limit",
+   "severity": "high"
+  },
+  {
+   "location": "Running title",
+   "rule": "Running title must not exceed 50 characters including spaces",
+   "problem": "The running title is 71 characters long",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "References may not include items marked \"in preparation\" or \"personal communication\"",
+   "problem": "Reference [5] is marked \"In preparation.\" and Reference [8] is a personal communication",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Supplementary movie files must be 20 MB or less",
+   "problem": "Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File names must contain only alphanumeric characters; no Japanese characters allowed",
+   "problem": "Supplementary figure file \"図1_final version.tiff\" contains Japanese characters",
+   "severity": "medium"
+  },
+  {
+   "location": "Author information",
+   "rule": "Each author must provide an ORCID iD",
+   "problem": "No ORCID iDs are listed for any author",
+   "severity": "medium"
+  },
+  {
+   "location": "Author information",
+   "rule": "If a preprint has been deposited, the DOI must be provided",
+   "problem": "The manuscript states a preprint was deposited on bioRxiv but no DOI is given",
+   "severity": "medium"
+  },
+  {
+   "location": "Data availability",
+   "rule": "A data availability statement must be included, describing raw data and repositories",
+   "problem": "No data availability statement is present",
+   "severity": "medium"
+  },
+  {
+   "location": "Ethics statement",
+   "rule": "If human subjects were used, an ethics statement must be included",
+   "problem": "No ethics statement is provided, though human subjects were mentioned in the rotation assay",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"findings\":[{\"location\":\"Abstract\",\"rule\":\"Abstract must be no more than 250 words\",\"problem\":\"The abstract contains 274 words, exceeding the 250-word limit\",\"severity\":\"high\"},{\"location\":\"Significance statement\",\"rule\":\"Significance statement must be less than 100 words\",\"problem\":\"The significance statement contains 112 words, exceeding the 100-word limit\",\"severity\":\"high\"},{\"location\":\"Running title\",\"rule\":\"Running title must not exceed 50 characters including spaces\",\"problem\":\"The running title is 71 characters long\",\"severity\":\"medium\"},{\"location\":\"References\",\"rule\":\"References may not include items marked \\\"in preparation\\\" or \\\"personal communication\\\"\",\"problem\":\"Reference [5] is marked \\\"In preparation.\\\" and Reference [8] is a personal communication\",\"severity\":\"high\"},{\"location\":\"Supplementary materials\",\"rule\":\"Supplementary movie files must be 20 MB or less\",\"problem\":\"Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit\",\"severity\":\"high\"},{\"location\":\"Supplementary materials\",\"rule\":\"File names must contain only alphanumeric characters; no Japanese characters allowed\",\"problem\":\"Supplementary figure file \\\"図1_final version.tiff\\\" contains Japanese characters\",\"severity\":\"medium\"},{\"location\":\"Author information\",\"rule\":\"Each author must provide an ORCID iD\",\"problem\":\"No ORCID iDs are listed for any author\",\"severity\":\"medium\"},{\"location\":\"Author information\",\"rule\":\"If a preprint has been deposited, the DOI must be provided\",\"problem\":\"The manuscript states a preprint was deposited on bioRxiv but no DOI is given\",\"severity\":\"medium\"},{\"location\":\"Data availability\",\"rule\":\"A data availability statement must be included, describing raw data and repositories\",\"problem\":\"No data availability statement is present\",\"severity\":\"medium\"},{\"location\":\"Ethics statement\",\"rule\":\"If human subjects were used, an ethics statement must be included\",\"problem\":\"No ethics statement is provided, though human subjects were mentioned in the rotation assay\",\"severity\":\"medium\"}]}",
+ "thinking_chars": 3112
+}

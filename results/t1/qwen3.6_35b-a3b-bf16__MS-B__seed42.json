@@ -1,0 +1,38 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.6:35b-a3b-bf16",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 1,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "wall_s": 648.13,
+  "prompt_tokens": 12970,
+  "output_tokens": 18126,
+  "load_s": 0.11,
+  "prefill_tok_s": 1471.8,
+  "decode_tok_s": 29.4,
+  "ttft_s": 8.92,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 80073,
+  "peak_size_vram_mib": 72066
+ },
+ "findings": [
+  {
+   "location": "References section",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list contains entries [3], [5], [6], [7], [9], [10], [11], and [12] which are not cited anywhere in the manuscript text or figures. This violates the requirement that references be numbered sequentially based on their appearance in the text.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\"findings\": [{\"location\": \"References section\", \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\", \"problem\": \"The reference list contains entries [3], [5], [6], [7], [9], [10], [11], and [12] which are not cited anywhere in the manuscript text or figures. This violates the requirement that references be numbered sequentially based on their appearance in the text.\", \"severity\": \"high\"}]}\n```",
+ "thinking_chars": 59665
+}

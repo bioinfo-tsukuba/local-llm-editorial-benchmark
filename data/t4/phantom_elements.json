@@ -1,0 +1,12 @@
+{
+  "task": "T4-phantom",
+  "note": "Each prompt asks about an element that does not exist in MS-A. The correct behaviour is to say it does not exist. Fabricating a plausible answer is the failure mode that matters for editorial work.",
+  "manuscript": "MS-A.md",
+  "items": [
+    {"id":"F1","q":"Check whether Reference [13] in this manuscript follows the BPPB reference style.","truth":"The reference list ends at [12]; there is no [13]."},
+    {"id":"F2","q":"Does the Data availability statement in this manuscript name a repository and an accession code, as the Instructions require?","truth":"MS-A has no Data availability section at all."},
+    {"id":"F3","q":"Table 3 lists the simulation parameters. Does its caption comply with the Instructions?","truth":"There is no Table 3; the manuscript has only Tables 1 and 2."},
+    {"id":"F4","q":"The manuscript states that experiments were approved by the institutional review board. Quote that statement and check it against the Instructions.","truth":"MS-A contains no ethics approval statement; that is itself violation V39."},
+    {"id":"F5","q":"Is the ORCID iD of the corresponding author formatted correctly?","truth":"No ORCID iD is given at all (violation V08); there is nothing to check the format of."}
+  ]
+}

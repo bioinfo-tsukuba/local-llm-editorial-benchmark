@@ -1,0 +1,134 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "manuscript": "MS-A",
+ "seed": 43,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 17,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "wall_s": 238.85,
+  "prompt_tokens": 12861,
+  "output_tokens": 8613,
+  "load_s": 9.49,
+  "prefill_tok_s": 1265.0,
+  "decode_tok_s": 41.5,
+  "ttft_s": 19.66,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 48511,
+  "peak_size_vram_mib": 40915
+ },
+ "findings": [
+  {
+   "location": "Page 1 / Corresponding author information",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The manuscript only provides an email address and department/city for the corresponding author. The complete postal address and ORCID iD are missing, and the information is not placed in the footer.",
+   "severity": "high"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "The manuscript lists seven keywords instead of the maximum allowed five.",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added...",
+   "problem": "The significance statement contains approximately 123 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript structure and section order",
+   "rule": "Introduction, Materials and methods..., Results, Discussion..., Conclusion, Conflict of interest, Author contributions, Data availability, (Preprint comment), Acknowledgements and References, should be arranged in this order.",
+   "problem": "The manuscript omits a 'Conclusion' section and a 'Data availability' statement. Additionally, 'Acknowledgements' appears after the References instead of before it, and 'Author contributions' precedes 'Conflict of interest'.",
+   "severity": "high"
+  },
+  {
+   "location": "Running title",
+   "rule": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required...",
+   "problem": "The running title ('Coarse-grained elastic network analysis of allosteric coupling in ring ATPases') contains approximately 78 characters, exceeding the 50-character limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Supply a short explanatory title above the body of the table, and table footnotes lettered a, b, c, and so forth, below the body of the table. Do not use vertical lines.",
+   "problem": "Table 1 uses vertical lines to separate columns, and its footnotes are numbered (1., 2., 3.) instead of lettered (a, b, c).",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Supply a short explanatory title above the body of the table...",
+   "problem": "The title for Table 2 is placed below the table body rather than above it.",
+   "severity": "low"
+  },
+  {
+   "location": "Figure file list (Fig1_modes.bmp, Fig2_spectra.bmp)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Figures 1 and 2 are submitted as BMP files at 150 dpi, violating both the required resolution (300 dpi) and accepted file formats.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials (Suppl_Movie_1.mov)",
+   "rule": "movie files in MPEG or AVI format. / The size of each file... should be no more than 20 MB.",
+   "problem": "The supplementary movie is provided in .mov format instead of MPEG or AVI, and its file size (45 MB) exceeds the 20 MB limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials (図1_final version.tiff)",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name contains a Japanese character (図) and a space, violating the alphanumeric-only requirement.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "The caption shall accompany the Graphical Abstract... and it should not duplicate the title of the article or the Significance statement.",
+   "problem": "The caption begins with 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase,' which exactly duplicates the manuscript's title.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract file",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.",
+   "problem": "The graphical abstract is submitted as a TIFF file, which is not among the accepted formats (PNG, JPEG, GIF).",
+   "severity": "medium"
+  },
+  {
+   "location": "References section",
+   "rule": "All references should be listed in numerical order...",
+   "problem": "The reference list is not in numerical order; reference [7] appears before reference [6].",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text...",
+   "problem": "Reference [8] lists a personal communication directly in the reference list instead of citing it parenthetically in the text.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with 'In preparation.', which is explicitly prohibited by the journal policy.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [4] uses the prefix 'doi:' instead of a full URL format (e.g., https://doi.org/...).",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [9]",
+   "rule": "For more than six authors, list the first six authors followed by “et al.”",
+   "problem": "Reference [9] lists all ten authors instead of truncating after the sixth author with 'et al.'",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Page 1 / Corresponding author information\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The manuscript only provides an email address and department/city for the corresponding author. The complete postal address and ORCID iD are missing, and the information is not placed in the footer.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"The manuscript lists seven keywords instead of the maximum allowed five.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Significance statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added...\",\n      \"problem\": \"The significance statement contains approximately 123 words, exceeding the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Manuscript structure and section order\",\n      \"rule\": \"Introduction, Materials and methods..., Results, Discussion..., Conclusion, Conflict of interest, Author contributions, Data availability, (Preprint comment), Acknowledgements and References, should be arranged in this order.\",\n      \"problem\": \"The manuscript omits a 'Conclusion' section and a 'Data availability' statement. Additionally, 'Acknowledgements' appears after the References instead of before it, and 'Author contributions' precedes 'Conflict of interest'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Running title\",\n      \"rule\": \"At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required...\",\n      \"problem\": \"The running title ('Coarse-grained elastic network analysis of allosteric coupling in ring ATPases') contains approximately 78 characters, exceeding the 50-character limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Table 1\",\n      \"rule\": \"Supply a short explanatory title above the body of the table, and table footnotes lettered a, b, c, and so forth, below the body of the table. Do not use vertical lines.\",\n      \"problem\": \"Table 1 uses vertical lines to separate columns, and its footnotes are numbered (1., 2., 3.) instead of lettered (a, b, c).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Table 2\",\n      \"rule\": \"Supply a short explanatory title above the body of the table...\",\n      \"problem\": \"The title for Table 2 is placed below the table body rather than above it.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Figure file list (Fig1_modes.bmp, Fig2_spectra.bmp)\",\n      \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n      \"problem\": \"Figures 1 and 2 are submitted as BMP files at 150 dpi, violating both the required resolution (300 dpi) and accepted file formats.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials (Suppl_Movie_1.mov)\",\n      \"rule\": \"movie files in MPEG or AVI format. / The size of each file... should be no more than 20 MB.\",\n      \"problem\": \"The supplementary movie is provided in .mov format instead of MPEG or AVI, and its file size (45 MB) exceeds the 20 MB limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials (図1_final version.tiff)\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The file name contains a Japanese character (図) and a space, violating the alphanumeric-only requirement.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"The caption shall accompany the Graphical Abstract... and it should not duplicate the title of the article or the Significance statement.\",\n      \"problem\": \"The caption begins with 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase,' which exactly duplicates the manuscript's title.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Graphical abstract file\",\n      \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\",\n      \"problem\": \"The graphical abstract is submitted as a TIFF file, which is not among the accepted formats (PNG, JPEG, GIF).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References section\",\n      \"rule\": \"All references should be listed in numerical order...\",\n      \"problem\": \"The reference list is not in numerical order; reference [7] appears before reference [6].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [8]\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text...\",\n      \"problem\": \"Reference [8] lists a personal communication directly in the reference list instead of citing it parenthetically in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ends with 'In preparation.', which is explicitly prohibited by the journal policy.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [4]\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [4] uses the prefix 'doi:' instead of a full URL format (e.g., https://doi.org/...).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [9]\",\n      \"rule\": \"For more than six authors, list the first six authors followed by “et al.”\",\n      \"problem\": \"Reference [9] lists all ten authors instead of truncating after the sixth author with 'et al.'\",\n      \"severity\": \"medium\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 26432
+}

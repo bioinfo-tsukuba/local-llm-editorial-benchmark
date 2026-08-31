@@ -1,0 +1,70 @@
+{
+ "task": "t6c",
+ "model": "command-r-plus",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 7,
+ "meta": {
+  "model": "command-r-plus",
+  "wall_s": 223.22,
+  "prompt_tokens": 5377,
+  "output_tokens": 559,
+  "load_s": 33.84,
+  "prefill_tok_s": 197.9,
+  "decode_tok_s": 3.5,
+  "ttft_s": 61.01,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79043,
+  "peak_size_vram_mib": 85363
+ },
+ "problems": [
+  {
+   "location": "Abstract",
+   "problem": "The abstract states that the effective length constant is 3.2 subunits counter-clockwise and 0.7 subunits clockwise, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "problem": "The abstract states that the effective length constant is 3.2 subunits counter-clockwise and 0.7 subunits clockwise, but the Results section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Conclusion",
+   "problem": "The Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise, but the Results section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 2.0",
+   "problem": "The table states that the counter-clockwise length constant is 2.05, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 2.4",
+   "problem": "The table states that the counter-clockwise length constant is 2.19, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 3.2",
+   "problem": "The table states that the counter-clockwise length constant is 2.42, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Table 2, row s = 3.6",
+   "problem": "The table states that the counter-clockwise length constant is 2.51, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"problems\": [{\"location\": \"Abstract\",\n\"problem\": \"The abstract states that the effective length constant is 3.2 subunits counter-clockwise and 0.7 subunits clockwise, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise.\",\n\"kind\": \"internal-contradiction\",\n\"severity\": \"high\"},\n{\"location\": \"Abstract\",\n\"problem\": \"The abstract states that the effective length constant is 3.2 subunits counter-clockwise and 0.7 subunits clockwise, but the Results section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise.\",\n\"kind\": \"internal-contradiction\",\n\"severity\": \"high\"},\n{\"location\": \"Conclusion\",\n\"problem\": \"The Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise, but the Results section states that the effective length constant is 2.3 subunits counter-clockwise and 0.7 subunits clockwise.\",\n\"kind\": \"internal-contradiction\",\n\"severity\": \"high\"},\n{\"location\": \"Table 2, row s = 2.0\",\n\"problem\": \"The table states that the counter-clockwise length constant is 2.05, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.\",\n\"kind\": \"internal-contradiction\",\n\"severity\": \"high\"},\n{\"location\": \"Table 2, row s = 2.4\",\n\"problem\": \"The table states that the counter-clockwise length constant is 2.19, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.\",\n\"kind\": \"internal-contradiction\",\n\"severity\": \"high\"},\n{\"location\": \"Table 2, row s = 3.2\",\n\"problem\": \"The table states that the counter-clockwise length constant is 2.42, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.\",\n\"kind\": \"internal-contradiction\",\n\"severity\": \"high\"},\n{\"location\": \"Table 2, row s = 3.6\",\n\"problem\": \"The table states that the counter-clockwise length constant is 2.51, but the Conclusion section states that the effective length constant is 2.3 subunits counter-clockwise.\",\n\"kind\": \"internal-contradiction\",\n\"severity\": \"high\"}]}",
+ "thinking_chars": 0
+}

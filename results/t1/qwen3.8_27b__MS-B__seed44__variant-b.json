@@ -1,0 +1,39 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "qwen3.8:27b",
+ "manuscript": "MS-B",
+ "seed": 44,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 1,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 426.87,
+  "prompt_tokens": 13137,
+  "output_tokens": 13821,
+  "load_s": 0.0,
+  "prefill_tok_s": 83201.9,
+  "decode_tok_s": 32.4,
+  "ttft_s": 0.16,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 36253,
+  "peak_size_vram_mib": 17119
+ },
+ "findings": [
+  {
+   "area": 7,
+   "location": "Reference list, entries [3], [5], [6], [7], [9], [10], [11], [12]",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "Eight of the twelve listed references ([3] Tama & Sanejouand, [5] Nishimura & Morisawa, [6] Togashi & Mikhailov, [7] Ikeguchi et al., [9] Adachi et al., [10] Ichimura et al., [11] Itoh et al., [12] Yasuda et al.) are never cited anywhere in the text, tables, or figure legends. The only in-text citations are [1,2], [4], and [8], so the numbering is not sequential by order of appearance (gaps at 3, 5, 6, 7, 9, 10, 11, 12).",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\n    \"area\": 7,\n    \"location\": \"Reference list, entries [3], [5], [6], [7], [9], [10], [11], [12]\",\n    \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n    \"problem\": \"Eight of the twelve listed references ([3] Tama & Sanejouand, [5] Nishimura & Morisawa, [6] Togashi & Mikhailov, [7] Ikeguchi et al., [9] Adachi et al., [10] Ichimura et al., [11] Itoh et al., [12] Yasuda et al.) are never cited anywhere in the text, tables, or figure legends. The only in-text citations are [1,2], [4], and [8], so the numbering is not sequential by order of appearance (gaps at 3, 5, 6, 7, 9, 10, 11, 12).\",\n    \"severity\": \"high\"\n  }\n]}",
+ "thinking_chars": 44452
+}

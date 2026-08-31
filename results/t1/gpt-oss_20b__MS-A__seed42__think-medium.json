@@ -1,0 +1,110 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:20b",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": "medium",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 13,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 267.52,
+  "prompt_tokens": 12265,
+  "output_tokens": 12788,
+  "load_s": 5.47,
+  "prefill_tok_s": 3247.5,
+  "decode_tok_s": 52.4,
+  "ttft_s": 9.25,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 22139,
+  "peak_size_vram_mib": 15032
+ },
+ "findings": [
+  {
+   "location": "Abstract",
+   "rule": "Abstract must be no more than 250 words.",
+   "problem": "The abstract contains approximately 331 words, exceeding the 250-word limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Abstract must not contain references.",
+   "problem": "Reference [12] is cited within the abstract.",
+   "severity": "high"
+  },
+  {
+   "location": "Keywords",
+   "rule": "Up to five keywords may be listed.",
+   "problem": "Seven keywords are listed: elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics.",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance",
+   "rule": "Significance statement must be less than 100 words.",
+   "problem": "The significance statement contains approximately 123 words.",
+   "severity": "medium"
+  },
+  {
+   "location": "Running title",
+   "rule": "Running title must not exceed 50 characters including spaces.",
+   "problem": "The running title \"Coarse-grained elastic network analysis of allosteric coupling in ring ATPases\" is 78 characters long.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be at least 300 dpi resolution.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are 150 dpi, below the required 300 dpi.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract file",
+   "rule": "Graphical abstract must be PNG, JPEG or GIF format.",
+   "problem": "Graphical_abstract.tiff is in TIFF format, which is not permitted.",
+   "severity": "high"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "Graphical abstract caption must be less than 100 words.",
+   "problem": "The caption contains approximately 134 words.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of \"in preparation\" is not allowed in the reference list.",
+   "problem": "Reference [5] is listed as \"In preparation.\"",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "Personal communications should not appear in the reference list.",
+   "problem": "Reference [8] is a personal communication.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Each supplementary file must be no larger than 20 MB.",
+   "problem": "Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "Movie files must be in MPEG or AVI format.",
+   "problem": "Suppl_Movie_1.mov is in .mov format, which is not allowed.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File names must not contain Japanese characters or spaces.",
+   "problem": "File \"図1_final version.tiff\" contains Japanese characters.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"findings\":[{\"location\":\"Abstract\",\"rule\":\"Abstract must be no more than 250 words.\",\"problem\":\"The abstract contains approximately 331 words, exceeding the 250-word limit.\",\"severity\":\"high\"},{\"location\":\"Abstract\",\"rule\":\"Abstract must not contain references.\",\"problem\":\"Reference [12] is cited within the abstract.\",\"severity\":\"high\"},{\"location\":\"Keywords\",\"rule\":\"Up to five keywords may be listed.\",\"problem\":\"Seven keywords are listed: elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics.\",\"severity\":\"medium\"},{\"location\":\"Significance\",\"rule\":\"Significance statement must be less than 100 words.\",\"problem\":\"The significance statement contains approximately 123 words.\",\"severity\":\"medium\"},{\"location\":\"Running title\",\"rule\":\"Running title must not exceed 50 characters including spaces.\",\"problem\":\"The running title \\\"Coarse-grained elastic network analysis of allosteric coupling in ring ATPases\\\" is 78 characters long.\",\"severity\":\"medium\"},{\"location\":\"Figure file list\",\"rule\":\"Figures must be at least 300 dpi resolution.\",\"problem\":\"Fig1_modes.bmp and Fig2_spectra.bmp are 150 dpi, below the required 300 dpi.\",\"severity\":\"medium\"},{\"location\":\"Graphical abstract file\",\"rule\":\"Graphical abstract must be PNG, JPEG or GIF format.\",\"problem\":\"Graphical_abstract.tiff is in TIFF format, which is not permitted.\",\"severity\":\"high\"},{\"location\":\"Graphical abstract caption\",\"rule\":\"Graphical abstract caption must be less than 100 words.\",\"problem\":\"The caption contains approximately 134 words.\",\"severity\":\"medium\"},{\"location\":\"Reference [5]\",\"rule\":\"The use of \\\"in preparation\\\" is not allowed in the reference list.\",\"problem\":\"Reference [5] is listed as \\\"In preparation.\\\"\",\"severity\":\"high\"},{\"location\":\"Reference [8]\",\"rule\":\"Personal communications should not appear in the reference list.\",\"problem\":\"Reference [8] is a personal communication.\",\"severity\":\"high\"},{\"location\":\"Supplementary materials\",\"rule\":\"Each supplementary file must be no larger than 20 MB.\",\"problem\":\"Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit.\",\"severity\":\"high\"},{\"location\":\"Supplementary materials\",\"rule\":\"Movie files must be in MPEG or AVI format.\",\"problem\":\"Suppl_Movie_1.mov is in .mov format, which is not allowed.\",\"severity\":\"high\"},{\"location\":\"Supplementary materials\",\"rule\":\"File names must not contain Japanese characters or spaces.\",\"problem\":\"File \\\"図1_final version.tiff\\\" contains Japanese characters.\",\"severity\":\"high\"}]}",
+ "thinking_chars": 55786
+}

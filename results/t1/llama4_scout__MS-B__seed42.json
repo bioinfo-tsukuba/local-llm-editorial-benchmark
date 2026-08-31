@@ -1,0 +1,31 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "llama4:scout",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 0,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 21.7,
+  "prompt_tokens": 12023,
+  "output_tokens": 50,
+  "load_s": 0.33,
+  "prefill_tok_s": 680.7,
+  "decode_tok_s": 14.0,
+  "ttft_s": 17.99,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 90996,
+  "peak_size_vram_mib": 84597
+ },
+ "findings": null,
+ "raw_response": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"violation\": [\n      {\n        \"category\": \"Formatting\",\n        \"description\": \"The article exceeds 25000 characters limit.\"\n      }\n    ]\n  }\n}",
+ "thinking_chars": 0
+}

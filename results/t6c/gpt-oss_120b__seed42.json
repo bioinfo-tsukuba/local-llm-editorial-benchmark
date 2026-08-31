@@ -1,0 +1,52 @@
+{
+ "task": "t6c",
+ "model": "gpt-oss:120b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 4,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 47.51,
+  "prompt_tokens": 5107,
+  "output_tokens": 851,
+  "load_s": 20.89,
+  "prefill_tok_s": 1162.0,
+  "decode_tok_s": 40.2,
+  "ttft_s": 25.29,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 71500,
+  "peak_size_vram_mib": 65041
+ },
+ "problems": [
+  {
+   "location": "Abstract",
+   "problem": "The effective length constant is reported as 3.2 subunits counter‑clockwise, but the Results, Table 2 (s=2.8) and Conclusion give 2.3 subunits. This is an internal contradiction.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Materials and methods – Network construction",
+   "problem": "Cutoff distance is given as 12 nm, but later the cutoff is varied between 10 and 14 Å and Table 1 lists cutoff (A). nm vs Å mismatch indicates a unit error.",
+   "kind": "unit-error",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 1 vs truncation description",
+   "problem": "Truncating residues 471‑489 (19 residues) should reduce bead count from 18 204 to 18 185, yet Table 1 lists 18 090 beads for the truncated network, a discrepancy of 95 beads.",
+   "kind": "internal-contradiction",
+   "severity": "high"
+  },
+  {
+   "location": "Results – Length‑constant variation statement",
+   "problem": "The text says length constants vary by less than 15% across s=2.0‑3.6, but Table 2 shows the counter‑clockwise constant changes from 2.05 to 2.51 (≈22% change) and the CW/CCW ratio changes from 2.77 to 4.51 (≈63%).",
+   "kind": "arithmetic",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"problems\": [\n    {\n      \"location\": \"Abstract\",\n      \"problem\": \"The effective length constant is reported as 3.2 subunits counter‑clockwise, but the Results, Table 2 (s=2.8) and Conclusion give 2.3 subunits. This is an internal contradiction.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Materials and methods – Network construction\",\n      \"problem\": \"Cutoff distance is given as 12 nm, but later the cutoff is varied between 10 and 14 Å and Table 1 lists cutoff (A). nm vs Å mismatch indicates a unit error.\",\n      \"kind\": \"unit-error\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Table 1 vs truncation description\",\n      \"problem\": \"Truncating residues 471‑489 (19 residues) should reduce bead count from 18 204 to 18 185, yet Table 1 lists 18 090 beads for the truncated network, a discrepancy of 95 beads.\",\n      \"kind\": \"internal-contradiction\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Results – Length‑constant variation statement\",\n      \"problem\": \"The text says length constants vary by less than 15% across s=2.0‑3.6, but Table 2 shows the counter‑clockwise constant changes from 2.05 to 2.51 (≈22% change) and the CW/CCW ratio changes from 2.77 to 4.51 (≈63%).\",\n      \"kind\": \"arithmetic\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 1618
+}

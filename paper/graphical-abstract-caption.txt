@@ -1,0 +1,7 @@
+The three panels read left to right. Left: manuscripts under review are confidential, so
+where policy forbids an external service the model must run on hardware the office
+controls. Centre: the grid marks the 313 measured conditions, twenty open-weight models
+across eight editorial tasks, with different models eligible for each. Right: the bar
+spans the forty guideline violations seeded into a manuscript; the teal segment is what
+a script of regular expressions and arithmetic recovers unaided, and the gold segment is
+what the strongest language model adds.

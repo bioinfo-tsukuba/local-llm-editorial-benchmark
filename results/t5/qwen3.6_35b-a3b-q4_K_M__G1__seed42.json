@@ -1,0 +1,31 @@
+{
+ "task": "T5",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "item": "G1",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 35.8,
+  "prompt_tokens": 2261,
+  "output_tokens": 1355,
+  "load_s": 6.26,
+  "prefill_tok_s": 767.7,
+  "decode_tok_s": 55.0,
+  "ttft_s": 9.21,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 46120,
+  "peak_size_vram_mib": 25373
+ },
+ "defects": [
+  {
+   "what": "Panel labels in the figure do not match the legend. The figure shows panels labeled (a) and (c), but the legend describes panels (a) and (b).",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"Panel labels in the figure do not match the legend. The figure shows panels labeled (a) and (c), but the legend describes panels (a) and (b).\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 4852
+}

@@ -1,0 +1,96 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 0,
+ "findings": [],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 0,
+   "parse_error": "empty response",
+   "wall_s": 180.91,
+   "prompt_tokens": 13001,
+   "output_tokens": 8192,
+   "prefill_tok_s": 1369.8
+  },
+  {
+   "area": "corresponding-author",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 118.71,
+   "prompt_tokens": 12999,
+   "output_tokens": 5269,
+   "prefill_tok_s": 1367.2
+  },
+  {
+   "area": "structure",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 106.01,
+   "prompt_tokens": 12991,
+   "output_tokens": 4658,
+   "prefill_tok_s": 1369.9
+  },
+  {
+   "area": "tables",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 94.09,
+   "prompt_tokens": 13002,
+   "output_tokens": 4091,
+   "prefill_tok_s": 1361.3
+  },
+  {
+   "area": "figures",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 122.03,
+   "prompt_tokens": 13003,
+   "output_tokens": 5404,
+   "prefill_tok_s": 1362.7
+  },
+  {
+   "area": "supplementary",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 121.94,
+   "prompt_tokens": 12999,
+   "output_tokens": 5407,
+   "prefill_tok_s": 1370.1
+  },
+  {
+   "area": "references",
+   "n": 0,
+   "parse_error": "empty response",
+   "wall_s": 181.11,
+   "prompt_tokens": 13010,
+   "output_tokens": 8192,
+   "prefill_tok_s": 1366.7
+  },
+  {
+   "area": "ethics",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 146.29,
+   "prompt_tokens": 13010,
+   "output_tokens": 6566,
+   "prefill_tok_s": 1365.5
+  }
+ ],
+ "meta": {
+  "wall_s": 1073.0,
+  "output_tokens": 47779,
+  "prompt_tokens": 104015,
+  "peak_mem_used_mib": 34683,
+  "peak_size_vram_mib": 26840
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

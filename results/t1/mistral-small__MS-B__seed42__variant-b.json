@@ -1,0 +1,326 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "mistral-small",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 42,
+ "meta": {
+  "model": "mistral-small",
+  "wall_s": 291.18,
+  "prompt_tokens": 12919,
+  "output_tokens": 3531,
+  "load_s": 0.12,
+  "prefill_tok_s": 2301.8,
+  "decode_tok_s": 12.4,
+  "ttft_s": 5.73,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 24512,
+  "peak_size_vram_mib": 20574
+ },
+ "findings": [
+  {
+   "area": 1,
+   "location": "Title",
+   "rule": "The title should be concise and informative, and should not exceed 50 characters including spaces.",
+   "problem": "The title 'A coarse-grained model of allosteric communication in a ring-shaped ATPase' exceeds 50 characters including spaces.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract includes a reference to a PDB ID: [PDB ID: 6qw9] (https://doi.org/10.2210/pdb6qw9/pdb).",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "The abstract must not exceed 250 words.",
+   "problem": "The abstract exceeds 250 words.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Six keywords are provided: 'elastic network model, allostery, ring ATPase, normal mode analysis, Brownian dynamics, and single-molecule rotation assay'.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement exceeds 100 words.",
+   "severity": "high"
+  },
+  {
+   "area": 2,
+   "location": "Page 1",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The ORCID iD is not in the footer but in the body of the text.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Materials and methods",
+   "rule": "The manuscript should go through rigorous review, and the ideas should be based on sound data without excessive speculation.",
+   "problem": "The manuscript does not explicitly state that the ideas are based on sound data without excessive speculation.",
+   "severity": "medium"
+  },
+  {
+   "area": 3,
+   "location": "Materials and methods",
+   "rule": "The manuscript should go through rigorous review, and the ideas should be based on sound data without excessive speculation.",
+   "problem": "The manuscript does not explicitly state that the ideas are based on sound data without excessive speculation.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Tables 1 and 2 are not cited in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "Number the tables consecutively with Arabic numerals (for example 'Table 3'), in the order of their appearance in the text.",
+   "problem": "Tables 1 and 2 are not numbered consecutively with Arabic numerals in the order of their appearance in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "Supply a short explanatory title above the body of the table.",
+   "problem": "Tables 1 and 2 do not have short explanatory titles above the body of the table.",
+   "severity": "high"
+  },
+  {
+   "area": 4,
+   "location": "Tables",
+   "rule": "Do not use vertical lines.",
+   "problem": "Tables 1 and 2 use vertical lines.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figures 1, 2, 3, and 4 are not cited in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "Number the figures consecutively with Arabic numerals (for example 'Figure 3'), in the order of their appearance in the text.",
+   "problem": "Figures 1, 2, 3, and 4 are not numbered consecutively with Arabic numerals in the order of their appearance in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "The dimensions of each illustration, photograph, or composite imagery should be no larger than the size of the manuscript page.",
+   "problem": "The dimensions of Figures 1, 2, 3, and 4 are not specified.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "The resolution of Figures 1, 2, 3, and 4 is not specified.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figures",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "The format of Figures 1, 2, 3, and 4 is not specified.",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "As Supplementary materials, image files should be in PDF, TXT or ZIP format, and movie files in MPEG or AVI format.",
+   "problem": "Supplementary Movie S1 is in MPEG format, which is correct, but the file name does not follow the required format (it should be 'SupplementaryMovieS1.mpeg' instead of 'SupplementaryMovieS1.mpeg').",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name 'SupplementaryMovieS1.mpeg' includes spaces.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "Title of the material should be, for example, 'Supplementary Text S1', 'Supplementary Table S1', and 'Supplementary Figure S1'.",
+   "problem": "The title of Supplementary Movie S1 is not in the required format.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "When a text with or without Supplementary Figures and/or Supplementary Tables is added as a Supplementary Text, please upload the PDF file.",
+   "problem": "Supplementary Figure S1 is in PDF format, which is correct, but the file name does not follow the required format (it should be 'SupplementaryFigureS1.pdf' instead of 'SupplementaryFigureS1.pdf').",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.",
+   "problem": "Supplementary Table S1 is in Excel format, which is correct, but the file name does not follow the required format (it should be 'SupplementaryTableS1.xlsx' instead of 'SupplementaryTableS1.xlsx').",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name 'SupplementaryTableS1.xlsx' includes spaces.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary materials",
+   "rule": "Title of the material should be, for example, 'Supplementary Text S1', 'Supplementary Table S1', and 'Supplementary Figure S1'.",
+   "problem": "The title of Supplementary Table S1 is not in the required format.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "References are not numbered sequentially as they appear in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a 'period' or a 'comma'.",
+   "problem": "References are not cited in the text in the form [1,3,5-8] before a 'period' or a 'comma'.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information.",
+   "problem": "The reference list includes a reference to 'unpublished data' (Terashima, A., unpublished data).",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "All references should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "The reference list is not listed in numerical order.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "Please use normal fonts for the Reference list without using italics or boldface, except for some special characters in the article title.",
+   "problem": "The reference list uses italics and boldface.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "Abbreviated Journal titles follow the Index Medicus/MEDLINE format, which can be found at NLM Catalog: Journals referenced in the NCBI Database: https://www.ncbi.nlm.nih.gov/nlmcatalog/journals/",
+   "problem": "The journal titles in the reference list do not follow the Index Medicus/MEDLINE format.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "The DOI for reference [10] is not added by its URL.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "References",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "The reference list includes a reference to 'in press' (Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).).",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The conflict of interest statement does not reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Author contributions",
+   "rule": "All persons designated as authors should qualify for authorship.",
+   "problem": "The author contributions section does not explicitly state that all persons designated as authors qualify for authorship.",
+   "severity": "medium"
+  },
+  {
+   "area": 8,
+   "location": "Data availability",
+   "rule": "Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described.",
+   "problem": "The data availability statement does not describe how the evidence data can be made available upon reasonable request.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Data availability",
+   "rule": "When the relating raw data to the results of the article are provided as evidence data by the authors, the name of data repository with the data Identification and/or the DOI information, if possible, should be described at the end of the manuscript.",
+   "problem": "The data availability statement does not describe the name of data repository with the data Identification and/or the DOI information.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Data availability",
+   "rule": "When the data are not publicly available due to a special reason, for example, privacy, ethical restriction or legal restriction, please describe the reason clearly.",
+   "problem": "The data availability statement does not describe any special reason for not making the data publicly available.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Ethics standard",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word 'New'.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Ethics standard",
+   "rule": "Authors may be asked to provide raw data in connection with the manuscript, and should be prepared to provide access to such data for a reasonable time after publication.",
+   "problem": "The manuscript does not explicitly state that the authors are prepared to provide access to the raw data for a reasonable time after publication.",
+   "severity": "medium"
+  },
+  {
+   "area": 8,
+   "location": "Ethics standard",
+   "rule": "For original research manuscripts, reporting experiments on live vertebrates and/or higher invertebrates, authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments in the methods section.",
+   "problem": "The methods section does not include a brief statement identifying the institutional and/or licensing committee approving the experiments.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Ethics standard",
+   "rule": "For experiments involving human subjects, authors must identify the committee approving the experiments, and include with their submission a statement confirming that informed consent was obtained from all subjects.",
+   "problem": "The methods section does not include a statement confirming that informed consent was obtained from all subjects.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Ethics standard",
+   "rule": "All experiments must have been conducted according to the principles expressed in the Declaration of Helsinki and the Methods section must include the required ethics statements.",
+   "problem": "The methods section does not include the required ethics statements.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"area\": 1,\n      \"location\": \"Title\",\n      \"rule\": \"The title should be concise and informative, and should not exceed 50 characters including spaces.\",\n      \"problem\": \"The title 'A coarse-grained model of allosteric communication in a ring-shaped ATPase' exceeds 50 characters including spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Abstract\",\n      \"rule\": \"The abstract must not include references.\",\n      \"problem\": \"The abstract includes a reference to a PDB ID: [PDB ID: 6qw9] (https://doi.org/10.2210/pdb6qw9/pdb).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Abstract\",\n      \"rule\": \"The abstract must not exceed 250 words.\",\n      \"problem\": \"The abstract exceeds 250 words.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"Six keywords are provided: 'elastic network model, allostery, ring ATPase, normal mode analysis, Brownian dynamics, and single-molecule rotation assay'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Significance statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n      \"problem\": \"The significance statement exceeds 100 words.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 2,\n      \"location\": \"Page 1\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The ORCID iD is not in the footer but in the body of the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Materials and methods\",\n      \"rule\": \"The manuscript should go through rigorous review, and the ideas should be based on sound data without excessive speculation.\",\n      \"problem\": \"The manuscript does not explicitly state that the ideas are based on sound data without excessive speculation.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Materials and methods\",\n      \"rule\": \"The manuscript should go through rigorous review, and the ideas should be based on sound data without excessive speculation.\",\n      \"problem\": \"The manuscript does not explicitly state that the ideas are based on sound data without excessive speculation.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Tables\",\n      \"rule\": \"All tables must be cited in the text.\",\n      \"problem\": \"Tables 1 and 2 are not cited in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Tables\",\n      \"rule\": \"Number the tables consecutively with Arabic numerals (for example 'Table 3'), in the order of their appearance in the text.\",\n      \"problem\": \"Tables 1 and 2 are not numbered consecutively with Arabic numerals in the order of their appearance in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Tables\",\n      \"rule\": \"Supply a short explanatory title above the body of the table.\",\n      \"problem\": \"Tables 1 and 2 do not have short explanatory titles above the body of the table.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Tables\",\n      \"rule\": \"Do not use vertical lines.\",\n      \"problem\": \"Tables 1 and 2 use vertical lines.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figures\",\n      \"rule\": \"All figures must be cited in the text.\",\n      \"problem\": \"Figures 1, 2, 3, and 4 are not cited in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figures\",\n      \"rule\": \"Number the figures consecutively with Arabic numerals (for example 'Figure 3'), in the order of their appearance in the text.\",\n      \"problem\": \"Figures 1, 2, 3, and 4 are not numbered consecutively with Arabic numerals in the order of their appearance in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figures\",\n      \"rule\": \"The dimensions of each illustration, photograph, or composite imagery should be no larger than the size of the manuscript page.\",\n      \"problem\": \"The dimensions of Figures 1, 2, 3, and 4 are not specified.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figures\",\n      \"rule\": \"Figures must be at a resolution high enough for printing. Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.\",\n      \"problem\": \"The resolution of Figures 1, 2, 3, and 4 is not specified.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figures\",\n      \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n      \"problem\": \"The format of Figures 1, 2, 3, and 4 is not specified.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"As Supplementary materials, image files should be in PDF, TXT or ZIP format, and movie files in MPEG or AVI format.\",\n      \"problem\": \"Supplementary Movie S1 is in MPEG format, which is correct, but the file name does not follow the required format (it should be 'SupplementaryMovieS1.mpeg' instead of 'SupplementaryMovieS1.mpeg').\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The file name 'SupplementaryMovieS1.mpeg' includes spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Title of the material should be, for example, 'Supplementary Text S1', 'Supplementary Table S1', and 'Supplementary Figure S1'.\",\n      \"problem\": \"The title of Supplementary Movie S1 is not in the required format.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"When a text with or without Supplementary Figures and/or Supplementary Tables is added as a Supplementary Text, please upload the PDF file.\",\n      \"problem\": \"Supplementary Figure S1 is in PDF format, which is correct, but the file name does not follow the required format (it should be 'SupplementaryFigureS1.pdf' instead of 'SupplementaryFigureS1.pdf').\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Although Supplementary Table files may be uploaded in Excel format, they will be published in ZIP format.\",\n      \"problem\": \"Supplementary Table S1 is in Excel format, which is correct, but the file name does not follow the required format (it should be 'SupplementaryTableS1.xlsx' instead of 'SupplementaryTableS1.xlsx').\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The file name 'SupplementaryTableS1.xlsx' includes spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary materials\",\n      \"rule\": \"Title of the material should be, for example, 'Supplementary Text S1', 'Supplementary Table S1', and 'Supplementary Figure S1'.\",\n      \"problem\": \"The title of Supplementary Table S1 is not in the required format.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"References are not numbered sequentially as they appear in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a 'period' or a 'comma'.\",\n      \"problem\": \"References are not cited in the text in the form [1,3,5-8] before a 'period' or a 'comma'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information.\",\n      \"problem\": \"The reference list includes a reference to 'unpublished data' (Terashima, A., unpublished data).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"All references should be listed in numerical order, starting on a new page, under the heading 'References'.\",\n      \"problem\": \"The reference list is not listed in numerical order.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"Please use normal fonts for the Reference list without using italics or boldface, except for some special characters in the article title.\",\n      \"problem\": \"The reference list uses italics and boldface.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"Abbreviated Journal titles follow the Index Medicus/MEDLINE format, which can be found at NLM Catalog: Journals referenced in the NCBI Database: https://www.ncbi.nlm.nih.gov/nlmcatalog/journals/\",\n      \"problem\": \"The journal titles in the reference list do not follow the Index Medicus/MEDLINE format.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"The DOI for reference [10] is not added by its URL.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"References\",\n      \"rule\": \"The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.\",\n      \"problem\": \"The reference list includes a reference to 'in press' (Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Conflict of interest\",\n      \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n      \"problem\": \"The conflict of interest statement does not reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Author contributions\",\n      \"rule\": \"All persons designated as authors should qualify for authorship.\",\n      \"problem\": \"The author contributions section does not explicitly state that all persons designated as authors qualify for authorship.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Data availability\",\n      \"rule\": \"Every corresponding author of the article published in BPPB has to make their evidence data available upon reasonable request, and the statement should be described.\",\n      \"problem\": \"The data availability statement does not describe how the evidence data can be made available upon reasonable request.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Data availability\",\n      \"rule\": \"When the relating raw data to the results of the article are provided as evidence data by the authors, the name of data repository with the data Identification and/or the DOI information, if possible, should be described at the end of the manuscript.\",\n      \"problem\": \"The data availability statement does not describe the name of data repository with the data Identification and/or the DOI information.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Data availability\",\n      \"rule\": \"When the data are not publicly available due to a special reason, for example, privacy, ethical restriction or legal restriction, please describe the reason clearly.\",\n      \"problem\": \"The data availability statement does not describe any special reason for not making the data publicly available.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Ethics standard\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The title contains the word 'New'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Ethics standard\",\n      \"rule\": \"Authors may be asked to provide raw data in connection with the manuscript, and should be prepared to provide access to such data for a reasonable time after publication.\",\n      \"problem\": \"The manuscript does not explicitly state that the authors are prepared to provide access to the raw data for a reasonable time after publication.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Ethics standard\",\n      \"rule\": \"For original research manuscripts, reporting experiments on live vertebrates and/or higher invertebrates, authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments in the methods section.\",\n      \"problem\": \"The methods section does not include a brief statement identifying the institutional and/or licensing committee approving the experiments.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Ethics standard\",\n      \"rule\": \"For experiments involving human subjects, authors must identify the committee approving the experiments, and include with their submission a statement confirming that informed consent was obtained from all subjects.\",\n      \"problem\": \"The methods section does not include a statement confirming that informed consent was obtained from all subjects.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Ethics standard\",\n      \"rule\": \"All experiments must have been conducted according to the principles expressed in the Declaration of Helsinki and the Methods section must include the required ethics statements.\",\n      \"problem\": \"The methods section does not include the required ethics statements.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

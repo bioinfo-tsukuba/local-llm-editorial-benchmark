@@ -1,0 +1,70 @@
+{
+ "task": "t7",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 7,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "wall_s": 197.91,
+  "prompt_tokens": 10050,
+  "output_tokens": 7213,
+  "load_s": 6.86,
+  "prefill_tok_s": 1278.7,
+  "decode_tok_s": 41.6,
+  "ttft_s": 14.72,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 48852,
+  "peak_size_vram_mib": 40915
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Section 6(2) Ethics standard: 'Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.'",
+   "problem": "The title contains the word 'Novel', which is explicitly prohibited by journal policy.",
+   "severity": "high"
+  },
+  {
+   "location": "Text body (e.g., paragraph 2: '...without any sampling (1, 2).')",
+   "rule": "Section 5(6) References: 'When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.'",
+   "problem": "Reference citations in the manuscript use parentheses (e.g., '(1, 2)') instead of the required square brackets.",
+   "severity": "medium"
+  },
+  {
+   "location": "Text body / Manuscript structure",
+   "rule": "Section 5(2) Tables & Section 5(3) Figures: 'All tables must be cited in the text.' / 'All figures must be cited in the text.'",
+   "problem": "Neither Table 1 nor Figure 1 is cited anywhere in the manuscript text.",
+   "severity": "medium"
+  },
+  {
+   "location": "References section",
+   "rule": "Section 5(6) References: 'References should be numbered sequentially as they appear in the text... All references should be listed in numerical order...'",
+   "problem": "The reference list is not in numerical order (lists [1], [2], [3], [4], [7], [6], [8]) and citations in the text do not follow sequential appearance order.",
+   "severity": "medium"
+  },
+  {
+   "location": "References section (Reference [5])",
+   "rule": "Section 5(6) References: 'The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.'",
+   "problem": "Reference [5] ends with 'In preparation.', which is explicitly prohibited.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list ('Fig1_two_readings.bmp   150 dpi, colour')",
+   "rule": "Section 5(3) Figures: 'Electronic files of photographs and illustrations should be at 300 dpi resolution...' & 'We accept figure files in TIFF, PNG, JPEG or PDF formats.'",
+   "problem": "The submitted figure is at 150 dpi (below the required 300 dpi) and uses the BMP format, which is not among the accepted formats.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials list ('図1_draft version.bmp')",
+   "rule": "Section 5(4) Supplementary materials: 'Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.' & 'As Supplementary materials, image files should be in PDF, TXT or ZIP format...'",
+   "problem": "The supplementary file name contains a Japanese character (図) and a space, violating the alphanumeric-only rule. Additionally, it uses the BMP format instead of the allowed PDF, TXT, or ZIP formats.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Title\",\n      \"rule\": \"Section 6(2) Ethics standard: 'Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.'\",\n      \"problem\": \"The title contains the word 'Novel', which is explicitly prohibited by journal policy.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Text body (e.g., paragraph 2: '...without any sampling (1, 2).')\",\n      \"rule\": \"Section 5(6) References: 'When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.'\",\n      \"problem\": \"Reference citations in the manuscript use parentheses (e.g., '(1, 2)') instead of the required square brackets.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Text body / Manuscript structure\",\n      \"rule\": \"Section 5(2) Tables & Section 5(3) Figures: 'All tables must be cited in the text.' / 'All figures must be cited in the text.'\",\n      \"problem\": \"Neither Table 1 nor Figure 1 is cited anywhere in the manuscript text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References section\",\n      \"rule\": \"Section 5(6) References: 'References should be numbered sequentially as they appear in the text... All references should be listed in numerical order...'\",\n      \"problem\": \"The reference list is not in numerical order (lists [1], [2], [3], [4], [7], [6], [8]) and citations in the text do not follow sequential appearance order.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References section (Reference [5])\",\n      \"rule\": \"Section 5(6) References: 'The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.'\",\n      \"problem\": \"Reference [5] ends with 'In preparation.', which is explicitly prohibited.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure file list ('Fig1_two_readings.bmp   150 dpi, colour')\",\n      \"rule\": \"Section 5(3) Figures: 'Electronic files of photographs and illustrations should be at 300 dpi resolution...' & 'We accept figure files in TIFF, PNG, JPEG or PDF formats.'\",\n      \"problem\": \"The submitted figure is at 150 dpi (below the required 300 dpi) and uses the BMP format, which is not among the accepted formats.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials list ('図1_draft version.bmp')\",\n      \"rule\": \"Section 5(4) Supplementary materials: 'Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.' & 'As Supplementary materials, image files should be in PDF, TXT or ZIP format...'\",\n      \"problem\": \"The supplementary file name contains a Japanese character (図) and a space, violating the alphanumeric-only rule. Additionally, it uses the BMP format instead of the allowed PDF, TXT, or ZIP formats.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 24330
+}

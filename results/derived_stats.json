@@ -1,0 +1,45 @@
+{
+ "note": "written by harness/make_paper_figures.py; do not edit",
+ "size_vs_score": {
+  "T1 guidelines": {
+   "spearman": 0.0228,
+   "n": 17
+  },
+  "T2 review": {
+   "spearman": -0.1883,
+   "n": 17
+  },
+  "T3a references": {
+   "spearman": -0.0051,
+   "n": 17
+  },
+  "T3b Japanese rules": {
+   "spearman": -0.0057,
+   "n": 17
+  },
+  "T4a guideline gaps": {
+   "spearman": -0.1421,
+   "n": 17
+  },
+  "T4b absent elements": {
+   "spearman": -0.1363,
+   "n": 17
+  },
+  "T5 figures": {
+   "spearman": -0.0223,
+   "n": 12
+  },
+  "T6 consistency": {
+   "spearman": 0.1272,
+   "n": 17
+  },
+  "T7 category rules": {
+   "spearman": 0.0713,
+   "n": 17
+  },
+  "T8 tool use": {
+   "spearman": -0.1574,
+   "n": 15
+  }
+ }
+}

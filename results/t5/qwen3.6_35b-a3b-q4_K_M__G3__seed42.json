@@ -1,0 +1,26 @@
+{
+ "task": "T5",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "item": "G3",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 0,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 36.77,
+  "prompt_tokens": 2382,
+  "output_tokens": 1713,
+  "load_s": 0.14,
+  "prefill_tok_s": 1535.2,
+  "decode_tok_s": 55.0,
+  "ttft_s": 1.69,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 32057,
+  "peak_size_vram_mib": 25373
+ },
+ "defects": [],
+ "raw_response": "```json\n{\"defects\": []}\n```",
+ "thinking_chars": 6183
+}

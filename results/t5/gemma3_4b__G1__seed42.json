@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "gemma3:4b",
+ "item": "G1",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "gemma3:4b",
+  "wall_s": 5.88,
+  "prompt_tokens": 672,
+  "output_tokens": 118,
+  "load_s": 3.26,
+  "prefill_tok_s": 5121.2,
+  "decode_tok_s": 68.4,
+  "ttft_s": 3.39,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 76111,
+  "peak_size_vram_mib": 4385
+ },
+ "defects": [
+  {
+   "what": "Panel labels disagree with the legend. Panel (a) is labeled 'Perturbation-response susceptibility as a function of subunit separation', but the figure shows a bar chart and a curve.",
+   "severity": "high"
+  },
+  {
+   "what": "Text too small to read. The text in the legend and on the figure is too small to read clearly.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"Panel labels disagree with the legend. Panel (a) is labeled 'Perturbation-response susceptibility as a function of subunit separation', but the figure shows a bar chart and a curve.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"Text too small to read. The text in the legend and on the figure is too small to read clearly.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

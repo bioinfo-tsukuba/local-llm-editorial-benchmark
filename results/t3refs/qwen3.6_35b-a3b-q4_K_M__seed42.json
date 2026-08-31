@@ -1,0 +1,68 @@
+{
+ "task": "t3refs",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "conversions",
+ "n_items": 8,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 168.8,
+  "prompt_tokens": 8257,
+  "output_tokens": 7581,
+  "load_s": 6.47,
+  "prefill_tok_s": 1385.8,
+  "decode_tok_s": 52.1,
+  "ttft_s": 12.42,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 46188,
+  "peak_size_vram_mib": 25820
+ },
+ "conversions": [
+  {
+   "id": "R1",
+   "converted": "[1] Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1",
+   "note": "Formatted per BPPB example for journal articles with ≤6 authors. Journal title abbreviated per MEDLINE."
+  },
+  {
+   "id": "R2",
+   "converted": "[2] Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016). https://doi.org/10.2142/biophysico.13.0_13",
+   "note": "Formatted per BPPB example for articles with >6 authors. Journal title abbreviated per MEDLINE."
+  },
+  {
+   "id": "R3",
+   "converted": "[3] Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).",
+   "note": "Formatted per BPPB example for a chapter in an edited book. Book title abbreviated per MEDLINE."
+  },
+  {
+   "id": "R4",
+   "converted": "[4] Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).",
+   "note": "Formatted per BPPB example for a book. Capitalization adjusted to sentence case as required."
+  },
+  {
+   "id": "R5",
+   "converted": "[5] Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044",
+   "note": "Formatted per BPPB example for a preprint server article. Full author list expanded to match journal style."
+  },
+  {
+   "id": "R6",
+   "converted": "[6] Togashi, Y., Mikhailov, A.S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. U.S.A. 104, 8697–8702 (2007).",
+   "note": "Formatted per BPPB style. Journal title abbreviated to MEDLINE standard. DOI was not provided in the input; please add it if available."
+  },
+  {
+   "id": "R7",
+   "converted": "[7] Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212",
+   "note": "Formatted per BPPB example for an accepted but not yet printed article. DOI added as it is standard practice and matches the journal's example."
+  },
+  {
+   "id": "R8",
+   "converted": "Not eligible for inclusion in the reference list. BPPB Instructions explicitly prohibit references marked as 'in preparation' or 'submitted for publication'. Please provide a complete citation if the work has been published, or cite it parenthetically in the text as (Nishimura, R., Morisawa, K., unpublished data).",
+   "note": "Per BPPB rules, 'in preparation' references are not allowed in the reference list."
+  }
+ ],
+ "raw_response": "{\n  \"conversions\": [\n    {\n      \"id\": \"R1\",\n      \"converted\": \"[1] Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1\",\n      \"note\": \"Formatted per BPPB example for journal articles with ≤6 authors. Journal title abbreviated per MEDLINE.\"\n    },\n    {\n      \"id\": \"R2\",\n      \"converted\": \"[2] Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016). https://doi.org/10.2142/biophysico.13.0_13\",\n      \"note\": \"Formatted per BPPB example for articles with >6 authors. Journal title abbreviated per MEDLINE.\"\n    },\n    {\n      \"id\": \"R3\",\n      \"converted\": \"[3] Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).\",\n      \"note\": \"Formatted per BPPB example for a chapter in an edited book. Book title abbreviated per MEDLINE.\"\n    },\n    {\n      \"id\": \"R4\",\n      \"converted\": \"[4] Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).\",\n      \"note\": \"Formatted per BPPB example for a book. Capitalization adjusted to sentence case as required.\"\n    },\n    {\n      \"id\": \"R5\",\n      \"converted\": \"[5] Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044\",\n      \"note\": \"Formatted per BPPB example for a preprint server article. Full author list expanded to match journal style.\"\n    },\n    {\n      \"id\": \"R6\",\n      \"converted\": \"[6] Togashi, Y., Mikhailov, A.S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. U.S.A. 104, 8697–8702 (2007).\",\n      \"note\": \"Formatted per BPPB style. Journal title abbreviated to MEDLINE standard. DOI was not provided in the input; please add it if available.\"\n    },\n    {\n      \"id\": \"R7\",\n      \"converted\": \"[7] Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press). https://doi.org/10.1038/nature02212\",\n      \"note\": \"Formatted per BPPB example for an accepted but not yet printed article. DOI added as it is standard practice and matches the journal's example.\"\n    },\n    {\n      \"id\": \"R8\",\n      \"converted\": \"Not eligible for inclusion in the reference list. BPPB Instructions explicitly prohibit references marked as 'in preparation' or 'submitted for publication'. Please provide a complete citation if the work has been published, or cite it parenthetically in the text as (Nishimura, R., Morisawa, K., unpublished data).\",\n      \"note\": \"Per BPPB rules, 'in preparation' references are not allowed in the reference list.\"\n    }\n  ]\n}",
+ "thinking_chars": 21009
+}

@@ -1,0 +1,31 @@
+{
+ "task": "T5",
+ "model": "qwen3-vl:30b-a3b-instruct",
+ "item": "G1",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 1,
+ "meta": {
+  "model": "qwen3-vl:30b-a3b-instruct",
+  "wall_s": 9.1,
+  "prompt_tokens": 2246,
+  "output_tokens": 50,
+  "load_s": 5.87,
+  "prefill_tok_s": 988.4,
+  "decode_tok_s": 70.0,
+  "ttft_s": 8.14,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 78228,
+  "peak_size_vram_mib": 20818
+ },
+ "defects": [
+  {
+   "what": "Panel label mismatch: the figure shows panels (a) and (c), but the legend refers to panels (a) and (b).",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\"defects\": [{\"what\": \"Panel label mismatch: the figure shows panels (a) and (c), but the legend refers to panels (a) and (b).\", \"severity\": \"high\"}]}\n```",
+ "thinking_chars": 0
+}

@@ -1,0 +1,27 @@
+{
+ "task": "t3ja",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": "salvaged",
+ "result_key": "answers",
+ "n_items": null,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 14.28,
+  "prompt_tokens": 7845,
+  "output_tokens": 609,
+  "load_s": 0.18,
+  "prefill_tok_s": 3342.3,
+  "decode_tok_s": 55.1,
+  "ttft_s": 2.52,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 20994,
+  "peak_size_vram_mib": 14193
+ },
+ "answers": null,
+ "raw_response": "{\"answers\":[{\"id\":\"J1\",\"answer\":\"250語\",\"basis\":\"\\\"An abstract of no more than 250 words is required.\\\"\"},{\"id\":\"J2\",\"answer\":\"5\",\"basis\":\"\\\"A list of up to five keywords should be provided.\\\"\"},{\"id\":\"J3\",\"answer\":\"50文字、ページ3から\",\"basis\":\"\\\"At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.\\\"\"},{\"id\":\"J4\",\"answer\":\"文献番号は角括弧で囲み、句読点の前に置く。例：…[1,3,5-8]…\",\"basis\":\"\\\"When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\\\"\"},{\"id\":\"J5\",\"answer\":\"最初の6名までを書き、以降はet al.を付ける\",\"basis\":\"\\\"For more than six authors, list the first six authors followed by “et al.”\\\"\"},{\"id\":\"J6\",\"answer\":\"図：TIFF, PNG, JPEG, PDFで300dpi。グラフィカルアブストラクト：PNG, JPEG, GIFで300dpi。\",\"basis\":\"\\\"Electronic files of photographs and illustrations should be at 300 dpi resolution… We accept figure files in TIFF, PNG, JPEG or PDF formats. … The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\\\"\"},{\"id\":\"J7\",\"answer\":[\"テーブルは縦線を使わない\",\"テーブルは本文中で必ず引用する\",\"テーブル番号は連続でアラビア数字で付ける\"],\"basis\":\"\\\"Do not use vertical lines. All tables must be cited in the text. Number the tables consecutively with Arabic numerals.\\\"\"},{\"id\":\"J8\",\"answer\":\"20MB。超える場合は別リポジトリへアップロードし、編集部へ連絡\",\"basis\":\"\\\"The size of each file that is uploaded… should be no more than 20 MB. When the supplementary materials are larger than 20 MB, please upload them to another relating BPPB data repository, J-STAGE Data…\\\"\"},{\"id\":\"J9\",\"answer\":\"「New」「Novel」「First」「Unprecedented」等のポジティブ語\",\"basis\":\"\\\"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words…\\\"\"},{\"id\":\"J10\",\"answer\":\"90日\",\"basis\":\"\\\"Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision.\\\"}]}",
+ "thinking_chars": 62
+}

@@ -1,0 +1,116 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.6:35b-a3b-bf16",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 14,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "wall_s": 331.15,
+  "prompt_tokens": 12861,
+  "output_tokens": 8348,
+  "load_s": 23.57,
+  "prefill_tok_s": 730.3,
+  "decode_tok_s": 29.9,
+  "ttft_s": 41.18,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 80959,
+  "peak_size_vram_mib": 72066
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word 'Novel'.",
+   "severity": "high"
+  },
+  {
+   "location": "Page 1 footer / Corresponding author information",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The manuscript only provides an email address for the corresponding author; it lacks the complete postal address and ORCID iD.",
+   "severity": "high"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are listed instead of a maximum of five.",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement is approximately 124 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Running title",
+   "rule": "At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains approximately 73 characters, exceeding the 50-character limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript structure / Section order",
+   "rule": "Introduction, Materials and methods... Conclusion, Conflict of interest, Author contributions, Data availability, (A comment about deposition to a preprint server...), Acknowledgements and References, should be arranged in this order.",
+   "problem": "The manuscript is missing the 'Conclusion' section entirely. It also lacks a 'Data availability' statement. Additionally, the 'Acknowledgements' section appears after the 'References' section instead of before it.",
+   "severity": "high"
+  },
+  {
+   "location": "Table 1 and Table 2",
+   "rule": "Do not use vertical lines. Supply a short explanatory title above the body of the table, and table footnotes lettered a, b, c, and so forth, below the body of the table.",
+   "problem": "Both tables are formatted with ASCII vertical lines. Table 1 footnotes use numbers (1, 2, 3) instead of letters (a, b, c). Titles are placed below or alongside the tables rather than above the body.",
+   "severity": "medium"
+  },
+  {
+   "location": "Results section",
+   "rule": "All figures must be cited in the text. Number the figures consecutively with Arabic numerals... in the order of their appearance in the text.",
+   "problem": "Figure 2 is cited before Figure 1 in the Results section, violating the required numerical citation order.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Figures 1 and 2 are submitted as BMP files (not an accepted format) and at 150 dpi resolution (below the required 300 dpi).",
+   "severity": "high"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure(s).",
+   "problem": "The graphical abstract caption is approximately 148 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "References section",
+   "rule": "All references should be listed in numerical order, starting on a new page, under the heading “References”.",
+   "problem": "The reference list is not in numerical order; reference [5] appears before [6] and [7], and [7] appears before [6].",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with 'In preparation.', which is explicitly prohibited.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text...",
+   "problem": "Reference [8] lists 'Kuramoto, H. Personal communication, 2025.' instead of placing it parenthetically in the main text.",
+   "severity": "high"
+  },
+  {
+   "location": "Introduction / Text",
+   "rule": "When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text...",
+   "problem": "The manuscript cites the structure as '(PDB 6qw9)' instead of using the required format '[PDB ID: 6qw9] (https://doi.org/10.2210/pdb6qw9/pdb)'.",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Title\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The title contains the word 'Novel'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Page 1 footer / Corresponding author information\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The manuscript only provides an email address for the corresponding author; it lacks the complete postal address and ORCID iD.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"Seven keywords are listed instead of a maximum of five.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Significance statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n      \"problem\": \"The significance statement is approximately 124 words, exceeding the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Running title\",\n      \"rule\": \"At the header on each odd page from page 3, a Running Title not exceeding 50 characters including spaces is required.\",\n      \"problem\": \"The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains approximately 73 characters, exceeding the 50-character limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Manuscript structure / Section order\",\n      \"rule\": \"Introduction, Materials and methods... Conclusion, Conflict of interest, Author contributions, Data availability, (A comment about deposition to a preprint server...), Acknowledgements and References, should be arranged in this order.\",\n      \"problem\": \"The manuscript is missing the 'Conclusion' section entirely. It also lacks a 'Data availability' statement. Additionally, the 'Acknowledgements' section appears after the 'References' section instead of before it.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 1 and Table 2\",\n      \"rule\": \"Do not use vertical lines. Supply a short explanatory title above the body of the table, and table footnotes lettered a, b, c, and so forth, below the body of the table.\",\n      \"problem\": \"Both tables are formatted with ASCII vertical lines. Table 1 footnotes use numbers (1, 2, 3) instead of letters (a, b, c). Titles are placed below or alongside the tables rather than above the body.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Results section\",\n      \"rule\": \"All figures must be cited in the text. Number the figures consecutively with Arabic numerals... in the order of their appearance in the text.\",\n      \"problem\": \"Figure 2 is cited before Figure 1 in the Results section, violating the required numerical citation order.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure file list\",\n      \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n      \"problem\": \"Figures 1 and 2 are submitted as BMP files (not an accepted format) and at 150 dpi resolution (below the required 300 dpi).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure(s).\",\n      \"problem\": \"The graphical abstract caption is approximately 148 words, exceeding the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References section\",\n      \"rule\": \"All references should be listed in numerical order, starting on a new page, under the heading “References”.\",\n      \"problem\": \"The reference list is not in numerical order; reference [5] appears before [6] and [7], and [7] appears before [6].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ends with 'In preparation.', which is explicitly prohibited.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [8]\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text...\",\n      \"problem\": \"Reference [8] lists 'Kuramoto, H. Personal communication, 2025.' instead of placing it parenthetically in the main text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Introduction / Text\",\n      \"rule\": \"When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text...\",\n      \"problem\": \"The manuscript cites the structure as '(PDB 6qw9)' instead of using the required format '[PDB ID: 6qw9] (https://doi.org/10.2210/pdb6qw9/pdb)'.\",\n      \"severity\": \"low\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 26139
+}

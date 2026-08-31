@@ -1,0 +1,61 @@
+{
+ "note": "Each change is defined as a pair of measured conditions; the effect is computed from results/t1_summary.csv so it cannot drift from the data. memory_delta_gib is the 128k-context peak difference measured in results/kv_footprint.json, or 0 where the change costs no memory.",
+ "manuscript": "MS-A",
+ "comparisons": [
+  {
+   "label": "write the deterministic checker",
+   "memory_delta_gib": 0,
+   "effect_from": "deterministic_baseline",
+   "comment": "score of harness/deterministic_check.py alone"
+  },
+  {
+   "label": "decompose the prompt into a checklist",
+   "memory_delta_gib": 0,
+   "from": {
+    "model": "qwen3.8:27b",
+    "variant": "a"
+   },
+   "to": {
+    "model": "qwen3.8:27b",
+    "variant": "b"
+   },
+   "comment": "Measured on qwen3.8:27b, the model the paper foregrounds and one of the seven that produce output under both prompt forms. The effect is not uniform: among those seven it ranges from -2 to +11, and models that return nothing under free-form gain more only because they start at zero."
+  },
+  {
+   "label": "use a newer model generation",
+   "memory_delta_gib": -11.0,
+   "from": {
+    "model": "qwen3.6:35b-a3b-q4_K_M",
+    "variant": "b"
+   },
+   "to": {
+    "model": "qwen3.8:27b",
+    "variant": "b"
+   }
+  },
+  {
+   "label": "quantize q4 to q8",
+   "memory_delta_gib": 13.8,
+   "from": {
+    "model": "qwen3.6:35b-a3b-q4_K_M",
+    "variant": "b"
+   },
+   "to": {
+    "model": "qwen3.6:35b-a3b-q8_0",
+    "variant": "b"
+   }
+  },
+  {
+   "label": "quantize q8 to bf16",
+   "memory_delta_gib": 30.4,
+   "from": {
+    "model": "qwen3.6:35b-a3b-q8_0",
+    "variant": "a"
+   },
+   "to": {
+    "model": "qwen3.6:35b-a3b-bf16",
+    "variant": "a"
+   }
+  }
+ ]
+}

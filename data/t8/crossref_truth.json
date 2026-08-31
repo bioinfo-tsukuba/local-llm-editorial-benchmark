@@ -1,0 +1,101 @@
+{
+ "10.1146/annurev.biochem.66.1.717": {
+  "doi": "10.1146/annurev.biochem.66.1.717",
+  "title": "THE ATP SYNTHASE—A SPLENDID MOLECULAR MACHINE",
+  "journal": "Annual Review of Biochemistry",
+  "abbrev": "Annu. Rev. Biochem.",
+  "volume": "66",
+  "page": "717-749",
+  "year": 1997,
+  "n_authors": 1,
+  "first_author": "Boyer"
+ },
+ "10.1093/protein/14.1.1": {
+  "doi": "10.1093/protein/14.1.1",
+  "title": "Conformational change of proteins arising from normal mode calculations",
+  "journal": "Protein Engineering, Design and Selection",
+  "abbrev": "Protein Engineering, Design and Selection",
+  "volume": "14",
+  "page": "1-6",
+  "year": 2001,
+  "n_authors": 2,
+  "first_author": "Tama"
+ },
+ "10.1016/S0006-3495(01)76033-X": {
+  "doi": "10.1016/s0006-3495(01)76033-x",
+  "title": "Anisotropy of Fluctuation Dynamics of Proteins with an Elastic Network Model",
+  "journal": "Biophysical Journal",
+  "abbrev": "Biophysical Journal",
+  "volume": "80",
+  "page": "505-515",
+  "year": 2001,
+  "n_authors": 6,
+  "first_author": "Atilgan"
+ },
+ "10.1103/PhysRevLett.94.078102": {
+  "doi": "10.1103/physrevlett.94.078102",
+  "title": "Protein Structural Change Upon Ligand Binding: Linear Response Theory",
+  "journal": "Physical Review Letters",
+  "abbrev": "Phys. Rev. Lett.",
+  "volume": "94",
+  "page": null,
+  "year": 2005,
+  "n_authors": 4,
+  "first_author": "Ikeguchi"
+ },
+ "10.1016/j.cell.2007.05.020": {
+  "doi": "10.1016/j.cell.2007.05.020",
+  "title": "Coupling of Rotation and Catalysis in F1-ATPase Revealed by Single-Molecule Imaging and Manipulation",
+  "journal": "Cell",
+  "abbrev": "Cell",
+  "volume": "130",
+  "page": "309-321",
+  "year": 2007,
+  "n_authors": 8,
+  "first_author": "Adachi"
+ },
+ "10.1038/35073513": {
+  "doi": "10.1038/35073513",
+  "title": "Resolution of distinct rotational substeps by submillisecond kinetic analysis of F1-ATPase",
+  "journal": "Nature",
+  "abbrev": "Nature",
+  "volume": "410",
+  "page": "898-904",
+  "year": 2001,
+  "n_authors": 5,
+  "first_author": "Yasuda"
+ },
+ "10.1016/S0006-3495(99)77237-1": {
+  "doi": "10.1016/s0006-3495(99)77237-1",
+  "title": "Single-Molecule Imaging of RNA Polymerase-DNA Interactions in Real Time",
+  "journal": "Biophysical Journal",
+  "abbrev": "Biophysical Journal",
+  "volume": "76",
+  "page": "709-715",
+  "year": 1999,
+  "n_authors": 6,
+  "first_author": "Harada"
+ },
+ "10.1146/annurev.biophys.35.040405.101933": {
+  "doi": "10.1146/annurev.biophys.35.040405.101933",
+  "title": "EVOLUTIONARY RELATIONSHIPS AND STRUCTURAL MECHANISMS OF AAA+ PROTEINS",
+  "journal": "Annual Review of Biophysics and Biomolecular Structure",
+  "abbrev": "Annu. Rev. Biophys. Biomol. Struct.",
+  "volume": "35",
+  "page": "93-114",
+  "year": 2006,
+  "n_authors": 2,
+  "first_author": "Erzberger"
+ },
+ "10.1073/pnas.0702950104": {
+  "doi": "10.1073/pnas.0702950104",
+  "title": "Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines",
+  "journal": "Proceedings of the National Academy of Sciences",
+  "abbrev": "Proc. Natl. Acad. Sci. U.S.A.",
+  "volume": "104",
+  "page": "8697-8702",
+  "year": 2007,
+  "n_authors": 2,
+  "first_author": "Togashi"
+ }
+}

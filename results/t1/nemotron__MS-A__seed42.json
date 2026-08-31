@@ -1,0 +1,80 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "nemotron",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 8,
+ "meta": {
+  "model": "nemotron",
+  "wall_s": 192.43,
+  "prompt_tokens": 12267,
+  "output_tokens": 493,
+  "load_s": 38.75,
+  "prefill_tok_s": 293.6,
+  "decode_tok_s": 4.4,
+  "ttft_s": 80.53,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79756,
+  "peak_size_vram_mib": 68843
+ },
+ "findings": [
+  {
+   "location": "Abstract",
+   "rule": "Abstract must not include references.",
+   "problem": "The abstract contains a reference to a preliminary version of the work deposited in bioRxiv.",
+   "severity": "medium"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Abstract should not exceed 250 words.",
+   "problem": "The abstract exceeds the 250-word limit (actual word count: 266).",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance",
+   "rule": "Significance statement should not exceed 100 words (except for Editorial or Commentary and Perspective).",
+   "problem": "The significance statement exceeds the 100-word limit (actual word count: 106).",
+   "severity": "medium"
+  },
+  {
+   "location": "Materials and methods",
+   "rule": "Authors must declare the institutional and/or licensing committee approving experiments on live vertebrates and/or higher invertebrates in the methods section.",
+   "problem": "No declaration of an institutional and/or licensing committee is found, although the manuscript involves experiments on purified enzyme (potential implication of vertebrate sources, e.g., rabbit skeletal muscle).",
+   "severity": "high"
+  },
+  {
+   "location": "References",
+   "rule": "References should not include 'in preparation' or 'submitted for publication'.",
+   "problem": "Reference [5] is listed as 'in preparation'.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "References should not include 'personal communication' in the reference list, but rather parenthetically in the text.",
+   "problem": "Reference [8] is listed as a personal communication in the reference list.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "File names should not include spaces or Japanese characters (multi-byte codes).",
+   "problem": "The file name ' 図1_final version.tiff' contains Japanese characters.",
+   "severity": "low"
+  },
+  {
+   "location": "Supplementary materials",
+   "rule": "File names should not include spaces or Japanese characters (multi-byte codes).",
+   "problem": "The file name '図1_final version.tiff' (also listed under Supplementary materials) contains Japanese characters.",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\"location\": \"Abstract\",\n   \"rule\": \"Abstract must not include references.\",\n   \"problem\": \"The abstract contains a reference to a preliminary version of the work deposited in bioRxiv.\",\n   \"severity\": \"medium\"},\n  \n  {\"location\": \"Abstract\",\n   \"rule\": \"Abstract should not exceed 250 words.\",\n   \"problem\": \"The abstract exceeds the 250-word limit (actual word count: 266).\",\n   \"severity\": \"medium\"},\n  \n  {\"location\": \"Significance\",\n   \"rule\": \"Significance statement should not exceed 100 words (except for Editorial or Commentary and Perspective).\",\n   \"problem\": \"The significance statement exceeds the 100-word limit (actual word count: 106).\",\n   \"severity\": \"medium\"},\n  \n  {\"location\": \"Materials and methods\",\n   \"rule\": \"Authors must declare the institutional and/or licensing committee approving experiments on live vertebrates and/or higher invertebrates in the methods section.\",\n   \"problem\": \"No declaration of an institutional and/or licensing committee is found, although the manuscript involves experiments on purified enzyme (potential implication of vertebrate sources, e.g., rabbit skeletal muscle).\",\n   \"severity\": \"high\"},\n  \n  {\"location\": \"References\",\n   \"rule\": \"References should not include 'in preparation' or 'submitted for publication'.\",\n   \"problem\": \"Reference [5] is listed as 'in preparation'.\",\n   \"severity\": \"medium\"},\n  \n  {\"location\": \"References\",\n   \"rule\": \"References should not include 'personal communication' in the reference list, but rather parenthetically in the text.\",\n   \"problem\": \"Reference [8] is listed as a personal communication in the reference list.\",\n   \"severity\": \"medium\"},\n  \n  {\"location\": \"Figure file list\",\n   \"rule\": \"File names should not include spaces or Japanese characters (multi-byte codes).\",\n   \"problem\": \"The file name ' 図1_final version.tiff' contains Japanese characters.\",\n   \"severity\": \"low\"},\n  \n  {\"location\": \"Supplementary materials\",\n   \"rule\": \"File names should not include spaces or Japanese characters (multi-byte codes).\",\n   \"problem\": \"The file name '図1_final version.tiff' (also listed under Supplementary materials) contains Japanese characters.\",\n   \"severity\": \"low\"}\n]}",
+ "thinking_chars": 0
+}

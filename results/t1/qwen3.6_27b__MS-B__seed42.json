@@ -1,0 +1,44 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.6:27b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 2,
+ "meta": {
+  "model": "qwen3.6:27b",
+  "wall_s": 1520.05,
+  "prompt_tokens": 12970,
+  "output_tokens": 15243,
+  "load_s": 0.16,
+  "prefill_tok_s": 1161.0,
+  "decode_tok_s": 10.2,
+  "ttft_s": 11.34,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 33093,
+  "peak_size_vram_mib": 25992
+ },
+ "findings": [
+  {
+   "location": "References",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "References [3], [5], [6], [7], [9], [10], [11], and [12] are included in the reference list but are not cited anywhere in the provided manuscript text, tables, or figure legends, violating the sequential citation requirement.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [11] is marked as 'in press' but lacks a DOI URL, whereas the journal's style guide example for in-press articles includes one and the instructions require DOIs to be provided when available.",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"References\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n      \"problem\": \"References [3], [5], [6], [7], [9], [10], [11], and [12] are included in the reference list but are not cited anywhere in the provided manuscript text, tables, or figure legends, violating the sequential citation requirement.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [11]\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [11] is marked as 'in press' but lacks a DOI URL, whereas the journal's style guide example for in-press articles includes one and the instructions require DOIs to be provided when available.\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+ "thinking_chars": 55656
+}

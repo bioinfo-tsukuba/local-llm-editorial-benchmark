@@ -1,0 +1,82 @@
+[
+ {
+  "config": "ONE NODE",
+  "prompt_tokens": 12288,
+  "size_gib": 63.06,
+  "backend": "CUDA",
+  "test": "pp12288",
+  "tok_s": 599.24
+ },
+ {
+  "config": "ONE NODE",
+  "prompt_tokens": 12288,
+  "size_gib": 63.06,
+  "backend": "CUDA",
+  "test": "tg128",
+  "tok_s": 23.98
+ },
+ {
+  "config": "TWO NODES",
+  "prompt_tokens": 12288,
+  "size_gib": 63.06,
+  "backend": "CUDA,RPC",
+  "test": "pp12288",
+  "tok_s": 1032.72
+ },
+ {
+  "config": "TWO NODES",
+  "prompt_tokens": 12288,
+  "size_gib": 63.06,
+  "backend": "CUDA,RPC",
+  "test": "tg128",
+  "tok_s": 24.67
+ },
+ {
+  "config": "ONE NODE",
+  "prompt_tokens": 71230,
+  "size_gib": 63.06,
+  "backend": "CUDA",
+  "test": "pp71230",
+  "tok_s": 285.35
+ },
+ {
+  "config": "ONE NODE",
+  "prompt_tokens": 71230,
+  "size_gib": 63.06,
+  "backend": "CUDA",
+  "test": "tg128",
+  "tok_s": 21.57
+ },
+ {
+  "config": "TWO NODES",
+  "prompt_tokens": 71230,
+  "size_gib": 63.06,
+  "backend": "CUDA,RPC",
+  "test": "pp71230",
+  "tok_s": 508.28
+ },
+ {
+  "config": "TWO NODES",
+  "prompt_tokens": 71230,
+  "size_gib": 63.06,
+  "backend": "CUDA,RPC",
+  "test": "tg128",
+  "tok_s": 24.83
+ },
+ {
+  "config": "ONE NODE",
+  "prompt_tokens": 12288,
+  "size_gib": 63.06,
+  "backend": "CUDA",
+  "test": "pp12288",
+  "tok_s": 603.02
+ },
+ {
+  "config": "ONE NODE",
+  "prompt_tokens": 12288,
+  "size_gib": 63.06,
+  "backend": "CUDA",
+  "test": "tg128",
+  "tok_s": 24.01
+ }
+]

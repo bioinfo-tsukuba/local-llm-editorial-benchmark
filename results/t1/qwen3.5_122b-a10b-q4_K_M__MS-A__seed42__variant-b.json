@@ -1,0 +1,298 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "qwen3.5:122b-a10b-q4_K_M",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 38,
+ "meta": {
+  "model": "qwen3.5:122b-a10b-q4_K_M",
+  "wall_s": 721.95,
+  "prompt_tokens": 13061,
+  "output_tokens": 14091,
+  "load_s": 26.41,
+  "prefill_tok_s": 491.4,
+  "decode_tok_s": 21.7,
+  "ttft_s": 52.99,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 91492,
+  "peak_size_vram_mib": 84281
+ },
+ "findings": [
+  {
+   "area": 1,
+   "location": "Running title",
+   "rule": "Running Title not exceeding 50 characters including spaces",
+   "problem": "Running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains 76 characters, exceeding the 50 character limit.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Title",
+   "rule": "Titles may not contain positive words: 'New', 'Novel', 'First', 'Unprecedented'",
+   "problem": "Title contains the word 'Novel' ('Novel coarse-grained model...').",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required",
+   "problem": "Abstract contains approximately 330 words, exceeding the 250 word limit.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "The abstract must not include references",
+   "problem": "Abstract includes a reference citation '[12]'.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Abstract",
+   "rule": "Titles and abstracts may not contain positive words like 'First'",
+   "problem": "Abstract contains the phrase 'for the first time'.",
+   "severity": "high"
+  },
+  {
+   "area": 1,
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided",
+   "problem": "Seven keywords are provided ('elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics'), exceeding the limit of five.",
+   "severity": "medium"
+  },
+  {
+   "area": 1,
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper",
+   "problem": "Significance statement contains approximately 115 words, exceeding the 100 word limit.",
+   "severity": "medium"
+  },
+  {
+   "area": 2,
+   "location": "Corresponding author details",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated",
+   "problem": "ORCID iD is missing for the corresponding author.",
+   "severity": "high"
+  },
+  {
+   "area": 2,
+   "location": "Corresponding author details",
+   "rule": "The complete postal address... should be indicated",
+   "problem": "Complete postal address (street, postal code) is missing; only 'Kyoto, Japan' is provided.",
+   "severity": "medium"
+  },
+  {
+   "area": 3,
+   "location": "Section order",
+   "rule": "Introduction, Materials and methods, Results, Discussion, Conclusion, Conflict of interest, Author contributions, Data availability, Acknowledgements and References should be arranged in this order",
+   "problem": "'Conclusion' section is missing.",
+   "severity": "medium"
+  },
+  {
+   "area": 3,
+   "location": "Section order",
+   "rule": "Data availability section required",
+   "problem": "'Data availability' section is missing.",
+   "severity": "high"
+  },
+  {
+   "area": 3,
+   "location": "Section order",
+   "rule": "Conflict of interest, Author contributions... should be arranged in this order",
+   "problem": "'Author contributions' appears before 'Conflict of interest'.",
+   "severity": "medium"
+  },
+  {
+   "area": 3,
+   "location": "Section order",
+   "rule": "Acknowledgements and References should be arranged in this order",
+   "problem": "'Acknowledgements' appears after 'References'.",
+   "severity": "medium"
+  },
+  {
+   "area": 3,
+   "location": "Preprint comment",
+   "rule": "A comment about deposition to a preprint server... should be arranged in this order (after Data availability)",
+   "problem": "Preprint comment is located in the Introduction instead of the designated section near Acknowledgements/References.",
+   "severity": "low"
+  },
+  {
+   "area": 4,
+   "location": "Table 1",
+   "rule": "All tables must be cited in the text",
+   "problem": "Table 1 is not cited in the text.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Table numbering",
+   "rule": "Number the tables consecutively... in the order of their appearance in the text",
+   "problem": "Table 2 is cited in the text before Table 1.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Table 2 title",
+   "rule": "Supply a short explanatory title above the body of the table",
+   "problem": "Table 2 title is placed below the body of the table.",
+   "severity": "medium"
+  },
+  {
+   "area": 4,
+   "location": "Table footnotes",
+   "rule": "table footnotes lettered a, b, c, and so forth",
+   "problem": "Table 1 footnotes are numbered (1, 2, 3) instead of lettered (a, b, c).",
+   "severity": "low"
+  },
+  {
+   "area": 4,
+   "location": "Table formatting",
+   "rule": "Do not use vertical lines",
+   "problem": "Tables 1 and 2 use vertical lines in the table structure.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figure 3",
+   "rule": "All figures must be cited in the text",
+   "problem": "Figure 3 is not cited in the text.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figure numbering",
+   "rule": "Number the figures consecutively... in the order of their appearance in the text",
+   "problem": "Figure 2 is cited in the text before Figure 1.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Figure 1 and 2 files",
+   "rule": "Electronic files... should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats",
+   "problem": "Figures 1 and 2 are in BMP format (not allowed) and have 150 dpi resolution (below 300 dpi requirement).",
+   "severity": "high"
+  },
+  {
+   "area": 5,
+   "location": "Graphical abstract file",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF",
+   "problem": "Graphical abstract file is in TIFF format.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Graphical abstract caption",
+   "rule": "upload a short caption less than 100 words",
+   "problem": "Graphical abstract caption contains approximately 140 words, exceeding the 100 word limit.",
+   "severity": "medium"
+  },
+  {
+   "area": 5,
+   "location": "Graphical abstract caption",
+   "rule": "it should not duplicate the title of the article",
+   "problem": "Graphical abstract caption duplicates the article title ('Novel coarse-grained model...').",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary movie file",
+   "rule": "The size of each file... should be no more than 20 MB",
+   "problem": "Supplementary movie file 'Suppl_Movie_1.mov' is 45 MB, exceeding the 20 MB limit.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary movie file",
+   "rule": "movie files in MPEG or AVI format",
+   "problem": "Supplementary movie file is in MOV format.",
+   "severity": "medium"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary file name",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name",
+   "problem": "File name '図 1_final version.tiff' contains Japanese characters and spaces.",
+   "severity": "high"
+  },
+  {
+   "area": 6,
+   "location": "Supplementary file naming",
+   "rule": "Title of the material should be, for example, 'Supplementary Text S1', 'Supplementary Table S1', and 'Supplementary Figure S1'",
+   "problem": "File names use 'Suppl_Fig_1' instead of 'Supplementary Figure S1' format.",
+   "severity": "low"
+  },
+  {
+   "area": 7,
+   "location": "Reference list order",
+   "rule": "All references should be listed in numerical order",
+   "problem": "Reference [7] appears before Reference [6] in the list.",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "Reference [9]",
+   "rule": "For more than six authors, list the first six authors followed by 'et al.'",
+   "problem": "Reference [9] lists all 10 authors instead of first six plus 'et al.'.",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "Reference [4]",
+   "rule": "Abbreviated Journal titles follow the Index Medicus/MEDLINE format",
+   "problem": "Reference [4] uses full journal name 'Biophysical Journal' instead of abbreviation 'Biophys. J.'.",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "Reference [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL",
+   "problem": "Reference [4] DOI is formatted as 'doi:10.1016...' instead of 'https://doi.org/...'.",
+   "severity": "medium"
+  },
+  {
+   "area": 7,
+   "location": "Reference [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list",
+   "problem": "Reference [5] is marked as 'In preparation'.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Reference [8]",
+   "rule": "References to 'unpublished data' and 'personal communications' should not appear in the reference list",
+   "problem": "Reference [8] is a 'Personal communication'.",
+   "severity": "high"
+  },
+  {
+   "area": 7,
+   "location": "Reference list",
+   "rule": "References should be numbered sequentially as they appear in the text",
+   "problem": "References [3, 5, 6, 7, 9, 10, 11] appear in the list but are not cited in the text.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Methods section",
+   "rule": "For original research manuscripts, reporting experiments on live vertebrates... authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments",
+   "problem": "No ethics statement is provided for the use of rabbit skeletal muscle (vertebrate tissue) in the Methods section.",
+   "severity": "high"
+  },
+  {
+   "area": 8,
+   "location": "Data availability",
+   "rule": "Every corresponding author... has to make their evidence data available... and the statement should be described",
+   "problem": "Data availability statement is missing from the manuscript.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"area\": 1,\n      \"location\": \"Running title\",\n      \"rule\": \"Running Title not exceeding 50 characters including spaces\",\n      \"problem\": \"Running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains 76 characters, exceeding the 50 character limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Title\",\n      \"rule\": \"Titles may not contain positive words: 'New', 'Novel', 'First', 'Unprecedented'\",\n      \"problem\": \"Title contains the word 'Novel' ('Novel coarse-grained model...').\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Abstract\",\n      \"rule\": \"An abstract of no more than 250 words is required\",\n      \"problem\": \"Abstract contains approximately 330 words, exceeding the 250 word limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Abstract\",\n      \"rule\": \"The abstract must not include references\",\n      \"problem\": \"Abstract includes a reference citation '[12]'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts may not contain positive words like 'First'\",\n      \"problem\": \"Abstract contains the phrase 'for the first time'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided\",\n      \"problem\": \"Seven keywords are provided ('elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics'), exceeding the limit of five.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Significance statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper\",\n      \"problem\": \"Significance statement contains approximately 115 words, exceeding the 100 word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 2,\n      \"location\": \"Corresponding author details\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated\",\n      \"problem\": \"ORCID iD is missing for the corresponding author.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 2,\n      \"location\": \"Corresponding author details\",\n      \"rule\": \"The complete postal address... should be indicated\",\n      \"problem\": \"Complete postal address (street, postal code) is missing; only 'Kyoto, Japan' is provided.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Section order\",\n      \"rule\": \"Introduction, Materials and methods, Results, Discussion, Conclusion, Conflict of interest, Author contributions, Data availability, Acknowledgements and References should be arranged in this order\",\n      \"problem\": \"'Conclusion' section is missing.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Section order\",\n      \"rule\": \"Data availability section required\",\n      \"problem\": \"'Data availability' section is missing.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Section order\",\n      \"rule\": \"Conflict of interest, Author contributions... should be arranged in this order\",\n      \"problem\": \"'Author contributions' appears before 'Conflict of interest'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Section order\",\n      \"rule\": \"Acknowledgements and References should be arranged in this order\",\n      \"problem\": \"'Acknowledgements' appears after 'References'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"Preprint comment\",\n      \"rule\": \"A comment about deposition to a preprint server... should be arranged in this order (after Data availability)\",\n      \"problem\": \"Preprint comment is located in the Introduction instead of the designated section near Acknowledgements/References.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table 1\",\n      \"rule\": \"All tables must be cited in the text\",\n      \"problem\": \"Table 1 is not cited in the text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table numbering\",\n      \"rule\": \"Number the tables consecutively... in the order of their appearance in the text\",\n      \"problem\": \"Table 2 is cited in the text before Table 1.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table 2 title\",\n      \"rule\": \"Supply a short explanatory title above the body of the table\",\n      \"problem\": \"Table 2 title is placed below the body of the table.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table footnotes\",\n      \"rule\": \"table footnotes lettered a, b, c, and so forth\",\n      \"problem\": \"Table 1 footnotes are numbered (1, 2, 3) instead of lettered (a, b, c).\",\n      \"severity\": \"low\"\n    },\n    {\n      \"area\": 4,\n      \"location\": \"Table formatting\",\n      \"rule\": \"Do not use vertical lines\",\n      \"problem\": \"Tables 1 and 2 use vertical lines in the table structure.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figure 3\",\n      \"rule\": \"All figures must be cited in the text\",\n      \"problem\": \"Figure 3 is not cited in the text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figure numbering\",\n      \"rule\": \"Number the figures consecutively... in the order of their appearance in the text\",\n      \"problem\": \"Figure 2 is cited in the text before Figure 1.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Figure 1 and 2 files\",\n      \"rule\": \"Electronic files... should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats\",\n      \"problem\": \"Figures 1 and 2 are in BMP format (not allowed) and have 150 dpi resolution (below 300 dpi requirement).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Graphical abstract file\",\n      \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF\",\n      \"problem\": \"Graphical abstract file is in TIFF format.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"upload a short caption less than 100 words\",\n      \"problem\": \"Graphical abstract caption contains approximately 140 words, exceeding the 100 word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 5,\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"it should not duplicate the title of the article\",\n      \"problem\": \"Graphical abstract caption duplicates the article title ('Novel coarse-grained model...').\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary movie file\",\n      \"rule\": \"The size of each file... should be no more than 20 MB\",\n      \"problem\": \"Supplementary movie file 'Suppl_Movie_1.mov' is 45 MB, exceeding the 20 MB limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary movie file\",\n      \"rule\": \"movie files in MPEG or AVI format\",\n      \"problem\": \"Supplementary movie file is in MOV format.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary file name\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name\",\n      \"problem\": \"File name '図 1_final version.tiff' contains Japanese characters and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 6,\n      \"location\": \"Supplementary file naming\",\n      \"rule\": \"Title of the material should be, for example, 'Supplementary Text S1', 'Supplementary Table S1', and 'Supplementary Figure S1'\",\n      \"problem\": \"File names use 'Suppl_Fig_1' instead of 'Supplementary Figure S1' format.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference list order\",\n      \"rule\": \"All references should be listed in numerical order\",\n      \"problem\": \"Reference [7] appears before Reference [6] in the list.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [9]\",\n      \"rule\": \"For more than six authors, list the first six authors followed by 'et al.'\",\n      \"problem\": \"Reference [9] lists all 10 authors instead of first six plus 'et al.'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [4]\",\n      \"rule\": \"Abbreviated Journal titles follow the Index Medicus/MEDLINE format\",\n      \"problem\": \"Reference [4] uses full journal name 'Biophysical Journal' instead of abbreviation 'Biophys. J.'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [4]\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL\",\n      \"problem\": \"Reference [4] DOI is formatted as 'doi:10.1016...' instead of 'https://doi.org/...'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list\",\n      \"problem\": \"Reference [5] is marked as 'In preparation'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference [8]\",\n      \"rule\": \"References to 'unpublished data' and 'personal communications' should not appear in the reference list\",\n      \"problem\": \"Reference [8] is a 'Personal communication'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 7,\n      \"location\": \"Reference list\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text\",\n      \"problem\": \"References [3, 5, 6, 7, 9, 10, 11] appear in the list but are not cited in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Methods section\",\n      \"rule\": \"For original research manuscripts, reporting experiments on live vertebrates... authors must include a brief statement identifying the institutional and/or licensing committee approving the experiments\",\n      \"problem\": \"No ethics statement is provided for the use of rabbit skeletal muscle (vertebrate tissue) in the Methods section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"area\": 8,\n      \"location\": \"Data availability\",\n      \"rule\": \"Every corresponding author... has to make their evidence data available... and the statement should be described\",\n      \"problem\": \"Data availability statement is missing from the manuscript.\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+ "thinking_chars": 41709
+}

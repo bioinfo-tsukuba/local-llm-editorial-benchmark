@@ -1,0 +1,12 @@
+{
+ "task": "t2",
+ "model": "magistral",
+ "seed": 42,
+ "error": "context too small: needs ~54253 tokens, model maximum is 40000",
+ "skipped_reason": "model-context-too-small",
+ "model_max_context": 40000,
+ "required_tokens": 54253,
+ "meta": {},
+ "weaknesses": null,
+ "n_items": null
+}

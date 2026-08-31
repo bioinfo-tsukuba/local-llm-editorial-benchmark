@@ -1,0 +1,35 @@
+{
+  "task": "T5",
+  "note": "VLM-only check. Each figure is paired with the legend the authors submitted. The model sees the image plus the legend plus the Instructions for Authors and must report only defects it can actually see.",
+  "items": [
+    {"id":"G1","image":"data/figures/FIG-1_panel_label_mismatch.png",
+     "legend":"Figure 1. (a) Perturbation-response susceptibility as a function of subunit separation in the clockwise and counter-clockwise directions. (b) Frequency spectrum of the elastic network for the apo ring.",
+     "defects":[
+       {"id":"G1a","what":"The second panel is labelled (c) but the legend describes panels (a) and (b); there is no panel (b) in the image.",
+        "match_keywords":["(c)","panel label","(b)","mismatch","does not match","inconsistent","label"]}],
+     "compliant_aspects":["300 dpi","readable axis labels","PNG format"]},
+    {"id":"G2","image":"data/figures/FIG-2_low_resolution.png",
+     "legend":"Figure 2. (a) Susceptibility decay. (b) Residue-level heat map of the susceptibility change.",
+     "defects":[
+       {"id":"G2a","what":"The figure is 72 dpi (504x216 px), far below the 300 dpi minimum required for printing.",
+        "match_keywords":["72","resolution","300 dpi","low resolution","pixelated","blurry","too small"]},
+       {"id":"G2b","what":"Axis labels and tick labels are far too small to read at the printed size.",
+        "match_keywords":["too small","unreadable","illegible","font size","axis label","tick label","hard to read"]}],
+     "compliant_aspects":["panel labels (a) and (b) match the legend","PNG format"]},
+    {"id":"G3","image":"data/figures/FIG-3_compliant.png",
+     "legend":"Figure 3. (a) Susceptibility decay with subunit separation. (b) Frequency spectrum of the elastic network. (c) Residue-level heat map of the susceptibility change over the subunit interface.",
+     "defects":[],
+     "compliant_aspects":["300 dpi","panel labels (a)(b)(c) all present and matching the legend","readable text","PNG format"],
+     "expected_behaviour":"Report no defects. Any finding here is a false positive."},
+    {"id":"G4","image":"data/figures/FIG-4_table_vertical_rules.png",
+     "legend":"Table 2. Dependence of the fitted susceptibility length constants on the nucleotide stiffening factor s.",
+     "defects":[
+       {"id":"G4a","what":"The table is ruled with vertical lines, which the Instructions forbid.",
+        "match_keywords":["vertical line","vertical rule","vertical border","grid","do not use vertical"]},
+       {"id":"G4b","what":"The table is submitted as an image; the Instructions require tables to be inserted with the Text-box tool in the Word template, not as a picture.",
+        "match_keywords":["image","picture","not editable","text-box","text box","embedded as","should be a table"]}],
+     "compliant_aspects":["title is above the body","300 dpi"]}
+  ],
+  "n_defects": 5,
+  "n_compliant_figures": 1
+}

@@ -1,0 +1,94 @@
+{
+ "task": "t7",
+ "model": "qwen3.8:27b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 11,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 265.33,
+  "prompt_tokens": 10032,
+  "output_tokens": 7318,
+  "load_s": 7.35,
+  "prefill_tok_s": 777.6,
+  "decode_tok_s": 29.9,
+  "ttft_s": 20.25,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 30749,
+  "peak_size_vram_mib": 17119
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.",
+   "problem": "The title is 'Novel directions for coarse-grained models of molecular machines' and contains the forbidden word 'Novel'.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [5] reads: 'Terashima, A., Kuramoto, H. Benchmarks for coarse-grained allostery. In preparation.' The phrase 'In preparation' is explicitly prohibited.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "The figure file 'Fig1_two_readings.bmp' is listed at 150 dpi, which is below the required 300 dpi minimum.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "The figure file 'Fig1_two_readings.bmp' is in BMP format, which is not among the accepted formats (TIFF, PNG, JPEG, PDF).",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials – second file",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file name '図1_draft version.bmp' contains the Japanese character '図' and a space between 'draft' and 'version'.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials – second file",
+   "rule": "The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.",
+   "problem": "The file '図1_draft version.bmp' uses the .bmp extension, which is not in the list of permitted extensions (pdf, txt, zip, mpeg, avi).",
+   "severity": "high"
+  },
+  {
+   "location": "Tables section (Table 1)",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is not referenced anywhere in the body text of the manuscript. No sentence mentions 'Table 1' or directs the reader to it.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure legends (Figure 1)",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 1 is not referenced anywhere in the body text of the manuscript. No sentence mentions 'Figure 1' or directs the reader to it.",
+   "severity": "medium"
+  },
+  {
+   "location": "Tables section (Table 1)",
+   "rule": "Do not use vertical lines.",
+   "problem": "Table 1 uses vertical line separators (|) between columns, which is explicitly prohibited.",
+   "severity": "medium"
+  },
+  {
+   "location": "References list",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "The reference list is ordered [1], [2], [3], [4], [5], [7], [6], [8]. Reference [7] appears before [6], breaking sequential order.",
+   "severity": "medium"
+  },
+  {
+   "location": "References list – entries [5], [6], [8]",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "References [5], [6], and [8] are not cited anywhere in the text, tables, or figure legends, yet they appear in the reference list.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\n    \"location\": \"Title\",\n    \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\",\n    \"problem\": \"The title is 'Novel directions for coarse-grained models of molecular machines' and contains the forbidden word 'Novel'.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Reference [5]\",\n    \"rule\": \"The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.\",\n    \"problem\": \"Reference [5] reads: 'Terashima, A., Kuramoto, H. Benchmarks for coarse-grained allostery. In preparation.' The phrase 'In preparation' is explicitly prohibited.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Figure file list\",\n    \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.\",\n    \"problem\": \"The figure file 'Fig1_two_readings.bmp' is listed at 150 dpi, which is below the required 300 dpi minimum.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Figure file list\",\n    \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n    \"problem\": \"The figure file 'Fig1_two_readings.bmp' is in BMP format, which is not among the accepted formats (TIFF, PNG, JPEG, PDF).\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Supplementary materials – second file\",\n    \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n    \"problem\": \"The file name '図1_draft version.bmp' contains the Japanese character '図' and a space between 'draft' and 'version'.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Supplementary materials – second file\",\n    \"rule\": \"The file name extension should be one of the following as appropriate; pdf, txt, zip, mpeg or avi.\",\n    \"problem\": \"The file '図1_draft version.bmp' uses the .bmp extension, which is not in the list of permitted extensions (pdf, txt, zip, mpeg, avi).\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Tables section (Table 1)\",\n    \"rule\": \"All tables must be cited in the text.\",\n    \"problem\": \"Table 1 is not referenced anywhere in the body text of the manuscript. No sentence mentions 'Table 1' or directs the reader to it.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Figure legends (Figure 1)\",\n    \"rule\": \"All figures must be cited in the text.\",\n    \"problem\": \"Figure 1 is not referenced anywhere in the body text of the manuscript. No sentence mentions 'Figure 1' or directs the reader to it.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Tables section (Table 1)\",\n    \"rule\": \"Do not use vertical lines.\",\n    \"problem\": \"Table 1 uses vertical line separators (|) between columns, which is explicitly prohibited.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"References list\",\n    \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n    \"problem\": \"The reference list is ordered [1], [2], [3], [4], [5], [7], [6], [8]. Reference [7] appears before [6], breaking sequential order.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"References list – entries [5], [6], [8]\",\n    \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n    \"problem\": \"References [5], [6], and [8] are not cited anywhere in the text, tables, or figure legends, yet they appear in the reference list.\",\n    \"severity\": \"medium\"\n  }\n]}",
+ "thinking_chars": 24479
+}

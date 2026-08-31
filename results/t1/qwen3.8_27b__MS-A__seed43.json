@@ -1,0 +1,224 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.8:27b",
+ "manuscript": "MS-A",
+ "seed": 43,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 32,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 688.54,
+  "prompt_tokens": 12829,
+  "output_tokens": 21661,
+  "load_s": 7.97,
+  "prefill_tok_s": 769.9,
+  "decode_tok_s": 32.6,
+  "ttft_s": 24.63,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79075,
+  "peak_size_vram_mib": 17119
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.",
+   "problem": "The title begins with the word 'Novel': 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase'.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract is approximately 330 words, exceeding the 250-word limit by about 80 words.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract contains the citation '[12]' in the sentence 'reproduce the sequential firing order observed in single-molecule rotation assays [12]'.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.",
+   "problem": "The abstract contains the phrase 'We further demonstrate for the first time that…', which includes the prohibited word 'First'.",
+   "severity": "high"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are listed: 'elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics'. The limit is five.",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The Significance statement is approximately 123 words, exceeding the 'less than 100 words' limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript structure (missing section)",
+   "rule": "The required section order includes: Introduction, Materials and methods, Results, Discussion, Conclusion, Conflict of interest, Author contributions, Data availability, …, Acknowledgements and References.",
+   "problem": "There is no 'Conclusion' section. The manuscript proceeds directly from Discussion to Author contributions.",
+   "severity": "high"
+  },
+  {
+   "location": "Manuscript structure (missing section)",
+   "rule": "The required section order includes a 'Data availability' section. Every corresponding author has to make their evidence data available upon reasonable request, and the statement should be described.",
+   "problem": "There is no 'Data availability' section anywhere in the manuscript.",
+   "severity": "high"
+  },
+  {
+   "location": "Manuscript structure (section order)",
+   "rule": "The required order is: …, Conflict of interest, Author contributions, …",
+   "problem": "The manuscript places 'Author contributions' before 'Conflict of interest', reversing the required order.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript structure (section order)",
+   "rule": "The required order ends with: …, Acknowledgements and References.",
+   "problem": "The manuscript places 'References' before 'Acknowledgements', reversing the required order.",
+   "severity": "medium"
+  },
+  {
+   "location": "Introduction (preprint comment)",
+   "rule": "A comment about deposition to a preprint server should be a separate section between Data availability and Acknowledgements, and should include the ID, DOI or URL (e.g. 'deposited in arXiv (ID, DOI or URL) on August 13, 2020').",
+   "problem": "The preprint comment ('A preliminary version of this work was deposited in bioRxiv on 4 March 2026') is embedded as a sentence within the Introduction paragraph rather than as a standalone section, and it omits the required bioRxiv ID, DOI, or URL.",
+   "severity": "medium"
+  },
+  {
+   "location": "Running title",
+   "rule": "A Running Title not exceeding 50 characters including spaces is required.",
+   "problem": "The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' is 78 characters including spaces, exceeding the 50-character limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Introduction (PDB citation)",
+   "rule": "When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text.",
+   "problem": "The manuscript writes '(PDB 6qw9)' instead of the required format '[PDB ID: 6qw9] (https://doi.org/10.2210/pdb6qw9/pdb)'.",
+   "severity": "low"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [5] reads: 'Nishimura, R., Morisawa, K. Directional coupling in driven elastic networks. In preparation.'",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information.",
+   "problem": "Reference [8] is 'Kuramoto, H. Personal communication, 2025.' A personal communication should not be in the reference list; it should appear parenthetically in the text.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference list (ordering)",
+   "rule": "All references should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "The references are listed in the order [1], [2], [3], [4], [5], [7], [6], [8], [9], [10], [11], [12]. Reference [7] appears before [6], breaking numerical order.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL (e.g. https://doi.org/…).",
+   "problem": "Reference [4] gives the DOI as 'doi:10.1016/S0006-3495(01)76033-X' rather than the required URL format 'https://doi.org/10.1016/S0006-3495(01)76033-X'.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "Abbreviated Journal titles follow the Index Medicus/MEDLINE format.",
+   "problem": "Reference [4] uses the full journal name 'Biophysical Journal' instead of the MEDLINE abbreviation 'Biophys. J.' as shown in the journal's own examples.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [9]",
+   "rule": "For more than six authors, list the first six authors followed by 'et al.'",
+   "problem": "Reference [9] lists all nine authors: 'Adachi, K., Oiwa, K., Nishizaka, T., Furuike, S., Noji, H., Itoh, H., Yoshida, M., Kinosita, K., Jr., Tanaka, S.' It should list only the first six followed by 'et al.'",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL. The 'in press' example in the Instructions includes a DOI URL.",
+   "problem": "Reference [11] ('Itoh, H., … Nature (in press).') is missing the DOI URL that the journal's own example for this exact reference includes (https://doi.org/10.1038/nature02212).",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference list (uncited references)",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends.",
+   "problem": "References [3], [5], [6], [7], [9], [10], and [11] appear in the reference list but are never cited anywhere in the main text, tables, or figure legends.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list (Fig1, Fig2)",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are in BMP format, which is not among the accepted formats (TIFF, PNG, JPEG, PDF).",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list (Fig1, Fig2)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are listed at 150 dpi, below the required 300 dpi minimum.",
+   "severity": "medium"
+  },
+  {
+   "location": "Results (Figure 3)",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 3 ('Residue-level decomposition of the susceptibility change upon C-terminal helix truncation') is listed in the figure legends but is never cited in the main text.",
+   "severity": "medium"
+  },
+  {
+   "location": "Tables (Table 1)",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 ('Bead and spring counts for the networks used in this study') is never cited in the main text. Only Table 2 is referenced.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract file",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.",
+   "problem": "The graphical abstract file is 'Graphical_abstract.tiff' (TIFF format), which is not among the accepted formats (PNG, JPEG, GIF).",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure(s).",
+   "problem": "The graphical abstract caption is approximately 134 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "The caption … should not duplicate the title of the article or the Significance statement.",
+   "problem": "The caption opens with the exact title text: 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase.', which is a verbatim duplicate of the article title.",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials (Suppl_Movie_1.mov)",
+   "rule": "Movie files in MPEG or AVI format. The file name extension should be one of the following: pdf, txt, zip, mpeg or avi.",
+   "problem": "The file 'Suppl_Movie_1.mov' uses the .mov extension, which is not in the accepted list (mpeg or avi).",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials (図1_final version.tiff)",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only. Image files should be in PDF, TXT or ZIP format.",
+   "problem": "The file name '図1_final version.tiff' contains a Japanese character (図), a space, and uses the .tiff extension which is not in the accepted list (pdf, txt, zip, mpeg, avi).",
+   "severity": "medium"
+  },
+  {
+   "location": "Conflict of interest",
+   "rule": "The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.",
+   "problem": "The Conflict of interest statement only covers K.M., A.T., and R.N. Authors S.J.W. and H.K. are not mentioned, so their declarations are missing.",
+   "severity": "medium"
+  },
+  {
+   "location": "Page 1 / Corresponding author information",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author line gives only 'Department of Molecular Biophysics, Kitagawa Institute of Technology, Kyoto' with no street address, postal code, or country, and no ORCID iD is provided.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\n    \"location\": \"Title\",\n    \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\",\n    \"problem\": \"The title begins with the word 'Novel': 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase'.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Abstract\",\n    \"rule\": \"An abstract of no more than 250 words is required.\",\n    \"problem\": \"The abstract is approximately 330 words, exceeding the 250-word limit by about 80 words.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Abstract\",\n    \"rule\": \"The abstract must not include references.\",\n    \"problem\": \"The abstract contains the citation '[12]' in the sentence 'reproduce the sequential firing order observed in single-molecule rotation assays [12]'.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Abstract\",\n    \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\",\n    \"problem\": \"The abstract contains the phrase 'We further demonstrate for the first time that…', which includes the prohibited word 'First'.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Keywords\",\n    \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n    \"problem\": \"Seven keywords are listed: 'elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics'. The limit is five.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Significance\",\n    \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n    \"problem\": \"The Significance statement is approximately 123 words, exceeding the 'less than 100 words' limit.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Manuscript structure (missing section)\",\n    \"rule\": \"The required section order includes: Introduction, Materials and methods, Results, Discussion, Conclusion, Conflict of interest, Author contributions, Data availability, …, Acknowledgements and References.\",\n    \"problem\": \"There is no 'Conclusion' section. The manuscript proceeds directly from Discussion to Author contributions.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Manuscript structure (missing section)\",\n    \"rule\": \"The required section order includes a 'Data availability' section. Every corresponding author has to make their evidence data available upon reasonable request, and the statement should be described.\",\n    \"problem\": \"There is no 'Data availability' section anywhere in the manuscript.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Manuscript structure (section order)\",\n    \"rule\": \"The required order is: …, Conflict of interest, Author contributions, …\",\n    \"problem\": \"The manuscript places 'Author contributions' before 'Conflict of interest', reversing the required order.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Manuscript structure (section order)\",\n    \"rule\": \"The required order ends with: …, Acknowledgements and References.\",\n    \"problem\": \"The manuscript places 'References' before 'Acknowledgements', reversing the required order.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Introduction (preprint comment)\",\n    \"rule\": \"A comment about deposition to a preprint server should be a separate section between Data availability and Acknowledgements, and should include the ID, DOI or URL (e.g. 'deposited in arXiv (ID, DOI or URL) on August 13, 2020').\",\n    \"problem\": \"The preprint comment ('A preliminary version of this work was deposited in bioRxiv on 4 March 2026') is embedded as a sentence within the Introduction paragraph rather than as a standalone section, and it omits the required bioRxiv ID, DOI, or URL.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Running title\",\n    \"rule\": \"A Running Title not exceeding 50 characters including spaces is required.\",\n    \"problem\": \"The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' is 78 characters including spaces, exceeding the 50-character limit.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Introduction (PDB citation)\",\n    \"rule\": \"When referring to macromolecular structures, please use [PDB ID: <PDB ID>] (https://doi.org/10.2210/pdb<PDB ID>/pdb) in the text.\",\n    \"problem\": \"The manuscript writes '(PDB 6qw9)' instead of the required format '[PDB ID: 6qw9] (https://doi.org/10.2210/pdb6qw9/pdb)'.\",\n    \"severity\": \"low\"\n  },\n  {\n    \"location\": \"Reference [5]\",\n    \"rule\": \"The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.\",\n    \"problem\": \"Reference [5] reads: 'Nishimura, R., Morisawa, K. Directional coupling in driven elastic networks. In preparation.'\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Reference [8]\",\n    \"rule\": \"References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text following the name(s) of the source of information.\",\n    \"problem\": \"Reference [8] is 'Kuramoto, H. Personal communication, 2025.' A personal communication should not be in the reference list; it should appear parenthetically in the text.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Reference list (ordering)\",\n    \"rule\": \"All references should be listed in numerical order, starting on a new page, under the heading 'References'.\",\n    \"problem\": \"The references are listed in the order [1], [2], [3], [4], [5], [7], [6], [8], [9], [10], [11], [12]. Reference [7] appears before [6], breaking numerical order.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Reference [4]\",\n    \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL (e.g. https://doi.org/…).\",\n    \"problem\": \"Reference [4] gives the DOI as 'doi:10.1016/S0006-3495(01)76033-X' rather than the required URL format 'https://doi.org/10.1016/S0006-3495(01)76033-X'.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Reference [4]\",\n    \"rule\": \"Abbreviated Journal titles follow the Index Medicus/MEDLINE format.\",\n    \"problem\": \"Reference [4] uses the full journal name 'Biophysical Journal' instead of the MEDLINE abbreviation 'Biophys. J.' as shown in the journal's own examples.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Reference [9]\",\n    \"rule\": \"For more than six authors, list the first six authors followed by 'et al.'\",\n    \"problem\": \"Reference [9] lists all nine authors: 'Adachi, K., Oiwa, K., Nishizaka, T., Furuike, S., Noji, H., Itoh, H., Yoshida, M., Kinosita, K., Jr., Tanaka, S.' It should list only the first six followed by 'et al.'\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Reference [11]\",\n    \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL. The 'in press' example in the Instructions includes a DOI URL.\",\n    \"problem\": \"Reference [11] ('Itoh, H., … Nature (in press).') is missing the DOI URL that the journal's own example for this exact reference includes (https://doi.org/10.1038/nature02212).\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Reference list (uncited references)\",\n    \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends.\",\n    \"problem\": \"References [3], [5], [6], [7], [9], [10], and [11] appear in the reference list but are never cited anywhere in the main text, tables, or figure legends.\",\n    \"severity\": \"high\"\n  },\n  {\n    \"location\": \"Figure file list (Fig1, Fig2)\",\n    \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n    \"problem\": \"Fig1_modes.bmp and Fig2_spectra.bmp are in BMP format, which is not among the accepted formats (TIFF, PNG, JPEG, PDF).\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Figure file list (Fig1, Fig2)\",\n    \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.\",\n    \"problem\": \"Fig1_modes.bmp and Fig2_spectra.bmp are listed at 150 dpi, below the required 300 dpi minimum.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Results (Figure 3)\",\n    \"rule\": \"All figures must be cited in the text.\",\n    \"problem\": \"Figure 3 ('Residue-level decomposition of the susceptibility change upon C-terminal helix truncation') is listed in the figure legends but is never cited in the main text.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Tables (Table 1)\",\n    \"rule\": \"All tables must be cited in the text.\",\n    \"problem\": \"Table 1 ('Bead and spring counts for the networks used in this study') is never cited in the main text. Only Table 2 is referenced.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Graphical abstract file\",\n    \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF, and the resolution should be 300 dpi.\",\n    \"problem\": \"The graphical abstract file is 'Graphical_abstract.tiff' (TIFF format), which is not among the accepted formats (PNG, JPEG, GIF).\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Graphical abstract caption\",\n    \"rule\": \"When you submit a figure for the Graphical Abstract, please also upload a short caption less than 100 words about the figure(s).\",\n    \"problem\": \"The graphical abstract caption is approximately 134 words, exceeding the 100-word limit.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Graphical abstract caption\",\n    \"rule\": \"The caption … should not duplicate the title of the article or the Significance statement.\",\n    \"problem\": \"The caption opens with the exact title text: 'Novel coarse-grained model of allosteric communication in a ring-shaped ATPase.', which is a verbatim duplicate of the article title.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Supplementary materials (Suppl_Movie_1.mov)\",\n    \"rule\": \"Movie files in MPEG or AVI format. The file name extension should be one of the following: pdf, txt, zip, mpeg or avi.\",\n    \"problem\": \"The file 'Suppl_Movie_1.mov' uses the .mov extension, which is not in the accepted list (mpeg or avi).\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Supplementary materials (図1_final version.tiff)\",\n    \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only. Image files should be in PDF, TXT or ZIP format.\",\n    \"problem\": \"The file name '図1_final version.tiff' contains a Japanese character (図), a space, and uses the .tiff extension which is not in the accepted list (pdf, txt, zip, mpeg, avi).\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Conflict of interest\",\n    \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n    \"problem\": \"The Conflict of interest statement only covers K.M., A.T., and R.N. Authors S.J.W. and H.K. are not mentioned, so their declarations are missing.\",\n    \"severity\": \"medium\"\n  },\n  {\n    \"location\": \"Page 1 / Corresponding author information\",\n    \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n    \"problem\": \"The corresponding author line gives only 'Department of Molecular Biophysics, Kitagawa Institute of Technology, Kyoto' with no street address, postal code, or country, and no ORCID iD is provided.\",\n    \"severity\": \"medium\"\n  }\n]}",
+ "thinking_chars": 60409
+}

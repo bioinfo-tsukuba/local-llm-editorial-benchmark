@@ -1,0 +1,158 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.6:27b",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 21,
+ "meta": {
+  "model": "qwen3.6:27b",
+  "wall_s": 1140.2,
+  "prompt_tokens": 12861,
+  "output_tokens": 11279,
+  "load_s": 7.15,
+  "prefill_tok_s": 576.5,
+  "decode_tok_s": 10.3,
+  "ttft_s": 29.46,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 79983,
+  "peak_size_vram_mib": 25992
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words",
+   "problem": "The title contains the prohibited word 'Novel'.",
+   "severity": "high"
+  },
+  {
+   "location": "Running title",
+   "rule": "A Running Title not exceeding 50 characters including spaces is required",
+   "problem": "The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains 78 characters including spaces.",
+   "severity": "medium"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required. The abstract must not include references.",
+   "problem": "The abstract exceeds the 250-word limit and contains a citation to reference [12].",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”...",
+   "problem": "The abstract contains the prohibited phrase 'for the first time'.",
+   "severity": "medium"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are listed instead of a maximum of five.",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added",
+   "problem": "The significance statement contains approximately 123 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript structure",
+   "rule": "Introduction, Materials and methods..., Results, Discussion..., Conclusion, Conflict of interest, Author contributions, Data availability... should be arranged in this order.",
+   "problem": "The manuscript is missing the required 'Conclusion' section and the mandatory 'Data availability' statement.",
+   "severity": "high"
+  },
+  {
+   "location": "Manuscript structure",
+   "rule": "...Acknowledgements and References, should be arranged in this order.",
+   "problem": "The Acknowledgements section is placed after the References section instead of before it.",
+   "severity": "low"
+  },
+  {
+   "location": "References list",
+   "rule": "All references should be listed in numerical order",
+   "problem": "References are not listed in numerical order; reference [7] appears before reference [6].",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with 'In preparation.'",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text",
+   "problem": "Reference [8] lists a personal communication in the reference list instead of in the text.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "The DOI is formatted as 'doi:10.1016/...' instead of the required URL format 'https://doi.org/...'.",
+   "severity": "low"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Do not use vertical lines.",
+   "problem": "The table uses vertical pipe characters (|) to separate columns.",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Supply... table footnotes lettered a, b, c, and so forth, below the body of the table.",
+   "problem": "Table footnotes are numbered (1., 2., 3.) instead of lettered.",
+   "severity": "low"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Supply a short explanatory title above the body of the table",
+   "problem": "The title for Table 2 is placed below the table body.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats. Electronic files... should be at 300 dpi resolution",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are in BMP format (not accepted) and have a resolution of 150 dpi (below the required 300 dpi).",
+   "severity": "high"
+  },
+  {
+   "location": "Graphical abstract file list",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF",
+   "problem": "The graphical abstract is submitted as a TIFF file.",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "it should not duplicate the title of the article or the Significance statement.",
+   "problem": "The caption begins with the exact text of the manuscript title ('Novel coarse-grained model...').",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials file list",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The file '図1_final version.tiff' contains a Japanese character and a space.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials file list",
+   "rule": "movie files in MPEG or AVI format.",
+   "problem": "The supplementary movie file 'Suppl_Movie_1.mov' is in MOV format, which is not listed as acceptable.",
+   "severity": "medium"
+  },
+  {
+   "location": "Introduction",
+   "rule": "(A comment about deposition to a preprint server if the authors have deposited the file there...) should be arranged in this order [after Data availability]",
+   "problem": "The preprint deposition statement is placed in the Introduction instead of after the Data availability section as specified.",
+   "severity": "low"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Title\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words\",\n      \"problem\": \"The title contains the prohibited word 'Novel'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Running title\",\n      \"rule\": \"A Running Title not exceeding 50 characters including spaces is required\",\n      \"problem\": \"The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains 78 characters including spaces.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"An abstract of no more than 250 words is required. The abstract must not include references.\",\n      \"problem\": \"The abstract exceeds the 250-word limit and contains a citation to reference [12].\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”...\",\n      \"problem\": \"The abstract contains the prohibited phrase 'for the first time'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"Seven keywords are listed instead of a maximum of five.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Significance statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added\",\n      \"problem\": \"The significance statement contains approximately 123 words, exceeding the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Manuscript structure\",\n      \"rule\": \"Introduction, Materials and methods..., Results, Discussion..., Conclusion, Conflict of interest, Author contributions, Data availability... should be arranged in this order.\",\n      \"problem\": \"The manuscript is missing the required 'Conclusion' section and the mandatory 'Data availability' statement.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Manuscript structure\",\n      \"rule\": \"...Acknowledgements and References, should be arranged in this order.\",\n      \"problem\": \"The Acknowledgements section is placed after the References section instead of before it.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"References list\",\n      \"rule\": \"All references should be listed in numerical order\",\n      \"problem\": \"References are not listed in numerical order; reference [7] appears before reference [6].\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ends with 'In preparation.'\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [8]\",\n      \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text\",\n      \"problem\": \"Reference [8] lists a personal communication in the reference list instead of in the text.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [4]\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"The DOI is formatted as 'doi:10.1016/...' instead of the required URL format 'https://doi.org/...'.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Table 1\",\n      \"rule\": \"Do not use vertical lines.\",\n      \"problem\": \"The table uses vertical pipe characters (|) to separate columns.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Table 1\",\n      \"rule\": \"Supply... table footnotes lettered a, b, c, and so forth, below the body of the table.\",\n      \"problem\": \"Table footnotes are numbered (1., 2., 3.) instead of lettered.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Table 2\",\n      \"rule\": \"Supply a short explanatory title above the body of the table\",\n      \"problem\": \"The title for Table 2 is placed below the table body.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure file list\",\n      \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats. Electronic files... should be at 300 dpi resolution\",\n      \"problem\": \"Fig1_modes.bmp and Fig2_spectra.bmp are in BMP format (not accepted) and have a resolution of 150 dpi (below the required 300 dpi).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Graphical abstract file list\",\n      \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF\",\n      \"problem\": \"The graphical abstract is submitted as a TIFF file.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"it should not duplicate the title of the article or the Significance statement.\",\n      \"problem\": \"The caption begins with the exact text of the manuscript title ('Novel coarse-grained model...').\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Supplementary materials file list\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The file '図1_final version.tiff' contains a Japanese character and a space.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials file list\",\n      \"rule\": \"movie files in MPEG or AVI format.\",\n      \"problem\": \"The supplementary movie file 'Suppl_Movie_1.mov' is in MOV format, which is not listed as acceptable.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Introduction\",\n      \"rule\": \"(A comment about deposition to a preprint server if the authors have deposited the file there...) should be arranged in this order [after Data availability]\",\n      \"problem\": \"The preprint deposition statement is placed in the Introduction instead of after the Data availability section as specified.\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+ "thinking_chars": 34181
+}

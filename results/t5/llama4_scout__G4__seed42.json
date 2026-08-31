@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "llama4:scout",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 9.66,
+  "prompt_tokens": 1956,
+  "output_tokens": 82,
+  "load_s": 0.14,
+  "prefill_tok_s": 555.8,
+  "decode_tok_s": 17.5,
+  "ttft_s": 3.66,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 76090,
+  "peak_size_vram_mib": 69429
+ },
+ "defects": [
+  {
+   "what": "The table image has a resolution that is likely too low for printing at the required size.",
+   "severity": "high"
+  },
+  {
+   "what": "The table contains vertical lines, which are not allowed according to the Instructions for Authors.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"The table image has a resolution that is likely too low for printing at the required size.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"The table contains vertical lines, which are not allowed according to the Instructions for Authors.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

@@ -1,0 +1,152 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.5:35b-a3b-bf16",
+ "manuscript": "MS-A",
+ "seed": 43,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 20,
+ "meta": {
+  "model": "qwen3.5:35b-a3b-bf16",
+  "wall_s": 385.63,
+  "prompt_tokens": 12861,
+  "output_tokens": 9416,
+  "load_s": 18.54,
+  "prefill_tok_s": 730.8,
+  "decode_tok_s": 27.9,
+  "ttft_s": 36.14,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 80954,
+  "peak_size_vram_mib": 72639
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word 'Novel'.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract contains approximately 296 words, exceeding the 250-word limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract includes a citation '[12]'.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented'...",
+   "problem": "The abstract contains the phrase 'for the first time'.",
+   "severity": "high"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are provided (elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics).",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance Statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added.",
+   "problem": "The significance statement contains approximately 104 words, exceeding the 100-word limit.",
+   "severity": "medium"
+  },
+  {
+   "location": "Page 1 Footer",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The manuscript does not display the complete postal address or ORCID iD in the footer of page 1.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript Structure (Section Order)",
+   "rule": "Introduction, Materials and methods..., Results, Discussion..., Conclusion, Conflict of interest, Author contributions, Data availability... Acknowledgements and References, should be arranged in this order.",
+   "problem": "The manuscript is missing a 'Conclusion' section. It places 'Author contributions' before 'Conflict of interest'. It places 'Acknowledgements' after 'References'. It omits the 'Data availability' section.",
+   "severity": "high"
+  },
+  {
+   "location": "Introduction",
+   "rule": "A comment about deposition to a preprint server... should be arranged in this order [after Data availability, before Acknowledgements].",
+   "problem": "The preprint comment ('A preliminary version of this work was deposited in bioRxiv...') is placed in the Introduction instead of the required section order.",
+   "severity": "medium"
+  },
+  {
+   "location": "References",
+   "rule": "All references should be listed in numerical order, starting on a new page, under the heading 'References'.",
+   "problem": "The reference list is not in numerical order (e.g., [5] is followed by [7], then [6]).",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with 'In preparation'.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text.",
+   "problem": "Reference [8] is listed as 'Personal communication'.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [4] uses 'doi:10.1016/...' instead of the URL format 'https://doi.org/...'.",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [11]",
+   "rule": "When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.",
+   "problem": "Reference [11] is listed as 'Nature (in press)' without the required DOI URL.",
+   "severity": "medium"
+  },
+  {
+   "location": "Tables",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is not cited in the text.",
+   "severity": "medium"
+  },
+  {
+   "location": "Tables",
+   "rule": "table footnotes lettered a, b, c, and so forth, below the body of the table.",
+   "problem": "Table 1 footnotes are numbered (1, 2, 3) instead of lettered.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Electronic files... should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats.",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are 150 dpi and in BMP format (not accepted).",
+   "severity": "high"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "The format of the graphical abstract should be PNG, JPEG or GIF... upload a short caption less than 100 words.",
+   "problem": "The Graphical Abstract is in TIFF format (not allowed). The caption exceeds 100 words (~116 words).",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials file name",
+   "rule": "Do not include spaces and Japanese characters (multi-byte codes) in the file name or file path.",
+   "problem": "The file '図1_final version.tiff' contains Japanese characters ('図').",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials file size",
+   "rule": "The size of each file that is uploaded... should be no more than 20 MB.",
+   "problem": "Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Title\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented', or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The title contains the word 'Novel'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"An abstract of no more than 250 words is required.\",\n      \"problem\": \"The abstract contains approximately 296 words, exceeding the 250-word limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"The abstract must not include references.\",\n      \"problem\": \"The abstract includes a citation '[12]'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: 'New', 'Novel', 'First', 'Unprecedented'...\",\n      \"problem\": \"The abstract contains the phrase 'for the first time'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"Seven keywords are provided (elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Significance Statement\",\n      \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added.\",\n      \"problem\": \"The significance statement contains approximately 104 words, exceeding the 100-word limit.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Page 1 Footer\",\n      \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\",\n      \"problem\": \"The manuscript does not display the complete postal address or ORCID iD in the footer of page 1.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Manuscript Structure (Section Order)\",\n      \"rule\": \"Introduction, Materials and methods..., Results, Discussion..., Conclusion, Conflict of interest, Author contributions, Data availability... Acknowledgements and References, should be arranged in this order.\",\n      \"problem\": \"The manuscript is missing a 'Conclusion' section. It places 'Author contributions' before 'Conflict of interest'. It places 'Acknowledgements' after 'References'. It omits the 'Data availability' section.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Introduction\",\n      \"rule\": \"A comment about deposition to a preprint server... should be arranged in this order [after Data availability, before Acknowledgements].\",\n      \"problem\": \"The preprint comment ('A preliminary version of this work was deposited in bioRxiv...') is placed in the Introduction instead of the required section order.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"References\",\n      \"rule\": \"All references should be listed in numerical order, starting on a new page, under the heading 'References'.\",\n      \"problem\": \"The reference list is not in numerical order (e.g., [5] is followed by [7], then [6]).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of 'in preparation' and 'submitted for publication' is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ends with 'In preparation'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [8]\",\n      \"rule\": \"References to 'unpublished data' and 'personal communications' should not appear in the reference list, but appear parenthetically in the text.\",\n      \"problem\": \"Reference [8] is listed as 'Personal communication'.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [4]\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [4] uses 'doi:10.1016/...' instead of the URL format 'https://doi.org/...'.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [11]\",\n      \"rule\": \"When the Reference has a Digital Object Identifier (DOI), it should be added by its URL.\",\n      \"problem\": \"Reference [11] is listed as 'Nature (in press)' without the required DOI URL.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Tables\",\n      \"rule\": \"All tables must be cited in the text.\",\n      \"problem\": \"Table 1 is not cited in the text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Tables\",\n      \"rule\": \"table footnotes lettered a, b, c, and so forth, below the body of the table.\",\n      \"problem\": \"Table 1 footnotes are numbered (1, 2, 3) instead of lettered.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure file list\",\n      \"rule\": \"Electronic files... should be at 300 dpi resolution... We accept figure files in TIFF, PNG, JPEG or PDF formats.\",\n      \"problem\": \"Fig1_modes.bmp and Fig2_spectra.bmp are 150 dpi and in BMP format (not accepted).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Graphical abstract caption\",\n      \"rule\": \"The format of the graphical abstract should be PNG, JPEG or GIF... upload a short caption less than 100 words.\",\n      \"problem\": \"The Graphical Abstract is in TIFF format (not allowed). The caption exceeds 100 words (~116 words).\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials file name\",\n      \"rule\": \"Do not include spaces and Japanese characters (multi-byte codes) in the file name or file path.\",\n      \"problem\": \"The file '図1_final version.tiff' contains Japanese characters ('図').\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials file size\",\n      \"rule\": \"The size of each file that is uploaded... should be no more than 20 MB.\",\n      \"problem\": \"Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit.\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+ "thinking_chars": 30090
+}

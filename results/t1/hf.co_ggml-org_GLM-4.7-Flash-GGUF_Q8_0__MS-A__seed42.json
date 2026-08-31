@@ -1,0 +1,31 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": "salvaged",
+ "n_findings": 0,
+ "meta": {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "wall_s": 47.52,
+  "prompt_tokens": 12315,
+  "output_tokens": 348,
+  "load_s": 28.5,
+  "prefill_tok_s": 1290.3,
+  "decode_tok_s": 37.3,
+  "ttft_s": 38.05,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 80541,
+  "peak_size_vram_mib": 36743
+ },
+ "findings": null,
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"An abstract of no more than 250 words is required.\",\n      \"problem\": \"The abstract contains 311 words, which exceeds the 250-word limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Abstract\",\n      \"rule\": \"The abstract must not include references.\",\n      \"problem\": \"The abstract includes a reference in the text: [12]\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"Introduction\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"The manuscript lists 5 keywords, which is acceptable. However, the keywords are not separated by semicolons or commas, but rather by spaces.\",\n      \"problem\": \"The manuscript lists 5 keywords, which is acceptable. However, the keywords are not separated by semicolons or commas, but rather by spaces.\",\n      \"severity\": \"low\"\n    },\n    of the\n    \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided below the abstract.\",\n      \"problem\": \"The manuscript lists 5 keywords, which is acceptable. however, the keywords are not separated by semicolons or commas, but rather by spaces.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to title\",\n      \"problem\": \"The manuscript lists  malformed JSON object with duplicate keys and invalid syntax. Please correct the JSON object to be valid JSON.\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

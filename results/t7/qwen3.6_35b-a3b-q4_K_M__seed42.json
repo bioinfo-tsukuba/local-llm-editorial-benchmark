@@ -1,0 +1,88 @@
+{
+ "task": "t7",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 10,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 183.22,
+  "prompt_tokens": 10050,
+  "output_tokens": 8231,
+  "load_s": 5.38,
+  "prefill_tok_s": 1375.4,
+  "decode_tok_s": 51.7,
+  "ttft_s": 12.68,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 34508,
+  "peak_size_vram_mib": 26840
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.",
+   "problem": "The title contains the word \"Novel\".",
+   "severity": "high"
+  },
+  {
+   "location": "Text (paragraph 2)",
+   "rule": "When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.",
+   "problem": "References are cited using parentheses \"(1, 2)\" instead of the required brackets.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference list",
+   "rule": "All references should be listed in numerical order, starting on a new page, under the heading “References”.",
+   "problem": "References [5], [7], and [6] are not listed in numerical order.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with \"In preparation.\".",
+   "severity": "high"
+  },
+  {
+   "location": "Table 1",
+   "rule": "All tables must be cited in the text.",
+   "problem": "Table 1 is not cited anywhere in the manuscript text.",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Do not use vertical lines.",
+   "problem": "The table body uses vertical lines (\"|\") to separate columns.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure legends / Figure file list",
+   "rule": "All figures must be cited in the text.",
+   "problem": "Figure 1 is not cited anywhere in the manuscript text.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list (Fig1_two_readings.bmp)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "The figure is submitted at 150 dpi, which does not meet the 300 dpi requirement.",
+   "severity": "high"
+  },
+  {
+   "location": "Figure file list (Fig1_two_readings.bmp)",
+   "rule": "We accept figure files in TIFF, PNG, JPEG or PDF formats .",
+   "problem": "The figure is submitted as a .bmp file, which is not an accepted format.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary materials file list (図1_draft version.bmp)",
+   "rule": "Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.",
+   "problem": "The filename contains Japanese characters (図) and a space.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Title\",\n      \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words, and their adjectives.\",\n      \"problem\": \"The title contains the word \\\"Novel\\\".\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Text (paragraph 2)\",\n      \"rule\": \"When cited in the text, reference numbers must be put in brackets in the form [1,3,5-8] before a ‘period’ or a ‘comma’.\",\n      \"problem\": \"References are cited using parentheses \\\"(1, 2)\\\" instead of the required brackets.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference list\",\n      \"rule\": \"All references should be listed in numerical order, starting on a new page, under the heading “References”.\",\n      \"problem\": \"References [5], [7], and [6] are not listed in numerical order.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\",\n      \"problem\": \"Reference [5] ends with \\\"In preparation.\\\".\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Table 1\",\n      \"rule\": \"All tables must be cited in the text.\",\n      \"problem\": \"Table 1 is not cited anywhere in the manuscript text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Table 1\",\n      \"rule\": \"Do not use vertical lines.\",\n      \"problem\": \"The table body uses vertical lines (\\\"|\\\") to separate columns.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure legends / Figure file list\",\n      \"rule\": \"All figures must be cited in the text.\",\n      \"problem\": \"Figure 1 is not cited anywhere in the manuscript text.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Figure file list (Fig1_two_readings.bmp)\",\n      \"rule\": \"Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.\",\n      \"problem\": \"The figure is submitted at 150 dpi, which does not meet the 300 dpi requirement.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Figure file list (Fig1_two_readings.bmp)\",\n      \"rule\": \"We accept figure files in TIFF, PNG, JPEG or PDF formats .\",\n      \"problem\": \"The figure is submitted as a .bmp file, which is not an accepted format.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary materials file list (図1_draft version.bmp)\",\n      \"rule\": \"Do not include spaces or Japanese characters (multi-byte codes) in the file name or the file path: Please use alphanumeric characters only.\",\n      \"problem\": \"The filename contains Japanese characters (図) and a space.\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+ "thinking_chars": 30520
+}

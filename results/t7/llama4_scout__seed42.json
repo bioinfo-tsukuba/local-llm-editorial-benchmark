@@ -1,0 +1,27 @@
+{
+ "task": "t7",
+ "model": "llama4:scout",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": null,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 55.77,
+  "prompt_tokens": 9461,
+  "output_tokens": 115,
+  "load_s": 23.83,
+  "prefill_tok_s": 396.3,
+  "decode_tok_s": 14.7,
+  "ttft_s": 47.7,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 91515,
+  "peak_size_vram_mib": 84597
+ },
+ "findings": null,
+ "raw_response": "{\n  \"violations\": [\n    {\n      \"type\": \"violation\",\n      \"description\": \"The manuscript exceeds the recommended length. Please shorten it to 3000 words or less.\"\n    },\n    {\n      \"type\": \"violation\",\n      \"description\": \"The manuscript does not include a statement about the use of human subjects or animals in the research.\"\n    },\n    {\n      \"type\": \"violation\",\n      \"description\": \"The manuscript does not provide a clear statement about the availability of data and materials.\"\n    }\n  ]\n}",
+ "thinking_chars": 0
+}

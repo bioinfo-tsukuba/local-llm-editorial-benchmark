@@ -1,0 +1,111 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "manuscript": "MS-B",
+ "seed": 44,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 2,
+ "findings": [
+  {
+   "location": "Page 1 (below author affiliations)",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author information is listed immediately after the author affiliations in the main text area instead of being placed in the footer of page 1 as required.",
+   "severity": "high",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Figure file list (Fig3_susceptibility.png and Fig4_heatmap.png)",
+   "rule": "Electronic files of photographs and illustrations should be at 300 dpi resolution in gray scale or color at the size being printed.",
+   "problem": "Figures 3 and 4 are listed as 600 dpi, exceeding the specified 300 dpi resolution requirement.",
+   "severity": "medium",
+   "_area": "figures"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 0,
+   "parse_error": "empty response",
+   "wall_s": 219.96,
+   "prompt_tokens": 13001,
+   "output_tokens": 8192,
+   "prefill_tok_s": 1262.4
+  },
+  {
+   "area": "corresponding-author",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 87.15,
+   "prompt_tokens": 12999,
+   "output_tokens": 3034,
+   "prefill_tok_s": 1261.6
+  },
+  {
+   "area": "structure",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 125.92,
+   "prompt_tokens": 12991,
+   "output_tokens": 4563,
+   "prefill_tok_s": 1269.0
+  },
+  {
+   "area": "tables",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 140.43,
+   "prompt_tokens": 13002,
+   "output_tokens": 5114,
+   "prefill_tok_s": 1261.1
+  },
+  {
+   "area": "figures",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 125.73,
+   "prompt_tokens": 13003,
+   "output_tokens": 4548,
+   "prefill_tok_s": 1265.5
+  },
+  {
+   "area": "supplementary",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 147.15,
+   "prompt_tokens": 12999,
+   "output_tokens": 5384,
+   "prefill_tok_s": 1262.5
+  },
+  {
+   "area": "references",
+   "n": 0,
+   "parse_error": "empty response",
+   "wall_s": 219.74,
+   "prompt_tokens": 13010,
+   "output_tokens": 8192,
+   "prefill_tok_s": 1269.0
+  },
+  {
+   "area": "ethics",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 194.22,
+   "prompt_tokens": 13010,
+   "output_tokens": 7195,
+   "prefill_tok_s": 1260.4
+  }
+ ],
+ "meta": {
+  "wall_s": 1261.3,
+  "output_tokens": 46222,
+  "prompt_tokens": 104015,
+  "peak_mem_used_mib": 49185,
+  "peak_size_vram_mib": 40915
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

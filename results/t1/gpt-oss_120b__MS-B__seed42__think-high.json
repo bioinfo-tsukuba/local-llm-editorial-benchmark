@@ -1,0 +1,44 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-B",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": "high",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 2,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 387.49,
+  "prompt_tokens": 12315,
+  "output_tokens": 11936,
+  "load_s": 0.15,
+  "prefill_tok_s": 1113.5,
+  "decode_tok_s": 32.8,
+  "ttft_s": 11.21,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 72164,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "References section",
+   "rule": "References should be numbered sequentially as they appear in the text, tables and figure legends, and all listed references must be cited in the manuscript.",
+   "problem": "References [3], [5], [6], [7], [9], [10], [11], and [12] appear in the reference list but are not cited anywhere in the manuscript.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [11] in References section",
+   "rule": "When an article has been accepted for publication but not yet appeared in print, the reference must include a DOI URL.",
+   "problem": "Reference [11] (Nature (in press)) does not include a DOI.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"References section\",\n      \"rule\": \"References should be numbered sequentially as they appear in the text, tables and figure legends, and all listed references must be cited in the manuscript.\",\n      \"problem\": \"References [3], [5], [6], [7], [9], [10], [11], and [12] appear in the reference list but are not cited anywhere in the manuscript.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [11] in References section\",\n      \"rule\": \"When an article has been accepted for publication but not yet appeared in print, the reference must include a DOI URL.\",\n      \"problem\": \"Reference [11] (Nature (in press)) does not include a DOI.\",\n      \"severity\": \"medium\"\n    }\n  ]\n}",
+ "thinking_chars": 49164
+}

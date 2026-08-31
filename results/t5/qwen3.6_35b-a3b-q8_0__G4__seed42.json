@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "wall_s": 32.34,
+  "prompt_tokens": 1246,
+  "output_tokens": 1286,
+  "load_s": 0.16,
+  "prefill_tok_s": 1430.2,
+  "decode_tok_s": 44.4,
+  "ttft_s": 1.03,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 46151,
+  "peak_size_vram_mib": 39448
+ },
+ "defects": [
+  {
+   "what": "The table uses vertical lines to separate columns, which is explicitly forbidden by the Instructions for Authors.",
+   "severity": "high"
+  },
+  {
+   "what": "The table is supplied as an image file (PNG) rather than being inserted as native text/Word object as required by the Instructions for Authors.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"The table uses vertical lines to separate columns, which is explicitly forbidden by the Instructions for Authors.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"The table is supplied as an image file (PNG) rather than being inserted as native text/Word object as required by the Instructions for Authors.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 4927
+}

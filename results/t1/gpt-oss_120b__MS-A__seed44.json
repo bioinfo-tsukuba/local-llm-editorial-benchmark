@@ -1,0 +1,86 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "gpt-oss:120b",
+ "manuscript": "MS-A",
+ "seed": 44,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": "low",
+ "error": null,
+ "parse_error": null,
+ "n_findings": 9,
+ "meta": {
+  "model": "gpt-oss:120b",
+  "wall_s": 32.73,
+  "prompt_tokens": 12265,
+  "output_tokens": 1083,
+  "load_s": 0.13,
+  "prefill_tok_s": 376774.3,
+  "decode_tok_s": 34.5,
+  "ttft_s": 0.16,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 72526,
+  "peak_size_vram_mib": 65041
+ },
+ "findings": [
+  {
+   "location": "Running title",
+   "rule": "Running title must not exceed 50 characters including spaces.",
+   "problem": "The running title is 73 characters long, exceeding the 50‑character limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided.",
+   "problem": "Seven keywords are listed (elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics).",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” is not allowed in the reference list.",
+   "problem": "Reference [5] is cited as “In preparation.”",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "Personal communications should not appear in the reference list; they belong in the text only.",
+   "problem": "Reference [8] is a personal communication listed in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference ordering",
+   "rule": "References must be listed in the order they are cited in the text.",
+   "problem": "Reference numbers are out of order (e.g., [7] appears before [6]).",
+   "severity": "medium"
+  },
+  {
+   "location": "Reference [4]",
+   "rule": "When a DOI is available it must be added as a URL (e.g., https://doi.org/...).",
+   "problem": "Reference [4] provides a DOI in the form “doi:10.1016/…”, not as a URL.",
+   "severity": "low"
+  },
+  {
+   "location": "Figure files Fig1_modes.bmp and Fig2_spectra.bmp",
+   "rule": "Figures must be at 300 dpi resolution for publication.",
+   "problem": "Both figure files are only 150 dpi, below the required 300 dpi.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary material file 図1_final version.tiff",
+   "rule": "File names must contain only alphanumeric characters; no spaces or Japanese characters.",
+   "problem": "The file name contains Japanese characters and spaces.",
+   "severity": "high"
+  },
+  {
+   "location": "Supplementary material file Suppl_Movie_1.mov",
+   "rule": "Each uploaded file must be ≤20 MB; larger files should be deposited in a repository.",
+   "problem": "The movie file is 45 MB, exceeding the 20 MB limit.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\n  \"findings\": [\n    {\n      \"location\": \"Running title\",\n      \"rule\": \"Running title must not exceed 50 characters including spaces.\",\n      \"problem\": \"The running title is 73 characters long, exceeding the 50‑character limit.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Keywords\",\n      \"rule\": \"A list of up to five keywords should be provided.\",\n      \"problem\": \"Seven keywords are listed (elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [5]\",\n      \"rule\": \"The use of “in preparation” is not allowed in the reference list.\",\n      \"problem\": \"Reference [5] is cited as “In preparation.”\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference [8]\",\n      \"rule\": \"Personal communications should not appear in the reference list; they belong in the text only.\",\n      \"problem\": \"Reference [8] is a personal communication listed in the reference list.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Reference ordering\",\n      \"rule\": \"References must be listed in the order they are cited in the text.\",\n      \"problem\": \"Reference numbers are out of order (e.g., [7] appears before [6]).\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"location\": \"Reference [4]\",\n      \"rule\": \"When a DOI is available it must be added as a URL (e.g., https://doi.org/...).\",\n      \"problem\": \"Reference [4] provides a DOI in the form “doi:10.1016/…”, not as a URL.\",\n      \"severity\": \"low\"\n    },\n    {\n      \"location\": \"Figure files Fig1_modes.bmp and Fig2_spectra.bmp\",\n      \"rule\": \"Figures must be at 300 dpi resolution for publication.\",\n      \"problem\": \"Both figure files are only 150 dpi, below the required 300 dpi.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary material file 図1_final version.tiff\",\n      \"rule\": \"File names must contain only alphanumeric characters; no spaces or Japanese characters.\",\n      \"problem\": \"The file name contains Japanese characters and spaces.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"location\": \"Supplementary material file Suppl_Movie_1.mov\",\n      \"rule\": \"Each uploaded file must be ≤20 MB; larger files should be deposited in a repository.\",\n      \"problem\": \"The movie file is 45 MB, exceeding the 20 MB limit.\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+ "thinking_chars": 1890
+}

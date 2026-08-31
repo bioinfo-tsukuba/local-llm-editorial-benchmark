@@ -1,0 +1,27 @@
+{
+ "task": "t4abs",
+ "model": "llama4:scout",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "answers",
+ "n_items": null,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 30.53,
+  "prompt_tokens": 7469,
+  "output_tokens": 191,
+  "load_s": 0.14,
+  "prefill_tok_s": 421.8,
+  "decode_tok_s": 15.3,
+  "ttft_s": 17.84,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 81212,
+  "peak_size_vram_mib": 74485
+ },
+ "answers": null,
+ "raw_response": "{\n  \"A1\": \"The maximum number of words allowed in the Abstract of a Regular Article is not specified in the provided text.\",\n  \"A2\": \"The maximum number of words allowed in a figure legend is not specified in the provided text.\",\n  \"A3\": \"The publication fee for a Note is not specified in the provided text.\",\n  \"A4\": \"The maximum number of references allowed in a Regular Article is not specified in the provided text.\",\n  \"A5\": \"The manuscript should be returned within 30 days, but the exact number of days is not specified in the provided text.\",\n  \"A6\": \"The font size for the body text is not specified in the provided text.\",\n  \"A7\": \"The number of reviewers is not specified in the provided text.\",\n  \"A8\": \"The maximum number of authors permitted on a Regular Article is not specified in the provided text.\"\n}",
+ "thinking_chars": 0
+}

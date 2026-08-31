@@ -1,0 +1,68 @@
+{
+ "task": "t3refs",
+ "model": "qwen3.8:27b",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "conversions",
+ "n_items": 8,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 136.01,
+  "prompt_tokens": 8255,
+  "output_tokens": 3907,
+  "load_s": 6.91,
+  "prefill_tok_s": 794.0,
+  "decode_tok_s": 32.9,
+  "ttft_s": 17.31,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 27222,
+  "peak_size_vram_mib": 16723
+ },
+ "conversions": [
+  {
+   "id": "R1",
+   "converted": "Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1",
+   "note": ""
+  },
+  {
+   "id": "R2",
+   "converted": "Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016).",
+   "note": "DOI not provided in the input; please supply the DOI URL (e.g. https://doi.org/10.2142/biophysico.13.0_13) if available."
+  },
+  {
+   "id": "R3",
+   "converted": "Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).",
+   "note": ""
+  },
+  {
+   "id": "R4",
+   "converted": "Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).",
+   "note": "Title was in all caps in the input; converted to title case per journal style (no italics/boldface)."
+  },
+  {
+   "id": "R5",
+   "converted": "Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044",
+   "note": "Input listed only 'Ichimura T et al.' without the required first six authors; full author list reconstructed from the journal's own style example for this paper. Please verify the author list."
+  },
+  {
+   "id": "R6",
+   "converted": "Togashi, Y., Mikhailov, A. S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. U. S. A. 104, 8697–8702 (2007).",
+   "note": "DOI not provided in the input; please supply the DOI URL if available. Journal name expanded to MEDLINE/NLM abbreviation."
+  },
+  {
+   "id": "R7",
+   "converted": "Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).",
+   "note": "DOI not provided in the input; please supply the DOI URL (e.g. https://doi.org/10.1038/nature02212) if available."
+  },
+  {
+   "id": "R8",
+   "converted": "This reference cannot be included in the reference list. The BPPB Instructions for Authors explicitly state: 'The use of \"in preparation\" and \"submitted for publication\" is not allowed in the Reference list.' If the data are needed, they should be cited parenthetically in the text as (Nishimura, R., Morisawa, K., unpublished data) after verifying the wording with the source and obtaining their approval.",
+   "note": "Rejected per journal policy. See note in converted field for the permissible in-text alternative."
+  }
+ ],
+ "raw_response": "{\"conversions\": [\n  {\"id\": \"R1\",\n   \"converted\": \"Harada, Y., Funatsu, T., Murakami, K., Nonoyama, Y., Ishihama, A., Yanagida, T. Single-molecule imaging of RNA polymerase-DNA interactions in real time. Biophys. J. 76, 709–715 (1999). https://doi.org/10.1016/S0006-3495(99)77237-1\",\n   \"note\": \"\"},\n  {\"id\": \"R2\",\n   \"converted\": \"Komatsu, H., Hayashi, F., Sasa, M., Shikata, K., Yamaguchi, S., Namba, K., et al. Genetic analysis of revertants isolated from the rod-fragile fliF mutant of Salmonella. Biophys. Physicobiol. 13, 13–25 (2016).\",\n   \"note\": \"DOI not provided in the input; please supply the DOI URL (e.g. https://doi.org/10.2142/biophysico.13.0_13) if available.\"},\n  {\"id\": \"R3\",\n   \"converted\": \"Go, M. Protein structures and split genes. in Adv. Biophys. (Kotani, M. ed.) vol. 19, pp. 91–131 (Japan Sci. Soc. Press and Elsevier Sci. Pub., Tokyo and Limerick, 1985).\",\n   \"note\": \"\"},\n  {\"id\": \"R4\",\n   \"converted\": \"Oosawa, F., Asakura, S. Thermodynamics of the Polymerization of Proteins (Academic Press, New York, 1975).\",\n   \"note\": \"Title was in all caps in the input; converted to title case per journal style (no italics/boldface).\"},\n  {\"id\": \"R5\",\n   \"converted\": \"Ichimura, T., Kakizuka, T., Horikawa, K., Seiriki, K., Kasai, A., Hashimoto, H., et al. Exploring rare cellular activity in more than one million cells by a trans-scale-scope. bioRxiv (2020). https://doi.org/10.1101/2020.06.29.179044\",\n   \"note\": \"Input listed only 'Ichimura T et al.' without the required first six authors; full author list reconstructed from the journal's own style example for this paper. Please verify the author list.\"},\n  {\"id\": \"R6\",\n   \"converted\": \"Togashi, Y., Mikhailov, A. S. Nonlinear relaxation dynamics in elastic networks and design principles of molecular machines. Proc. Natl. Acad. Sci. U. S. A. 104, 8697–8702 (2007).\",\n   \"note\": \"DOI not provided in the input; please supply the DOI URL if available. Journal name expanded to MEDLINE/NLM abbreviation.\"},\n  {\"id\": \"R7\",\n   \"converted\": \"Itoh, H., Takahashi, A., Adachi, K., Noji, H., Yasuda, R., Yoshida, M., et al. Mechanically driven ATP synthesis by F1-ATPase. Nature (in press).\",\n   \"note\": \"DOI not provided in the input; please supply the DOI URL (e.g. https://doi.org/10.1038/nature02212) if available.\"},\n  {\"id\": \"R8\",\n   \"converted\": \"This reference cannot be included in the reference list. The BPPB Instructions for Authors explicitly state: 'The use of \\\"in preparation\\\" and \\\"submitted for publication\\\" is not allowed in the Reference list.' If the data are needed, they should be cited parenthetically in the text as (Nishimura, R., Morisawa, K., unpublished data) after verifying the wording with the source and obtaining their approval.\",\n   \"note\": \"Rejected per journal policy. See note in converted field for the permissible in-text alternative.\"}\n]}",
+ "thinking_chars": 9594
+}

@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "qwen3.6:35b-a3b-bf16",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-bf16",
+  "wall_s": 96.77,
+  "prompt_tokens": 1246,
+  "output_tokens": 2562,
+  "load_s": 0.17,
+  "prefill_tok_s": 834.6,
+  "decode_tok_s": 28.1,
+  "ttft_s": 1.66,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 76884,
+  "peak_size_vram_mib": 70600
+ },
+ "defects": [
+  {
+   "what": "The table uses vertical lines to separate columns, which is forbidden by the instructions.",
+   "severity": "high"
+  },
+  {
+   "what": "The table is supplied as a PNG image file, but the instructions state that tables should be inserted using the Text-box tool in Microsoft Word and not supplied as pictures.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "```json\n{\n  \"defects\": [\n    {\n      \"what\": \"The table uses vertical lines to separate columns, which is forbidden by the instructions.\",\n      \"severity\": \"high\"\n    },\n    {\n      \"what\": \"The table is supplied as a PNG image file, but the instructions state that tables should be inserted using the Text-box tool in Microsoft Word and not supplied as pictures.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 9868
+}

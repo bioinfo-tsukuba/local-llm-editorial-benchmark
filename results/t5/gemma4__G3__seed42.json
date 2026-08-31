@@ -1,0 +1,26 @@
+{
+ "task": "T5",
+ "model": "gemma4",
+ "item": "G3",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 0,
+ "meta": {
+  "model": "gemma4",
+  "wall_s": 12.32,
+  "prompt_tokens": 683,
+  "output_tokens": 695,
+  "load_s": 0.0,
+  "prefill_tok_s": 1937.8,
+  "decode_tok_s": 58.3,
+  "ttft_s": 0.35,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 16148,
+  "peak_size_vram_mib": 3227
+ },
+ "defects": [],
+ "raw_response": "```json\n{\"defects\": []}\n```",
+ "thinking_chars": 2582
+}

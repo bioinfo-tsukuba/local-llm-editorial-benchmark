@@ -1,0 +1,209 @@
+{
+ "task": "T1",
+ "variant": "c",
+ "model": "gpt-oss:20b",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 8192,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 16,
+ "findings": [
+  {
+   "location": "Running title",
+   "rule": "Running title must not exceed 50 characters including spaces",
+   "problem": "The running title \"Coarse-grained elastic network analysis of allosteric coupling in ring ATPases\" is 78 characters long",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Abstract must be no more than 250 words and contain no references",
+   "problem": "The abstract contains more than 250 words (estimated >300) and includes a reference to [12]",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Keywords",
+   "rule": "Provide up to five keywords",
+   "problem": "Seven keywords are listed: elastic network model, allostery, ring ATPase, normal mode analysis, coarse-grained simulation, molecular motor, Brownian dynamics",
+   "severity": "high",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "Significance statement must be less than 100 words",
+   "problem": "The significance statement contains more than 100 words (estimated >120)",
+   "severity": "medium",
+   "_area": "front-matter"
+  },
+  {
+   "location": "Footer of page 1",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author must be indicated on the footer of page 1.",
+   "problem": "The manuscript lists only the department, institute, city, and country, but omits the full postal address and does not provide an ORCID iD for the corresponding author.",
+   "severity": "medium",
+   "_area": "corresponding-author"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Table title must be supplied above the body of the table and footnotes must be lettered a, b, c, etc.",
+   "problem": "The title \"Bead and spring counts for the networks used in this study.\" is placed on the same line as the table number and the table contains vertical lines. Footnotes are numbered 1,2,3 instead of lettered.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Table title must be supplied above the body of the table and footnotes must be lettered a, b, c, etc. and no vertical lines.",
+   "problem": "The title \"Dependence of the fitted susceptibility length constants on the nucleotide stiffening factor s.\" is on the same line as the table number and the table contains vertical lines. No footnotes are present, but the formatting violates the requirement for a title above the body.",
+   "severity": "medium",
+   "_area": "tables"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figures must be in TIFF, PNG, JPEG or PDF format and at 300 dpi resolution",
+   "problem": "Fig1_modes.bmp and Fig2_spectra.bmp are in BMP format and only 150 dpi",
+   "severity": "high",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figure filenames must contain only alphanumeric characters, no spaces or Japanese characters",
+   "problem": "File \"図1_final version.tiff\" contains Japanese characters and a space",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Each figure must have a high‑resolution version for HTML",
+   "problem": "High‑resolution files are provided only for Figure 3 and Figure 4; Figure 1 and Figure 2 lack separate high‑resolution files",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Text",
+   "rule": "Figures must be cited in numerical order as they appear",
+   "problem": "The manuscript cites Figure 2 before Figure 1, and Figure 4 before Figure 3, violating the required sequential numbering",
+   "severity": "medium",
+   "_area": "figures"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary materials must be in PDF, TXT, ZIP for images and MPEG or AVI for movies, and file names must contain only alphanumeric characters with no spaces or Japanese characters.",
+   "problem": "Suppl_Table_1.xlsx is an Excel file, which is not an allowed format for supplementary materials.",
+   "severity": "medium",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Each uploaded file must be no larger than 20 MB.",
+   "problem": "Suppl_Movie_1.mov is 45 MB, exceeding the 20 MB limit.",
+   "severity": "high",
+   "_area": "supplementary"
+  },
+  {
+   "location": "Reference list",
+   "rule": "All references must be published or available; 'In preparation' and personal communications are not allowed in the reference list.",
+   "problem": "Reference [5] is listed as \"Nishimura, R., Morisawa, K. Directional coupling in driven elastic networks. In preparation.\" and reference [8] is a personal communication. Both are prohibited.",
+   "severity": "high",
+   "_area": "references"
+  },
+  {
+   "location": "Reference list",
+   "rule": "References must be numbered sequentially without gaps.",
+   "problem": "The reference list skips number [6]; the numbering jumps from [5] to [7].",
+   "severity": "medium",
+   "_area": "references"
+  },
+  {
+   "location": "Data availability section (absent in manuscript)",
+   "rule": "Authors must include a data availability statement describing availability of evidence data, repository, DOI, or reason for restriction.",
+   "problem": "The manuscript lacks any data availability statement, violating the requirement to describe data availability or reasons for non-publication.",
+   "severity": "medium",
+   "_area": "ethics"
+  }
+ ],
+ "per_area": [
+  {
+   "area": "front-matter",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 15.71,
+   "prompt_tokens": 12296,
+   "output_tokens": 336,
+   "prefill_tok_s": 3210.9
+  },
+  {
+   "area": "corresponding-author",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 7.23,
+   "prompt_tokens": 12295,
+   "output_tokens": 161,
+   "prefill_tok_s": 3205.6
+  },
+  {
+   "area": "structure",
+   "n": 0,
+   "parse_error": null,
+   "wall_s": 6.6,
+   "prompt_tokens": 12289,
+   "output_tokens": 134,
+   "prefill_tok_s": 3258.4
+  },
+  {
+   "area": "tables",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 9.96,
+   "prompt_tokens": 12297,
+   "output_tokens": 302,
+   "prefill_tok_s": 3225.9
+  },
+  {
+   "area": "figures",
+   "n": 4,
+   "parse_error": null,
+   "wall_s": 18.67,
+   "prompt_tokens": 12300,
+   "output_tokens": 741,
+   "prefill_tok_s": 3217.3
+  },
+  {
+   "area": "supplementary",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 12.49,
+   "prompt_tokens": 12296,
+   "output_tokens": 431,
+   "prefill_tok_s": 3240.6
+  },
+  {
+   "area": "references",
+   "n": 2,
+   "parse_error": null,
+   "wall_s": 21.39,
+   "prompt_tokens": 12311,
+   "output_tokens": 883,
+   "prefill_tok_s": 3225.0
+  },
+  {
+   "area": "ethics",
+   "n": 1,
+   "parse_error": null,
+   "wall_s": 7.19,
+   "prompt_tokens": 12311,
+   "output_tokens": 161,
+   "prefill_tok_s": 3231.2
+  }
+ ],
+ "meta": {
+  "wall_s": 100.1,
+  "output_tokens": 3149,
+  "prompt_tokens": 98395,
+  "peak_mem_used_mib": 34578,
+  "peak_size_vram_mib": 15032
+ },
+ "raw_response": "",
+ "thinking_chars": 0
+}

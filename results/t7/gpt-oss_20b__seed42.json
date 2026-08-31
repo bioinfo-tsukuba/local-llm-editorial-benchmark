@@ -1,0 +1,616 @@
+{
+ "task": "t7",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "findings",
+ "n_items": 98,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 163.05,
+  "prompt_tokens": 9653,
+  "output_tokens": 7859,
+  "load_s": 3.65,
+  "prefill_tok_s": 3279.4,
+  "decode_tok_s": 53.1,
+  "ttft_s": 6.59,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 21717,
+  "peak_size_vram_mib": 15032
+ },
+ "findings": [
+  {
+   "location": "References section",
+   "rule": "Use of \"In preparation\" in reference list is not allowed",
+   "problem": "Reference [5] is listed as \"In preparation.\"",
+   "severity": "medium"
+  },
+  {
+   "location": "References section",
+   "rule": "References must be numbered sequentially",
+   "problem": "Reference list order is 1,2,3,4,5,7,6,8 – out of sequence",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figure files must be in TIFF, PNG, JPEG, or PDF format",
+   "problem": "Figure file Fig1_two_readings.bmp is in BMP format",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Figure files must be 300 dpi resolution",
+   "problem": "Figure file Fig1_two_readings.bmp is 150 dpi",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain Japanese characters",
+   "problem": "File name \"図1_draft version.bmp\" contains Japanese characters",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain Japanese characters",
+   "problem": "File name \"図1_draft version.bmp\" contains Japanese characters",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "File name \"図1_draft version.bmp\" contains a space",
+   "severity": "medium"
+  },
+  {
+   "location": "Supplementary materials list",
+   "rule": "Supplementary file names must not contain spaces",
+   "problem": "...",
+   "severity": "medium"
+  },
+  {
+   "location": "Graphical Abstract",
+   "rule": "Graphical Abstract is required for all papers except Editorial or Commentary",
+   "problem": "No graphical abstract file or caption provided",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"findings\":[{\"location\":\"References section\",\"rule\":\"Use of \\\"In preparation\\\" in reference list is not allowed\",\"problem\":\"Reference [5] is listed as \\\"In preparation.\\\"\",\"severity\":\"medium\"},{\"location\":\"References section\",\"rule\":\"References must be numbered sequentially\",\"problem\":\"Reference list order is 1,2,3,4,5,7,6,8 – out of sequence\",\"severity\":\"medium\"},{\"location\":\"Figure file list\",\"rule\":\"Figure files must be in TIFF, PNG, JPEG, or PDF format\",\"problem\":\"Figure file Fig1_two_readings.bmp is in BMP format\",\"severity\":\"medium\"},{\"location\":\"Figure file list\",\"rule\":\"Figure files must be 300 dpi resolution\",\"problem\":\"Figure file Fig1_two_readings.bmp is 150 dpi\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain Japanese characters\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains Japanese characters\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain Japanese characters\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains Japanese characters\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"File name \\\"図1_draft version.bmp\\\" contains a space\",\"severity\":\"medium\"},{\"location\":\"Supplementary materials list\",\"rule\":\"Supplementary file names must not contain spaces\",\"problem\":\"...\",\"severity\":\"medium\"},{\"location\":\"Graphical Abstract\",\"rule\":\"Graphical Abstract is required for all papers except Editorial or Commentary\",\"problem\":\"No graphical abstract file or caption provided\",\"severity\":\"high\"}]",
+ "thinking_chars": 17774
+}

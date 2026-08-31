@@ -1,0 +1,166 @@
+{
+ "source": "ollama list and ollama show, recorded 2026-08-28",
+ "note": "size_gb is the on-disk weight size the runtime reports. vision and tools are read from the runtime's model metadata and define which models are eligible for T5 and T8. qwen3:32b was pulled but never measured on any task and is therefore not listed among the models evaluated.",
+ "models": [
+  {
+   "model": "gemma3:4b",
+   "size_gb": 3.3,
+   "architecture": "dense",
+   "active_params": "4B",
+   "vision": true,
+   "tools": false
+  },
+  {
+   "model": "gemma4",
+   "size_gb": 9.6,
+   "architecture": "dense",
+   "active_params": null,
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "gpt-oss:20b",
+   "size_gb": 13,
+   "architecture": "MoE",
+   "active_params": null,
+   "vision": false,
+   "tools": true
+  },
+  {
+   "model": "mistral-small",
+   "size_gb": 14,
+   "architecture": "dense",
+   "active_params": null,
+   "vision": false,
+   "tools": true
+  },
+  {
+   "model": "magistral",
+   "size_gb": 14,
+   "architecture": "dense",
+   "active_params": null,
+   "vision": false,
+   "tools": true
+  },
+  {
+   "model": "qwen3.6:27b",
+   "size_gb": 17,
+   "architecture": "dense",
+   "active_params": "27B",
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "qwen3.8:27b",
+   "size_gb": 17,
+   "architecture": "MoE",
+   "active_params": null,
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "qwen3-vl:30b-a3b-instruct",
+   "size_gb": 19,
+   "architecture": "MoE",
+   "active_params": "3B",
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "qwen3.6:35b-a3b-q4_K_M",
+   "size_gb": 23,
+   "architecture": "MoE",
+   "active_params": "3B",
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+   "size_gb": 31,
+   "architecture": "MoE",
+   "active_params": null,
+   "vision": false,
+   "tools": false
+  },
+  {
+   "model": "qwen3.6:35b-a3b-q8_0",
+   "size_gb": 38,
+   "architecture": "MoE",
+   "active_params": "3B",
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "nemotron",
+   "size_gb": 42,
+   "architecture": "dense",
+   "active_params": "42B",
+   "vision": false,
+   "tools": true
+  },
+  {
+   "model": "command-r-plus",
+   "size_gb": 59,
+   "architecture": "dense",
+   "active_params": null,
+   "vision": false,
+   "tools": true
+  },
+  {
+   "model": "qwen3-vl:30b-a3b-instruct-bf16",
+   "size_gb": 62,
+   "architecture": "MoE",
+   "active_params": "3B",
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "gpt-oss:120b",
+   "size_gb": 65,
+   "architecture": "MoE",
+   "active_params": null,
+   "vision": false,
+   "tools": true
+  },
+  {
+   "model": "glm-4.5-air:q4",
+   "size_gb": 67,
+   "architecture": "MoE",
+   "active_params": "12B",
+   "vision": false,
+   "tools": false
+  },
+  {
+   "model": "llama4:scout",
+   "size_gb": 67,
+   "architecture": "MoE",
+   "active_params": null,
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "qwen3.6:35b-a3b-bf16",
+   "size_gb": 71,
+   "architecture": "MoE",
+   "active_params": "3B",
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "qwen3.5:35b-a3b-bf16",
+   "size_gb": 71,
+   "architecture": "MoE",
+   "active_params": "3B",
+   "vision": true,
+   "tools": true
+  },
+  {
+   "model": "qwen3.5:122b-a10b-q4_K_M",
+   "size_gb": 81,
+   "architecture": "MoE",
+   "active_params": "10B",
+   "vision": true,
+   "tools": true
+  }
+ ]
+}

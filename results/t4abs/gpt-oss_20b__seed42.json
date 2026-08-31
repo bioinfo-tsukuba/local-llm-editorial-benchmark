@@ -1,0 +1,76 @@
+{
+ "task": "t4abs",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "num_ctx": 32768,
+ "error": null,
+ "parse_error": null,
+ "result_key": "answers",
+ "n_items": 8,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 11.07,
+  "prompt_tokens": 7625,
+  "output_tokens": 451,
+  "load_s": 0.19,
+  "prefill_tok_s": 3389.6,
+  "decode_tok_s": 55.5,
+  "ttft_s": 2.44,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 20974,
+  "peak_size_vram_mib": 14193
+ },
+ "answers": [
+  {
+   "id": "A1",
+   "in_document": true,
+   "answer": "The abstract must be no more than 250 words.",
+   "quote": "An abstract of no more than 250 words is required."
+  },
+  {
+   "id": "A2",
+   "in_document": false,
+   "answer": "The Instructions do not specify a maximum number of words allowed in a figure legend.",
+   "quote": ""
+  },
+  {
+   "id": "A3",
+   "in_document": true,
+   "answer": "The publication fee for a Note is 40,000 JPY plus tax.",
+   "quote": "The publication fee for an accepted manuscript in any category except “Commentary and Perspective” or “Editorial” is 40,000 JPY plus tax for the authors."
+  },
+  {
+   "id": "A4",
+   "in_document": false,
+   "answer": "The Instructions do not specify a maximum number of references allowed in a Regular Article.",
+   "quote": ""
+  },
+  {
+   "id": "A5",
+   "in_document": true,
+   "answer": "A revised manuscript must be returned within 90 days of receiving the editorial decision.",
+   "quote": "Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision."
+  },
+  {
+   "id": "A6",
+   "in_document": false,
+   "answer": "The Instructions do not specify a required font size for the body text.",
+   "quote": ""
+  },
+  {
+   "id": "A7",
+   "in_document": true,
+   "answer": "A manuscript is sent to two or more reviewers.",
+   "quote": "Manuscripts are sent out for peer review to two or more reviewers."
+  },
+  {
+   "id": "A8",
+   "in_document": false,
+   "answer": "The Instructions do not specify a maximum number of authors permitted on a Regular Article.",
+   "quote": ""
+  }
+ ],
+ "raw_response": "{\"answers\":[{\"id\":\"A1\",\"in_document\":true,\"answer\":\"The abstract must be no more than 250 words.\",\"quote\":\"An abstract of no more than 250 words is required.\"},{\"id\":\"A2\",\"in_document\":false,\"answer\":\"The Instructions do not specify a maximum number of words allowed in a figure legend.\",\"quote\":\"\"},{\"id\":\"A3\",\"in_document\":true,\"answer\":\"The publication fee for a Note is 40,000 JPY plus tax.\",\"quote\":\"The publication fee for an accepted manuscript in any category except “Commentary and Perspective” or “Editorial” is 40,000 JPY plus tax for the authors.\"},{\"id\":\"A4\",\"in_document\":false,\"answer\":\"The Instructions do not specify a maximum number of references allowed in a Regular Article.\",\"quote\":\"\"},{\"id\":\"A5\",\"in_document\":true,\"answer\":\"A revised manuscript must be returned within 90 days of receiving the editorial decision.\",\"quote\":\"Authors who have been requested to revise their manuscript should send the revised version to the handling editor within 90 days of receiving the editorial decision.\"},{\"id\":\"A6\",\"in_document\":false,\"answer\":\"The Instructions do not specify a required font size for the body text.\",\"quote\":\"\"},{\"id\":\"A7\",\"in_document\":true,\"answer\":\"A manuscript is sent to two or more reviewers.\",\"quote\":\"Manuscripts are sent out for peer review to two or more reviewers.\"},{\"id\":\"A8\",\"in_document\":false,\"answer\":\"The Instructions do not specify a maximum number of authors permitted on a Regular Article.\",\"quote\":\"\"}]}",
+ "thinking_chars": 400
+}

@@ -1,0 +1,152 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 20,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q4_K_M",
+  "wall_s": 244.54,
+  "prompt_tokens": 12861,
+  "output_tokens": 10666,
+  "load_s": 6.81,
+  "prefill_tok_s": 1379.2,
+  "decode_tok_s": 49.8,
+  "ttft_s": 16.13,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 48167,
+  "peak_size_vram_mib": 26840
+ },
+ "findings": [
+  {
+   "location": "Title",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words",
+   "problem": "The title contains the word 'Novel'.",
+   "severity": "high"
+  },
+  {
+   "location": "Page 1 footer",
+   "rule": "The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.",
+   "problem": "The corresponding author's ORCID iD is missing from the footer.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "An abstract of no more than 250 words is required.",
+   "problem": "The abstract contains approximately 330 words, exceeding the limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "The abstract must not include references.",
+   "problem": "The abstract cites reference '[12]'.",
+   "severity": "high"
+  },
+  {
+   "location": "Abstract",
+   "rule": "Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”...",
+   "problem": "The abstract contains the phrase 'for the first time'.",
+   "severity": "high"
+  },
+  {
+   "location": "Keywords",
+   "rule": "A list of up to five keywords should be provided below the abstract.",
+   "problem": "Seven keywords are listed instead of a maximum of five.",
+   "severity": "medium"
+  },
+  {
+   "location": "Significance statement",
+   "rule": "A short statement of less than 100 words about the significance of the paper should be added",
+   "problem": "The significance statement contains approximately 123 words, exceeding the limit.",
+   "severity": "high"
+  },
+  {
+   "location": "Running title (header)",
+   "rule": "a Running Title not exceeding 50 characters including spaces is required",
+   "problem": "The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains approximately 78 characters.",
+   "severity": "high"
+  },
+  {
+   "location": "Table 1",
+   "rule": "Do not use vertical lines.",
+   "problem": "Table 1 uses vertical pipe characters ('|') as column separators.",
+   "severity": "medium"
+  },
+  {
+   "location": "Table footnotes",
+   "rule": "table footnotes lettered a, b, c, and so forth, below the body of the table.",
+   "problem": "Table footnotes are numbered (1, 2, 3) instead of lettered.",
+   "severity": "medium"
+  },
+  {
+   "location": "Table 2",
+   "rule": "Supply a short explanatory title above the body of the table",
+   "problem": "The title for Table 2 is placed below the table body instead of above it.",
+   "severity": "medium"
+  },
+  {
+   "location": "Figure file list",
+   "rule": "Electronic files ... should be at 300 dpi resolution ... We accept figure files in TIFF, PNG, JPEG or PDF formats .",
+   "problem": "Figures 1 and 2 are submitted as BMP files at 150 dpi, violating both the format and resolution requirements.",
+   "severity": "high"
+  },
+  {
+   "location": "Graphical abstract caption",
+   "rule": "upload a short caption less than 100 words about the figure(s).",
+   "problem": "The graphical abstract caption contains approximately 148 words.",
+   "severity": "high"
+  },
+  {
+   "location": "References list",
+   "rule": "References should be numbered sequentially as they appear in the text... All references should be listed in numerical order",
+   "problem": "References are not ordered sequentially by appearance (e.g., [5] appears before [6], and [7] appears before [6]).",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [5]",
+   "rule": "The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.",
+   "problem": "Reference [5] ends with 'In preparation.'",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [8]",
+   "rule": "References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text",
+   "problem": "Reference [8] lists a personal communication, which is prohibited in the reference list.",
+   "severity": "high"
+  },
+  {
+   "location": "Reference [9]",
+   "rule": "For more than six authors, list the first six authors followed by “et al.”:",
+   "problem": "Reference [9] lists all nine authors instead of truncating after the sixth with 'et al.'",
+   "severity": "medium"
+  },
+  {
+   "location": "Introduction text",
+   "rule": "When referring to macromolecular structures, please use [PDB ID: <PDB ID>] ... in the text",
+   "problem": "The PDB identifier is cited as '(PDB 6qw9)' instead of '[PDB ID: 6qw9]'.",
+   "severity": "medium"
+  },
+  {
+   "location": "Manuscript structure",
+   "rule": "Following the above information, Introduction, Materials and methods ... Results, Discussion ... Conclusion, Conflict of interest, Author contributions, Data availability ... should be arranged in this order.",
+   "problem": "The manuscript omits the required 'Conclusion' and 'Data availability' sections entirely.",
+   "severity": "high"
+  },
+  {
+   "location": "Manuscript structure",
+   "rule": "Conflict of interest, Author contributions ... should be arranged in this order.",
+   "problem": "The 'Author contributions' section appears before the 'Conflict of interest' section, reversing the required order.",
+   "severity": "medium"
+  }
+ ],
+ "raw_response": "{\"findings\": [\n  {\"location\": \"Title\", \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”, or other similar descriptive words\", \"problem\": \"The title contains the word 'Novel'.\", \"severity\": \"high\"},\n  {\"location\": \"Page 1 footer\", \"rule\": \"The complete postal address and the ORCID iD of the corresponding author should be indicated on the footer of page 1.\", \"problem\": \"The corresponding author's ORCID iD is missing from the footer.\", \"severity\": \"high\"},\n  {\"location\": \"Abstract\", \"rule\": \"An abstract of no more than 250 words is required.\", \"problem\": \"The abstract contains approximately 330 words, exceeding the limit.\", \"severity\": \"high\"},\n  {\"location\": \"Abstract\", \"rule\": \"The abstract must not include references.\", \"problem\": \"The abstract cites reference '[12]'.\", \"severity\": \"high\"},\n  {\"location\": \"Abstract\", \"rule\": \"Titles and abstracts of manuscripts may not contain the positive words: “New”, “Novel”, “First”, “Unprecedented”...\", \"problem\": \"The abstract contains the phrase 'for the first time'.\", \"severity\": \"high\"},\n  {\"location\": \"Keywords\", \"rule\": \"A list of up to five keywords should be provided below the abstract.\", \"problem\": \"Seven keywords are listed instead of a maximum of five.\", \"severity\": \"medium\"},\n  {\"location\": \"Significance statement\", \"rule\": \"A short statement of less than 100 words about the significance of the paper should be added\", \"problem\": \"The significance statement contains approximately 123 words, exceeding the limit.\", \"severity\": \"high\"},\n  {\"location\": \"Running title (header)\", \"rule\": \"a Running Title not exceeding 50 characters including spaces is required\", \"problem\": \"The running title 'Coarse-grained elastic network analysis of allosteric coupling in ring ATPases' contains approximately 78 characters.\", \"severity\": \"high\"},\n  {\"location\": \"Table 1\", \"rule\": \"Do not use vertical lines.\", \"problem\": \"Table 1 uses vertical pipe characters ('|') as column separators.\", \"severity\": \"medium\"},\n  {\"location\": \"Table footnotes\", \"rule\": \"table footnotes lettered a, b, c, and so forth, below the body of the table.\", \"problem\": \"Table footnotes are numbered (1, 2, 3) instead of lettered.\", \"severity\": \"medium\"},\n  {\"location\": \"Table 2\", \"rule\": \"Supply a short explanatory title above the body of the table\", \"problem\": \"The title for Table 2 is placed below the table body instead of above it.\", \"severity\": \"medium\"},\n  {\"location\": \"Figure file list\", \"rule\": \"Electronic files ... should be at 300 dpi resolution ... We accept figure files in TIFF, PNG, JPEG or PDF formats .\", \"problem\": \"Figures 1 and 2 are submitted as BMP files at 150 dpi, violating both the format and resolution requirements.\", \"severity\": \"high\"},\n  {\"location\": \"Graphical abstract caption\", \"rule\": \"upload a short caption less than 100 words about the figure(s).\", \"problem\": \"The graphical abstract caption contains approximately 148 words.\", \"severity\": \"high\"},\n  {\"location\": \"References list\", \"rule\": \"References should be numbered sequentially as they appear in the text... All references should be listed in numerical order\", \"problem\": \"References are not ordered sequentially by appearance (e.g., [5] appears before [6], and [7] appears before [6]).\", \"severity\": \"high\"},\n  {\"location\": \"Reference [5]\", \"rule\": \"The use of “in preparation” and “submitted for publication” is not allowed in the Reference list.\", \"problem\": \"Reference [5] ends with 'In preparation.'\", \"severity\": \"high\"},\n  {\"location\": \"Reference [8]\", \"rule\": \"References to “unpublished data” and “personal communications” should not appear in the reference list, but appear parenthetically in the text\", \"problem\": \"Reference [8] lists a personal communication, which is prohibited in the reference list.\", \"severity\": \"high\"},\n  {\"location\": \"Reference [9]\", \"rule\": \"For more than six authors, list the first six authors followed by “et al.”:\", \"problem\": \"Reference [9] lists all nine authors instead of truncating after the sixth with 'et al.'\", \"severity\": \"medium\"},\n  {\"location\": \"Introduction text\", \"rule\": \"When referring to macromolecular structures, please use [PDB ID: <PDB ID>] ... in the text\", \"problem\": \"The PDB identifier is cited as '(PDB 6qw9)' instead of '[PDB ID: 6qw9]'.\", \"severity\": \"medium\"},\n  {\"location\": \"Manuscript structure\", \"rule\": \"Following the above information, Introduction, Materials and methods ... Results, Discussion ... Conclusion, Conflict of interest, Author contributions, Data availability ... should be arranged in this order.\", \"problem\": \"The manuscript omits the required 'Conclusion' and 'Data availability' sections entirely.\", \"severity\": \"high\"},\n  {\"location\": \"Manuscript structure\", \"rule\": \"Conflict of interest, Author contributions ... should be arranged in this order.\", \"problem\": \"The 'Author contributions' section appears before the 'Conflict of interest' section, reversing the required order.\", \"severity\": \"medium\"}\n]}",
+ "thinking_chars": 31789
+}

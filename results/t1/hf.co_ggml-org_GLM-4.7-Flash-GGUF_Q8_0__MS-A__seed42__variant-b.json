@@ -1,0 +1,31 @@
+{
+ "task": "T1",
+ "variant": "b",
+ "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": "salvaged",
+ "n_findings": 0,
+ "meta": {
+  "model": "hf.co/ggml-org/GLM-4.7-Flash-GGUF:Q8_0",
+  "wall_s": 53.33,
+  "prompt_tokens": 12505,
+  "output_tokens": 528,
+  "load_s": 28.94,
+  "prefill_tok_s": 1265.9,
+  "decode_tok_s": 36.8,
+  "ttft_s": 38.82,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 71851,
+  "peak_size_vram_mib": 36743
+ },
+ "findings": null,
+ "raw_response": "```json\n{\n  \"findings\": [\n    {\n      \"area\": 1,\n      \"location\": \"Title\",\n      \"rule\": \"The title should be concise and relevant to the content.\",\n      \"problem\": \"The title is excessively long and includes unnecessary words.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 1,\n      \"location\": \"Abstract\",\n      \"rule\": \"The abstract must not include references.\",\n      \"problem\": \"[12] is present in the abstract.\",\n      \"severity\": \"high\"\n    },\n    {\n      \" legends: 1, 2, 3, 4, 5,  6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,  violations found in the Figure legends section. The text is not formatted correctly.\",\n      \"rule\": \"Figure legends should be concise and descriptive.\",\n      \"problem\": \"The figure legends are not formatted as a list of captions; they are presented as a single block of text with line breaks.\",\n      \"severity\": \"medium\"\n    },\n    {\n      \"area\": 3,\n      \"location\": \"References\",\n      \"rule\": \"References should be listed in numerical order, starting on a new page, under the heading 'References'.\",\n      \"problem\": \"Reference [5] is out of numerical order; it appears after [4] and before [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [ numbering is not sequential. The reference list is not in numerical order.\",\n      \"severity\": \"high\"\n    },\n    Instructions for Authors\n    {\n      \"area\": 8,\n      \"location\": \"Conflict of interest\",\n      \"rule\": \"The policy of BPPB requires that all authors should reveal any financial interests or connections, direct or indirect, or other situations that may raise the question of bias in the reported work.\",\n      \"problem\": \"The conflict of interest statement is missing.\",\n      \"severity\": \"high\"\n    }\n  ]\n}\n```",
+ "thinking_chars": 0
+}

@@ -1,0 +1,207 @@
+{
+ "task": "T8",
+ "model": "qwen3.6:35b-a3b-q8_0",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_tool_calls": 12,
+ "n_checks": 8,
+ "meta": {
+  "model": "qwen3.6:35b-a3b-q8_0",
+  "wall_s": 72.39,
+  "prompt_tokens": 4793,
+  "output_tokens": 2857,
+  "load_s": 0.1,
+  "prefill_tok_s": 2554.7,
+  "decode_tok_s": 43.1,
+  "ttft_s": 1.98,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 46728,
+  "peak_size_vram_mib": 39895
+ },
+ "checks": [
+  {
+   "id": "V1",
+   "verified": false,
+   "journal_abbreviated": "Biophys. J.",
+   "problems": [
+    "Title in reference ('Anisotropic fluctuations of amino acids in protein structures') does not match resolved DOI title ('Anisotropy of Fluctuation Dynamics of Proteins with an Elastic Network Model')"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V2",
+   "verified": true,
+   "journal_abbreviated": "Protein Eng. Des. Sel.",
+   "problems": [
+    "Journal name not in abbreviated form (reference uses full title 'Protein Engineering, Design and Selection')"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V3",
+   "verified": true,
+   "journal_abbreviated": "Proc. Natl. Acad. Sci. U.S.A.",
+   "problems": [
+    "Journal name not in abbreviated form (reference uses full title 'Proceedings of the National Academy of Sciences')"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V4",
+   "verified": true,
+   "journal_abbreviated": "Nature",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V5",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "DOI resolves to a different paper (Yasuda et al., Nature 2001) than the reference (Adachi et al., Cell 2007)"
+   ],
+   "corrected_doi": "10.1016/j.cell.2007.05.020"
+  },
+  {
+   "id": "V6",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "DOI does not resolve in authoritative databases",
+    "Reference could not be verified"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V7",
+   "verified": false,
+   "journal_abbreviated": "Annu. Rev. Biophys. Biomol. Struct.",
+   "problems": [
+    "Volume in reference (37) does not match resolved DOI (35)",
+    "Year in reference (2008) does not match resolved DOI (2006)"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V8",
+   "verified": true,
+   "journal_abbreviated": null,
+   "problems": [],
+   "corrected_doi": null
+  }
+ ],
+ "tool_trace": [
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1016/S0006-3495(01)76033-X"
+   },
+   "result_summary": "Biophys. J. 80 (2001) 10.1016/s0006-3495(01)76033-x",
+   "error": null
+  },
+  {
+   "n": 2,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1093/protein/14.1.1"
+   },
+   "result_summary": "Protein Eng. Des. Sel. 14 (2001) 10.1093/protein/14.1.1",
+   "error": null
+  },
+  {
+   "n": 3,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1073/pnas.0702950104"
+   },
+   "result_summary": "Proc. Natl. Acad. Sci. U.S.A. 104 (2007) 10.1073/pnas.0702950104",
+   "error": null
+  },
+  {
+   "n": 4,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null
+  },
+  {
+   "n": 5,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.2142/biophysico.bppb-v21.0112"
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null
+  },
+  {
+   "n": 6,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1146/annurev.biophys.35.040405.101933"
+   },
+   "result_summary": "Annu. Rev. Biophys. Biomol. Struct. 35 (2006) 10.1146/annurev.biophys.35.040405.101933",
+   "error": null
+  },
+  {
+   "n": 7,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1101/2020.06.29.179044"
+   },
+   "result_summary": " None (2020) 10.1101/2020.06.29.179044",
+   "error": null
+  },
+  {
+   "n": 8,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Adachi K Oiwa K Nishizaka T Furuike S Noji H Itoh H Coupling of rotation and catalysis in F1-ATPase revealed by single-molecule imaging and manipulation Cell 2007"
+   },
+   "result_summary": "3 candidates: 10.1016/j.cell.2007.05.020, 10.2142/biophys.43.s135_2, 10.1016/s0076-6879(03)61013-x",
+   "error": null
+  },
+  {
+   "n": 9,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Morisawa K Kuramoto H Directional allosteric channels in hexameric ring ATPases Biophys. Physicobiol. 2024"
+   },
+   "result_summary": "3 candidates: 10.1021/jacs.6b10744.s003, 10.1021/jacs.6b10744.s002, 10.1021/jacs.6b10744.s001",
+   "error": null
+  },
+  {
+   "n": 10,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Morisawa Kuramoto Directional allosteric channels hexameric ring ATPases Biophys Physicobiol 2024"
+   },
+   "result_summary": "3 candidates: 10.1021/jacs.6b10744.s003, 10.1021/jacs.6b10744.s002, 10.1021/jacs.6b10744.s001",
+   "error": null
+  },
+  {
+   "n": 11,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Morisawa K Kuramoto H Directional allosteric channels in hexameric ring ATPases Biophys Physicobiol 21 112-125 2024"
+   },
+   "result_summary": "3 candidates: 10.1021/jacs.6b10744.s003, 10.1021/jacs.6b10744.s002, 10.1021/jacs.6b10744.s001",
+   "error": null
+  },
+  {
+   "n": 12,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Directional allosteric channels in hexameric ring ATPases Morisawa Kuramoto 2024"
+   },
+   "result_summary": "3 candidates: 10.1021/jacs.6b10744.s003, 10.1021/jacs.6b10744.s002, 10.1021/jacs.6b10744.s001",
+   "error": null
+  }
+ ],
+ "raw_response": "```json\n{\n  \"checks\": [\n    {\n      \"id\": \"V1\",\n      \"verified\": false,\n      \"journal_abbreviated\": \"Biophys. J.\",\n      \"problems\": [\"Title in reference ('Anisotropic fluctuations of amino acids in protein structures') does not match resolved DOI title ('Anisotropy of Fluctuation Dynamics of Proteins with an Elastic Network Model')\"],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V2\",\n      \"verified\": true,\n      \"journal_abbreviated\": \"Protein Eng. Des. Sel.\",\n      \"problems\": [\"Journal name not in abbreviated form (reference uses full title 'Protein Engineering, Design and Selection')\"],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V3\",\n      \"verified\": true,\n      \"journal_abbreviated\": \"Proc. Natl. Acad. Sci. U.S.A.\",\n      \"problems\": [\"Journal name not in abbreviated form (reference uses full title 'Proceedings of the National Academy of Sciences')\"],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V4\",\n      \"verified\": true,\n      \"journal_abbreviated\": \"Nature\",\n      \"problems\": [],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V5\",\n      \"verified\": false,\n      \"journal_abbreviated\": null,\n      \"problems\": [\"DOI resolves to a different paper (Yasuda et al., Nature 2001) than the reference (Adachi et al., Cell 2007)\"],\n      \"corrected_doi\": \"10.1016/j.cell.2007.05.020\"\n    },\n    {\n      \"id\": \"V6\",\n      \"verified\": false,\n      \"journal_abbreviated\": null,\n      \"problems\": [\"DOI does not resolve in authoritative databases\", \"Reference could not be verified\"],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V7\",\n      \"verified\": false,\n      \"journal_abbreviated\": \"Annu. Rev. Biophys. Biomol. Struct.\",\n      \"problems\": [\"Volume in reference (37) does not match resolved DOI (35)\", \"Year in reference (2008) does not match resolved DOI (2006)\"],\n      \"corrected_doi\": null\n    },\n    {\n      \"id\": \"V8\",\n      \"verified\": true,\n      \"journal_abbreviated\": null,\n      \"problems\": [],\n      \"corrected_doi\": null\n    }\n  ]\n}\n```",
+ "thinking_chars": 8216,
+ "wall_s": 199.7
+}

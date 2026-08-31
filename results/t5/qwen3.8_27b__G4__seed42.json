@@ -1,0 +1,35 @@
+{
+ "task": "T5",
+ "model": "qwen3.8:27b",
+ "item": "G4",
+ "seed": 42,
+ "error": null,
+ "parse_error": null,
+ "n_defects": 2,
+ "meta": {
+  "model": "qwen3.8:27b",
+  "wall_s": 20.58,
+  "prompt_tokens": 1246,
+  "output_tokens": 420,
+  "load_s": 0.0,
+  "prefill_tok_s": 608.3,
+  "decode_tok_s": 22.9,
+  "ttft_s": 2.05,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 27173,
+  "peak_size_vram_mib": 16627
+ },
+ "defects": [
+  {
+   "what": "Table uses vertical lines between columns (s | CCW | CW | ratio), which the Instructions forbid ('must not use vertical lines').",
+   "severity": "high"
+  },
+  {
+   "what": "The table is supplied as a picture (PNG file FIG-4_table_vertical_rules.png) rather than inserted with the Word Text-box tool, which the Instructions require.",
+   "severity": "high"
+  }
+ ],
+ "raw_response": "{\"defects\": [\n  {\"what\": \"Table uses vertical lines between columns (s | CCW | CW | ratio), which the Instructions forbid ('must not use vertical lines').\", \"severity\": \"high\"},\n  {\"what\": \"The table is supplied as a picture (PNG file FIG-4_table_vertical_rules.png) rather than inserted with the Word Text-box tool, which the Instructions require.\", \"severity\": \"high\"}\n]}",
+ "thinking_chars": 1397
+}

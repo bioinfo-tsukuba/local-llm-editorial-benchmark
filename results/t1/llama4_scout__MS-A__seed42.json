@@ -1,0 +1,31 @@
+{
+ "task": "T1",
+ "variant": "a",
+ "model": "llama4:scout",
+ "manuscript": "MS-A",
+ "seed": 42,
+ "num_ctx": 65536,
+ "num_predict": 24576,
+ "timeout_s": 3600,
+ "think": null,
+ "error": null,
+ "parse_error": null,
+ "n_findings": 0,
+ "meta": {
+  "model": "llama4:scout",
+  "wall_s": 70.76,
+  "prompt_tokens": 11978,
+  "output_tokens": 133,
+  "load_s": 25.28,
+  "prefill_tok_s": 342.5,
+  "decode_tok_s": 13.8,
+  "ttft_s": 60.25,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 90924,
+  "peak_size_vram_mib": 84597
+ },
+ "findings": null,
+ "raw_response": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"title\": \"Manuscript\",\n    \"abstract\": \"This is a manuscript for a scientific article.\",\n    \"authors\": [\n      {\n        \"name\": \"John Doe\",\n        \"email\": \"john.doe@example.com\"\n      },\n      {\n        \"name\": \"Jane Smith\",\n        \"email\": \"jane.smith@example.com\"\n      }\n    ],\n    \"references\": [\n      {\n        \"title\": \"Reference 1\",\n        \"authors\": [\n          {\n            \"name\": \"Author 1\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+ "thinking_chars": 0
+}

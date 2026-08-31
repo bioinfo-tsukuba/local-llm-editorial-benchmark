@@ -1,0 +1,27 @@
+{
+ "task": "t6d",
+ "model": "gemma4",
+ "seed": 42,
+ "num_ctx": 65536,
+ "error": null,
+ "parse_error": null,
+ "result_key": "problems",
+ "n_items": 0,
+ "meta": {
+  "model": "gemma4",
+  "wall_s": 43.45,
+  "prompt_tokens": 5253,
+  "output_tokens": 2279,
+  "load_s": 0.0,
+  "prefill_tok_s": 4072.1,
+  "decode_tok_s": 54.2,
+  "ttft_s": 1.29,
+  "done_reason": "stop",
+  "tool_calls": null,
+  "peak_mem_used_mib": 17845,
+  "peak_size_vram_mib": 3700
+ },
+ "problems": [],
+ "raw_response": "```json\n{\n  \"problems\": []\n}\n```",
+ "thinking_chars": 8634
+}
