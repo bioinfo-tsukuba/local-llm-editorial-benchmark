@@ -30,8 +30,11 @@ def main():
 
     ab = strip(s[s.index('## Abstract'):s.index('**Key words')])
     sig = strip(s[s.index('## ◀ Significance ▶'):s.index('---\n\n## Introduction')])
-    kw = [k.strip() for k in s[s.index('**Key words:**'):].split('\n')[0]
-          .replace('**Key words:**', '').split(',') if k.strip()]
+    # the key words wrap onto a second line, and reading only the first counted 4
+    # of the 5 -- at the limit either way here, but it would have passed 6
+    _kwblk = s[s.index('**Key words:**'):]
+    _kwblk = _kwblk[:_kwblk.index('\n\n')].replace('**Key words:**', '')
+    kw = [k.strip() for k in _kwblk.replace('\n', ' ').split(',') if k.strip()]
 
     for label, n, lim in (('Abstract', len(ab.split()), 250),
                           ('Significance', len(sig.split()), 100),
@@ -117,8 +120,9 @@ def main():
     print(f'{"back matter in order":<28}{"ok" if ok else "FAIL"} {"" if ok else got}')
     if not ok:
         fails.append('back matter out of order')
-    pre = re.search(r'^A preliminary version of this work was deposited in '
-                    r'(\w+) \(([^)]+)\) on (.+?)\.$', s, re.M)
+    # the server name can contain a space (Research Square), so \w+ is too narrow
+    pre = re.search(r'A preliminary version of this work was deposited in '
+                    r'([A-Za-z ]+?)\s*\(([^)]+)\) on ([^.]+)\.', s)
     if pre:
         i = s.index(pre.group(0))
         ok = s.index('## Data availability') < i < s.index('## Acknowledgements')
