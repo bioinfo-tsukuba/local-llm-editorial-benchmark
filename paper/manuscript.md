@@ -172,7 +172,7 @@ to Crossref and the NLM Catalog.
 
 ![Figure 2](figures/figure2_tasks.png)
 
-**Figure 2**  The eight editorial tasks. T1 checks a manuscript against the journal's own Instructions for Authors, with 40 seeded violations. T2 generates review points and scores them against 12 points drawn from three published reviews. T3 converts reference formatting and answers rule queries. T4 poses questions whose answers are absent from the source, so that the correct response is a refusal. T5 supplies a figure image together with the file metadata a submission system reports. T6 requires reconciling numbers stated in different sections. T7 submits a manuscript under a category for which some rules are exempt, where the failure mode is flagging an exempt rule. T8 requires live calls to Crossref and the NLM Catalog, with one reference whose DOI does not resolve. The panel is a schematic and shows no data.
+**Figure 2**  The eight editorial tasks. T1 checks a manuscript against the journal's own Instructions for Authors, with 40 seeded violations. T2 generates review points and scores them against 12 points drawn from three published reviews. T3 converts reference formatting and answers rule queries. T4 poses questions whose answers are absent from the source — a requirement the guidelines do not state, or an element the manuscript does not contain — so that the correct response is a refusal; a model that answers instead would have the editorial office raise a requirement or a defect that does not exist. T5 supplies a figure image together with the file metadata a submission system reports; the five items listed under T5 in the panel are the defects seeded into those figures, not requirements, so "72 dpi" is a figure supplied below the 300 dpi the Instructions for Authors require. T6 requires reconciling numbers stated in different sections. T7 submits a manuscript under a category for which some rules are exempt, where the failure mode is flagging an exempt rule. T8 requires live calls to Crossref and the NLM Catalog, with one reference whose DOI does not resolve. The panel is a schematic and shows no data.
 
 The guideline document underlying T1, T3, T4, and T7 is the Instructions for Authors of
 Biophysics and Physicobiology (https://www.biophys.jp/biophysics_and_physicobiology.html),
@@ -221,9 +221,19 @@ ability to answer in Japanese. T4 comprises 8 questions about the guidelines, of
 have an answer and 4 do not, together with 5 questions about elements that do not exist
 in MS-A. In both sets, the correct response to an unanswerable item is to state that the
 information is unavailable; inventing a plausible answer is the failure the task is
-designed to detect. T8 comprises 8 references to be checked against Crossref and the NLM
-Catalog, including one with a DOI that does not resolve and two that disagree with the
-records to which they resolve. The T5 stimuli are four matplotlib-generated figures,
+designed to detect. The editorial situation this stands for is the one in which an
+office puts a question to the model whose answer does not exist: a requirement the
+Instructions for Authors do not state, or an element the manuscript under examination
+does not contain. A model that invents a requirement leads the office to ask an author to
+satisfy a rule the journal does not have, and a model that invents a defect leads it to
+query a problem the manuscript does not contain. Both are worse for the office than
+silence, because an author cannot distinguish a fabricated requirement from a real one,
+and it is the office's credibility rather than the model's that is spent. T8 comprises 8 references to be checked against Crossref and the NLM
+Catalog: four test the Index Medicus abbreviation, one of them a control that is already
+correct; one has a DOI that does not resolve; two disagree with the records to which they
+resolve; and one is cited as a preprint for which a peer-reviewed version exists. The
+three scored measures follow that division, with the preprint item grouped with the two
+mismatches, so they are out of 4, 3, and 1 respectively. The T5 stimuli are four matplotlib-generated figures,
 three of which contain five defects between them while the fourth is compliant. The T5
 prompt supplies both the image and the file attributes that a submission system would
 report. Consequently, only three of the five defects strictly require vision, and the T5
@@ -304,11 +314,28 @@ what the guidelines require, to answer "not specified" where the guidelines are 
 and to return its findings as JSON.
 
 For T1, three prompt structures were compared while holding the guidelines and the
-manuscript constant. **Free-form** supplies both documents and asks for every violation
+manuscript constant, and the decomposition was then repeated on T8 (below). **Free-form** supplies both documents and asks for every violation
 in a single call. **Checklist** supplies the same documents with the guidelines
 decomposed into eight areas taken from the document's own section headings, again in a
-single call; the decomposition supplies structure, not answers. **Area-split**
-issues one call per area and concatenates the results. The remaining tasks use a single
+single call; the decomposition supplies structure, not answers. The eight areas are: the
+title, abstract, keywords, significance statement, and running title; the
+corresponding-author details on page 1; the presence and order of the required sections;
+tables, covering citation in the text, numbering, title placement, footnotes, and rules;
+figures, covering citation in the text, numbering, file format, resolution, and the
+graphical abstract; supplementary materials, covering naming, file formats, file names,
+and file sizes; references, covering in-text citation format, list order, author lists,
+journal abbreviation, DOI format, and entries that may not appear in the list at all; and
+ethics and policy statements, covering conflict of interest, author contributions, data
+availability, approvals for experiments, and prohibited wording. The model is told to
+work through them in order and to report nothing for an area it finds compliant rather
+than to skip it, so that the whole checklist is covered on every manuscript.
+**Area-split** issues one call per area and concatenates the results. T8 is the only
+other task in which this manipulation has a natural form, since its eight references can
+be checked one per call as T1's eight areas are, and it was run there as well with
+everything else held fixed: the same system prompt, the same tools, the same models, the
+same context and generation budgets, and the same total tool-call budget of 24, which
+becomes 3 per reference. Those results are in `results/t8b/` in the accompanying
+repository (see Data availability). The remaining tasks use a single
 structure each, matched to what the task requires: T2 supplies the full text of the
 preprint and asks for the points a reviewer would raise; T3, T4, and T7 supply the
 guidelines together with the items to be judged; T5 supplies each figure as an image
@@ -408,13 +435,14 @@ Measurements were made on an NVIDIA DGX Spark, a compact desktop workstation: a 
 Grace Blackwell SoC (compute capability sm_121a), a 20-core Arm CPU (10 Cortex-X925 and 10 Cortex-A725), and 119 GiB of
 unified CPU/GPU memory with approximately 273 GB/s of bandwidth, running Ubuntu 24.04.3
 (kernel 6.14.0-1013-nvidia) with CUDA 13.0 and driver 580.95.05. Because memory is
-unified there is no discrete VRAM, and the conventional GPU instrumentation reports
+unified there is no discrete video memory (VRAM), and the conventional GPU instrumentation reports
 `Memory-Usage: Not Supported`; all memory figures here come from `free` and per-process
 resident set size. Unified memory also removes the constraint that weights fit a
 discrete graphics card, allowing models from 3.3 to 81 GB to be evaluated on a single
 machine. Two-node measurements used a second identical machine connected by
-ConnectX-7 running remote direct memory access (RDMA) over Converged Ethernet (RoCEv2),
-and llama.cpp's RPC backend. RDMA lets one machine read the other's memory without
+ConnectX-7 running remote direct memory access (RDMA) over Converged Ethernet (RoCE),
+version 2,
+and llama.cpp's remote procedure call (RPC) backend. RDMA lets one machine read the other's memory without
 involving its processor; activation was confirmed in the server log rather than assumed.
 
 Inference used ollama. Two versions were in use: 0.17.6 as a system service, and 0.32.15
@@ -436,10 +464,11 @@ runs, each preceded by unloading the model so that no cache survives, and on pas
 from published papers rather than on the task prompts, so that no passage is presented
 twice. Peak memory
 is the maximum observed during execution, sampled at five context lengths from 4k to
-128k to separate weight footprint from KV-cache growth. The two-node comparison is a
+128k to separate weight footprint from growth of the key-value (KV) cache. The two-node comparison is a
 throughput microbenchmark and not one of the eight tasks: 44 measurements of prefill and
 decode rate for two models, at prompt lengths of 4,096, 12,288, 32,768, 71,230, and
-131,072 tokens, on one node and on two nodes over each of RDMA and TCP.
+131,072 tokens, on one node and on two nodes over each of RDMA and the Transmission Control Protocol
+(TCP).
 
 Every condition run under the configuration above is reported, including those that
 returned no usable output and those that exceeded the wall-clock budget of 3,600 s per
@@ -602,6 +631,15 @@ therefore ranked within each measure and the ranks compared across them (Figure 
 
 **Figure 5**  Rank within each measure, model by model, over the same ten measures as Figure 4. Every line is named at its left-hand end, in the colour of the line. All 17 lines begin at T1, where the ranks run from 1 to 17 and are therefore distinct, so the names read down the left margin in T1 order. Three models are drawn in colour and the remaining 14 in grey. Lines break at measures a model did not run. The three vision-only models that ran T5 alone are omitted, since a single point is not a rank trajectory.
 
+Resistance to hallucination (T4) is the one measure on which most models are at ceiling,
+and the exceptions are the ones that matter for deployment. On the guideline questions,
+14 of 17 models answer all 8 correctly, meaning that they answer the 4 that have an
+answer and decline the 4 that do not; 3 models score 0 of 8. On the questions about
+elements absent from the manuscript, 12 of 17 deny all 5, 2 deny 4, and 3 deny none. The
+distribution is close to all-or-nothing in both sets: a model either withholds the answer
+that does not exist or supplies it, and an office choosing a model can read that off
+directly.
+
 No model led across all measured tasks. The model that leads guideline compliance (T1),
 `qwen3.5:122b-a10b-q4_K_M`, is 5th of 17 on peer-review points (T2) and returns none of
 T8's four journal abbreviations correctly; `qwen3.8:27b` is 2nd on T1 and 1st on T2 and
@@ -617,7 +655,7 @@ suggests that a deployment may benefit from task-specific model selection; how f
 carries beyond this benchmark is limited by the single preprint behind T2 and the five
 defects behind T5.
 
-### Effects of prompt structure, quantization, and model generation on score (T1)
+### Effects of prompt structure, quantization, and model generation on score (T1 and T8)
 
 Because model size did not account for the observed differences, we next examined factors
 that could change performance without requiring larger hardware. Two were task-side
@@ -654,9 +692,26 @@ cost at all. Decomposing the prompt recovered four for the model shown. Within t
 violation for 13.8 GiB more memory, and q8 to bf16 lost seven for a further 30.4 GiB.
 Whether that holds for other families was not tested.
 
+Decomposition was then applied to T8, the only other task in which the manipulation has
+a natural form: T1's area-split gives each of eight guideline areas its own call, and
+T8's eight references can likewise be checked one per call. It helped there too, and by
+more than on T1. Over the 15 tool-capable models the journal abbreviations recovered
+rise from 25 of 60 to 37 of 60, 6 models improving, 1 falling, and 8 unchanged; the
+mismatched or superseded records caught rise from 14 of 45 to 26 of 45; and the
+fabricated reference is correctly refused by 9 models rather than 7. The single model
+that falls, `magistral`, falls on all three measures. The larger part of the gain is not
+better judgment but an answer at all: 8 of the 15 models return nothing parseable when
+asked for all eight references in one call, against 2 when asked for one at a time, and
+the models that never call a tool fall from 3 to 2. No model fabricated a DOI under
+either form. The cost is time. The median condition takes 298 s against 172 s, a factor
+of 1.7, because eight conversations each re-read the system prompt and the tool
+definitions. On T8, then, the effect of decomposing the prompt is larger than any
+difference between the models measured here, and it is paid for in wall time rather than
+in memory.
+
 ![Figure 6](figures/figure6_prompt_structure.png)
 
-**Figure 6**  What moved detection on T1. Left: guideline violations detected under free-form prompting and under the checklist, one line per model at matched reasoning effort; red marks the two models the checklist lowers, and the three models that detect nothing under either form lie on one coincident line at zero, marked as such. Centre: the same shift resolved by difficulty class for `qwen3.8:27b`. Right: the observed score difference for each comparison, annotated with its cost in memory; the second line of each row names the models compared, from `data/score_change_comparisons.json`. The checklist row is `qwen3.8:27b` under the two prompt forms, the generation row is `qwen3.6:35b-a3b-q4_K_M` against `qwen3.8:27b`, and the two quantization rows are steps within `qwen3.6:35b-a3b`; the deterministic checker uses no model. The comparisons are not interventions of one kind — the deterministic checker is a different computational layer, and the others are single comparisons within one model family or between two generations — so the panel reports differences rather than interchangeable effects.
+**Figure 6**  What moved detection, on T1 and on T8. Top left: guideline violations detected on T1 under free-form prompting and under the checklist, one line per model at matched reasoning effort; red marks the two models the checklist lowers, and the three models that detect nothing under either form lie on one coincident line at zero, marked as such. Top right: the same shift resolved by difficulty class for `qwen3.8:27b`. Bottom left: the same manipulation on T8, where the eight references are checked in one call or one call each, over the 15 tool-capable models; red marks the one model it lowers, and `×n` gives the number of models on a coincident line. The two panels are not on one axis because T1 scores 40 seeded violations and T8 four journal abbreviations. Bottom right: the observed score difference for each comparison, annotated with its cost in memory; the second line of each row names the models compared. The checklist row is `qwen3.8:27b` under the two prompt forms, the generation row is `qwen3.6:35b-a3b-q4_K_M` against `qwen3.8:27b`, and the two quantization rows are steps within `qwen3.6:35b-a3b`; the deterministic checker uses no model. The comparisons are not interventions of one kind — the deterministic checker is a different computational layer, and the others are single comparisons within one model family or between two generations — so the panel reports differences rather than interchangeable effects.
 
 
 Tool access showed a similar distinction between possessing a capability and using it
@@ -758,6 +813,18 @@ Three quarters of the seeded guideline violations were recovered by a program us
 model, with no model-memory requirement and in under a tenth of a second. The violations they resolved are the cross-referencing, counting, and formatting ones,
 and they include four that the highest-scoring model missed. The result with the broadest practical implication is
 therefore not a particular model score, but an ordering of computational layers.
+
+Combining the two layers by fine-tuning a model on the checker's output, rather than by
+running both and taking the union, is a natural alternative that we did not test. Two
+things would have to be in place first. One is supervision at scale: the checker labels
+one seeded manuscript here, so distilling it would mean first building a corpus of
+manuscripts carrying known violations. The other is a target worth distilling. The four
+violations the checker resolves and the best model misses are settled by a regular
+expression or by arithmetic, which is what a language model does least reliably and what
+a called function does for nothing; the items on which a fine-tuned model would help are
+the nine requiring a judgment about wording, and for those the checker supplies no
+labels. We therefore expect the gain from calling the checker to exceed the gain from
+imitating it, but that is an expectation rather than a measurement.
 
 This ordering is consistent with established practice in editorial screening.
 Statistical consistency checking with statcheck is already used during peer review at
@@ -873,9 +940,13 @@ task suite across two nodes; the reported end-to-end estimate was calculated fro
 measured phase throughputs.
 
 One prompt variant was evaluated on only 7 of the 17 models because each condition
-required eight inference calls. No principal conclusion depends on this variant alone,
-but completing the comparison would provide a stronger test of the effect of prompt
-structure. Finally, the deterministic layer used here operates on plain text and does
+required eight inference calls. No principal conclusion depends on this variant alone.
+Prompt structure was varied on two of the eight tasks, T1 and T8, and not on the other
+six: those score between four and twelve items each, so a shift of the size seen here
+would be within one item and a null result could not be distinguished from a measure too
+coarse to show one. What the two tasks share is that decomposition helped; how far that
+carries to a task with neither a long rule document to partition nor a list of items to
+separate is untested. Finally, the deterministic layer used here operates on plain text and does
 not parse document structure. A production implementation with access to the submitted
 file format could therefore recover several violations that we assigned to the model.
 This would likely narrow the model's incremental contribution further and is perhaps the

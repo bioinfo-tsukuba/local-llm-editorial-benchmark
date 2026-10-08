@@ -263,7 +263,8 @@ def fig_concept():
 
     # ============ column 2: the benchmark ===========================
     card(C2, 62, W, 32, '#f4f7f9', '#d4dde3')
-    title(C2 + W / 2, 92, 'A benchmark from real rules and reviews')
+    # at the default size this title runs past the card's right edge
+    title(C2 + W / 2, 92, 'A benchmark from real rules and reviews', size=8.0)
     # Counted from the material itself. The word count was written in as 4,539, which
     # was the truncated copy of the guidelines; the complete document is longer, and a
     # figure that carries a number must not be the place it goes stale.
@@ -310,7 +311,10 @@ def fig_concept():
     # ============ column 3: the measurement =========================
     card(C3, 58, W, 36, '#f4f7f9', '#d4dde3')
     title(C3 + W / 2, 92, 'Factors varied', size=8.2)
-    gx, gy, cw, ch = C3 + 4.2, 71.5, 1.24, 1.42
+    # The caption below the headline used to sit at the height of the first factor
+    # row and collided with it on both sides; the whole stack moves up and the rows
+    # start lower, so the caption has a line of its own.
+    gx, gy, cw, ch = C3 + 4.2, 73.4, 1.24, 1.42
     rng = np.random.default_rng(0)
     for r in range(9):
         for c in range(17):
@@ -322,15 +326,15 @@ def fig_concept():
     # grid is ragged and "17 x 8" would misdescribe it
     _cells = sum(len(glob.glob(str(ROOT / 'results' / t / '*.json')))
                  for t in 't1 t1c t2 t3refs t3ja t4abs t4ph t5 t6c t6d t7 t8'.split())
-    ax.text(C3 + W / 2, 69.4, f'{len(_INV)} models,  8 tasks,  {_cells} conditions',
+    ax.text(C3 + W / 2, 71.4, f'{len(_INV)} models,  8 tasks,  {_cells} conditions',
             ha='center', va='top', fontsize=7.4, color=INK, fontweight='bold')
-    ax.text(C3 + W / 2, 66.6, 'task-specific model subsets', ha='center', va='top',
+    ax.text(C3 + W / 2, 68.7, 'task-specific model subsets', ha='center', va='top',
             fontsize=6.1, color=MUTE, style='italic')
     for k, (a, b) in enumerate([('model size', '3.3 – 81 GB'),
                                 ('prompt structure', '3 variants'),
                                 ('context length', '4k – 128k tokens'),
                                 ('quantization', 'q4 / q8 / bf16')]):
-        yy = 65.0 - k * 1.9
+        yy = 65.4 - k * 1.9
         ax.text(C3 + 3.0, yy, a, fontsize=6.1, color=MUTE, va='center')
         ax.text(C3 + W - 3.0, yy, b, fontsize=6.1, color=INK, va='center', ha='right')
 
@@ -455,12 +459,15 @@ def fig_tasks():
     mark(a, 41, 68, MISS, 2.4)
     a.text(24, 17, 'image + file metadata', ha='center', va='top',
            fontsize=5.8, color=MUTE)
-    a.add_patch(FancyBboxPatch((54, 30), 42, 34, boxstyle='round,pad=0,rounding_size=1.2',
+    # widened from 42 to 50 so the longest item clears the right-hand border
+    a.add_patch(FancyBboxPatch((54, 30), 50, 34, boxstyle='round,pad=0,rounding_size=1.2',
                                fc='#f7eeee', ec='#e0c2c3', lw=.7, zorder=2))
-    for k, t in enumerate(['72 dpi', 'panel labels', 'unreadable axes',
+    # 'the five seeded defects', not requirements: a reviewer read '72 dpi' as a
+    # specification. The journal requires 300 dpi; 72 dpi is the fault.
+    for k, t in enumerate(['72 dpi (300 required)', 'panel labels', 'unreadable axes',
                            'table as image', 'vertical rules']):
         a.text(58, 58 - k * 6.4, '• ' + t, fontsize=5.8, color=INK, zorder=3)
-    a.text(75, 24, '5 defects, plus one\nfigure with none', ha='center', va='top',
+    a.text(79, 24, '5 defects, plus one\nfigure with none', ha='center', va='top',
            fontsize=6.0, color=MUTE)
 
     # ---- T6 self-consistency: two numbers that cannot both hold
@@ -536,8 +543,12 @@ def n_up_pre(pairs):
 def fig_prompt():
     """What changes the score: prompt structure against the things a purchase buys."""
     import csv as _csv
-    fig, axes = plt.subplots(1, 3, figsize=(7.4, 2.9),
-                             gridspec_kw={'width_ratios': [1.05, 1.0, 1.55]})
+    # Four panels: T1 slopes, the T1 difficulty split, T8 slopes, and the summary of
+    # observed differences. Laid out 2x2 rather than 1x4: in one row the panels are
+    # under two inches wide and the category labels collide with each other.
+    fig, axes = plt.subplots(2, 2, figsize=(7.4, 5.6),
+                             gridspec_kw={'width_ratios': [1.0, 1.35]})
+    axes = axes.ravel()
 
     # ---- A: every model improves from free-form to checklist
     # Pair the two prompt forms at the same reasoning effort. Pooling over effort
@@ -611,14 +622,50 @@ def fig_prompt():
         ax.text(xi - .18, e + .5, str(e), ha='center', fontsize=7, color=INK)
         ax.text(xi + .18, h + .5, str(h), ha='center', fontsize=7,
                 color=ACC, fontweight='bold')
-    ax.set_xticks(x); ax.set_xticklabels(['free-form', 'checklist'], fontsize=7)
+    ax.set_xticks(x); ax.set_xticklabels(['free-form', 'checklist'], fontsize=7.5)
     ax.set_xlim(-.62, 1.62)
     ax.set_ylim(0, max(easy + hard) + 6); ax.set_ylabel('detected')
     ax.set_title(f'split by difficulty class\n{short(ref["from"]["model"])}', fontsize=8, pad=4)
     ax.legend(frameon=False, fontsize=6.4, loc='upper left')
     ax.grid(axis='y', alpha=.18, lw=.4)
 
-    # ---- C: each change, scored from the data rather than typed in
+    # ---- C: the same manipulation on T8, one reference per call
+    # T8 is scored out of 4 abbreviations, not 40 violations, so it needs its own axis
+    # rather than a second series on the left panel.
+    def _t8(name, col='abbrev_correct'):
+        out = {}
+        for r in rows(name):
+            out[r['model']] = max(out.get(r['model'], -1),
+                                  int(str(r[col]).split('/')[0]))
+        return out
+
+    ax = axes[2]
+    _a8, _b8 = _t8('t8'), _t8('t8b')
+    _both8 = sorted(m for m in _a8 if m in _b8)
+    for m in _both8:
+        up = _b8[m] >= _a8[m]
+        ax.plot([0, 1], [_a8[m], _b8[m]], '-o', ms=3.4, lw=1.1,
+                color=ACC if up else BAD, alpha=.85, zorder=3 if up else 4)
+    _u8 = sum(1 for m in _both8 if _b8[m] > _a8[m])
+    _d8 = sum(1 for m in _both8 if _b8[m] < _a8[m])
+    # five models run 4 to 4 and three run 0 to 0, so most lines here are coincident;
+    # the midpoint of a segment is unique per (start, end) pair, which is where the
+    # count goes
+    _seg = collections.Counter((_a8[m], _b8[m]) for m in _both8)
+    for (p0, p1), n in _seg.items():
+        if n > 1:
+            ax.text(.5, (p0 + p1) / 2, f'×{n}', ha='center', va='center',
+                    fontsize=6.4, color=MUTE, zorder=5,
+                    bbox=dict(fc='white', ec='none', pad=.8))
+    ax.set_xlim(-.4, 1.4); ax.set_xticks([0, 1])
+    ax.set_xticklabels(['one call,\nall eight', 'one call\nper reference'], fontsize=7.2)
+    ax.set_ylabel('abbreviations correct (of 4)')
+    ax.set_ylim(-.6, 4.6)
+    ax.set_title(f'The same split on T8 raises {_u8} of {len(_both8)} models\n'
+                 f'and lowers {_d8}', fontsize=8, pad=4)
+    ax.grid(axis='y', alpha=.18, lw=.4)
+
+    # ---- D: each change, scored from the data rather than typed in
     def detected(model, variant):
         for r in rows('t1'):
             if (r.get('model') == model and r.get('manuscript') == 'MS-A'
@@ -642,7 +689,7 @@ def fig_prompt():
             eff = detected(**c['to']) - detected(**c['from'])
         col = ACC if eff > 1 else (WARN if eff > 0 else BAD)
         items.append((c['label'], c['memory_delta_gib'], eff, col, _pair_note(c)))
-    ax = axes[2]
+    ax = axes[3]
     y = np.arange(len(items))[::-1]
     ax.barh(y, [i[2] for i in items], .5, color=[i[3] for i in items])
     # negative bars grow leftward, so their value label must sit to the right of
@@ -810,8 +857,12 @@ def fig3():
         tot = p + d
         ax.text(tot + max(pf + dc) * .02, i, f'{d/tot*100:.0f}% decode',
                 va='center', fontsize=6.5, color=INK)
-        ax.text(tot * .5, i - .38, f'in {mt["prompt_tokens"]:,} / out {mt["output_tokens"]:,} tok',
-                va='center', ha='center', fontsize=6, color=MUTE)
+        # anchored at the axis, not centred on the bar: centring put the label's
+        # midpoint near the origin for the short bars, so it ran left across the
+        # axis line and into the model names
+        ax.text(max(pf + dc) * .01, i - .38,
+                f'in {mt["prompt_tokens"]:,} / out {mt["output_tokens"]:,} tok',
+                va='center', ha='left', fontsize=6, color=MUTE)
     ax.set_yticks(y); ax.set_yticklabels([b[0] for b in bars], fontsize=7)
     ax.invert_yaxis(); ax.set_xlabel('wall-clock seconds')
     ax.legend(frameon=False, fontsize=7, loc='lower right')

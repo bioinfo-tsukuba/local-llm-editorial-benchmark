@@ -23,8 +23,15 @@ def txt(c):
                 f"{c.get('corrected_doi')}")
 
 
+# variant B (results/t8b, one reference per call) is graded by the same code, into a
+# separate CSV, so the reported T8 numbers cannot move:
+#     python3 harness/grade_t8.py t8b
+import sys
+_SUB = sys.argv[1] if len(sys.argv) > 1 else 't8'
+_OUT = ROOT / f'results/{_SUB}_summary.csv'
+
 rows = []
-d = ROOT / 'results' / 't8'
+d = ROOT / 'results' / _SUB
 for f in sorted(d.glob('*.json')) if d.exists() else []:
     r = json.loads(f.read_text())
     checks = {str(c.get('id')).upper(): c for c in (r.get('checks') or []) if isinstance(c, dict)}
@@ -85,7 +92,7 @@ for f in sorted(d.glob('*.json')) if d.exists() else []:
     })
 
 if rows:
-    with open(ROOT / 'results/t8_summary.csv', 'w', newline='') as fh:
+    with open(_OUT, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
     hdr = ['model', 'n_tool_calls', 'abbrev_correct', 'mismatch_caught',
            'refusal_correct', 'fabricated_dois', 'wall_s']
@@ -97,4 +104,4 @@ if rows:
         if r['detail']:
             print(f"  {r['model'][:30]}: {r['detail']}")
 else:
-    print('t8: no results')
+    print(f'{_SUB}: no results')

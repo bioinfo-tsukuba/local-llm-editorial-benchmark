@@ -1,0 +1,189 @@
+{
+ "task": "T8",
+ "variant": "b",
+ "model": "gpt-oss:20b",
+ "seed": 42,
+ "error": null,
+ "parse_error": "",
+ "n_tool_calls": 9,
+ "n_checks": 8,
+ "n_calls_made": 8,
+ "meta": {
+  "model": "gpt-oss:20b",
+  "wall_s": 3.29,
+  "prompt_tokens": 809,
+  "output_tokens": 161,
+  "load_s": 0.17,
+  "prefill_tok_s": 7397.2,
+  "decode_tok_s": 57.4,
+  "ttft_s": 0.28,
+  "done_reason": "stop",
+  "peak_mem_used_mib": 72422,
+  "peak_size_vram_mib": 14193
+ },
+ "checks": [
+  {
+   "id": "V1",
+   "verified": false,
+   "journal_abbreviated": "Biophys. J.",
+   "problems": [
+    "DOI resolves to a different article title: 'Anisotropy of Fluctuation Dynamics of Proteins with an Elastic Network Model' rather than the cited title 'Anisotropic fluctuations of amino acids in protein structures'. The authors and year match, but the title does not. The journal abbreviation is correct per MEDLINE style."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V2",
+   "verified": true,
+   "journal_abbreviated": "Protein Eng. Des. Sel.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V3",
+   "verified": true,
+   "journal_abbreviated": "Proc. Natl. Acad. Sci. U.S.A.",
+   "problems": [],
+   "corrected_doi": null
+  },
+  {
+   "id": "V4",
+   "verified": true,
+   "journal_abbreviated": "Nature",
+   "problems": [
+    "Author list does not exactly match the authoritative record: the reference lists \"Kinosita, K., Jr.\" and \"Itoh, H.\" whereas the record lists \"Kinosita, K.\" and \"Itoh, H.\" (no Jr.)"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V5",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "DOI 10.1038/35073513 resolves to a different article (Yasuda et al., 2001, Nature) and does not match the cited title, authors, journal, volume, pages, or year. The reference appears to be incorrect."
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V6",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "DOI 10.2142/biophysico.bppb-v21.0112 does not resolve; reference could not be verified"
+   ],
+   "corrected_doi": null
+  },
+  {
+   "id": "V7",
+   "verified": false,
+   "journal_abbreviated": "Annu. Rev. Biophys. Biomol. Struct.",
+   "problems": [
+    "Year mismatch: reference lists 2008 but DOI resolves to 2006",
+    "Volume mismatch: reference lists 37 but DOI resolves to 35"
+   ],
+   "corrected_doi": "10.1146/annurev.biophys.35.040405.101933"
+  },
+  {
+   "id": "V8",
+   "verified": false,
+   "journal_abbreviated": null,
+   "problems": [
+    "The reference is a bioRxiv preprint, which is not an indexed journal and therefore does not have an Index Medicus/MEDLINE style abbreviated title. The DOI resolves, but the journal name cannot be verified in the required abbreviated form."
+   ]
+  }
+ ],
+ "tool_trace": [
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1016/S0006-3495(01)76033-X"
+   },
+   "result_summary": "Biophys. J. 80 (2001) 10.1016/s0006-3495(01)76033-x",
+   "error": null,
+   "item": "V1"
+  },
+  {
+   "n": 2,
+   "tool": "search_reference",
+   "args": {
+    "bibliographic": "Anisotropic fluctuations of amino acids in protein structures Atilgan"
+   },
+   "result_summary": "3 candidates: 10.1093/bioinformatics/btm186, 10.1007/s00726-020-02820-9, 10.1007/s00726-018-2683-7",
+   "error": null,
+   "item": "V1"
+  },
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1093/protein/14.1.1"
+   },
+   "result_summary": "Protein Eng. Des. Sel. 14 (2001) 10.1093/protein/14.1.1",
+   "error": null,
+   "item": "V2"
+  },
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1073/pnas.0702950104"
+   },
+   "result_summary": "Proc. Natl. Acad. Sci. U.S.A. 104 (2007) 10.1073/pnas.0702950104",
+   "error": null,
+   "item": "V3"
+  },
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null,
+   "item": "V4"
+  },
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1038/35073513"
+   },
+   "result_summary": "Nature 410 (2001) 10.1038/35073513",
+   "error": null,
+   "item": "V5"
+  },
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.2142/biophysico.bppb-v21.0112"
+   },
+   "result_summary": "This DOI does not resolve in Crossref.",
+   "error": null,
+   "item": "V6"
+  },
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1146/annurev.biophys.35.040405.101933"
+   },
+   "result_summary": "Annu. Rev. Biophys. Biomol. Struct. 35 (2006) 10.1146/annurev.biophys.35.040405.101933",
+   "error": null,
+   "item": "V7"
+  },
+  {
+   "n": 1,
+   "tool": "lookup_doi",
+   "args": {
+    "doi": "10.1101/2020.06.29.179044"
+   },
+   "result_summary": " None (2020) 10.1101/2020.06.29.179044",
+   "error": null,
+   "item": "V8"
+  }
+ ],
+ "raw_response": "=== V1 ===\n{\"checks\":[{\"id\":\"V1\",\"verified\":false,\"journal_abbreviated\":\"Biophys. J.\",\"problems\":[\"DOI resolves to a different article title: 'Anisotropy of Fluctuation Dynamics of Proteins with an Elastic Network Model' rather than the cited title 'Anisotropic fluctuations of amino acids in protein structures'. The authors and year match, but the title does not. The journal abbreviation is correct per MEDLINE style.\"],\"corrected_doi\":null}]}\n\n=== V2 ===\n{\"checks\":[{\"id\":\"V2\",\"verified\":true,\"journal_abbreviated\":\"Protein Eng. Des. Sel.\",\"problems\":[],\"corrected_doi\":null}]}\n\n=== V3 ===\n{\"checks\":[{\"id\":\"V3\",\"verified\":true,\"journal_abbreviated\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"problems\":[],\"corrected_doi\":null}]}\n\n=== V4 ===\n{\"checks\":[{\"id\":\"V4\",\"verified\":true,\"journal_abbreviated\":\"Nature\",\"problems\":[\"Author list does not exactly match the authoritative record: the reference lists \\\"Kinosita, K., Jr.\\\" and \\\"Itoh, H.\\\" whereas the record lists \\\"Kinosita, K.\\\" and \\\"Itoh, H.\\\" (no Jr.)\"],\"corrected_doi\":null}]}\n\n=== V5 ===\n{\"checks\":[{\"id\":\"V5\",\"verified\":false,\"journal_abbreviated\":null,\"problems\":[\"DOI 10.1038/35073513 resolves to a different article (Yasuda et al., 2001, Nature) and does not match the cited title, authors, journal, volume, pages, or year. The reference appears to be incorrect.\"],\"corrected_doi\":null}]}\n\n=== V6 ===\n{\"checks\":[{\"id\":\"V6\",\"verified\":false,\"journal_abbreviated\":null,\"problems\":[\"DOI 10.2142/biophysico.bppb-v21.0112 does not resolve; reference could not be verified\"],\"corrected_doi\":null}]}\n\n=== V7 ===\n{\"checks\":[{\"id\":\"V7\",\"verified\":false,\"journal_abbreviated\":\"Annu. Rev. Biophys. Biomol. Struct.\",\"problems\":[\"Year mismatch: reference lists 2008 but DOI resolves to 2006\",\"Volume mismatch: reference lists 37 but DOI resolves to 35\"],\"corrected_doi\":\"10.1146/annurev.biophys.35.040405.101933\"}]}\n\n=== V8 ===\n{\"checks\":[{\"id\":\"V8\",\"verified\":false,\"journal_abbreviated\":null,\"problems\":[\"The reference is a bioRxiv preprint, which is not an indexed journal and therefore does not have an Index Medicus/MEDLINE style abbreviated title. The DOI resolves, but the journal name cannot be verified in the required abbreviated form.\"]}]}",
+ "thinking_chars": 0,
+ "wall_s": 44.1
+}

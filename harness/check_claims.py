@@ -478,6 +478,84 @@ for _fa, _ca, _da, _fb, _cb, _db, _want in _diss:
               else 'other',
               f'{_same} of {len(_both)}', _same == 14)
 
+# --- the T4 ceiling counts added for R1-1 -------------------------------------
+# Written from the pooled-T4 table during the revision and wrong on the first pass
+# (13 and 2 for a set that is 12, 2 and 3), so they are recomputed here.
+def _best(name, col):
+    out = {}
+    for _r in summary(name):
+        _v = int(str(_r[col]).split('/')[0])
+        out[_r['model']] = max(out.get(_r['model'], -1), _v)
+    return out
+
+_a, _b = _best('t4abs', 'correct'), _best('t4ph', 'correctly_denied')
+if _a and _b:
+    _flat4 = ' '.join(MS.split())
+    _a8 = sum(1 for v in _a.values() if v == 8)
+    _a0 = sum(1 for v in _a.values() if v == 0)
+    _b5 = sum(1 for v in _b.values() if v == 5)
+    _b4 = sum(1 for v in _b.values() if v == 4)
+    _b0 = sum(1 for v in _b.values() if v == 0)
+    claim('T4 guideline questions at ceiling and at zero',
+          f'{_a8} of {len(_a)} at 8/8, {_a0} at 0',
+          f'{_a8} and {_a0} of {len(_a)}',
+          f'{_a8} of {len(_a)} models answer all 8 correctly' in _flat4
+          and f'{_a0} models score 0 of 8' in _flat4)
+    claim('T4 absent-element questions, full split',
+          f'{_b5} deny all 5, {_b4} deny 4, {_b0} deny none',
+          f'{_b5}/{_b4}/{_b0} of {len(_b)}',
+          f'{_b5} of {len(_b)} deny all 5, {_b4} deny 4, and {_b0} deny none' in _flat4)
+
+# --- T8 decomposition, added for R2-3 ----------------------------------------
+_t8b = summary('t8b')
+if _t8b and summary('t8'):
+    _A = {r['model']: r for r in summary('t8')}
+    _B = {r['model']: r for r in _t8b}
+    _ms = [m for m in _A if m in _B]
+    _n = lambda r, c: int(str(r[c]).split('/')[0])
+    _flat8 = ' '.join(MS.split())
+    for _col, _den, _txt in (('abbrev_correct', 4, 'abbreviations'),
+                             ('mismatch_caught', 3, 'mismatched or superseded'),
+                             ('refusal_correct', 1, 'refusals')):
+        _a = sum(_n(_A[m], _col) for m in _ms)
+        _b = sum(_n(_B[m], _col) for m in _ms)
+        claim(f'T8 decomposition, {_txt}',
+              f'{_a} of {_den * len(_ms)} to {_b}',
+              f'{_a} -> {_b} of {_den * len(_ms)}',
+              (f'rise from {_a} of {_den * len(_ms)} to {_b} of {_den * len(_ms)}' in _flat8
+               or f'by {_b} models rather than {_a}' in _flat8))
+    _up = sum(1 for m in _ms if _n(_B[m], 'abbrev_correct') > _n(_A[m], 'abbrev_correct'))
+    _dn = sum(1 for m in _ms if _n(_B[m], 'abbrev_correct') < _n(_A[m], 'abbrev_correct'))
+    claim('T8 decomposition, models up and down',
+          f'{_up} up, {_dn} down, {len(_ms) - _up - _dn} unchanged',
+          f'{_up}/{_dn}/{len(_ms) - _up - _dn} of {len(_ms)}',
+          f'{_up} models improving, {_dn} falling, and {len(_ms) - _up - _dn} unchanged' in _flat8)
+
+    def _noans(d):
+        return sum(1 for m in _ms
+                   if not str(d[m].get('n_checks') or '').strip()
+                   or _n(d[m], 'n_checks') == 0)
+
+    def _notool(d):
+        return sum(1 for m in _ms if _n(d[m], 'n_tool_calls') == 0)
+    claim('T8 decomposition, no parseable answer',
+          f'{_noans(_A)} then {_noans(_B)}',
+          f'{_noans(_A)} -> {_noans(_B)} of {len(_ms)}',
+          f'{_noans(_A)} of the {len(_ms)} models return nothing parseable' in _flat8
+          and f'against {_noans(_B)} when asked' in _flat8)
+    claim('T8 decomposition, never called a tool',
+          f'{_notool(_A)} then {_notool(_B)}',
+          f'{_notool(_A)} -> {_notool(_B)}',
+          f'fall from {_notool(_A)} to {_notool(_B)}' in _flat8)
+    import statistics as _st2
+    _wa = _st2.median([float(_A[m]['wall_s']) for m in _ms if _A[m]['wall_s']])
+    _wb = _st2.median([float(_B[m]['wall_s']) for m in _ms if _B[m]['wall_s']])
+    claim('T8 decomposition, median wall time',
+          f'{_wb:.0f} s against {_wa:.0f} s, {_wb / _wa:.1f}x',
+          f'{_wa:.0f} -> {_wb:.0f} s ({_wb / _wa:.2f}x)',
+          f'{_wb:.0f} s against {_wa:.0f} s' in _flat8
+          and f'factor of {_wb / _wa:.1f}' in _flat8)
+
 print()
 for n in notes:
     print('note:', n)
