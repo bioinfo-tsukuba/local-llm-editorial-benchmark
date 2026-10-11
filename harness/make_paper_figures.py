@@ -449,26 +449,30 @@ def fig_tasks():
 
     # ---- T5 figures
     a = axes[1][0]; cap(a, 'T5', 'Figures (vision)', 'defects visible in the image')
-    page(a, 2, 24, 44, 52, 'white')
+    # The panel is 0-100 wide, so the defect card cannot be widened to the right
+    # without the axes clipping it. The room comes from the thumbnail instead, which
+    # is decorative: its x extent is scaled by 0.8 about x=2, freeing nine units.
+    def _x(v):
+        return 2 + (v - 2) * .8
+
+    page(a, 2, 24, 44 * .8, 52, 'white')
     rng = np.random.default_rng(3)
-    xs = np.linspace(10, 40, 14); ys = 36 + 22 * rng.random(14)
+    xs = _x(np.linspace(10, 40, 14)); ys = 36 + 22 * rng.random(14)
     a.plot(xs, ys, color=ACC, lw=1.0)
-    a.plot([9, 9], [32, 66], color='#9fb0bc', lw=.8)
-    a.plot([9, 42], [32, 32], color='#9fb0bc', lw=.8)
-    a.text(24, 27, 'axis labels too small', ha='center', fontsize=4.6, color=MISS)
-    mark(a, 41, 68, MISS, 2.4)
-    a.text(24, 17, 'image + file metadata', ha='center', va='top',
+    a.plot([_x(9), _x(9)], [32, 66], color='#9fb0bc', lw=.8)
+    a.plot([_x(9), _x(42)], [32, 32], color='#9fb0bc', lw=.8)
+    a.text(_x(24), 27, 'axis labels too small', ha='center', fontsize=4.6, color=MISS)
+    mark(a, _x(41), 68, MISS, 2.4)
+    a.text(_x(24), 17, 'image + file metadata', ha='center', va='top',
            fontsize=5.8, color=MUTE)
-    # The panel is 0-100 wide. Widening this card to fit the longest item ran its
-    # right edge to 104, where the axes clipped it; it starts further left instead.
-    a.add_patch(FancyBboxPatch((50, 30), 48, 34, boxstyle='round,pad=0,rounding_size=1.2',
+    a.add_patch(FancyBboxPatch((40, 30), 59, 34, boxstyle='round,pad=0,rounding_size=1.2',
                                fc='#f7eeee', ec='#e0c2c3', lw=.7, zorder=2))
     # 'the five seeded defects', not requirements: a reviewer read '72 dpi' as a
     # specification. The journal requires 300 dpi; 72 dpi is the fault.
     for k, t in enumerate(['72 dpi (300 required)', 'panel labels', 'unreadable axes',
                            'table as image', 'vertical rules']):
-        a.text(53.5, 58 - k * 6.4, '• ' + t, fontsize=5.8, color=INK, zorder=3)
-    a.text(74, 24, '5 defects, plus one\nfigure with none', ha='center', va='top',
+        a.text(44, 58 - k * 6.4, '• ' + t, fontsize=5.8, color=INK, zorder=3)
+    a.text(69.5, 24, '5 defects, plus one\nfigure with none', ha='center', va='top',
            fontsize=6.0, color=MUTE)
 
     # ---- T6 self-consistency: two numbers that cannot both hold
