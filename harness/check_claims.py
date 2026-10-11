@@ -556,6 +556,22 @@ if _t8b and summary('t8'):
           f'{_wb:.0f} s against {_wa:.0f} s' in _flat8
           and f'factor of {_wb / _wa:.1f}' in _flat8)
 
+# --- the item-count range the limitations quote ------------------------------
+# Written as "between four and twelve" and wrong: the smallest of the six tasks
+# other than T1 and T8 scores five items, not four. Recomputed from the same
+# denominators the figures use.
+_DEN = {'t2': 12, 't3refs': 8, 't3ja': 10, 't4abs': 8, 't4ph': 5,
+        't5': 5, 't6c': 10, 't7': 8}
+_have = {k: v for k, v in _DEN.items() if summary(k)}
+if _have:
+    _lo, _hi = min(_have.values()), max(_have.values())
+    _w = {4: 'four', 5: 'five', 6: 'six', 8: 'eight', 10: 'ten', 12: 'twelve'}
+    _flatd = ' '.join(MS.split())
+    claim('item counts of the six tasks not varied',
+          f'between {_w.get(_lo, _lo)} and {_w.get(_hi, _hi)}',
+          f'{_lo} to {_hi} over {len(_have)} measures',
+          f'score between {_w.get(_lo, _lo)} and {_w.get(_hi, _hi)} items each' in _flatd)
+
 print()
 for n in notes:
     print('note:', n)

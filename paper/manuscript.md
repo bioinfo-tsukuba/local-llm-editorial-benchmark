@@ -941,12 +941,14 @@ measured phase throughputs.
 
 One prompt variant was evaluated on only 7 of the 17 models because each condition
 required eight inference calls. No principal conclusion depends on this variant alone.
-Prompt structure was varied on two of the eight tasks, T1 and T8, and not on the other
-six: those score between four and twelve items each, so a shift of the size seen here
-would be within one item and a null result could not be distinguished from a measure too
-coarse to show one. What the two tasks share is that decomposition helped; how far that
-carries to a task with neither a long rule document to partition nor a list of items to
-separate is untested. Finally, the deterministic layer used here operates on plain text and does
+Prompt structure was varied on two of the eight tasks, T1 and T8, and not on the
+other six. Those six score between five and twelve items each, so the smallest
+difference they can register is one item, between a twelfth and a fifth of their whole
+range. A null result on them would therefore be uninformative: it would not separate a
+prompt structure that changes nothing from a measure too coarse to show that it changed
+something. Both tasks on which the comparison was run offer something to decompose, a
+long rule document in T1 and a list of eight references in T8; whether decomposition
+helps a task that offers neither is untested. Finally, the deterministic layer used here operates on plain text and does
 not parse document structure. A production implementation with access to the submitted
 file format could therefore recover several violations that we assigned to the model.
 This would likely narrow the model's incremental contribution further and is perhaps the
