@@ -459,15 +459,16 @@ def fig_tasks():
     mark(a, 41, 68, MISS, 2.4)
     a.text(24, 17, 'image + file metadata', ha='center', va='top',
            fontsize=5.8, color=MUTE)
-    # widened from 42 to 50 so the longest item clears the right-hand border
-    a.add_patch(FancyBboxPatch((54, 30), 50, 34, boxstyle='round,pad=0,rounding_size=1.2',
+    # The panel is 0-100 wide. Widening this card to fit the longest item ran its
+    # right edge to 104, where the axes clipped it; it starts further left instead.
+    a.add_patch(FancyBboxPatch((50, 30), 48, 34, boxstyle='round,pad=0,rounding_size=1.2',
                                fc='#f7eeee', ec='#e0c2c3', lw=.7, zorder=2))
     # 'the five seeded defects', not requirements: a reviewer read '72 dpi' as a
     # specification. The journal requires 300 dpi; 72 dpi is the fault.
     for k, t in enumerate(['72 dpi (300 required)', 'panel labels', 'unreadable axes',
                            'table as image', 'vertical rules']):
-        a.text(58, 58 - k * 6.4, '• ' + t, fontsize=5.8, color=INK, zorder=3)
-    a.text(79, 24, '5 defects, plus one\nfigure with none', ha='center', va='top',
+        a.text(53.5, 58 - k * 6.4, '• ' + t, fontsize=5.8, color=INK, zorder=3)
+    a.text(74, 24, '5 defects, plus one\nfigure with none', ha='center', va='top',
            fontsize=6.0, color=MUTE)
 
     # ---- T6 self-consistency: two numbers that cannot both hold
