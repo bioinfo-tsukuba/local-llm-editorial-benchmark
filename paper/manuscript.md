@@ -435,7 +435,7 @@ Measurements were made on an NVIDIA DGX Spark, a compact desktop workstation: a 
 Grace Blackwell SoC (compute capability sm_121a), a 20-core Arm CPU (10 Cortex-X925 and 10 Cortex-A725), and 119 GiB of
 unified CPU/GPU memory with approximately 273 GB/s of bandwidth, running Ubuntu 24.04.3
 (kernel 6.14.0-1013-nvidia) with CUDA 13.0 and driver 580.95.05. Because memory is
-unified there is no discrete video memory (VRAM), and the conventional GPU instrumentation reports
+unified there is no discrete video random-access memory (VRAM), and the conventional GPU instrumentation reports
 `Memory-Usage: Not Supported`; all memory figures here come from `free` and per-process
 resident set size. Unified memory also removes the constraint that weights fit a
 discrete graphics card, allowing models from 3.3 to 81 GB to be evaluated on a single
