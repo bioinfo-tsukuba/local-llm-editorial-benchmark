@@ -14,7 +14,7 @@ import difflib, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAPER = ROOT / 'BPPB-special-issue-paper'
 OLD = PAPER / '20260911_1st_submission'
-OUT = PAPER / '20261008_1st_revision' / 'docx-changes.md'
+OUT = PAPER / '20261011_1st_revision' / 'docx-changes.md'
 
 # which reviewer comment each section's changes answer, for the right-hand column
 WHY = {

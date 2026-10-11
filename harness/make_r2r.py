@@ -2,7 +2,7 @@
 """Assemble the point-by-point response from the per-comment files.
 
 The letter is written one comment per file under
-BPPB-special-issue-paper/20261008_1st_revision/R2R/ and concatenated here, so the
+BPPB-special-issue-paper/20261011_1st_revision/R2R/ and concatenated here, so the
 version pasted into ScholarOne cannot drift from the files that were reviewed.
 Order comes from the table in R2R/README.md, which is the numbering itself.
 
@@ -11,8 +11,8 @@ Usage: python3 harness/make_r2r.py
 import pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-R2R = ROOT / 'BPPB-special-issue-paper/20261008_1st_revision/R2R'
-OUT = ROOT / 'BPPB-special-issue-paper/20261008_1st_revision/response-to-reviewers.md'
+R2R = ROOT / 'BPPB-special-issue-paper/20261011_1st_revision/R2R'
+OUT = ROOT / 'BPPB-special-issue-paper/20261011_1st_revision/response-to-reviewers.md'
 
 HEAD = """# Response to the reviewers\' comments
 

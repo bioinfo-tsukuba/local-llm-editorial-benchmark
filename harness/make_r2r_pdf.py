@@ -15,7 +15,7 @@ Usage: python3 harness/make_r2r_pdf.py
 import html, pathlib, re, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SRC = ROOT / 'BPPB-special-issue-paper/20261008_1st_revision/response-to-reviewers.md'
+SRC = ROOT / 'BPPB-special-issue-paper/20261011_1st_revision/response-to-reviewers.md'
 OUTDIR = SRC.parent
 
 CSS = """
