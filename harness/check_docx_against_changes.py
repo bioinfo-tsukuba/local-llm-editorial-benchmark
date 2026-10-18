@@ -39,7 +39,12 @@ def docx_text(p):
         if re.match(r'word/(document|header\d*|footer\d*)\.xml$', n):
             x = z.read(n).decode('utf-8', 'ignore')
             # runs are joined with nothing: Word splits a word across runs at any
-            # formatting boundary, and a separator turns "top left" into "top l eft"
+            # formatting boundary, and a separator turns "top left" into "top l eft".
+            # Deleted text lives in <w:delText>, not <w:t>, so a file with tracked
+            # changes reads here as if the deletions had been accepted -- which is
+            # what we want to check, but it has to be said, because reading the
+            # proof PDF instead shows insertions and deletions run together
+            # ("inon T1") and that looked like a defect until the markup was found.
             out.append(''.join(re.findall(r'<w:t[^>]*>(.*?)</w:t>', x, re.S)))
     import html
     return norm(html.unescape(' '.join(out)))
@@ -82,6 +87,16 @@ def main():
             print(f'       new text not found: "{p[:70]}..."')
         if stale:
             print(f'       old text still present: "{stale}..."')
+
+    # tracked changes: report them, since the proof renders them as markup and the
+    # final version must have them accepted
+    z0 = zipfile.ZipFile(DOCX)
+    _doc = z0.read('word/document.xml').decode('utf-8', 'ignore')
+    _ins, _del = len(re.findall(r'<w:ins ', _doc)), len(re.findall(r'<w:del ', _doc))
+    if _ins or _del:
+        print(f'\nnote {DOCX.name} has tracked changes: {_ins} insertions, '
+              f'{_del} deletions. The proof renders these as markup. They must be '
+              f'accepted before the final version.')
 
     # figures: compare the images Word embedded against the generated PNGs
     z = zipfile.ZipFile(DOCX)

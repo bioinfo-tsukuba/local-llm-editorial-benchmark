@@ -506,8 +506,9 @@ those that do not, the 40 seeded violations in MS-A were evaluated with the dete
 baseline, with each model under its best prompt, and with the baseline and model in
 combination. The deterministic baseline detected 31 of the 40 violations, the strongest
 single model detected 36, and the combination detected all 40 (Table 3). The baseline
-raised no false positive on the compliant control and took under a tenth of a second and
-no memory; the model raised one and took 722 s and 81 GB.
+raised no false positive on the compliant control, took under a tenth of a second, and
+loaded no weights, its process occupying 15 MB; the model raised one and took 722 s and
+81 GB.
 
 **Table 3**  Contribution of each layer to the 40 seeded guideline violations (T1, MS-A). The
 deterministic checker is 220 lines of regular expressions and arithmetic and uses no
@@ -517,7 +518,7 @@ item set the best model already reports that violation, and the lookup is what s
 the correct form (Results, tool use). "Best model" is `qwen3.5:122b-a10b-q4_K_M` under the checklist prompt. Its one false
 positive on the compliant control is a distractor: text written to resemble a violation
 without being one. The final row is the union of detections from the two layers measured
-separately, not the result of running an integrated pipeline. Time and memory are for a single manuscript.
+separately, not the result of running an integrated pipeline. Time and memory are for a single manuscript, and the memory reported is the weight footprint, the quantity a deployment must provision. The checker and the external lookup load no weights; the resident set size of the checker process was 15 MB.
 
 | Layer | Detected | False positives | Time | Memory |
 |---|---|---|---|---|
