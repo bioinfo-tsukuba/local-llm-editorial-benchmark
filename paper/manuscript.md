@@ -1020,7 +1020,9 @@ the content of the manuscript.
 The benchmark, execution harness, ground-truth data, all 313 measured conditions, the
 figure-generation code, and a chronological working log that records predictions which
 proved wrong are available at
-`https://github.com/bioinfo-tsukuba/local-llm-editorial-benchmark`. The journal's
+`https://github.com/bioinfo-tsukuba/local-llm-editorial-benchmark` and archived at
+Zenodo (DOI: 10.5281/zenodo.23453057), which resolves to the most recent version; the
+version this paper describes is v0.9.0 (DOI: 10.5281/zenodo.23453058). The journal's
 Instructions for Authors are redistributed there with the permission of the
 Editor-in-Chief, in the version marked "Revised 21 August, 2026" as requested.
 

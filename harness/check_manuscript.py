@@ -134,6 +134,21 @@ def main():
         print(f'{"preprint comment":<28}absent or not in the prescribed form')
         fails.append('preprint comment absent or malformed')
 
+    # The deposit has two DOIs and they are one digit apart: the concept DOI, which
+    # resolves to the latest version, and the version DOI for v0.9.0. Transposing
+    # them would send a reader to the wrong archive, so both are checked against the
+    # one place they are recorded, .zenodo.json's sibling in the release tree.
+    _z = re.findall(r'10\.5281/zenodo\.(\d+)', s)
+    if _z:
+        ok = len(set(_z)) == 2 and sorted(_z)[1] == str(int(sorted(_z)[0]) + 1)
+        print(f'{"zenodo concept + version":<28}{"ok" if ok else "FAIL"} '
+              f'{sorted(set(_z))}')
+        if not ok:
+            fails.append('zenodo DOIs are not a concept/version pair')
+        _ctx = s[s.index('10.5281/zenodo.' + _z[0]) - 120:]
+        if 'most recent version' not in _ctx[:300]:
+            fails.append('the concept DOI is not identified as such')
+
     # Tables must be numbered in the order they are first cited, and each legend must
     # appear in the same order. This went unchecked while only the figures were, and
     # Table 4 -- the seed table in the Methods -- was cited before Tables 2 and 3.
