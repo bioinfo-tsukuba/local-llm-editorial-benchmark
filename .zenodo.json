@@ -1,0 +1,35 @@
+{
+ "title": "Benchmarking locally hosted language models for journal editorial work on a compact desktop workstation: benchmark, data and harness",
+ "description": "<p>Benchmark, data and execution harness for the manuscript &quot;Benchmarking locally hosted language models for journal editorial work on a compact desktop workstation&quot;, submitted to <i>Biophysics and Physicobiology</i> for the special issue &quot;Research with AI Scientists&quot;.</p><p>Contents: 8 editorial tasks built from a journal's Instructions for Authors, from 5 manuscripts carrying 58 verified seeded defects, and from published reviews of a preprint; 20 open-weight models from 3.3 to 81 GB measured across 313 conditions on one compact desktop workstation; a deterministic baseline that uses no model; and the code that generates every figure and tabulated number.</p><p><b>Licensing is mixed and the field above states only the repository's own licence.</b> Code and manuscript are MIT. Data created for this study (manuscripts, ground truth, figure stimuli, task items) are CC BY 4.0. Material obtained from third parties is redistributed under its own terms: the journal's Instructions for Authors are included with the permission of the Editor-in-Chief, and the preprint and peer reviews behind the peer-review task are CC BY 4.0 from their sources. See LICENSE, data/LICENSE and data/PROVENANCE.md.</p>",
+ "upload_type": "software",
+ "creators": [
+  {
+   "name": "Ozaki, Haruka",
+   "orcid": "0000-0002-1606-2762",
+   "affiliation": "RIKEN Center for Biosystems Dynamics Research; Institute of Medicine, University of Tsukuba"
+  }
+ ],
+ "license": {
+  "id": "mit"
+ },
+ "access_right": "open",
+ "language": "eng",
+ "keywords": [
+  "locally hosted language models",
+  "editorial workflow",
+  "benchmark",
+  "peer review",
+  "research infrastructure",
+  "open-weight models",
+  "scholarly publishing"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.21203/rs.3.rs-10989828/v1",
+   "relation": "isSupplementTo",
+   "resource_type": "publication-preprint",
+   "scheme": "doi"
+  }
+ ],
+ "notes": "The manuscript was under review at the time of this deposit. Numbers in the description are recomputed from results/ by harness/make_public_release.py and are not transcribed."
+}
